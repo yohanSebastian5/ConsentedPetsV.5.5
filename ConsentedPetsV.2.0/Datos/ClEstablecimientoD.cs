@@ -1,4 +1,5 @@
 ﻿using ConsentedPets.Entidades;
+using ConsentedPets.Vista.PerfilesRol.Administrador.Veterinaria;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -93,22 +94,22 @@ namespace ConsentedPets.Datos
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
-        public ClEstablecimientoE mtdListar(string foto="",int id=0,int tipo=0)
+        public ClEstablecimientoE mtdListar(string foto="",string establecimiento="Veterinaria",int id=0,int tipo=0)
         {
             string consulta="";
             if (tipo==0)
             {
-                 consulta = "select * from Veterinaria where foto='" + foto + "'";
+                 consulta = "select * from '"+establecimiento+"' where foto='" + foto + "'";
             }
             else if (tipo==1)
             {
-                consulta = "select * from Veterinaria where idVeterinaria='" + id + "'";
+                consulta = "select * from "+establecimiento+" where id"+establecimiento+"='" + id + "'";
             }
 
             ClProcesarSQL SQL = new ClProcesarSQL();
             DataTable tblVeterinaria = SQL.mtdSelectDesc(consulta);
             ClEstablecimientoE objVet = new ClEstablecimientoE();
-            objVet.id = int.Parse(tblVeterinaria.Rows[0]["idVeterinaria"].ToString());
+            objVet.id = int.Parse(tblVeterinaria.Rows[0]["id"+establecimiento].ToString());
             objVet.nombre = tblVeterinaria.Rows[0]["nombre"].ToString();
             objVet.direccion = tblVeterinaria.Rows[0]["direccion"].ToString();
             objVet.telefono = tblVeterinaria.Rows[0]["telefono"].ToString();
@@ -116,7 +117,23 @@ namespace ConsentedPets.Datos
             objVet.foto = tblVeterinaria.Rows[0]["foto"].ToString();
             return objVet;
         }
+        public void mtdActualizar(ClEstablecimientoE objE, string tipo="")
+        {
+     
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "EditarEstablecimiento"+tipo;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id", objE.id);
+            comando.Parameters.AddWithValue("@nombre", objE.nombre);
+            comando.Parameters.AddWithValue("@telefono", objE.telefono);
+            comando.Parameters.AddWithValue("@email", objE.email);
+            comando.Parameters.AddWithValue("@foto", objE.foto);
+            comando.Parameters.AddWithValue("@direccion", objE.direccion);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
 
+        }
        
 
 

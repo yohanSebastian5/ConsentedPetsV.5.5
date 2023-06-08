@@ -1,7 +1,10 @@
-﻿using ConsentedPets.Entidades;
+﻿using ConsentedPets.Datos;
+using ConsentedPets.Entidades;
 using ConsentedPets.Logica;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -14,15 +17,35 @@ namespace ConsentedPets.Vista.PerfilesRol.Administrador.Veterinaria
         protected void Page_Load(object sender, EventArgs e)
         {
             int clase = 1;
+        
             ClEstablecimientoL objEstaL = new ClEstablecimientoL();
-            ClEstablecimientoE objEstaE = objEstaL.mtdListarVet("", int.Parse(Session["Veterinaria"].ToString()), clase);
+            ClEstablecimientoE objEstaE = objEstaL.mtdListarVet("","Veterinaria", int.Parse(Session["Veterinaria"].ToString()), clase);
             txtNombre.Text = objEstaE.nombre;
             txtEmail.Text = objEstaE.email;
             txtDireccion.Text = objEstaE.direccion;
             txtTelefono.Text = objEstaE.telefono;
             string ruta = "../../../imagenes/ImagenesEstablecimiento/"+objEstaE.foto;
             Image1.ImageUrl = ruta;
+
         }
 
+        protected void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            ClEstablecimientoE objE = new ClEstablecimientoE();
+            ClEstablecimientoL objL = new ClEstablecimientoL();
+            objE.nombre = txtNombre.Text;
+            objE.telefono = txtTelefono.Text;
+            objE.direccion= txtDireccion.Text;
+            objE.email = txtEmail.Text;
+            string nombreV = 1 + txtNombre.Text + txtTelefono.Text + ".png";
+            string rutaImg = Path.Combine(Server.MapPath("~/Vista/imagenes/ImagenesEstablecimiento/"), nombreV);
+            FlImagenV.SaveAs(rutaImg);
+            objL.mtdActualizar(objE,"V");
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Informacion Atualizada!', ''"+objE.nombre+"' A sido Actualizado', 'success')", true);
+
+
+
+
+        }
     }
 }
