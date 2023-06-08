@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ConsentedPets.Vista.Site1" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Consented Pets</title>
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="../Styles/sweetalert.css" rel="stylesheet" />
+
+    <link href="fonts/icomoon/Css/style.css" rel="stylesheet" />
+    <link href="fonts/icomoon/fonts/Style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="Css/StyleModal.css" rel="stylesheet" />
+    <script src="Bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        .botonmodal {
+            background-color: rgba(255, 255, 255, 0.322);
+            border: unset;
+            color: white;
+        }
+
+        .arr {
+            margin: 0px;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color:#8E715F; background-size: cover; width: 100%; height: 100%;" >
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../Principal.aspx">Consented Pets</a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="ClinicaVeterinaria.aspx">Veterinarias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="PetShop.aspx">Pet Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Escuela.aspx">Escuelas Caninas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="PerfilesRol/ElegirPerfil.aspx">
+                                <img src="imagenes/persona.png" style="width: 20px; height: 20px" /> Perfil 
+                            </a>
+                        </li>
+                        <li class="nav-item" >
+                            <a style="color: black" href="Login.aspx">Iniciar Sesion </a>
+                            <%--<input id="btnLogin" runat="server" type="button" value="Iniciar Sesion" style="color:black"  onclick=""/>--%>
+                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+   
+    
+
+    
+
+    <script src="fonts/icomoon/js/bootstrap.min.js"></script>
+    <script src="fonts/icomoon/js/jquery-3.3.1.min.js"></script>
+    <script src="fonts/icomoon/js/jquery.sticky.js"></script>
+    <script src="fonts/icomoon/js/main.js"></script>
+    <script src="fonts/icomoon/js/owl.carousel.min.js"></script>
+    <script src="fonts/icomoon/js/popper.min.js"></script>
+    <script src="../Scripts/sweetalert.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

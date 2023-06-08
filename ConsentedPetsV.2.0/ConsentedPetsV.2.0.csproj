@@ -1,0 +1,728 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{14755080-2934-4AFD-9173-A946BE0047BB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConsentedPetsV._2._0</RootNamespace>
+    <AssemblyName>ConsentedPetsV.2.0</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="PaginaPrincipal.aspx" />
+    <Content Include="Principal.aspx" />
+    <Content Include="Scripts\sweetalert-dev.js" />
+    <Content Include="Scripts\sweetalert.min.js" />
+    <Content Include="Styles\sweetalert.css" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Vista\Bootstrap\css\bootstrap.css" />
+    <Content Include="Vista\Bootstrap\css\bootstrap.min.css" />
+    <Content Include="Vista\Bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="Vista\Bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="Vista\Css\AgregarVeter.css" />
+    <Content Include="Vista\Css\EditarPerfilUsuario.css" />
+    <Content Include="Vista\Css\MascotasRegistradasUsuario.css" />
+    <Content Include="Vista\Css\script.js" />
+    <Content Include="Vista\imagenes\ImagenesMascota\mascota1.png" />
+    <Content Include="Vista\imagenes\ImagenesMascota\mascota2.png" />
+    <Content Include="Vista\imagenes\ImagenesMascota\mascota3.png" />
+    <Content Include="Vista\imagenes\ImagenesMascota\mascota4.png" />
+    <Content Include="Vista\imagenes\imagenesProcesosV\proceso1.png" />
+    <Content Include="Vista\imagenes\imagenesProcesosV\proceso2.png" />
+    <Content Include="Vista\imagenes\imagenesProcesosV\proceso3.png" />
+    <Content Include="Vista\imagenes\muchi.png" />
+    <Content Include="Vista\imagenes\RegistrarServicio\Iconos\diente.jpg" />
+    <Content Include="Vista\imagenes\RegistrarServicio\Iconos\Urgencias.png" />
+    <Content Include="Vista\imagenes\RegistrarServicio\Iconos\vacunacion.png" />
+    <Content Include="Vista\PaginaVeterinaria\css\stiloProcesos.css" />
+    <Content Include="Vista\imagenes\ImagenesUsuarios\usuario1.png" />
+    <Content Include="Vista\imagenes\ImagenesUsuarios\usuario2.png" />
+    <Content Include="Vista\imagenes\ImagenesUsuarios\usuario3.png" />
+    <Content Include="Vista\imagenes\ImagenesUsuarios\usuario4.png" />
+    <Content Include="Vista\imagenes\servicios\servicio4.png" />
+    <Content Include="Vista\PaginaVeterinaria.aspx" />
+    <Content Include="Vista\PaginaVeterinaria\carrusel\assets\owl.carousel.min.css" />
+    <Content Include="Vista\PaginaVeterinaria\carrusel\owl.carousel.min.js" />
+    <Content Include="Vista\PaginaVeterinaria\css\style.css" />
+    <Content Include="Vista\PaginaVeterinaria\easing\easing.min.js" />
+    <Content Include="Vista\PaginaVeterinaria\img\about.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\carousel-1.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\carousel-2.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\header.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\portfolio-1.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\portfolio-2.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\portfolio-3.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\portfolio-4.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\portfolio-5.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\portfolio-6.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\product-1.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\product-2.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\product-3.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\product-4.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\product-5.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\promotion.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\service-1.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\service-2.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\service-3.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\service-4.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\team-1.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\team-2.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\team-3.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\team-4.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\testimonial-1.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\testimonial-2.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\img\testimonial-3.jpg" />
+    <Content Include="Vista\PaginaVeterinaria\isotope\isotope.pkgd.min.js" />
+    <Content Include="Vista\PaginaVeterinaria\js\main.js" />
+    <Content Include="Vista\PaginaVeterinaria\lightbox\css\lightbox.min.css" />
+    <Content Include="Vista\PaginaVeterinaria\lightbox\js\lightbox.min.js" />
+    <Content Include="Vista\PaginaVeterinaria\mail\contact.js" />
+    <Content Include="Vista\PaginaVeterinaria\mail\jqBootstrapValidation.min.js" />
+    <Content Include="Vista\PaginaVeterinaria\waypoints\waypoints.min.js" />
+    <Content Include="Vista\imagenes\atras.png" />
+    <Content Include="Vista\imagenes\Escuela.png" />
+    <Content Include="Vista\imagenes\Fondo.png" />
+    <Content Include="Vista\imagenes\fondoEstablecimiento.png" />
+    <Content Include="Vista\Bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Vista\Bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Vista\Bootstrap\js\bootstrap.esm.js" />
+    <Content Include="Vista\Bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="Vista\Bootstrap\js\bootstrap.js" />
+    <Content Include="Vista\Bootstrap\js\bootstrap.min.js" />
+    <Content Include="Vista\ClinicaVeterinaria.aspx" />
+    <Content Include="Vista\Css\Login.css" />
+    <Content Include="Vista\Css\estiloCita.css" />
+    <Content Include="Vista\Css\EstiloRepeat.css" />
+    <Content Include="Vista\Css\RegistrarV.css" />
+    <Content Include="Vista\Css\repCard.css" />
+    <Content Include="Vista\Css\Style.css" />
+    <Content Include="Vista\Css\Style2.css" />
+    <Content Include="Vista\Css\StyleModal.css" />
+    <Content Include="Vista\Css\StylePrincipal.css" />
+    <Content Include="Vista\Escuela.aspx" />
+    <Content Include="Vista\Establecimiento\RegistrarEstablecimiento.aspx" />
+    <Content Include="Vista\fonts\icomoon\Css\style.css" />
+    <Content Include="Vista\fonts\icomoon\fonts\Style.css" />
+    <Content Include="Vista\fonts\icomoon\js\bootstrap.min.js" />
+    <Content Include="Vista\fonts\icomoon\js\jquery-3.3.1.min.js" />
+    <Content Include="Vista\fonts\icomoon\js\jquery.sticky.js" />
+    <Content Include="Vista\fonts\icomoon\js\main.js" />
+    <Content Include="Vista\fonts\icomoon\js\owl.carousel.min.js" />
+    <Content Include="Vista\fonts\icomoon\js\popper.min.js" />
+    <Content Include="Vista\imagenes\back2.jpg" />
+    <Content Include="Vista\imagenes\elegirperfil.jpg" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\1Vete112312121.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\1Vete23113687802.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\1VetShop3113687802.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\carlamartinez3124565456.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\DiegoBarrera 312528452.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\DiegoRojas311212.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\DiegoRojas3114623679.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\DiegoSiza323121.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\KarenMelo3114623679.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\KarenPacheco3114623679.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\YohanMelo3114623679.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\yyymm321.png" />
+    <Content Include="Vista\imagenes\logoimg.png" />
+    <Content Include="Vista\imagenes\leave1.png" />
+    <Content Include="Vista\imagenes\leave2.png" />
+    <Content Include="Vista\imagenes\logo.png" />
+    <Content Include="Vista\imagenes\editarPerfilV.jpg" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\escuela1.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\escuela2.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\escuela3.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\escuela4.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\escuela5.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\escuela6.png" />
+    <Content Include="Vista\imagenes\fondo2.png" />
+    <Content Include="Vista\imagenes\fondoRegistrar.jpg" />
+    <Content Include="Vista\imagenes\fondoRegistroM.png" />
+    <Content Include="Vista\imagenes\fondoRegistroM.png.jpg" />
+    <Content Include="Vista\imagenes\fondoSecciones.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento2YohanSystem.Web.UI.WebControls.TextBox.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\1ysd.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\3YOhan456.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\Cristian Pacheco1313131.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\SebastianPacheco1313131.png" />
+    <Content Include="Vista\imagenes\PetShop\PetShop1.png" />
+    <Content Include="Vista\imagenes\PetShop\PetShop2.png" />
+    <Content Include="Vista\imagenes\PetShop\PetShop3.png" />
+    <Content Include="Vista\imagenes\RegistrarServicio\Iconos\Belleza.jpg" />
+    <Content Include="Vista\imagenes\RegistrarServicio\Iconos\Cirugia.jpg" />
+    <Content Include="Vista\imagenes\RegistrarServicio\Iconos\diente.png" />
+    <Content Include="Vista\imagenes\RegistrarServicio\Iconos\Exa.jpg" />
+    <Content Include="Vista\imagenes\RegistrarServicio\Iconos\General.jpg" />
+    <Content Include="Vista\imagenes\RegistrarServicio\Iconos\Heridas.jpg" />
+    <Content Include="Vista\imagenes\RegistrarServicio\Iconos\Radio.jpg" />
+    <Content Include="Vista\imagenes\RegistrarServicio\Iconos\Urgencias.jpg" />
+    <Content Include="Vista\imagenes\RegistrarServicio\Iconos\Vacunas.jpg" />
+    <Content Include="Vista\imagenes\RegistrarV.PNG" />
+    <Content Include="Vista\imagenes\school.png" />
+    <Content Include="Vista\imagenes\servicios\servicio1.png" />
+    <Content Include="Vista\imagenes\servicios\servicio2.png" />
+    <Content Include="Vista\imagenes\servicios\servicio3.png" />
+    <Content Include="Vista\imagenes\shop.png" />
+    <Content Include="Vista\imagenes\Tienda.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\PetShop1.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\PetShop2.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\PetShop3.png" />
+    <Content Include="Vista\imagenes\vet.png" />
+    <Content Include="Vista\imagenes\Veterinaria.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\Veterinaria1.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\Veterinaria2.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\Veterinaria3.png" />
+    <Content Include="Vista\js\glightbox\css\glightbox.css" />
+    <Content Include="Vista\js\glightbox\css\glightbox.min.css" />
+    <Content Include="Vista\js\glightbox\css\plyr.css" />
+    <Content Include="Vista\js\glightbox\css\plyr.min.css" />
+    <Content Include="Vista\js\glightbox\js\glightbox.js" />
+    <Content Include="Vista\js\glightbox\js\glightbox.min.js" />
+    <Content Include="Vista\js\isotope-layout\isotope.pkgd.js" />
+    <Content Include="Vista\js\isotope-layout\isotope.pkgd.min.js" />
+    <Content Include="Vista\js\purecounter\purecounter_vanilla.js" />
+    <Content Include="Vista\js\swiper\swiper-bundle.min.css" />
+    <Content Include="Vista\js\swiper\swiper-bundle.min.js" />
+    <Content Include="Vista\Login.aspx" />
+    <Content Include="Vista\Mascota\RegistrarMascota.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditarPerfilE.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\ListarPersonal.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\ListarVeterinarias.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\PetShop\EditarPerfilP.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\RegistrarVeterinaria.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\AgregarVeterinario.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\CitasActivas.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\EditarPefilV.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarCitas.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarVeterinarios.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\RegistrarProceso.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarServicios.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarVeterinarios.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\ProcesosRegistrados.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\RegistrarServicioV.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\ServiciosRegistrados.aspx" />
+    <Content Include="Vista\PerfilesRol\css\AgregarVeter.css" />
+    <Content Include="Vista\PerfilesRol\css\añadirVeterinaria.css" />
+    <Content Include="Vista\PerfilesRol\css\RegistrarProceso.css" />
+    <Content Include="Vista\PerfilesRol\css\RegistroMascota.css" />
+    <Content Include="Vista\PerfilesRol\css\style.css" />
+    <Content Include="Vista\PerfilesRol\demo\chart-area-demo.js" />
+    <Content Include="Vista\PerfilesRol\demo\chart-bar-demo.js" />
+    <Content Include="Vista\PerfilesRol\demo\chart-pie-demo.js" />
+    <Content Include="Vista\PerfilesRol\demo\datatables-demo.js" />
+    <Content Include="Vista\PerfilesRol\ElegirPerfil.aspx" />
+    <Content Include="Vista\PerfilesRol\js\añadirVeterinaria.js" />
+    <Content Include="Vista\PerfilesRol\js\datatables-simple-demo.js" />
+    <Content Include="Vista\PerfilesRol\js\scripts.js" />
+    <Content Include="Vista\imagenes\persona.png" />
+    <Content Include="Vista\PerfilesRol\Usuario\EditarPerfil.aspx" />
+    <Content Include="Vista\PerfilesRol\Usuario\ListarCitasUsuario.aspx" />
+    <Content Include="Vista\PerfilesRol\Usuario\RegistrarMascota.aspx" />
+    <Content Include="Vista\PerfilesRol\Usuario\MascotasRegistradas.aspx" />
+    <Content Include="Vista\PerfilesRol\Usuario\RegistroMascota.aspx" />
+    <Content Include="Vista\PetShop.aspx" />
+    <Content Include="Vista\Usuario\Imagenes\fondo3.png" />
+    <Content Include="Vista\Usuario\RegistrarUsuario.aspx" />
+    <Content Include="Vista\Usuario\RegistroVeterinario.aspx" />
+    <Content Include="Vista\Usuario\StyleU\PerfilU.css" />
+    <Content Include="Vista\Usuario\StyleU\Style.css" />
+    <Content Include="Vista\Usuario\StyleU\StyleCliente.css" />
+    <Content Include="Vista\Veterinaria\Cita.aspx" />
+    <Content Include="Vista\Veterinaria\ListarServicioss.aspx" />
+    <Content Include="Vista\Veterinaria\ListarVeterinarios.aspx" />
+    <Content Include="Vista\Veterinaria\VeterinariInicio.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Datos\ClCitaD.cs" />
+    <Compile Include="Datos\ClConexion.cs" />
+    <Compile Include="Datos\ClEstablecimientoD.cs" />
+    <Compile Include="Datos\ClMascotaD.cs" />
+    <Compile Include="Datos\ClProcesarSQL.cs" />
+    <Compile Include="Datos\ClProcesosVetD.cs" />
+    <Compile Include="Datos\ClRepeaterEstablecimientoD.cs" />
+    <Compile Include="Datos\ClServicioVetD.cs" />
+    <Compile Include="Datos\ClUsuarioD.cs" />
+    <Compile Include="Entidades\ClCitaE.cs" />
+    <Compile Include="Entidades\ClEstablecimientoE.cs" />
+    <Compile Include="Entidades\ClMascotaE.cs" />
+    <Compile Include="Entidades\ClProcesosVetE.cs" />
+    <Compile Include="Entidades\ClRepeaterEstablecimientoE.cs" />
+    <Compile Include="Entidades\ClServicioVeterinariaE.cs" />
+    <Compile Include="Entidades\ClUsuarioE.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Logica\ClCitaL.cs" />
+    <Compile Include="Logica\ClEstablecimientoL.cs" />
+    <Compile Include="Logica\ClMascotaL.cs" />
+    <Compile Include="Logica\ClProcesosVetL.cs" />
+    <Compile Include="Logica\ClRepeaterEstablecimientoL.cs" />
+    <Compile Include="Logica\ClServicioVetL.cs" />
+    <Compile Include="Logica\CLUsuarioL.cs" />
+    <Compile Include="Logica\Encrypt.cs" />
+    <Compile Include="PaginaPrincipal.aspx.cs">
+      <DependentUpon>PaginaPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaPrincipal.aspx.designer.cs">
+      <DependentUpon>PaginaPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.aspx.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Principal.aspx.designer.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\ClinicaVeterinaria.aspx.cs">
+      <DependentUpon>ClinicaVeterinaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\ClinicaVeterinaria.aspx.designer.cs">
+      <DependentUpon>ClinicaVeterinaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Escuela.aspx.cs">
+      <DependentUpon>Escuela.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Escuela.aspx.designer.cs">
+      <DependentUpon>Escuela.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Establecimiento\RegistrarEstablecimiento.aspx.cs">
+      <DependentUpon>RegistrarEstablecimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Establecimiento\RegistrarEstablecimiento.aspx.designer.cs">
+      <DependentUpon>RegistrarEstablecimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Mascota\RegistrarMascota.aspx.cs">
+      <DependentUpon>RegistrarMascota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Mascota\RegistrarMascota.aspx.designer.cs">
+      <DependentUpon>RegistrarMascota.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PaginaVeterinaria.aspx.cs">
+      <DependentUpon>PaginaVeterinaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PaginaVeterinaria.aspx.designer.cs">
+      <DependentUpon>PaginaVeterinaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditarPerfilE.aspx.cs">
+      <DependentUpon>EditarPerfilE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditarPerfilE.aspx.designer.cs">
+      <DependentUpon>EditarPerfilE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\Escuela.Master.cs">
+      <DependentUpon>Escuela.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\Escuela.Master.designer.cs">
+      <DependentUpon>Escuela.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\ListarPersonal.aspx.cs">
+      <DependentUpon>ListarPersonal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\ListarPersonal.aspx.designer.cs">
+      <DependentUpon>ListarPersonal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\ListarVeterinarias.aspx.cs">
+      <DependentUpon>ListarVeterinarias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\ListarVeterinarias.aspx.designer.cs">
+      <DependentUpon>ListarVeterinarias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PerfilAdmin.Master.cs">
+      <DependentUpon>PerfilAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PerfilAdmin.Master.designer.cs">
+      <DependentUpon>PerfilAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\EditarPerfilP.aspx.cs">
+      <DependentUpon>EditarPerfilP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\EditarPerfilP.aspx.designer.cs">
+      <DependentUpon>EditarPerfilP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\PetShop.Master.cs">
+      <DependentUpon>PetShop.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\PetShop.Master.designer.cs">
+      <DependentUpon>PetShop.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\RegistrarVeterinaria.aspx.cs">
+      <DependentUpon>RegistrarVeterinaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\RegistrarVeterinaria.aspx.designer.cs">
+      <DependentUpon>RegistrarVeterinaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\AgregarVeterinario.aspx.cs">
+      <DependentUpon>AgregarVeterinario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\AgregarVeterinario.aspx.designer.cs">
+      <DependentUpon>AgregarVeterinario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\CitasActivas.aspx.cs">
+      <DependentUpon>CitasActivas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\CitasActivas.aspx.designer.cs">
+      <DependentUpon>CitasActivas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\EditarPefilV.aspx.cs">
+      <DependentUpon>EditarPefilV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\EditarPefilV.aspx.designer.cs">
+      <DependentUpon>EditarPefilV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarCitas.aspx.cs">
+      <DependentUpon>ListarCitas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarCitas.aspx.designer.cs">
+      <DependentUpon>ListarCitas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarServicios.aspx.cs">
+      <DependentUpon>ListarServicios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarServicios.aspx.designer.cs">
+      <DependentUpon>ListarServicios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarVeterinarios.aspx.cs">
+      <DependentUpon>ListarVeterinarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarVeterinarios.aspx.designer.cs">
+      <DependentUpon>ListarVeterinarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\RegistrarProceso.aspx.cs">
+      <DependentUpon>RegistrarProceso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\ProcesosRegistrados.aspx.cs">
+      <DependentUpon>ProcesosRegistrados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\ProcesosRegistrados.aspx.designer.cs">
+      <DependentUpon>ProcesosRegistrados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\RegistrarProceso.aspx.designer.cs">
+      <DependentUpon>RegistrarProceso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\RegistrarServicioV.aspx.cs">
+      <DependentUpon>RegistrarServicioV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\RegistrarServicioV.aspx.designer.cs">
+      <DependentUpon>RegistrarServicioV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\ServiciosRegistrados.aspx.cs">
+      <DependentUpon>ServiciosRegistrados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\ServiciosRegistrados.aspx.designer.cs">
+      <DependentUpon>ServiciosRegistrados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\Veterinaria.Master.cs">
+      <DependentUpon>Veterinaria.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\Veterinaria.Master.designer.cs">
+      <DependentUpon>Veterinaria.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\ElegirPerfil.aspx.cs">
+      <DependentUpon>ElegirPerfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\ElegirPerfil.aspx.designer.cs">
+      <DependentUpon>ElegirPerfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\EditarPerfil.aspx.cs">
+      <DependentUpon>EditarPerfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\EditarPerfil.aspx.designer.cs">
+      <DependentUpon>EditarPerfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\ListarCitasUsuario.aspx.cs">
+      <DependentUpon>ListarCitasUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\ListarCitasUsuario.aspx.designer.cs">
+      <DependentUpon>ListarCitasUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\MascotasRegistradas.aspx.cs">
+      <DependentUpon>MascotasRegistradas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\MascotasRegistradas.aspx.designer.cs">
+      <DependentUpon>MascotasRegistradas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\PerfilUsuario.Master.cs">
+      <DependentUpon>PerfilUsuario.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\PerfilUsuario.Master.designer.cs">
+      <DependentUpon>PerfilUsuario.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\RegistrarMascota.aspx.cs">
+      <DependentUpon>RegistrarMascota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\RegistrarMascota.aspx.designer.cs">
+      <DependentUpon>RegistrarMascota.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\RegistroMascota.aspx.cs">
+      <DependentUpon>RegistroMascota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\RegistroMascota.aspx.designer.cs">
+      <DependentUpon>RegistroMascota.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PetShop.aspx.cs">
+      <DependentUpon>PetShop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PetShop.aspx.designer.cs">
+      <DependentUpon>PetShop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Usuario\RegistrarUsuario.aspx.cs">
+      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Usuario\RegistrarUsuario.aspx.designer.cs">
+      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Usuario\RegistroVeterinario.aspx.cs">
+      <DependentUpon>RegistroVeterinario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Usuario\RegistroVeterinario.aspx.designer.cs">
+      <DependentUpon>RegistroVeterinario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Veterinaria\Cita.aspx.cs">
+      <DependentUpon>Cita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Veterinaria\Cita.aspx.designer.cs">
+      <DependentUpon>Cita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Veterinaria\ListarServicioss.aspx.cs">
+      <DependentUpon>ListarServicioss.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Veterinaria\ListarServicioss.aspx.designer.cs">
+      <DependentUpon>ListarServicioss.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Veterinaria\ListarVeterinarios.aspx.cs">
+      <DependentUpon>ListarVeterinarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Veterinaria\ListarVeterinarios.aspx.designer.cs">
+      <DependentUpon>ListarVeterinarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Veterinaria\VeterinariaInicio.Master.cs">
+      <DependentUpon>VeterinariaInicio.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Veterinaria\VeterinariaInicio.Master.designer.cs">
+      <DependentUpon>VeterinariaInicio.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Veterinaria\VeterinariInicio.aspx.cs">
+      <DependentUpon>VeterinariInicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Veterinaria\VeterinariInicio.aspx.designer.cs">
+      <DependentUpon>VeterinariInicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Vista\Bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Vista\Bootstrap\css\bootstrap.css.map" />
+    <Content Include="Vista\Bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Vista\Bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="Vista\Bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Vista\Bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Vista\Bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Vista\Bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="Vista\Bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="Vista\Bootstrap\js\bootstrap.js.map" />
+    <Content Include="Vista\Bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\Escuela.Master" />
+    <Content Include="Vista\PerfilesRol\Administrador\PerfilAdmin.Master" />
+    <Content Include="Vista\PerfilesRol\Administrador\PetShop\PetShop.Master" />
+    <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\Veterinaria.Master" />
+    <Content Include="Vista\Site1.Master" />
+    <Content Include="Vista\Veterinaria\VeterinariaInicio.Master" />
+    <Content Include="Vista\PerfilesRol\Usuario\PerfilUsuario.Master" />
+    <Content Include="Vista\imagenes\PetShop\Saved Pictures\desktop.ini" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Vista\Empleados\" />
+    <Folder Include="Vista\imagenes\Escuela\" />
+    <Folder Include="Vista\imagenes\Tienda\" />
+    <Folder Include="Vista\imagenes\Veterinaria\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50979</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50979/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

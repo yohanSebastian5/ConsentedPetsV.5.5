@@ -1,0 +1,175 @@
+﻿.contenedor {
+    margin-bottom: 20px;
+    background: #8f0000;
+    color: aliceblue;
+}
+
+.boton {
+    background: rgba(255,255,255,.2);
+    padding: 15px;
+    border: 1px solid #8f0000;
+    color: aliceblue;
+}
+
+.carousell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.d-block {
+    width: 500px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-boxed {
+    color: #313437;
+    background-color: #eef4f7;
+}
+
+    .team-boxed p {
+        color: #7d8285;
+    }
+
+    .team-boxed h2 {
+        font-weight: bold;
+        margin-bottom: 40px;
+        padding-top: 40px;
+        color: inherit;
+    }
+
+@media (max-width:767px) {
+    .team-boxed h2 {
+        margin-bottom: 25px;
+        padding-top: 25px;
+        font-size: 24px;
+    }
+}
+
+.team-boxed .intro {
+    font-size: 16px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+    .team-boxed .intro p {
+        margin-bottom: 0;
+    }
+
+.team-boxed .people {
+    padding: 50px 0;
+}
+
+.team-boxed .item {
+    text-align: center;
+}
+
+    .team-boxed .item .box {
+        text-align: center;
+        padding: 30px;
+        background-color: #fff;
+        margin-bottom: 30px;
+    }
+
+    .team-boxed .item .name {
+        font-weight: bold;
+        margin-top: 28px;
+        margin-bottom: 8px;
+        color: inherit;
+    }
+
+    .team-boxed .item .title {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #d0d0d0;
+        letter-spacing: 2px;
+        font-size: 13px;
+    }
+
+    .team-boxed .item .description {
+        font-size: 15px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+
+    .team-boxed .item img {
+        max-width: 160px;
+    }
+
+.team-boxed .social {
+    font-size: 18px;
+    color: #a2a8ae;
+}
+
+    .team-boxed .social a {
+        color: inherit;
+        margin: 0 10px;
+        display: inline-block;
+        opacity: 0.7;
+    }
+
+        .team-boxed .social a:hover {
+            opacity: 1;
+        }
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.login {
+    width: 400px;
+    height: 550px;
+    border: 1px solid #CCC;
+    background: url(../imagenes/fondo2.png) center center no-repeat;
+    background-size: cover;
+    margin: 30px auto;
+    border-radius: 20px;
+}
+
+    .login .form {
+        width: 100%;
+        height: 100%;
+        padding: 15px 25px;
+    }
+
+        .login .form h2 {
+            color: #401616;
+            text-align: center;
+            font-weight: normal;
+            font-size: 18px;
+            margin-top: 60px;
+            margin-bottom: 80px;
+        }
+
+        .login .form input {
+            width: 100%;
+            height: 40px;
+            margin-top: 20px;
+            background: rgba(30,26,26,50%);
+            border: 1px solid rgba(255,255,255,.1);
+            padding: 0 15px;
+            color: #FFF;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+            .login .form input:focus {
+                border: 1px solid rgba(255,255,255,.8);
+                outline: none;
+            }
+
+::-webkit-input-placeholder {
+    color: #DDD;
+}
+
+.login .form input.submit {
+    background: rgba(30,26,26,50%);
+    color: #FFF;
+    font-size: 15px;
+    margin-top: 40px;
+    font-weight: bold;
+}

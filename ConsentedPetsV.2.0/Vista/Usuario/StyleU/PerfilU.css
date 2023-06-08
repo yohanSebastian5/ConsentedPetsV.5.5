@@ -1,0 +1,66 @@
+﻿#elementosE {
+    margin-left: 205px;
+}
+.Enca{
+
+}
+#imgUsuarioE {
+    width: 200px;
+    height: 200px;
+    margin-left: 110px;
+    margin-top: 25px;
+    border: 2px solid white;
+}
+#textBox {
+    margin: 80px;
+    background: #4b5f4b00;
+    color: white;
+}
+#borderNombres {
+    width: 750px;
+    height: 200px;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    border: 2px solid white;
+    margin-left: 470px;
+    margin-top: -355px;
+}
+#borderNombres2 {
+    width: 750px;
+    height: 200px;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    border: 2px solid white;
+    margin-left: 470px;
+    margin-top: 40px;
+}
+#borderNombres3 {
+    width: 750px;
+    height: 200px;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    border: 2px solid white;
+    margin-left: 470px;
+    margin-top: 40px;
+}
+.textBox{
+    margin:auto;
+}
+.colorT {
+    cimgUsu owderblue;
+}
+.imgUsu {
+    border: 2px solid white;
+    width: 444px;
+    height: 316px;
+    direction: ltr;
+}
+#divImag {
+    border: 2px solid white;
+    width: 444px;
+    height: 316px;
+    direction: ltr;
+}

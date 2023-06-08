@@ -1,0 +1,143 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="VeterinariaInicio.master.cs" Inherits="ConsentedPetsV._2._0.Vista.Veterinaria.VeterinariaInicio" %>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Consented Pets</title>
+
+    <link href="../PerfilesRol/css/style.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <asp:ContentPlaceHolder ID="ContentHeadAdministrador" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="sb-nav-fixed ">
+    <form runat="server">
+        <style>
+            .traslucido {
+                background: rgba(0, 0, 0,0.15)
+            }
+        </style>
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="../../Principal.aspx">Consented Pets</a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+         
+            <a class="nav-link" href="../ClinicaVeterinaria.aspx" style="color:white">Veterinarias</a>
+            <a class="nav-link" href="../PetShop.aspx" style="color:white">Pet Shop</a>
+            <a class="nav-link" href="../Escuela.aspx" style="color:white">Escuelas Caninas</a>
+            
+                
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-10 me-3 me-lg-4">
+
+                <a class="nav-link" href="../Home/Login.aspx">Iniciar sesion</a>
+                <a class="nav-link"><img src="../imagenes/persona.png" style="width:20px;height:20px"/></a>
+
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">INFORMACIÓN VETERINARIA</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts1" aria-expanded="false" aria-controls="collapseLayouts1">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Información
+           
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="#">Ver información</a>
+                                </nav>
+                            </div>
+
+
+
+                            <div class="sb-sidenav-menu-heading">INFORMACIÓN VETERINARIOS</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts2">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Veterinarios
+                               
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    
+                                    <a class="nav-link" href="ListarVeterinarios.aspx">Ver veterinarios</a>
+                                </nav>
+                            </div>
+                            
+                            
+                            
+                              
+                            
+
+
+
+
+
+                             <div class="sb-sidenav-menu-heading">INFORMACIÓN SERVICIOS</div>
+
+
+
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts1111" aria-expanded="false" aria-controls="collapseLayouts1111">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Servicios
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts1111" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="ListarServicioss.aspx">Ver Servicios</a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </nav>
+
+
+            </div>
+
+
+
+            <div id="layoutSidenav_content">
+                <main>
+                    <section class="section">
+                        <div class="row">
+                            <asp:ContentPlaceHolder ID="ContentBodyAdministrador" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+
+        <script src="../PerfilesRol/demo/chart-area-demo.js"></script>
+ 
+        <script src="../PerfilesRol/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+
+        <script src="../PerfilesRol/js/datatables-simple-demo.js"></script>
+    </form>
+</body>
+</html>
