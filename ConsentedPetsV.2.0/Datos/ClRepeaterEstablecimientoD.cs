@@ -28,6 +28,7 @@ namespace ConsentedPets.Datos
             else 
             {
                 seccion = "select * from Veterinaria inner join UsuarioVeterinaria on Veterinaria.idVeterinaria=UsuarioVeterinaria.idVeterinaria where UsuarioVeterinaria.idUsuario='"+usuario+"'";
+                seccion2 = "Veterinaria";
             }
 
             string consulta = seccion+seccion2;
@@ -38,7 +39,7 @@ namespace ConsentedPets.Datos
             {
                 ClRepeaterEstablecimientoE objVet = new ClRepeaterEstablecimientoE();
 
-                objVet.idVeterinaria =int.Parse( tblVeterinaria.Rows[i]["idVeterinaria"].ToString());
+                objVet.idVeterinaria =int.Parse( tblVeterinaria.Rows[i]["id"+seccion2].ToString());
                 objVet.nombre = tblVeterinaria.Rows[i]["nombre"].ToString();
                 objVet.direccion = tblVeterinaria.Rows[i]["direccion"].ToString();
                 objVet.telefono = tblVeterinaria.Rows[i]["telefono"].ToString();
