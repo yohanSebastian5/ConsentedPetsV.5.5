@@ -148,10 +148,12 @@ h1 {
 
 .account-setup {
     left: calc(50% - 175px);
+    margin-left: 140px;
 }
 
 .finish-step, .user-details {
     left: 1400px;
+    margin-left: 140px;
 }
 
 .line {
