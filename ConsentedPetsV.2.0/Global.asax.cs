@@ -21,7 +21,7 @@ namespace ConsentedPetsV._2._0
             Session["Usuario"] = 0;
             Session["Veterinaria"] = 0;
             Session["Tienda"] = 0;
-            Session["Escuelas"] = 0;
+            Session["Escuela"] = 0;
             Session["idVeterinaria"] = 0;
             Session["idMascota"] = 0;
         }
