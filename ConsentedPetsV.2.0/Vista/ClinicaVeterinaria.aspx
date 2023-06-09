@@ -21,59 +21,58 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <main>
 
-    <h1>Veterinarias</h1>
-    <div class="row container justify-content-evenly" runat="server">
+        <h1>Veterinarias</h1>
+        <div class="row container justify-content-evenly" runat="server">
 
-        <asp:Repeater ID="repVet" runat="server">
-            <ItemTemplate>
+            <asp:Repeater ID="repVet" runat="server">
+                <ItemTemplate>
 
-                <div class="Pet col-md-3 align-items-center">
+                    <div class="Pet col-md-3 align-items-center">
 
-                    <img src='<%# ResolveUrl("~/Vista/imagenes/ImagenesEstablecimiento/") + Eval("foto") %>' />
-                    <div class="Pet-content">
-                        <h2 class="Pet-text"><%#Eval("nombre") %>
-                        </h2>
+                        <img src='<%# ResolveUrl("~/Vista/imagenes/ImagenesEstablecimiento/") + Eval("foto") %>' />
+                        <div class="Pet-content">
+                            <h2 class="Pet-text"><%#Eval("nombre") %>
+                            </h2>
 
 
-                        <h2></h2>
-                        <br />
-                        <p class="Pet-text">
-                            <%#Eval("direccion")%><br />
+                            <h2></h2>
                             <br />
-                            <%#Eval("telefono")%><br />
-                            <br />
-                            <%#Eval("email")%>
-                        </p>
-                        <h2 style="display: none" id="idV" contenteditable="inherit"><%#Eval("idVeterinaria") %></h2>
-                        <a id="enlace" href="Login.aspx" onclick="listarVet(this)" class="Pet-text">Ver más </a>
-                        <%--         <a onclick="listarVet(this)" class="Pet-text">Ver más</a>--%>
-                        <%--<a href="Login.aspx?idVeterinaria= <%# Session["idVeterinaria"] %>" class="Pet-text">Ver más</a>--%>
+                            <p class="Pet-text">
+                                <%#Eval("direccion")%><br />
+                                <br />
+                                <%#Eval("telefono")%><br />
+                                <br />
+                                <%#Eval("email")%>
+                            </p>
+                            <h2 style="display: none" id="idV" contenteditable="inherit"><%#Eval("idVeterinaria") %></h2>
+                            <a id="enlace" href="Login.aspx" onclick="listarVet(this)" class="Pet-text">Ver más </a>
+
+                        </div>
                     </div>
-                </div>
 
 
-            </ItemTemplate>
-        </asp:Repeater>
-    </div>
-    <script>
-        function listarVet(elementoA) {
-            var valor = elementoA.previousElementSibling.innerText;;
-            $.ajax({
-                type: "POST",
-                url: "ClinicaVeterinaria.aspx/ListarV",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                data: JSON.stringify({ tipo: valor }),
-                success: function (data) {
-                    console.log(valor);
-                }, error: function (xhr, textStatus, errorThrown) {
-                    // Manejar cualquier error que ocurra durante la llamada AJAX
-                    console.error(errorThrown);
-                }
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
+        <script>
+            function listarVet(elementoA) {
+                var valor = elementoA.previousElementSibling.innerText;;
+                $.ajax({
+                    type: "POST",
+                    url: "ClinicaVeterinaria.aspx/ListarV",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify({ tipo: valor }),
+                    success: function (data) {
+                        console.log(valor);
+                    }, error: function (xhr, textStatus, errorThrown) {
+                        // Manejar cualquier error que ocurra durante la llamada AJAX
+                        console.error(errorThrown);
+                    }
 
-            });
-        }
-    </script>
+                });
+            }
+        </script>
 
-        </main>
+    </main>
 </asp:Content>
