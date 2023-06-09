@@ -2,6 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentHeadAdministrador" runat="server">
     <link href="../../../Css/RegistrarV.css" rel="stylesheet" />
+        <script src="../../../../Scripts/sweetalert.min.js"></script>
+    <link href="../../../../Styles/sweetalert.css" rel="stylesheet" />
     <style>
         body {
             /**/ background-image: url('../../../imagenes/editarPerfilV.jpg');
@@ -50,15 +52,32 @@
                 <asp:TextBox ID="txtEmail" placeholder="Email" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
             </div>
             <br />
-            <asp:FileUpload ID="FlImagenV" runat="server" CssClass="field space" />
+            <asp:FileUpload ID="FlImagenV" onchange="cargar(this)" runat="server" CssClass="field space" />
 
             <br />
             <br />
             <div class="field">
-                <asp:Button ID="btnRegistrar" runat="server" Text="Actualizar" />
+                <asp:Button ID="btnRegistrar" runat="server" Text="Actualizar" OnClick="btnRegistrar_Click" />
             </div>
         </div>
     </div>
 </form>
+    <script>
+        function cargar(input) {
+            console.log('cae');
+            if (input.files[0]) {
+                var img = new FileReader();
+                console.log('caer');
+                img.onload = function (e) {
+                    document.getElementById("<%= Image1.ClientID %>").src = e.target.result;
+                           console.log(e.target.result);
+                       };
+                       img.readAsDataURL(input.files[0]);
+                   }
+
+
+
+               }
+    </script>
 
 </asp:Content>
