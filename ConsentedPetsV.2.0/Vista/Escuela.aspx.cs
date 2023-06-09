@@ -20,7 +20,8 @@ namespace ConsentedPets.Vista
             repSchool.DataSource = lista;
             repSchool.DataBind();
         }
-        public static void ListarSchool(string tipo)
+        [WebMethod]
+        public static void ListarE(string tipo)
         {
             HttpContext.Current.Session["Escuela"] = tipo;
         }
