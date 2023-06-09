@@ -104,6 +104,7 @@
     <Content Include="Vista\imagenes\RegistrarServicio\Iconos\diente.jpg" />
     <Content Include="Vista\imagenes\RegistrarServicio\Iconos\Urgencias.png" />
     <Content Include="Vista\imagenes\RegistrarServicio\Iconos\vacunacion.png" />
+    <Content Include="Vista\imagenes\ServicioCursosE\a.png" />
     <Content Include="Vista\PaginaEscuela\css\bootstrap-grid.css" />
     <Content Include="Vista\PaginaEscuela\css\bootstrap-grid.min.css" />
     <Content Include="Vista\PaginaEscuela\css\bootstrap-reboot.css" />
@@ -321,6 +322,10 @@
     <Content Include="Vista\Login.aspx" />
     <Content Include="Vista\Mascota\RegistrarMascota.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditarPerfilE.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\RegistrarEscuela.aspx" />
+    <Content Include="Vista\PerfilesRol\css\registrar.css" />
+    <Content Include="Vista\PerfilesRol\js\Registrar.js" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarCursosS.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\ListarPersonal.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\ListarVeterinarias.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\PetShop\EditarPerfilP.aspx" />
@@ -339,6 +344,7 @@
     <Content Include="Vista\PerfilesRol\css\AgregarVeter.css" />
     <Content Include="Vista\PerfilesRol\css\añadirVeterinaria.css" />
     <Content Include="Vista\PerfilesRol\css\RegistrarProceso.css" />
+    <Content Include="Vista\PerfilesRol\css\RegistrarServicioE.css" />
     <Content Include="Vista\PerfilesRol\css\RegistroMascota.css" />
     <Content Include="Vista\PerfilesRol\css\style.css" />
     <Content Include="Vista\PerfilesRol\demo\chart-area-demo.js" />
@@ -348,6 +354,7 @@
     <Content Include="Vista\PerfilesRol\ElegirPerfil.aspx" />
     <Content Include="Vista\PerfilesRol\js\añadirVeterinaria.js" />
     <Content Include="Vista\PerfilesRol\js\datatables-simple-demo.js" />
+    <Content Include="Vista\PerfilesRol\js\RegistrarServicioe.js" />
     <Content Include="Vista\PerfilesRol\js\scripts.js" />
     <Content Include="Vista\imagenes\persona.png" />
     <Content Include="Vista\PerfilesRol\Usuario\EditarPerfil.aspx" />
@@ -375,6 +382,7 @@
     <Compile Include="Datos\ClEstablecimientoD.cs" />
     <Compile Include="Datos\ClMascotaD.cs" />
     <Compile Include="Datos\ClProcesarSQL.cs" />
+    <Compile Include="Datos\ClProcesosEscuela.cs" />
     <Compile Include="Datos\ClProcesosVetD.cs" />
     <Compile Include="Datos\ClRepeaterEstablecimientoD.cs" />
     <Compile Include="Datos\ClServicioED.cs" />
@@ -478,6 +486,13 @@
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\Escuela.Master.designer.cs">
       <DependentUpon>Escuela.Master</DependentUpon>
     </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarCursosS.aspx.cs">
+      <DependentUpon>RegistrarCursosS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarCursosS.aspx.designer.cs">
+      <DependentUpon>RegistrarCursosS.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\ListarPersonal.aspx.cs">
       <DependentUpon>ListarPersonal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -512,6 +527,13 @@
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\PetShop\PetShop.Master.designer.cs">
       <DependentUpon>PetShop.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\RegistrarEscuela.aspx.cs">
+      <DependentUpon>RegistrarEscuela.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\RegistrarEscuela.aspx.designer.cs">
+      <DependentUpon>RegistrarEscuela.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\RegistrarVeterinaria.aspx.cs">
       <DependentUpon>RegistrarVeterinaria.aspx</DependentUpon>

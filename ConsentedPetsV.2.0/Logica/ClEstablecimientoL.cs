@@ -28,10 +28,10 @@ namespace ConsentedPets.Logica
             ClEstablecimientoD objCate = new ClEstablecimientoD();
             objCate.mtdRegistrarUsuarioRol(idUsu, idVeter);
         }
-        public ClEstablecimientoE mtdListarVet(string foto="", int id = 0, int tipo = 0)
+        public ClEstablecimientoE mtdListarVet(string foto="", string esta = "Veterinaria",int id=0, int tipo = 0)
         {
             ClEstablecimientoD objD = new ClEstablecimientoD();
-            ClEstablecimientoE objE = objD.mtdListar(foto,id,tipo);
+            ClEstablecimientoE objE = objD.mtdListar(foto,esta,id,tipo);
             return objE;
         }
 
@@ -41,7 +41,11 @@ namespace ConsentedPets.Logica
             List<ClEstablecimientoE> lista = objVete.mtdVeterinaria(idVeterinaria);
             return lista;
         }      
-
+        public void mtdActualizar(ClEstablecimientoE objE,string tipo="")
+        {
+            ClEstablecimientoD objD = new ClEstablecimientoD();
+            objD.mtdActualizar(objE, tipo);
+        }
 
     }
 }
