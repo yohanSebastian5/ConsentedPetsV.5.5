@@ -18,6 +18,7 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
             List<ClServicioEE> lista = objServicio.mtdServicio(idEscuela);
             repServicio.DataSource = lista;
             repServicio.DataBind();
+
         }
     }
 }

@@ -110,7 +110,7 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active" style="min-height: 300px;">
-                    <img class="position-relative w-100" src="img/carousel-1.jpg" style="min-height: 300px; object-fit: cover;">
+                    <img class="position-relative w-100" src="../imagenes/ServicioCursosE/carousel-1.jpg" style="min-height: 300px; object-fit: cover;">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
@@ -120,7 +120,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" style="min-height: 300px;">
-                    <img class="position-relative w-100" src="img/carousel-2.jpg" style="min-height: 300px; object-fit: cover;">
+                    <img class="position-relative w-100" src="../imagenes/ServicioCursosE/carousel-2.jpg" style="min-height: 300px; object-fit: cover;">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
@@ -130,7 +130,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" style="min-height: 300px;">
-                    <img class="position-relative w-100" src="img/carousel-3.jpg" style="min-height: 300px; object-fit: cover;">
+                    <img class="position-relative w-100" src="../imagenes/ServicioCursosE/carousel-3.jpg" style="min-height: 300px; object-fit: cover;">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
@@ -149,7 +149,7 @@
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-5">
-                    <img class="img-fluid rounded mb-4 mb-lg-0" src="img/about.jpg" alt="">
+                    <img class="img-fluid rounded mb-4 mb-lg-0" src="../imagenes/ServicioCursosE/about.jpg" alt="">
                 </div>
                 <div class="col-lg-7">
                     <div class="text-left mb-4">
@@ -179,7 +179,7 @@
                 <asp:Repeater ID="repServicio" runat="server">
                     <ItemTemplate>
                         <div class="cat-item mx-3 position-relative overflow-hidden rounded mb-2" style="height: 160px; width: 270px">
-                            <img class="img-fluid" src='<%# ResolveUrl("img/Servicio/") + Eval("foto") %>' alt="">
+                            <img class="img-fluid" src='<%# ResolveUrl("../imagenes/ServicioCursosE/") + Eval("foto") %>' alt="">
                             <a class="cat-overlay text-white text-decoration-none" href="">
                                 <h4 class="text-white font-weight-medium"><%# Eval("nombre") %></h4>
                                 <span>100 Courses</span>
@@ -207,24 +207,28 @@
                 <h1>Our Courses</h1>
             </div>
             <div class="row">
+                <asp:Repeater ID="Repeater1" runat="server">
+                    <ItemTemplate>
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="rounded overflow-hidden mb-2">
-                        <img class="img-fluid" src'<%# ResolveUrl("img/Servicios") + Eval("foto") %>' alt="">
+                  <div class="rounded overflow-hidden mb-2">
+                        <img class="img-fluid" src'<%# ResolveUrl("../imagenes/ServicioCursosE/") + Eval("foto") %>' alt="">
                         <div class="bg-secondary p-4">
                             <div class="d-flex justify-content-between mb-3">
                                 <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
                                 <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
                             </div>
-                            <a class="h5" href="">Web design & development courses for beginner</a>
+                            <a class="h5" href=""><%# Eval("descripcion") %></a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
                                     <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$99</h5>
+                                    <h5 class="m-0">$<%# Eval("precio") %></h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+               </ItemTemplate>
+                </asp:Repeater>
             </div>
             <%--  <div class="d-flex">
                     <asp:Repeater ID="Repeater1" runat="server">
@@ -260,7 +264,7 @@
                 <div class="col-md-6 col-lg-3 text-center team mb-4">
                     <div class="team-item rounded overflow-hidden mb-2">
                         <div class="team-img position-relative">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="">
+                            <img class="img-fluid" src="../imagenes/ServicioCursosE/team-1.jpg" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -293,7 +297,7 @@
                         <div class="text-center">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
                             <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="img/testimonial-1.jpg" alt="">
+                            <img class="img-fluid mx-auto mb-3" src="../imagenes/ServicioCursosE/testimonial-1.jpg" alt="">
                             <h5 class="m-0">Client Name</h5>
                             <span>Profession</span>
                         </div>
@@ -369,7 +373,7 @@
             <div class="row pb-3">
                 <div class="col-lg-4 mb-4">
                     <div class="blog-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="img/blog-1.jpg" alt="">
+                        <img class="img-fluid" src="../imagenes/ServicioCursosE/blog-1.jpg" alt="">
                         <a class="blog-overlay text-decoration-none" href="">
                             <h5 class="text-white mb-3">Lorem elitr magna stet eirmod labore amet labore clita at ut clita</h5>
                             <p class="text-primary m-0">Jan 01, 2050</p>
