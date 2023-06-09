@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Services;
 
 namespace ConsentedPets.Vista
 {
@@ -18,6 +19,10 @@ namespace ConsentedPets.Vista
             List<ClRepeaterEstablecimientoE> lista = objVet.mtdRepeater(Seccion);
             repSchool.DataSource = lista;
             repSchool.DataBind();
+        }
+        public static void ListarSchool(string tipo)
+        {
+            HttpContext.Current.Session["Escuela"] = tipo;
         }
     }
 }

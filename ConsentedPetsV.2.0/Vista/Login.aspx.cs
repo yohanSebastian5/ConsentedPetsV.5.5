@@ -20,8 +20,13 @@ namespace ConsentedPetsV._2._0.Vista
                     Response.Redirect("PaginaVeterinaria.aspx");
 
                 }
+                else if (int.Parse(Session["Escuela"].ToString()) != 0)
+                {
+                    Response.Redirect("PaginaEscuela.aspx");
+                }
 
             }
+
 
         }
         protected void btnIngresar_Click(object sender, EventArgs e)
@@ -43,6 +48,10 @@ namespace ConsentedPetsV._2._0.Vista
                 if (int.Parse(Session["Veterinaria"].ToString()) != 0)
                 {
                     Response.Redirect("PaginaVeterinaria.aspx");
+                }
+                else if (int.Parse(Session["Escuela"].ToString()) != 0)
+                {
+                    Response.Redirect("PaginaEscuela.aspx");
                 }
 
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Bienvenido " + objUsuE.nombre + "!', 'Haz iniciado Sesion', 'success')", true);
