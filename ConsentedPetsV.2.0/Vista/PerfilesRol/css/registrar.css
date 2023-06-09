@@ -152,8 +152,9 @@ h1 {
 }
 
 .finish-step, .user-details {
-    left: 1400px;
+    left: 3400px;
     margin-left: 140px;
+
 }
 
 .line {
@@ -165,6 +166,9 @@ h1 {
 
 .line-active {
     background-position: left bottom;
+}
+.ocultar {
+    display: none;
 }
 
 label {

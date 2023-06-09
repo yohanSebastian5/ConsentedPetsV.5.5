@@ -19,6 +19,13 @@ namespace ConsentedPetsV._2._0.Logica
             return listaVet;
 
         }
+        public List<ClServicioVeterinariaE> mtdListar(int id)
+        {
+            ClProcesosEscuela objE = new ClProcesosEscuela();
+            List<ClServicioVeterinariaE> listaVet = objE.mtdListar(id);
+            return listaVet;
+
+        }
         public void mtdRegistrar(ClServicioVeterinariaE objServis)
         {
             ClServicioVetD objD = new ClServicioVetD();

@@ -104,6 +104,7 @@
     <Content Include="Vista\imagenes\RegistrarServicio\Iconos\diente.jpg" />
     <Content Include="Vista\imagenes\RegistrarServicio\Iconos\Urgencias.png" />
     <Content Include="Vista\imagenes\RegistrarServicio\Iconos\vacunacion.png" />
+    <Content Include="Vista\imagenes\ServicioCursosE\a.png" />
     <Content Include="Vista\PaginaEscuela\css\bootstrap-grid.css" />
     <Content Include="Vista\PaginaEscuela\css\bootstrap-grid.min.css" />
     <Content Include="Vista\PaginaEscuela\css\bootstrap-reboot.css" />
@@ -381,6 +382,7 @@
     <Compile Include="Datos\ClEstablecimientoD.cs" />
     <Compile Include="Datos\ClMascotaD.cs" />
     <Compile Include="Datos\ClProcesarSQL.cs" />
+    <Compile Include="Datos\ClProcesosEscuela.cs" />
     <Compile Include="Datos\ClProcesosVetD.cs" />
     <Compile Include="Datos\ClRepeaterEstablecimientoD.cs" />
     <Compile Include="Datos\ClServicioVetD.cs" />
