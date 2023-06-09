@@ -51,7 +51,7 @@ namespace ConsentedPetsV._2._0.Vista
                 }
                 else if (int.Parse(Session["Escuela"].ToString()) != 0)
                 {
-                    Response.Redirect("PaginaEscuela.aspx");
+                    Response.Redirect("PaginaEscuela/PaginaEscuela.aspx");
                 }
 
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Bienvenido " + objUsuE.nombre + "!', 'Haz iniciado Sesion', 'success')", true);

@@ -385,6 +385,7 @@
     <Compile Include="Datos\ClProcesosEscuela.cs" />
     <Compile Include="Datos\ClProcesosVetD.cs" />
     <Compile Include="Datos\ClRepeaterEstablecimientoD.cs" />
+    <Compile Include="Datos\ClServicioED.cs" />
     <Compile Include="Datos\ClServicioVetD.cs" />
     <Compile Include="Datos\ClUsuarioD.cs" />
     <Compile Include="Entidades\ClCitaE.cs" />
@@ -392,6 +393,7 @@
     <Compile Include="Entidades\ClMascotaE.cs" />
     <Compile Include="Entidades\ClProcesosVetE.cs" />
     <Compile Include="Entidades\ClRepeaterEstablecimientoE.cs" />
+    <Compile Include="Entidades\ClServicioEE.cs" />
     <Compile Include="Entidades\ClServicioVeterinariaE.cs" />
     <Compile Include="Entidades\ClUsuarioE.cs" />
     <Compile Include="Global.asax.cs">
@@ -402,6 +404,7 @@
     <Compile Include="Logica\ClMascotaL.cs" />
     <Compile Include="Logica\ClProcesosVetL.cs" />
     <Compile Include="Logica\ClRepeaterEstablecimientoL.cs" />
+    <Compile Include="Logica\ClServicioEL.cs" />
     <Compile Include="Logica\ClServicioVetL.cs" />
     <Compile Include="Logica\CLUsuarioL.cs" />
     <Compile Include="Logica\Encrypt.cs" />
