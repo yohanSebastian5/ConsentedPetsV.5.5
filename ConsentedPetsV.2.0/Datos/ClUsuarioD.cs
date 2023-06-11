@@ -190,14 +190,23 @@ namespace ConsentedPets.Datos
             }
             return listaProductos;
         }
-        public List<ClUsuarioE> mtdListar(int idVeterinaria)
+        public List<ClUsuarioE> mtdListar(int idVeterinaria,int tipo =0)
         {
+            string consulta = "";
+            if (tipo==0)
+            {
+                consulta = "select Usuario.* from Usuario inner join UsuarioVeterinaria on Usuario.idUsuario= UsuarioVeterinaria.idUsuario inner join UsuarioRol on " +
+            "UsuarioRol.idUsuario = Usuario.idUsuario where idVeterinaria = '" + idVeterinaria + "' and UsuarioRol.idRol = 4; ";
 
-            
-            
-            string consulta = "select Usuario.* from Usuario inner join UsuarioVeterinaria on Usuario.idUsuario= UsuarioVeterinaria.idUsuario inner join UsuarioRol on " +
-                "UsuarioRol.idUsuario = Usuario.idUsuario where idVeterinaria = '" + idVeterinaria + "' and UsuarioRol.idRol = 4; ";
+            }
+            else if (tipo==1)
+            {
+                consulta = "select Usuario.* from Usuario inner join UsuarioEscuela on Usuario.idUsuario= UsuarioEscuela.idUsuario inner join UsuarioRol on " +
+            "UsuarioRol.idUsuario = Usuario.idUsuario where idEscuela = '" + idVeterinaria + "' and UsuarioRol.idRol = 3; ";
 
+            }
+            
+        
             ClProcesarSQL SQL = new ClProcesarSQL();
             DataTable tblVeterinaria = SQL.mtdSelectDesc(consulta);
             List<ClUsuarioE> listaProductos = new List<ClUsuarioE>();

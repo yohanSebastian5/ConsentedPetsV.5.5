@@ -9,10 +9,10 @@ namespace ConsentedPets.Logica
 {
     public class ClRepeaterEstablecimientoL
     {
-        public List<ClRepeaterEstablecimientoE> mtdRepeater(int idSeccion,int usuario=0)
+        public List<ClRepeaterEstablecimientoE> mtdRepeater(int idSeccion,int usuario=0,int establecimiento=0)
         {
             ClRepeaterEstablecimientoD objVet = new ClRepeaterEstablecimientoD();
-            List<ClRepeaterEstablecimientoE> listaVet = objVet.mtdListar(idSeccion,usuario);
+            List<ClRepeaterEstablecimientoE> listaVet = objVet.mtdListar(idSeccion,usuario,establecimiento);
             return listaVet;
 
         }

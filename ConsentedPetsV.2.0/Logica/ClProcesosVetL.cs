@@ -21,5 +21,15 @@ namespace ConsentedPetsV._2._0.Logica
             ClProcesosVetD objD = new ClProcesosVetD();
             objD.mtdRegistrarS(objE);
         }
+        public void mtdRegistrarServcioE(ClServicioVeterinariaE objE)
+        {
+            ClProcesosEscuela objD = new ClProcesosEscuela();
+            objD.mtdRegistrarS(objE);
+        }
+        public void mtdRegistrarCursoE(ClServicioVeterinariaE objE)
+        {
+            ClProcesosEscuela objD = new ClProcesosEscuela();
+            objD.mtdRegistrarCurso(objE);
+        }
     }
 }

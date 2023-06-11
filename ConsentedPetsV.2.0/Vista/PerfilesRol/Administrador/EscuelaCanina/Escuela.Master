@@ -52,7 +52,7 @@
                         </a>
                         <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="/Presentacion/Admin/RegistroA.aspx">Editar perfil</a>
+                                <a class="nav-link" href="EditarPerfilE.aspx">Editar perfil</a>
                             </nav>
                         </div>
 
@@ -60,14 +60,14 @@
                         <div class="sb-sidenav-menu-heading">Servicios</div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts221" aria-expanded="false" aria-controls="collapseLayouts221">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Manejo de Servicios
+                            Manejo de Cursos
                                
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapseLayouts221" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="/Presentacion/Admin/RegistroA.aspx">Servicios Registrados</a>
-                                <a class="nav-link" href="/Presentacion/Admin/RegistroA.aspx">Registrar Servicio</a>
+                                <a class="nav-link" href="RegistrarCursosS.aspx">Registrar Servicio</a>
 
                             </nav>
                         </div>
@@ -98,7 +98,7 @@
                         </a>
                         <div class="collapse" id="collapseLayouts2213" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="/Presentacion/Admin/RegistroA.aspx">Profesores registrados</a>
+                                <a class="nav-link" href="ListarProfesores.aspx">Profesores registrados</a>
                                 <a class="nav-link" href="/Presentacion/Admin/RegistroA.aspx">Registrar Profesores</a>
 
                             </nav>

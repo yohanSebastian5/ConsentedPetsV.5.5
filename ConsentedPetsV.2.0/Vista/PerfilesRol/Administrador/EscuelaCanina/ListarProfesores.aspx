@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vista/PerfilesRol/Administrador/Veterinaria/Veterinaria.Master" AutoEventWireup="true" CodeBehind="ListarVeterinarios.aspx.cs" Inherits="ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria.ListarVeterinarios" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vista/PerfilesRol/Administrador/EscuelaCanina/Escuela.Master" AutoEventWireup="true" CodeBehind="ListarProfesores.aspx.cs" Inherits="ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina.ListarProfesores" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentHeadAdministrador" runat="server">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -18,7 +17,7 @@
             justify-content: center;
             flex-direction: column;
         }
-
+        
         body {
             background: linear-gradient(#d98567, #243b55);
             color: white;
@@ -26,10 +25,10 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
-    <div class="center">
-        <h1 style="margin-top: 20px; color: #78fff1">Listar Personal</h1>
+     <div class="center">
+        <h1 style="margin-top:20px; color:#78fff1">Listar Personal</h1>
         <div style="width: 1100px">
-            <table id="tblUsua" class="table" style="color: white">
+            <table id="tblUsua" class="table" style="color:white">
                 <thead style="color: #78fff1">
                     <tr>
                         <th>Nombre</th>
@@ -54,7 +53,7 @@
             var id = 0;
             $.ajax({
                 type: "POST",
-                url: "ListarVeterinarios.aspx/mtdLista",
+                url: "ListarProfesores.aspx/mtdLista",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (response) {
@@ -81,5 +80,4 @@
             });
         });
     </script>
-
 </asp:Content>

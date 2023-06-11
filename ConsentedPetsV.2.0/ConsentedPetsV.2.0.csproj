@@ -322,6 +322,8 @@
     <Content Include="Vista\Login.aspx" />
     <Content Include="Vista\Mascota\RegistrarMascota.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditarPerfilE.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProfesores.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\ListarEscuelas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\RegistrarEscuela.aspx" />
     <Content Include="Vista\PerfilesRol\css\registrar.css" />
     <Content Include="Vista\PerfilesRol\js\Registrar.js" />
@@ -483,12 +485,26 @@
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\Escuela.Master.designer.cs">
       <DependentUpon>Escuela.Master</DependentUpon>
     </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProfesores.aspx.cs">
+      <DependentUpon>ListarProfesores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProfesores.aspx.designer.cs">
+      <DependentUpon>ListarProfesores.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarCursosS.aspx.cs">
       <DependentUpon>RegistrarCursosS.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarCursosS.aspx.designer.cs">
       <DependentUpon>RegistrarCursosS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\ListarEscuelas.aspx.cs">
+      <DependentUpon>ListarEscuelas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\ListarEscuelas.aspx.designer.cs">
+      <DependentUpon>ListarEscuelas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\ListarPersonal.aspx.cs">
       <DependentUpon>ListarPersonal.aspx</DependentUpon>

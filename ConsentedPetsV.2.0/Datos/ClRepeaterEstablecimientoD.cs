@@ -9,7 +9,7 @@ namespace ConsentedPets.Datos
 {
     public class ClRepeaterEstablecimientoD
     {
-        public List<ClRepeaterEstablecimientoE> mtdListar(int Seccion,int usuario=0)
+        public List<ClRepeaterEstablecimientoE> mtdListar(int Seccion,int usuario=0,int Establecimiento=0)
         {
             string seccion = "select * from ";
             string seccion2 = "";
@@ -25,10 +25,15 @@ namespace ConsentedPets.Datos
             {
                 seccion2 = "Escuela";
             }
-            else 
+            else if (Establecimiento==0)
             {
                 seccion = "select * from Veterinaria inner join UsuarioVeterinaria on Veterinaria.idVeterinaria=UsuarioVeterinaria.idVeterinaria where UsuarioVeterinaria.idUsuario='"+usuario+"'";
                 seccion2 = "Veterinaria";
+            }
+            else if (Establecimiento==1)
+            {
+                seccion = "select * from Escuela inner join UsuarioEscuela on Escuela.idEscuela=UsuarioEscuela.idEscuela where UsuarioEscuela.idUsuario='" + usuario + "'";
+                seccion2 = "Escuela";
             }
 
             string consulta = seccion+seccion2;
