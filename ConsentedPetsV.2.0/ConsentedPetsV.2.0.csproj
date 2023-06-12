@@ -322,9 +322,13 @@
     <Content Include="Vista\Login.aspx" />
     <Content Include="Vista\Mascota\RegistrarMascota.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditarPerfilE.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMatriculas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProfesores.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarProfesor.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\ListarEscuelas.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\ListarTiendas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\RegistrarEscuela.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\RegistrarTienda.aspx" />
     <Content Include="Vista\PerfilesRol\css\registrar.css" />
     <Content Include="Vista\PerfilesRol\js\Registrar.js" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarCursosS.aspx" />
@@ -392,6 +396,7 @@
     <Compile Include="Entidades\ClCitaE.cs" />
     <Compile Include="Entidades\ClEstablecimientoE.cs" />
     <Compile Include="Entidades\ClMascotaE.cs" />
+    <Compile Include="Entidades\ClMatriculaE.cs" />
     <Compile Include="Entidades\ClProcesosVetE.cs" />
     <Compile Include="Entidades\ClRepeaterEstablecimientoE.cs" />
     <Compile Include="Entidades\ClServicioVeterinariaE.cs" />
@@ -485,6 +490,13 @@
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\Escuela.Master.designer.cs">
       <DependentUpon>Escuela.Master</DependentUpon>
     </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMatriculas.aspx.cs">
+      <DependentUpon>ListarMatriculas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMatriculas.aspx.designer.cs">
+      <DependentUpon>ListarMatriculas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProfesores.aspx.cs">
       <DependentUpon>ListarProfesores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -499,6 +511,13 @@
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarCursosS.aspx.designer.cs">
       <DependentUpon>RegistrarCursosS.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarProfesor.aspx.cs">
+      <DependentUpon>RegistrarProfesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarProfesor.aspx.designer.cs">
+      <DependentUpon>RegistrarProfesor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\ListarEscuelas.aspx.cs">
       <DependentUpon>ListarEscuelas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -512,6 +531,13 @@
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\ListarPersonal.aspx.designer.cs">
       <DependentUpon>ListarPersonal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\ListarTiendas.aspx.cs">
+      <DependentUpon>ListarTiendas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\ListarTiendas.aspx.designer.cs">
+      <DependentUpon>ListarTiendas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\ListarVeterinarias.aspx.cs">
       <DependentUpon>ListarVeterinarias.aspx</DependentUpon>
@@ -547,6 +573,13 @@
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\RegistrarEscuela.aspx.designer.cs">
       <DependentUpon>RegistrarEscuela.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\RegistrarTienda.aspx.cs">
+      <DependentUpon>RegistrarTienda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\RegistrarTienda.aspx.designer.cs">
+      <DependentUpon>RegistrarTienda.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\RegistrarVeterinaria.aspx.cs">
       <DependentUpon>RegistrarVeterinaria.aspx</DependentUpon>

@@ -71,5 +71,23 @@ namespace ConsentedPetsV._2._0.Datos
             conexion.CerrarConexion();
 
         }
+        public List<ClMatriculaE> mtdListarMatriculas(int id)
+        {
+            string consulta = "select * from Matricula  inner join Curso on  Matricula.idCursoE =Curso.idCursoE  inner join ServicioEs on Curso.idServicioE= ServicioEs.idServicioE inner join Registro on Matricula.idRegistro= Registro.idRegistro inner join Mascota on Registro.idMascota= Mascota.idMascota where Registro.idEscuela="+id+""; 
+            ClProcesarSQL SQL = new ClProcesarSQL();
+            DataTable tbl = SQL.mtdSelectDesc(consulta);
+            List<ClMatriculaE> listaProductos = new List<ClMatriculaE>();
+            for (int i = 0; i < tbl.Rows.Count; i++)
+            {
+                ClMatriculaE objMatricula = new ClMatriculaE();
+                objMatricula.precioTotal = tbl.Rows[i]["precioTotal"].ToString();
+                objMatricula.nombre = tbl.Rows[i]["nombre"].ToString();
+                objMatricula.fechaMatricula = tbl.Rows[i]["fechaMatricula"].ToString();
+                objMatricula.mascota = tbl.Rows[i]["nombre2"].ToString();
+                objMatricula.especie = tbl.Rows[i]["especie"].ToString();
+                listaProductos.Add(objMatricula);
+            }
+            return listaProductos;
+        }
     }
 }

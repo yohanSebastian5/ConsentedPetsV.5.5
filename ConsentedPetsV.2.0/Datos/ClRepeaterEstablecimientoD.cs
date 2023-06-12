@@ -35,6 +35,12 @@ namespace ConsentedPets.Datos
                 seccion = "select * from Escuela inner join UsuarioEscuela on Escuela.idEscuela=UsuarioEscuela.idEscuela where UsuarioEscuela.idUsuario='" + usuario + "'";
                 seccion2 = "Escuela";
             }
+            else if (Establecimiento==2)
+            {
+                seccion = "select * from Tienda inner join UsuarioTienda on Tienda.idTienda=UsuarioTienda.idTienda where UsuarioTienda.idUsuario='" + usuario + "'";
+                seccion2 = "Tienda";
+            }
+            
 
             string consulta = seccion+seccion2;
             ClProcesarSQL SQL = new ClProcesarSQL();

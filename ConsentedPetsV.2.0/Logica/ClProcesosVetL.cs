@@ -31,5 +31,12 @@ namespace ConsentedPetsV._2._0.Logica
             ClProcesosEscuela objD = new ClProcesosEscuela();
             objD.mtdRegistrarCurso(objE);
         }
+        public List<ClMatriculaE> mtdListarMatriculas(int idVeterinaria)
+        {
+            ClProcesosEscuela objM = new ClProcesosEscuela();
+            List<ClMatriculaE> lista = objM.mtdListarMatriculas(idVeterinaria);
+            return lista;
+
+        }
     }
 }
