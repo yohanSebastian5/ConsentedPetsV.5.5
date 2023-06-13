@@ -221,5 +221,24 @@ namespace ConsentedPets.Datos
             return listaProductos;
         }
 
-}
+        public void mtdActualizarDatos(ClUsuarioE objE)
+        {
+
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "EditarPerfilUsuario" ;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@nombre", objE.nombre);
+            comando.Parameters.AddWithValue("@apellido", objE.apellido);
+            comando.Parameters.AddWithValue("@genero", objE.genero);
+            comando.Parameters.AddWithValue("@telefono", objE.telefono);
+            comando.Parameters.AddWithValue("@email", objE.email);
+            comando.Parameters.AddWithValue("@direccion", objE.direccion);
+            comando.Parameters.AddWithValue("@contraseña", objE.contraseña);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+
+        }
+
+    }
 }

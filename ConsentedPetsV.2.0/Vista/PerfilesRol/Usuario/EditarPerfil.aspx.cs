@@ -2,6 +2,7 @@
 using ConsentedPets.Logica;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -35,6 +36,29 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario
             }
             repNom.DataSource = listaU;
             repNom.DataBind();
+        }
+
+        protected void btnAddMore_Click(object sender, EventArgs e)
+        {
+            ClUsuarioE objE = new ClUsuarioE();
+            CLUsuarioL objL = new CLUsuarioL();
+            objE.nombre = txtNombre.Text;
+            objE.apellido = txtApellido.Text;
+            objE.genero = txtGenero.Text;
+            objE.telefono = txtTelefono.Text;
+            objE.email = txtEmail.Text;
+            objE.direccion = txtDireccion.Text;
+            objE.contraseña = txtContraseña.Text;
+            
+
+
+            //string nombreV = 1 + txtNombre.Text + txtTelefono.Text + ".png";
+            //string rutaImg = Path.Combine(Server.MapPath("~/Vista/imagenes/ImagenesEstablecimiento/"), nombreV);
+            //FlImagenV.SaveAs(rutaImg);
+            //objL.mtdActualizar(objE, "V");
+            //ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Informacion Atualizada!', ''" + objE.nombre + "' A sido Actualizado', 'success')", true);
+
+
         }
     }
 }

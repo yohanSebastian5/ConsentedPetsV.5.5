@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="col-md-2">
-                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
+                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" OnClick="btnAddMore_Click"/>
                 </div>
             </div>
             <br />

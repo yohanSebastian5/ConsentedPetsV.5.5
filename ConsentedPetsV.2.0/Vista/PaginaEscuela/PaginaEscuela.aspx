@@ -207,11 +207,11 @@
                 <h1>Our Courses</h1>
             </div>
             <div class="row">
-                <asp:Repeater ID="Repeater1" runat="server">
+                <asp:Repeater ID="repCurso" runat="server">
                     <ItemTemplate>
                 <div class="col-lg-4 col-md-6 mb-4">
                   <div class="rounded overflow-hidden mb-2">
-                        <img class="img-fluid" src'<%# ResolveUrl("../imagenes/ServicioCursosE/") + Eval("foto") %>' alt="">
+                        <img class="img-fluid" src'<%# ResolveUrl("~Vista/imagenes/ServicioCursosE/") + Eval("foto") %>' alt="">
                         <div class="bg-secondary p-4">
                             <div class="d-flex justify-content-between mb-3">
                                 <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>

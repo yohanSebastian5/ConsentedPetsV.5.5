@@ -12,6 +12,6 @@ namespace ConsentedPetsV._2._0.Entidades
         public string descripcion { get; set; }
         public int precio { get; set; }
         public string foto { get; set; }
-        public string idServicioE { get; set; }
+        public int idServicioE { get; set; }
     }
 }

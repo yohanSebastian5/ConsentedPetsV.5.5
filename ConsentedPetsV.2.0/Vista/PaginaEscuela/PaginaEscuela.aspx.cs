@@ -19,6 +19,14 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
             repServicio.DataSource = lista;
             repServicio.DataBind();
 
+
+            ClCursoEL objCurso = new ClCursoEL();
+            List<ClCursoEE> listaC = objCurso.mtdCurso(idEscuela);
+            repCurso.DataSource = listaC;
+            repCurso.DataBind();
+
+
+
         }
     }
 }

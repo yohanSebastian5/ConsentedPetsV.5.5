@@ -12,7 +12,7 @@ namespace ConsentedPetsV._2._0.Datos
     {
         public List<ClCursoEE> mtdCurso (int idEscuela)
         {
-            string consulta = "seleect * from CursoE where idCurso = '" + idEscuela + "'";
+            string consulta = "select * from CursoE where idCurso = '" + idEscuela + "'";
             ClProcesarSQL sql = new ClProcesarSQL ();
             DataTable tabla = sql.mtdSelectDesc(consulta);
             List<ClCursoEE> lista = new List<ClCursoEE> ();
@@ -21,6 +21,12 @@ namespace ConsentedPetsV._2._0.Datos
 
                 ClCursoEE objCurso = new ClCursoEE ();
                 objCurso.idCurso = int.Parse(tabla.Rows[i]["idCurso"].ToString());
+                objCurso.nombre = tabla.Rows[i]["nombre"].ToString();
+                objCurso.descripcion = tabla.Rows[i]["descripcion"].ToString();
+                objCurso.precio = int.Parse(tabla.Rows[i]["precio"].ToString());
+                objCurso.foto = tabla.Rows[i]["foto"].ToString();
+                objCurso.idServicioE = int.Parse(tabla.Rows[i]["idServicioE"].ToString());
+
                 lista.Add(objCurso);
             }
             return lista;

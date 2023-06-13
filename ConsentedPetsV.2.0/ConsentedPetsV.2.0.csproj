@@ -402,6 +402,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Logica\ClCitaL.cs" />
+    <Compile Include="Logica\ClCursoEL.cs" />
     <Compile Include="Logica\ClEstablecimientoL.cs" />
     <Compile Include="Logica\ClMascotaL.cs" />
     <Compile Include="Logica\ClProcesosVetL.cs" />
