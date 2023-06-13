@@ -101,6 +101,7 @@
     <Content Include="Vista\imagenes\imagenesProcesosV\proceso2.png" />
     <Content Include="Vista\imagenes\imagenesProcesosV\proceso3.png" />
     <Content Include="Vista\imagenes\muchi.png" />
+    <Content Include="Vista\imagenes\RActividad.jpg" />
     <Content Include="Vista\imagenes\RegistrarServicio\Iconos\diente.jpg" />
     <Content Include="Vista\imagenes\RegistrarServicio\Iconos\Urgencias.png" />
     <Content Include="Vista\imagenes\RegistrarServicio\Iconos\vacunacion.png" />
@@ -324,12 +325,14 @@
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditarPerfilE.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMatriculas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProfesores.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarActividad.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarProfesor.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\ListarEscuelas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\ListarTiendas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\RegistrarEscuela.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\RegistrarTienda.aspx" />
     <Content Include="Vista\PerfilesRol\css\registrar.css" />
+    <Content Include="Vista\PerfilesRol\css\RegistrarActividad.css" />
     <Content Include="Vista\PerfilesRol\js\Registrar.js" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarCursosS.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\ListarPersonal.aspx" />
@@ -360,6 +363,7 @@
     <Content Include="Vista\PerfilesRol\ElegirPerfil.aspx" />
     <Content Include="Vista\PerfilesRol\js\añadirVeterinaria.js" />
     <Content Include="Vista\PerfilesRol\js\datatables-simple-demo.js" />
+    <Content Include="Vista\PerfilesRol\js\RegistrarActividad.js" />
     <Content Include="Vista\PerfilesRol\js\RegistrarServicioe.js" />
     <Content Include="Vista\PerfilesRol\js\scripts.js" />
     <Content Include="Vista\imagenes\persona.png" />
@@ -503,6 +507,13 @@
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProfesores.aspx.designer.cs">
       <DependentUpon>ListarProfesores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarActividad.aspx.cs">
+      <DependentUpon>RegistrarActividad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarActividad.aspx.designer.cs">
+      <DependentUpon>RegistrarActividad.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarCursosS.aspx.cs">
       <DependentUpon>RegistrarCursosS.aspx</DependentUpon>
