@@ -38,5 +38,12 @@ namespace ConsentedPetsV._2._0.Logica
             return lista;
 
         }
+        public List<ClMatriculaE> mtdListarMascotas(int idVeterinaria)
+        {
+            ClProcesosEscuela objM = new ClProcesosEscuela();
+            List<ClMatriculaE> lista = objM.mtdListarMascotas(idVeterinaria);
+            return lista;
+
+        }
     }
 }

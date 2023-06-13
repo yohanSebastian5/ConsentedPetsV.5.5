@@ -89,5 +89,26 @@ namespace ConsentedPetsV._2._0.Datos
             }
             return listaProductos;
         }
+        public List<ClMatriculaE> mtdListarMascotas(int id)
+        {
+            string consulta = "select * from Matricula  inner join Curso on  Matricula.idCursoE =Curso.idCursoE  inner join ServicioEs on Curso.idServicioE= ServicioEs.idServicioE inner join Registro on Matricula.idRegistro= Registro.idRegistro inner join Mascota on Registro.idMascota= Mascota.idMascota inner join Usuario on Mascota.idUsuario=Usuario.idUsuario where Registro.idEscuela=" + id + "";
+            ClProcesarSQL SQL = new ClProcesarSQL();
+            DataTable tbl = SQL.mtdSelectDesc(consulta);
+            List<ClMatriculaE> listaProductos = new List<ClMatriculaE>();
+            for (int i = 0; i < tbl.Rows.Count; i++)
+            {
+                ClMatriculaE objMatricula = new ClMatriculaE();
+                objMatricula.nombre = tbl.Rows[i]["nombre"].ToString();
+                objMatricula.fechaMatricula = tbl.Rows[i]["fechaMatricula"].ToString();
+                objMatricula.mascota = tbl.Rows[i]["nombre2"].ToString();
+                objMatricula.especie = tbl.Rows[i]["especie"].ToString();
+                objMatricula.foto= tbl.Rows[i]["foto1"].ToString();
+                objMatricula.fotoU= tbl.Rows[i]["foto"].ToString();
+                objMatricula.usuario= tbl.Rows[i]["nombre3"].ToString();
+                objMatricula.apellido= tbl.Rows[i]["apellido"].ToString();
+                listaProductos.Add(objMatricula);
+            }
+            return listaProductos;
+        }
     }
 }

@@ -323,6 +323,7 @@
     <Content Include="Vista\Login.aspx" />
     <Content Include="Vista\Mascota\RegistrarMascota.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditarPerfilE.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMascotas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMatriculas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProfesores.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarActividad.aspx" />
@@ -331,6 +332,7 @@
     <Content Include="Vista\PerfilesRol\Administrador\ListarTiendas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\RegistrarEscuela.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\RegistrarTienda.aspx" />
+    <Content Include="Vista\PerfilesRol\css\ListarMascotas.css" />
     <Content Include="Vista\PerfilesRol\css\registrar.css" />
     <Content Include="Vista\PerfilesRol\css\RegistrarActividad.css" />
     <Content Include="Vista\PerfilesRol\js\Registrar.js" />
@@ -493,6 +495,13 @@
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\Escuela.Master.designer.cs">
       <DependentUpon>Escuela.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMascotas.aspx.cs">
+      <DependentUpon>ListarMascotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMascotas.aspx.designer.cs">
+      <DependentUpon>ListarMascotas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMatriculas.aspx.cs">
       <DependentUpon>ListarMatriculas.aspx</DependentUpon>
