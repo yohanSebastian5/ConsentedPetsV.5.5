@@ -100,6 +100,7 @@
     <Content Include="Vista\imagenes\imagenesProcesosV\proceso1.png" />
     <Content Include="Vista\imagenes\imagenesProcesosV\proceso2.png" />
     <Content Include="Vista\imagenes\imagenesProcesosV\proceso3.png" />
+    <Content Include="Vista\imagenes\ImagenesUsuarios\usuario5.png" />
     <Content Include="Vista\imagenes\muchi.png" />
     <Content Include="Vista\imagenes\RegistrarServicio\Iconos\diente.jpg" />
     <Content Include="Vista\imagenes\RegistrarServicio\Iconos\Urgencias.png" />

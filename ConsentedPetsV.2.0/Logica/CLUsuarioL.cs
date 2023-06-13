@@ -65,5 +65,12 @@ namespace ConsentedPets.Logica
             objD.mtdActualizarDatos(objE);
         }
 
+        public List<ClUsuarioE> mtdProfesores(int idEcuela)
+        {
+            ClUsuarioD objUs = new ClUsuarioD();
+            List<ClUsuarioE> lista = objUs.mtdListarprofesor(idEcuela);
+            return lista;
+        }
+
     }
 }

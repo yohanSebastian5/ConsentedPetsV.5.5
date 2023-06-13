@@ -221,6 +221,37 @@ namespace ConsentedPets.Datos
             return listaProductos;
         }
 
+        public List<ClUsuarioE> mtdListarprofesor(int idEscuela)
+        {
+
+
+
+            string consulta = "select Usuario.* from Usuario inner join UsuarioEscuela on Usuario.idUsuario= UsuarioEscuela.idUsuario inner join UsuarioRol on " +
+                "UsuarioRol.idUsuario = Usuario.idUsuario where idEscuela = '" + idEscuela + "' and UsuarioRol.idRol = 3; ";
+
+            ClProcesarSQL SQL = new ClProcesarSQL();
+            DataTable tblVeterinaria = SQL.mtdSelectDesc(consulta);
+            List<ClUsuarioE> listaProductos = new List<ClUsuarioE>();
+            for (int i = 0; i < tblVeterinaria.Rows.Count; i++)
+            {
+                ClUsuarioE objVet = new ClUsuarioE();
+                objVet.nombre = tblVeterinaria.Rows[i]["nombre"].ToString();
+                objVet.apellido = tblVeterinaria.Rows[i]["apellido"].ToString();
+                objVet.telefono = tblVeterinaria.Rows[i]["telefono"].ToString();
+                objVet.email = tblVeterinaria.Rows[i]["email"].ToString();
+                objVet.foto = tblVeterinaria.Rows[i]["foto"].ToString();
+                objVet.direccion = tblVeterinaria.Rows[i]["direccion"].ToString();
+                objVet.genero = tblVeterinaria.Rows[i]["genero"].ToString();
+                objVet.contraseña = tblVeterinaria.Rows[i]["contraseña"].ToString();
+                objVet.especializacion = tblVeterinaria.Rows[i]["especializacion"].ToString();
+                objVet.experiencia = tblVeterinaria.Rows[i]["experiencia"].ToString();
+                objVet.profesion = tblVeterinaria.Rows[i]["profesion"].ToString();
+                objVet.idUsuario = int.Parse(tblVeterinaria.Rows[i]["idUsuario"].ToString());
+                listaProductos.Add(objVet);
+            }
+            return listaProductos;
+        }
+
         public void mtdActualizarDatos(ClUsuarioE objE)
         {
 

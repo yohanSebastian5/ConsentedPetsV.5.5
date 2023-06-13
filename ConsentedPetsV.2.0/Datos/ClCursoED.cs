@@ -12,7 +12,7 @@ namespace ConsentedPetsV._2._0.Datos
     {
         public List<ClCursoEE> mtdCurso (int idEscuela)
         {
-            string consulta = "select * from CursoE where idCurso = '" + idEscuela + "'";
+            string consulta = "select * from Curso inner join ServicioEs on Curso.idServicioE= ServicioEs.idServicioE where ServicioEs.idEscuela='"+idEscuela+"'";
             ClProcesarSQL sql = new ClProcesarSQL ();
             DataTable tabla = sql.mtdSelectDesc(consulta);
             List<ClCursoEE> lista = new List<ClCursoEE> ();
