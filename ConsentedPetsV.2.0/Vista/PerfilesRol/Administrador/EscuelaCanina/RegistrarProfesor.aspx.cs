@@ -31,7 +31,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
         public static void ActualizarDatos(string docum, string espes, string expes, string profes)
         {
             int tipo = 2;
-            int rol = 4;
+            int rol = 3;
             ClUsuarioE objUsuE = cargardatos(docum);
             CLUsuarioL objUsuL = new CLUsuarioL();
             objUsuE.documento = docum;
