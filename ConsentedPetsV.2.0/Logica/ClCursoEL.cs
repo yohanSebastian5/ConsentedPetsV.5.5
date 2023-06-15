@@ -15,5 +15,12 @@ namespace ConsentedPetsV._2._0.Logica
             List<ClCursoEE> lista = objCurso.mtdCurso(idEscuela);
             return lista;
         }
+
+        public List<ClCursoEE> mtdC(int idServicio)
+        {
+            ClCursoED objCurso = new ClCursoED();
+            List<ClCursoEE> lista = objCurso.mtdC(idServicio);
+            return lista;
+        }
     }
 }

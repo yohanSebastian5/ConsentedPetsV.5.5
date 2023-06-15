@@ -148,20 +148,20 @@
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="row align-items-center">
-                
-                        <div class="col-lg-5">
-                            <asp:Image ID="foto" runat="server" class="img-fluid rounded mb-4 mb-lg-0" />
 
-                        </div>
-                        <div class="col-lg-7">
-                            <div class="text-left mb-4">
-                                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
-                                <h1 id="nombre" runat="server"></h1>
-                            </div>
-                            <p>HAZ QUE TU MASCOTA TENGA UNA TRANSFORMACIÓN EN SU FORMA DE SER RECIBIENDO EL MEJOR ADIESTRAMIENTO CANINO</p>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
-                        </div>
-                   
+                <div class="col-lg-5">
+                    <asp:Image ID="foto" runat="server" class="img-fluid rounded mb-4 mb-lg-0" />
+
+                </div>
+                <div class="col-lg-7">
+                    <div class="text-left mb-4">
+                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
+                        <h1 id="nombre" runat="server"></h1>
+                    </div>
+                    <p>HAZ QUE TU MASCOTA TENGA UNA TRANSFORMACIÓN EN SU FORMA DE SER RECIBIENDO EL MEJOR ADIESTRAMIENTO CANINO</p>
+                    <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                </div>
+
 
             </div>
         </div>
@@ -327,37 +327,30 @@
                             <div class="card-header bg-light text-center p-4">
                                 <h1 class="m-0">Enrollment </h1>
                             </div>
+
                             <div class="card-body rounded-bottom bg-primary p-5">
-                                <form>
+                                <form runat="server">
                                     <div class="form-group">
-                                        <select class="custom-select border-0 px-4" style="height: 47px;">
-                                            <option selected>Select a course</option>
-                                            <option value="1">Course 1</option>
-                                            <option value="2">Course 1</option>
-                                            <option value="3">Course 1</option>
-                                        </select>
+                                        <asp:DropDownList ID="ddlMascota" CssClass="custom-select border-0 px-4" runat="server" Style="height: 47px;"></asp:DropDownList>
                                     </div>
-                                    <div class="form-group">
-                                        <select class="custom-select border-0 px-4" style="height: 47px;">
-                                            <option selected>Select a course</option>
-                                            <option value="1">Course 1</option>
-                                            <option value="2">Course 1</option>
-                                            <option value="3">Course 1</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <select class="custom-select border-0 px-4" style="height: 47px;">
-                                            <option selected>Select a course</option>
-                                            <option value="1">Course 1</option>
-                                            <option value="2">Course 1</option>
-                                            <option value="3">Course 1</option>
-                                        </select>
-                                    </div>
+                                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                        <ContentTemplate>
+                                            <div class="form-group">
+                                                <asp:DropDownList ID="ddlServicio" CssClass="custom-select border-0 px-4" runat="server" Style="height: 47px;" AutoPostBack="true" OnSelectedIndexChanged="ddlServicio_SelectedIndexChanged" ></asp:DropDownList>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <asp:DropDownList ID="ddlCurso" CssClass="custom-select border-0 px-4" runat="server" Style="height: 47px;"></asp:DropDownList>
+                                            </div>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
                                     <div>
                                         <button class="btn btn-dark btn-block border-0 py-3" type="submit">Sign Up Now</button>
                                     </div>
                                 </form>
                             </div>
+
                         </div>
                     </div>
                 </div>

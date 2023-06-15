@@ -31,5 +31,27 @@ namespace ConsentedPetsV._2._0.Datos
             }
             return lista;
         }
+
+        public List<ClCursoEE> mtdC(int idServicio)
+        {
+            string cons = "select * from Curso where idServicioE ='" + idServicio + "'";
+            ClProcesarSQL sql = new ClProcesarSQL();
+            DataTable tabla = sql.mtdSelectDesc(cons);
+            List<ClCursoEE> lista = new List<ClCursoEE>();
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+
+                ClCursoEE objCurso = new ClCursoEE();
+                objCurso.idCurso = int.Parse(tabla.Rows[i]["idCurso"].ToString());
+                objCurso.nombre = tabla.Rows[i]["nombre"].ToString();
+                objCurso.descripcion = tabla.Rows[i]["descripcion"].ToString();
+                objCurso.precio = int.Parse(tabla.Rows[i]["precio"].ToString());
+                objCurso.foto = tabla.Rows[i]["foto"].ToString();
+                objCurso.idServicioE = int.Parse(tabla.Rows[i]["idServicioE"].ToString());
+
+                lista.Add(objCurso);
+            }
+            return lista;
+        }
     }
 }
