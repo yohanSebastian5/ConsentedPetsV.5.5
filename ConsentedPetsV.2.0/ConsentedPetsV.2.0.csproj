@@ -326,6 +326,7 @@
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMascotas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMatriculas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProfesores.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarServicios.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarActividad.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarProfesor.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\ListarEscuelas.aspx" />
@@ -333,8 +334,10 @@
     <Content Include="Vista\PerfilesRol\Administrador\RegistrarEscuela.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\RegistrarTienda.aspx" />
     <Content Include="Vista\PerfilesRol\css\ListarMascotas.css" />
+    <Content Include="Vista\PerfilesRol\css\ListarServicios.css" />
     <Content Include="Vista\PerfilesRol\css\registrar.css" />
     <Content Include="Vista\PerfilesRol\css\RegistrarActividad.css" />
+    <Content Include="Vista\PerfilesRol\js\ListarServicios.js" />
     <Content Include="Vista\PerfilesRol\js\Registrar.js" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarCursosS.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\ListarPersonal.aspx" />
@@ -516,6 +519,13 @@
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProfesores.aspx.designer.cs">
       <DependentUpon>ListarProfesores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarServicios.aspx.cs">
+      <DependentUpon>ListarServicios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarServicios.aspx.designer.cs">
+      <DependentUpon>ListarServicios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarActividad.aspx.cs">
       <DependentUpon>RegistrarActividad.aspx</DependentUpon>
