@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentHeadAdministrador" runat="server">
     <link href="../../css/ListarServicios.css" rel="stylesheet" />
+     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
     <div class="cards">
@@ -26,7 +27,7 @@
                 </div>
                 <div class="card-flap flap2">
                     <div class="card-actions">
-                        <a href="#" class="toggle-info btn">Read more</a>
+                        <a href="#"  class="toggle-info btn">Read more</a>
                     </div>
                 </div>
             </div>
@@ -78,5 +79,5 @@
             });
     </script>
 
-    <script src="../../js/ListarServicios.js"></script>
+
 </asp:Content>
