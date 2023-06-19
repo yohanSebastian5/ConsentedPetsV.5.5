@@ -334,12 +334,17 @@
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarProfesor.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\ListarEscuelas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\ListarTiendas.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\PetShop\MascotasRegistradas.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\PetShop\ProductosRegistrados.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarMascota.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarProducto.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\RegistrarEscuela.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\RegistrarTienda.aspx" />
     <Content Include="Vista\PerfilesRol\css\ListarMascotas.css" />
     <Content Include="Vista\PerfilesRol\css\ListarServicios.css" />
     <Content Include="Vista\PerfilesRol\css\registrar.css" />
     <Content Include="Vista\PerfilesRol\css\RegistrarActividad.css" />
+    <Content Include="Vista\PerfilesRol\css\RegistrarProducto.css" />
     <Content Include="Vista\PerfilesRol\js\ListarServicios.js" />
     <Content Include="Vista\PerfilesRol\js\Registrar.js" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarCursosS.aspx" />
@@ -372,6 +377,7 @@
     <Content Include="Vista\PerfilesRol\js\añadirVeterinaria.js" />
     <Content Include="Vista\PerfilesRol\js\datatables-simple-demo.js" />
     <Content Include="Vista\PerfilesRol\js\RegistrarActividad.js" />
+    <Content Include="Vista\PerfilesRol\js\RegistrarProducto.js" />
     <Content Include="Vista\PerfilesRol\js\RegistrarServicioe.js" />
     <Content Include="Vista\PerfilesRol\js\scripts.js" />
     <Content Include="Vista\imagenes\persona.png" />
@@ -614,12 +620,40 @@
     <Compile Include="Vista\PerfilesRol\Administrador\PetShop\EditarPerfilP.aspx.designer.cs">
       <DependentUpon>EditarPerfilP.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\MascotasRegistradas.aspx.cs">
+      <DependentUpon>MascotasRegistradas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\MascotasRegistradas.aspx.designer.cs">
+      <DependentUpon>MascotasRegistradas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\PetShop\PetShop.Master.cs">
       <DependentUpon>PetShop.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\PetShop\PetShop.Master.designer.cs">
       <DependentUpon>PetShop.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\ProductosRegistrados.aspx.cs">
+      <DependentUpon>ProductosRegistrados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\ProductosRegistrados.aspx.designer.cs">
+      <DependentUpon>ProductosRegistrados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarMascota.aspx.cs">
+      <DependentUpon>RegistrarMascota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarMascota.aspx.designer.cs">
+      <DependentUpon>RegistrarMascota.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarProducto.aspx.cs">
+      <DependentUpon>RegistrarProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarProducto.aspx.designer.cs">
+      <DependentUpon>RegistrarProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\RegistrarEscuela.aspx.cs">
       <DependentUpon>RegistrarEscuela.aspx</DependentUpon>

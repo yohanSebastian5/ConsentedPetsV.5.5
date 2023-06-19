@@ -1,24 +1,24 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vista/PerfilesRol/Usuario/PerfilUsuario.Master" AutoEventWireup="true" CodeBehind="RegistroMascota.aspx.cs" Inherits="ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario.RegistroMascota" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head"   runat="server">
-    <link href="../../Css/RegistrarV.css" rel="stylesheet" />
-    <script src="../../../Scripts/sweetalert.min.js"></script>
-    <link href="../../../Styles/sweetalert.css" rel="stylesheet" />
-   
-       <style>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vista/PerfilesRol/Administrador/PetShop/PetShop.Master" AutoEventWireup="true" CodeBehind="RegistrarMascota.aspx.cs" Inherits="ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.PetShop.RegistrarMascota" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentHeadAdministrador" runat="server">
+    <link href="../../../Css/RegistrarV.css" rel="stylesheet" />
+    <script src="../../../../Scripts/sweetalert.min.js"></script>
+    <link href="../../../../Styles/sweetalert.css" rel="stylesheet" />
+
+    <style>
         body {
             background-image: url('../../imagenes/fondoRegistroM.png.jpg');
             background-size: cover;
             background-repeat: no-repeat;
         }
-
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
-
-      <div class="bg-img" style="background: rgba(0,0,0,0.3);">
-        <div class="content" style="background: rgb(120 110 110 / 61%);">
-            <header style="color: #aeb0b7e0;">Registra Tu mascota</header>
-            <br />
+    <form runat="server">
+        <div class="bg-img" style="background: rgba(0,0,0,0.3);">
+            <div class="content" style="background: rgb(120 110 110 / 61%);">
+                <header style="color: #aeb0b7e0;">Registra Tu mascota</header>
+                <br />
                 <div class="field space">
                     <span class="fa fa-user"></span>
                     <asp:TextBox CssClass="quitarmargen" ID="txtNombre" required="" placeholder="Nombre" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
@@ -52,7 +52,7 @@
                                      
                 </div>--%>
                 <br />
-                <asp:FileUpload  ID="FlFotoM" runat="server" CssClass="field space" />
+                <asp:FileUpload ID="FlFotoM" runat="server" CssClass="field space" />
                 <br />
                 <div class="field space">
                     <span class="fa fa-user"></span>
@@ -62,12 +62,12 @@
                 <br />
                 <br />
                 <div class="field">
-                    <asp:Button CssClass="quitarmargen" ID="btnRegistrar" runat="server" Text="REGISTRAR" OnClick="btnRegistrar_Click" />
+                    <asp:Button CssClass="quitarmargen" ID="btnRegistrar" runat="server" Text="REGISTRAR" />
                 </div>
 
+            </div>
         </div>
-    </div>
+    </form>
 
-
-    <script src="../../Bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../Bootstrap/js/bootstrap.min.js"></script>
 </asp:Content>

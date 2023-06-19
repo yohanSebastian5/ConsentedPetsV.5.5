@@ -18,8 +18,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body class="sb-nav-fixed ">
-    <form runat="server">
-
+    
 
         <style>
             .traslucido {
@@ -53,7 +52,7 @@
                             </a>
                             <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="/Presentacion/Admin/RegistroA.aspx">Editar perfil</a>
+                                    <a class="nav-link" href="EditarPerfilP.aspx">Editar perfil</a>
                                 </nav>
                             </div>
                          
@@ -67,9 +66,8 @@
                             </a>
                             <div class="collapse" id="collapseLayouts221" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="/Presentacion/Admin/RegistroA.aspx">Productos Registrados</a>
-                                    <a class="nav-link" href="/Presentacion/Admin/RegistroA.aspx">Registrar Producto</a>
-                                    <a class="nav-link" href="/Presentacion/Admin/RegistroA.aspx"></a>
+                                    <a class="nav-link" href="ProductosRegistrados.aspx">Productos Registrados</a>
+                                    <a class="nav-link" href="RegistrarProducto.aspx">Registrar Producto</a>
 
                                 </nav>
                             </div>
@@ -83,8 +81,8 @@
                             </a>
                             <div class="collapse" id="collapseLayouts2212" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="/Presentacion/Admin/RegistroA.aspx">Mascotas Registradas</a>
-                                    <a class="nav-link" href="/Presentacion/Admin/RegistroA.aspx">Registrar Mascotas</a>
+                                    <a class="nav-link" href="MascotasRegistradas.aspx">Mascotas Registradas</a>
+                                    <a class="nav-link" href="RegistrarMascota.aspx">Registrar Mascotas</a>
 
                                 </nav>
                             </div>
@@ -167,6 +165,6 @@
         <script src="demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
-    </form>
+    
 </body>
 </html>
