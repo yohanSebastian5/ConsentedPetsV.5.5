@@ -323,11 +323,14 @@
     <Content Include="Vista\Login.aspx" />
     <Content Include="Vista\Mascota\RegistrarMascota.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditarPerfilE.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarActividades.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProcesos.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMascotas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMatriculas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProfesores.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarServicios.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarActividad.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarProcesoE.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarProfesor.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\ListarEscuelas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\ListarTiendas.aspx" />
@@ -499,6 +502,20 @@
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\Escuela.Master.designer.cs">
       <DependentUpon>Escuela.Master</DependentUpon>
     </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarActividades.aspx.cs">
+      <DependentUpon>ListarActividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarActividades.aspx.designer.cs">
+      <DependentUpon>ListarActividades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProcesos.aspx.cs">
+      <DependentUpon>ListarProcesos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProcesos.aspx.designer.cs">
+      <DependentUpon>ListarProcesos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMascotas.aspx.cs">
       <DependentUpon>ListarMascotas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -540,6 +557,13 @@
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarCursosS.aspx.designer.cs">
       <DependentUpon>RegistrarCursosS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarProcesoE.aspx.cs">
+      <DependentUpon>RegistrarProcesoE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarProcesoE.aspx.designer.cs">
+      <DependentUpon>RegistrarProcesoE.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarProfesor.aspx.cs">
       <DependentUpon>RegistrarProfesor.aspx</DependentUpon>

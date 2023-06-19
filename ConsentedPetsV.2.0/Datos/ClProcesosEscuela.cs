@@ -110,5 +110,58 @@ namespace ConsentedPetsV._2._0.Datos
             }
             return listaProductos;
         }
+
+        public List<ClServicioVeterinariaE> mtdListarCurso(int id)
+        {
+            string consulta = "select * from Curso where idServicioE=" + id;
+
+            ClProcesarSQL SQL = new ClProcesarSQL();
+            DataTable tble = SQL.mtdSelectDesc(consulta);
+            List<ClServicioVeterinariaE> lista = new List<ClServicioVeterinariaE>();
+            for (int i = 0; i < tble.Rows.Count; i++)
+            {
+                ClServicioVeterinariaE objE = new ClServicioVeterinariaE();
+                objE.nombre = tble.Rows[i]["nombre"].ToString();
+                objE.descripcion = tble.Rows[i]["descripcion"].ToString();
+                objE.precio =int.Parse( tble.Rows[i]["valorServicio"].ToString());
+                objE.foto = tble.Rows[i]["foto"].ToString();
+                lista.Add(objE);
+            }
+            return lista;
+        }
+        public List<ClServicioVeterinariaE> mtdListarProcesos(int id)
+        {
+            string consulta = "select * from HistoriaE where idEscuela=" + id;
+
+            ClProcesarSQL SQL = new ClProcesarSQL();
+            DataTable tble = SQL.mtdSelectDesc(consulta);
+            List<ClServicioVeterinariaE> lista = new List<ClServicioVeterinariaE>();
+            for (int i = 0; i < tble.Rows.Count; i++)
+            {
+                ClServicioVeterinariaE objE = new ClServicioVeterinariaE();
+                objE.nombre = tble.Rows[i]["nombre"].ToString();
+                objE.descripcion = tble.Rows[i]["descripcion"].ToString();
+                objE.foto =tble.Rows[i]["foto"].ToString();
+                lista.Add(objE);
+            }
+            return lista;
+        }
+        public List<ClServicioVeterinariaE> mtdListarActividades(int id)
+        {
+            string consulta = "select * from Actividades where idEscuela=" + id;
+
+            ClProcesarSQL SQL = new ClProcesarSQL();
+            DataTable tble = SQL.mtdSelectDesc(consulta);
+            List<ClServicioVeterinariaE> lista = new List<ClServicioVeterinariaE>();
+            for (int i = 0; i < tble.Rows.Count; i++)
+            {
+                ClServicioVeterinariaE objE = new ClServicioVeterinariaE();
+                objE.nombre = tble.Rows[i]["nombre"].ToString();
+                objE.descripcion = tble.Rows[i]["descripcion"].ToString();
+                objE.fecha = tble.Rows[i]["fecha"].ToString();
+                lista.Add(objE);
+            }
+            return lista;
+        }
     }
 }
