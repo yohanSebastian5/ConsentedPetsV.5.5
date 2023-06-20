@@ -171,6 +171,62 @@
     <Content Include="Vista\PaginaEscuela\mail\contact.js" />
     <Content Include="Vista\PaginaEscuela\mail\jqBootstrapValidation.min.js" />
     <Content Include="Vista\PaginaEscuela\PaginaEscuela.aspx" />
+    <Content Include="Vista\PaginaTienda\assets\css\bootstrap.min.css" />
+    <Content Include="Vista\PaginaTienda\assets\css\flex-slider.css" />
+    <Content Include="Vista\PaginaTienda\assets\css\font-awesome.css" />
+    <Content Include="Vista\PaginaTienda\assets\css\lightbox.css" />
+    <Content Include="Vista\PaginaTienda\assets\css\owl-carousel.css" />
+    <Content Include="Vista\PaginaTienda\assets\css\templatemo-klassy-cafe.css" />
+    <Content Include="Vista\PaginaTienda\assets\fonts\flexslider-icon.svg" />
+    <Content Include="Vista\PaginaTienda\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Vista\PaginaTienda\assets\fonts\slick.svg" />
+    <Content Include="Vista\PaginaTienda\assets\images\about-thumb-01.jpg" />
+    <Content Include="Vista\PaginaTienda\assets\images\about-thumb-02.jpg" />
+    <Content Include="Vista\PaginaTienda\assets\images\about-thumb-03.jpg" />
+    <Content Include="Vista\PaginaTienda\assets\images\about-video-bg.jpg" />
+    <Content Include="Vista\PaginaTienda\assets\images\chefs-01.jpg" />
+    <Content Include="Vista\PaginaTienda\assets\images\chefs-02.jpg" />
+    <Content Include="Vista\PaginaTienda\assets\images\chefs-03.jpg" />
+    <Content Include="Vista\PaginaTienda\assets\images\close.png" />
+    <Content Include="Vista\PaginaTienda\assets\images\klassy-logo.png" />
+    <Content Include="Vista\PaginaTienda\assets\images\loading.gif" />
+    <Content Include="Vista\PaginaTienda\assets\images\menu-item-01.jpg" />
+    <Content Include="Vista\PaginaTienda\assets\images\menu-item-02.jpg" />
+    <Content Include="Vista\PaginaTienda\assets\images\menu-item-03.jpg" />
+    <Content Include="Vista\PaginaTienda\assets\images\menu-item-04.jpg" />
+    <Content Include="Vista\PaginaTienda\assets\images\menu-item-05.jpg" />
+    <Content Include="Vista\PaginaTienda\assets\images\next.png" />
+    <Content Include="Vista\PaginaTienda\assets\images\prev.png" />
+    <Content Include="Vista\PaginaTienda\assets\images\reservation-bg.jpg" />
+    <Content Include="Vista\PaginaTienda\assets\images\slide-01.jpg" />
+    <Content Include="Vista\PaginaTienda\assets\images\slide-02.jpg" />
+    <Content Include="Vista\PaginaTienda\assets\images\slide-03.jpg" />
+    <Content Include="Vista\PaginaTienda\assets\images\tab-icon-01.png" />
+    <Content Include="Vista\PaginaTienda\assets\images\tab-icon-02.png" />
+    <Content Include="Vista\PaginaTienda\assets\images\tab-icon-03.png" />
+    <Content Include="Vista\PaginaTienda\assets\images\tab-item-01.png" />
+    <Content Include="Vista\PaginaTienda\assets\images\tab-item-02.png" />
+    <Content Include="Vista\PaginaTienda\assets\images\tab-item-03.png" />
+    <Content Include="Vista\PaginaTienda\assets\images\tab-item-04.png" />
+    <Content Include="Vista\PaginaTienda\assets\images\tab-item-05.png" />
+    <Content Include="Vista\PaginaTienda\assets\images\tab-item-06.png" />
+    <Content Include="Vista\PaginaTienda\assets\images\top-left-bg.jpg" />
+    <Content Include="Vista\PaginaTienda\assets\images\white-logo.png" />
+    <Content Include="Vista\PaginaTienda\assets\js\accordions.js" />
+    <Content Include="Vista\PaginaTienda\assets\js\bootstrap.min.js" />
+    <Content Include="Vista\PaginaTienda\assets\js\custom.js" />
+    <Content Include="Vista\PaginaTienda\assets\js\datepicker.js" />
+    <Content Include="Vista\PaginaTienda\assets\js\imgfix.min.js" />
+    <Content Include="Vista\PaginaTienda\assets\js\isotope.js" />
+    <Content Include="Vista\PaginaTienda\assets\js\jquery-2.1.0.min.js" />
+    <Content Include="Vista\PaginaTienda\assets\js\jquery.counterup.min.js" />
+    <Content Include="Vista\PaginaTienda\assets\js\lightbox.js" />
+    <Content Include="Vista\PaginaTienda\assets\js\owl-carousel.js" />
+    <Content Include="Vista\PaginaTienda\assets\js\popper.js" />
+    <Content Include="Vista\PaginaTienda\assets\js\scrollreveal.min.js" />
+    <Content Include="Vista\PaginaTienda\assets\js\slick.js" />
+    <Content Include="Vista\PaginaTienda\assets\js\waypoints.min.js" />
+    <Content Include="Vista\PaginaTienda\PaginaTienda.aspx" />
     <Content Include="Vista\PaginaVeterinaria\css\stiloProcesos.css" />
     <Content Include="Vista\imagenes\ImagenesUsuarios\usuario1.png" />
     <Content Include="Vista\imagenes\ImagenesUsuarios\usuario2.png" />
@@ -471,6 +527,13 @@
     </Compile>
     <Compile Include="Vista\PaginaEscuela\PaginaEscuela.aspx.designer.cs">
       <DependentUpon>PaginaEscuela.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PaginaTienda\PaginaTienda.aspx.cs">
+      <DependentUpon>PaginaTienda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PaginaTienda\PaginaTienda.aspx.designer.cs">
+      <DependentUpon>PaginaTienda.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PaginaVeterinaria.aspx.cs">
       <DependentUpon>PaginaVeterinaria.aspx</DependentUpon>
@@ -871,6 +934,18 @@
     <Content Include="Vista\PaginaEscuela\scss\bootstrap\scss\_utilities.scss" />
     <Content Include="Vista\PaginaEscuela\scss\bootstrap\scss\_variables.scss" />
     <Content Include="Vista\PaginaEscuela\scss\style.scss" />
+    <Content Include="Vista\PaginaTienda\assets\fonts\Flaticon.woff" />
+    <Content Include="Vista\PaginaTienda\assets\fonts\flexslider-icon.eot" />
+    <Content Include="Vista\PaginaTienda\assets\fonts\flexslider-icon.ttf" />
+    <Content Include="Vista\PaginaTienda\assets\fonts\flexslider-icon.woff" />
+    <Content Include="Vista\PaginaTienda\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Vista\PaginaTienda\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Vista\PaginaTienda\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Vista\PaginaTienda\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Vista\PaginaTienda\assets\fonts\FontAwesome.otf" />
+    <Content Include="Vista\PaginaTienda\assets\fonts\slick.eot" />
+    <Content Include="Vista\PaginaTienda\assets\fonts\slick.ttf" />
+    <Content Include="Vista\PaginaTienda\assets\fonts\slick.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
