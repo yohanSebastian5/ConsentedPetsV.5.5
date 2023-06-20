@@ -334,7 +334,9 @@
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarProfesor.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\ListarEscuelas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\ListarTiendas.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\PetShop\ListarPedidos.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\PetShop\ListarVendedor.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\PetShop\ListarVentas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\PetShop\MascotasRegistradas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\PetShop\ProductosRegistrados.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarMascota.aspx" />
@@ -625,12 +627,26 @@
     <Compile Include="Vista\PerfilesRol\Administrador\PetShop\EditarPerfilP.aspx.designer.cs">
       <DependentUpon>EditarPerfilP.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\ListarPedidos.aspx.cs">
+      <DependentUpon>ListarPedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\ListarPedidos.aspx.designer.cs">
+      <DependentUpon>ListarPedidos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\PetShop\ListarVendedor.aspx.cs">
       <DependentUpon>ListarVendedor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\PetShop\ListarVendedor.aspx.designer.cs">
       <DependentUpon>ListarVendedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\ListarVentas.aspx.cs">
+      <DependentUpon>ListarVentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\ListarVentas.aspx.designer.cs">
+      <DependentUpon>ListarVentas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\PetShop\MascotasRegistradas.aspx.cs">
       <DependentUpon>MascotasRegistradas.aspx</DependentUpon>
