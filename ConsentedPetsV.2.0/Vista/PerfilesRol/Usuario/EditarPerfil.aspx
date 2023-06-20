@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vista/PerfilesRol/Usuario/PerfilUsuario.Master" AutoEventWireup="true" CodeBehind="EditarPerfil.aspx.cs" Inherits="ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario.EditarPerfil" %>
+﻿<%@ Page Title="" Language="C#"  EnableEventValidation="true" MasterPageFile="~/Vista/PerfilesRol/Usuario/PerfilUsuario.Master" AutoEventWireup="true" CodeBehind="EditarPerfil.aspx.cs" Inherits="ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario.EditarPerfil" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -17,11 +17,9 @@
 
                 <div class="col-md-6">
                     <div class="profile-head">
-                        <asp:Repeater ID="repNom" runat="server">
-                            <ItemTemplate>
-                                <h5><%#Eval("nombre")%></h5>
-                            </ItemTemplate>
-                        </asp:Repeater>
+                        
+                                <h5 id="nom" runat="server"><%#Eval("nombre")%></h5>
+                           
 
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                         </ul>
@@ -37,11 +35,12 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="profile-img">
+                        
                         <img id="img" runat="server" />
                         <div class="file btn btn-lg btn-primary">
                             Change Photo
                                
-                            <input type="file" name="file" />
+                             <asp:FileUpload ID="FlImagenV" onchange="cargar(this)" runat="server" CssClass="field space" />
                         </div>
                     </div>
 
@@ -170,6 +169,23 @@
                 </div>
             </div>
         </form>
+        <script>
+        function cargar(input) {
+            console.log('cae');
+            if (input.files[0]) {
+                var img = new FileReader();
+                console.log('caer');
+                img.onload = function (e) {
+                    document.getElementById("<%= img.ClientID %>").src = e.target.result;
+                           console.log(e.target.result);
+                       };
+                       img.readAsDataURL(input.files[0]);
+                   }
+
+
+
+               }
+        </script>
     </div>
 
 </asp:Content>

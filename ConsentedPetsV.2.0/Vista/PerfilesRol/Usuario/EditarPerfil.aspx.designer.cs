@@ -15,13 +15,13 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario
     {
 
         /// <summary>
-        /// Control repNom.
+        /// Control nom.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repNom;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nom;
 
         /// <summary>
         /// Control img.
@@ -31,6 +31,15 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlImage img;
+
+        /// <summary>
+        /// Control FlImagenV.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FlImagenV;
 
         /// <summary>
         /// Control txtNombre.

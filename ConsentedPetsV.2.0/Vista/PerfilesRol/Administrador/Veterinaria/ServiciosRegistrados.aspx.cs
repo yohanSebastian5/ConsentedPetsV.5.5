@@ -15,7 +15,8 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria
         {
 
     
-                int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());            
+                int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
+            idVeterinaria = 1;
                 ClServicioVetL objVet = new ClServicioVetL();
                 List<ClServicioVeterinariaE> lista = objVet.mtdRepeater(idVeterinaria);
                 

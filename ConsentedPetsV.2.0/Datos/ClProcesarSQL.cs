@@ -24,7 +24,7 @@ namespace ConsentedPets.Datos
         {
             ClConexion objConexion = new ClConexion();
             SqlCommand comando = new SqlCommand(consulta,
-           objConexion.AbrirConexion());
+            objConexion.AbrirConexion());
             int registros = comando.ExecuteNonQuery();
             objConexion.CerrarConexion().Close();
             return registros;

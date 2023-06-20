@@ -72,16 +72,15 @@ namespace ConsentedPets.Datos
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
-        public List<ClUsuarioE> mtdMostrar(int idUsuario)
+        public ClUsuarioE mtdMostrar (int idUsuario)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "MostrarUsuario";
             comando.Parameters.AddWithValue("idUsuario", idUsuario);
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
-            List<ClUsuarioE> listaUsuario = new List<ClUsuarioE>();
             ClUsuarioE objDatos = null;
-            while (leer.Read())
+            if (leer.Read())
             {
                 objDatos = new ClUsuarioE();
                 objDatos.idUsuario = leer.GetInt32(0);
@@ -92,15 +91,10 @@ namespace ConsentedPets.Datos
                 objDatos.foto = leer.GetString(5);
                 objDatos.direccion = leer.GetString(6);
                 objDatos.genero = leer.GetString(7);
-                objDatos.contraseña = leer.GetString(8);
-                listaUsuario.Add(objDatos);
-
+                objDatos.contraseña = leer.GetString(8);                
             }
-
-
             conexion.CerrarConexion();
-            return listaUsuario;
-
+            return objDatos;
         }
         public ClUsuarioE mtdLogin(ClUsuarioE objE,int tipo=0)
         {
@@ -258,11 +252,15 @@ namespace ConsentedPets.Datos
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "EditarPerfilUsuario" ;
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@nombre", objE.nombre);
+
+           
+            comando.Parameters.AddWithValue("@idUsuario", objE.idUsuario);
+             comando.Parameters.AddWithValue("@nombre", objE.nombre);
             comando.Parameters.AddWithValue("@apellido", objE.apellido);
             comando.Parameters.AddWithValue("@genero", objE.genero);
             comando.Parameters.AddWithValue("@telefono", objE.telefono);
             comando.Parameters.AddWithValue("@email", objE.email);
+            comando.Parameters.AddWithValue("@foto", objE.foto);
             comando.Parameters.AddWithValue("@direccion", objE.direccion);
             comando.Parameters.AddWithValue("@contraseña", objE.contraseña);
             comando.ExecuteNonQuery();
@@ -270,6 +268,7 @@ namespace ConsentedPets.Datos
             conexion.CerrarConexion();
 
         }
+        
 
     }
 }

@@ -83,16 +83,15 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav py-0">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a href="about.html" class="nav-item nav-link">About</a>
-                            <a href="about.html" class="nav-item nav-link">Services</a>
-                            <a href="course.html" class="nav-item nav-link">Courses</a>
-                            <a href="teacher.html" class="nav-item nav-link">Teachers</a>
-                            <a href="teacher.html" class="nav-item nav-link">Tuition</a>
-
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="" class="nav-item nav-link active">Home</a>
+                            <a href="#About" class="nav-item nav-link">About</a>
+                            <a href="#Services" class="nav-item nav-link">Services</a>
+                            <a href="#Courses" class="nav-item nav-link">Courses</a>
+                            <a href="#Teachers" class="nav-item nav-link">Teachers</a>
+                            <a href="#Testimonial" class="nav-item nav-link">Testimonial</a>
+                            
                         </div>
-                        <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="">Join Now</a>
+                        <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="#Register">Register your pet</a>
                     </div>
                 </nav>
             </div>
@@ -106,16 +105,17 @@
             <ol class="carousel-indicators">
                 <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
                 <li data-target="#header-carousel" data-slide-to="1"></li>
-                <li data-target="#header-carousel" data-slide-to="2"></li>
+                
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active" style="min-height: 300px;">
-                    <img class="position-relative w-100" src="../imagenes/ServicioCursosE/carousel-1.jpg" style="min-height: 300px; object-fit: cover;">
+                    <asp:Image  ID="idImagEstab" runat="server" class="position-relative w-100" style="min-height: 300px; object-fit: cover;"/>
+                    
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
-                            <h1 class="display-3 text-white mb-md-4">Best Education From Your Home</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                            <h1 class="display-3 text-white mb-md-4" id="nom" runat="server"></h1>
+                            <a href="#Register" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -125,27 +125,17 @@
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
                             <h1 class="display-3 text-white mb-md-4">Best Online Learning Platform</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                            <a href="#Register" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item" style="min-height: 300px;">
-                    <img class="position-relative w-100" src="../imagenes/ServicioCursosE/carousel-3.jpg" style="min-height: 300px; object-fit: cover;">
-                    <div class="carousel-caption d-flex align-items-center justify-content-center">
-                        <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
-                            <h1 class="display-3 text-white mb-md-4">New Way To Learn From Home</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
-                        </div>
-                    </div>
-                </div>
+                </div>               
             </div>
         </div>
     </div>
     <!-- Carousel End -->
 
     <!-- About Start -->
-    <div class="container-fluid py-5">
+    <div id="About" class="container-fluid py-5">
         <div class="container py-5">
             <div class="row align-items-center">
 
@@ -170,7 +160,7 @@
 
 
     <!-- Category Start -->
-    <div class="container-fluid py-5">
+    <div id="Services" class="container-fluid py-5">
 
         <div class="container pt-5 pb-3">
 
@@ -184,7 +174,7 @@
                     <ItemTemplate>
                         <div class="cat-item mx-3 position-relative overflow-hidden rounded mb-2" style="height: 160px; width: 270px">
                             <img class="img-fluid" src='<%# ResolveUrl("../imagenes/ServicioCursosE/") + Eval("foto") %>' alt="">
-                            <a class="cat-overlay text-white text-decoration-none" href="">
+                            <a class="cat-overlay text-white text-decoration-none">
                                 <h4 class="text-white font-weight-medium"><%# Eval("nombre") %></h4>
                                 <span>100 Courses</span>
                             </a>
@@ -204,7 +194,7 @@
 
 
     <!-- Courses Start -->
-    <div class="container-fluid py-5">
+    <div id="Courses" class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center mb-5">
                 <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Courses</h5>
@@ -236,6 +226,7 @@
             </div>
 
         </div>
+        </div>
         <!-- Courses End -->
 
 
@@ -243,7 +234,7 @@
 
 
         <!-- Team Start -->
-        <div class="container-fluid py-5">
+        <div id="Teachers" class="container-fluid py-5">
             <div class="container pt-5 pb-3">
                 <div class="text-center mb-5">
                     <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Teachers</h5>
@@ -278,7 +269,7 @@
 
 
         <!-- Testimonial Start -->
-        <div class="container-fluid py-5">
+        <div id="Testimonial" class="container-fluid py-5">
             <div class="container py-5">
                 <div class="text-center mb-5">
                     <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Testimonial</h5>
@@ -303,59 +294,62 @@
         <!-- Testimonial End -->
 
         <!-- Registration Start -->
-        <div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
-            <div class="container py-5">
-                <div class="row align-items-center">
-                    <div class="col-lg-7 mb-5 mb-lg-0">
-                        <div class="mb-4">
-                            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Need Any Courses</h5>
-                            <h1 class="text-white">30% Off For New Students</h1>
-                        </div>
-                        <p class="text-white">
-                            Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos,
-                        ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
-                        dolor
-                        </p>
-                        <ul class="list-inline text-white m-0">
-                            <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Labore eos amet dolor amet diam</li>
-                            <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Etsea et sit dolor amet ipsum</li>
-                            <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Diam dolor diam elitripsum vero.</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="card border-0">
-                            <div class="card-header bg-light text-center p-4">
-                                <h1 class="m-0">Enrollment </h1>
-                            </div>
+        <form runat="server">
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <div id="Register" class="container-fluid bg-registration py-5" style="margin: 90px 0;">
+                        <div class="container py-5">
+                            <div class="row align-items-center">
+                                
+                                <div class="col-lg-5">
+                                    <div class="card border-0">
+                                        <div class="card-header bg-light text-center p-4">
+                                            <h1 class="m-0">Register </h1>
+                                        </div>
 
-                            <div class="card-body rounded-bottom bg-primary p-5">
-                                <form runat="server">
-                                    <div class="form-group">
-                                        <asp:DropDownList ID="ddlMascota" CssClass="custom-select border-0 px-4" runat="server" Style="height: 47px;"></asp:DropDownList>
-                                    </div>
-                                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                                        <ContentTemplate>
+                                        <div class="card-body rounded-bottom bg-primary p-5">
+
                                             <div class="form-group">
-                                                <asp:DropDownList ID="ddlServicio" CssClass="custom-select border-0 px-4" runat="server" Style="height: 47px;" AutoPostBack="true" OnSelectedIndexChanged="ddlServicio_SelectedIndexChanged" ></asp:DropDownList>
+                                                <asp:DropDownList ID="ddlMascota" CssClass="custom-select border-0 px-4" runat="server" Style="height: 47px;"></asp:DropDownList>
                                             </div>
 
                                             <div class="form-group">
-                                                <asp:DropDownList ID="ddlCurso" CssClass="custom-select border-0 px-4" runat="server" Style="height: 47px;"></asp:DropDownList>
+                                                <asp:DropDownList ID="ddlServicio" CssClass="custom-select border-0 px-4" runat="server" Style="height: 47px;" AutoPostBack="true" OnSelectedIndexChanged="ddlServicio_SelectedIndexChanged"></asp:DropDownList>
                                             </div>
-                                        </ContentTemplate>
-                                    </asp:UpdatePanel>
-                                    <div>
-                                        <button class="btn btn-dark btn-block border-0 py-3" type="submit">Sign Up Now</button>
-                                    </div>
-                                </form>
-                            </div>
 
+                                            <div class="form-group">
+                                                <asp:DropDownList ID="ddlCurso" CssClass="custom-select border-0 px-4" runat="server" Style="height: 47px;" AutoPostBack="true" OnSelectedIndexChanged="ddlCurso_SelectedIndexChanged"></asp:DropDownList>
+                                            </div>
+
+                                            <div>
+                                                
+                                                <button class="btn btn-dark btn-block border-0 py-3 submit" runat="server" id="btnMatricula">Sign Up Now</button>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 mb-5 mb-lg-0">
+                                    <div class="mb-4">
+                                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Need Any Courses</h5>
+                                        <h1 class="text-white" id="idMostrarNombre" runat="server"></h1>
+                                    </div>
+                                    <p class="text-white" id="idMostrarDescripcion" runat="server">
+                                    </p>
+                                    <ul class="list-inline text-white m-0">
+                                        
+                                       <lu>Valor del curso: $</lu><lu class="py-2" id="precio" runat="server"></lu>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </form>
         <!-- Registration End -->
 
 

@@ -79,37 +79,21 @@
 
             <div id="header-carousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <section id="hero" class="d-flex flex-column justify-content-center">
-                        <img id="heroImage" alt="Imagen" runat="server" />
-
-
-                        <div class="container">
-
-
-                            <div class="row justify-content-center">
-
-                                <div class="col-xl-8">
-                                    <asp:Repeater ID="repNom" runat="server">
-                                        <ItemTemplate>
-                                            <h1><%#Eval("nombre")%></h1>
-                                        </ItemTemplate>
-                                    </asp:Repeater>
-
-                                    <%-- <h1>ENCUENTRA LO QUE BUSCAS </h1>--%>
-                                    <h2>AGENDA PARA QUE TU MASCOTA RECIBA LA MEJOR ATENCIÓN Y CUIDADO PARA SU BIENESTAR</h2>
-
-
+                    <div class="container-fluid p-0 pb-5 mb-5">
+                        <div class="carousel-item active" style="min-height: 300px;">
+                            <asp:Image ID="idImagEstab" runat="server" class="position-relative w-100" Style="min-height: 300px; object-fit: cover;" />
+                            <div class="carousel-caption d-flex align-items-center justify-content-center">
+                                <div class="p-5" style="width: 100%; max-width: 900px;">
+                                   
+                                    <h1 class="display-3 text-white mb-md-4" id="nom" runat="server"></h1>
+                                    
+                                     <h5 class="text-white text-uppercase mb-md-3">AGENDA PARA QUE TU MASCOTA RECIBA LA MEJOR ATENCIÓN Y CUIDADO PARA SU BIENESTAR</h5>
                                 </div>
                             </div>
-
-
                         </div>
-
-                    </section>
+                    </div>
                 </div>
-
             </div>
-
         </div>
         <!-- Carousel End -->
 
@@ -140,8 +124,10 @@
                                         </div>
                                         <div class="position-relative text-center bg-light rounded p-4 pb-5" style="margin-top: -75px;">
                                             <h5 class="font-weight-semi-bold mt-5 mb-3 pt-5"><%#Eval("nombre")%></h5>
-                                            <p><%#Eval("descripcion")%></p>                                            
-                                            <a id="precio" style="color:#555555"><labe>Precio: </labe><%#Eval("precio")%></a>
+                                            <p><%#Eval("descripcion")%></p>
+                                            <a id="precio" style="color: #555555">
+                                                <labe>Precio: </labe>
+                                                <%#Eval("precio")%></a>
                                         </div>
                                     </div>
                                 </ItemTemplate>
@@ -215,10 +201,16 @@
                                             <img class="rounded-circle w-100 h-100" src='<%# ResolveUrl("~/Vista/imagenes/ImagenesUsuarios/") + Eval("foto") %>' style="object-fit: cover;">
                                         </div>
                                         <div class="position-relative text-center bg-light rounded px-4 py-5" style="margin-top: -100px;">
-                                            <h3 class="font-weight-bold mt-5 mb-3 pt-5"> <%#Eval("nombre") %></h3>
-                                            <h6 class="text-uppercase text-muted mb-4"><label>Especialización: </label> <%#Eval("especializacion")%></h6>
-                                            <h6 class="text-uppercase text-muted mb-4"><label>Experiencia: </label> <%#Eval("experiencia")%></h6>
-                                            <h6 class="text-uppercase text-muted mb-4"><label>Teléfono: </label> <%#Eval("telefono")%></h6>
+                                            <h3 class="font-weight-bold mt-5 mb-3 pt-5"><%#Eval("nombre") %></h3>
+                                            <h6 class="text-uppercase text-muted mb-4">
+                                                <label>Especialización: </label>
+                                                <%#Eval("especializacion")%></h6>
+                                            <h6 class="text-uppercase text-muted mb-4">
+                                                <label>Experiencia: </label>
+                                                <%#Eval("experiencia")%></h6>
+                                            <h6 class="text-uppercase text-muted mb-4">
+                                                <label>Teléfono: </label>
+                                                <%#Eval("telefono")%></h6>
 
                                         </div>
                                     </div>
@@ -273,9 +265,10 @@
 
 
 
-         
 
-    <!--hast aqui va el ajax-->--%>
+
+        <!--hast aqui va el ajax-->
+        --%>
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
@@ -352,7 +345,7 @@
                                 </asp:DropDownList>
                             </div>
                             <asp:Button ID="btnAgendarCita" runat="server" Text="Agendar Cita" OnClick="btnAgendarCita_Click1" />
-                            
+
                         </div>
                     </div>
                 </div>

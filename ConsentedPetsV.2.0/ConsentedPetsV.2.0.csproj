@@ -383,6 +383,7 @@
     <Compile Include="Datos\ClCursoED.cs" />
     <Compile Include="Datos\ClEstablecimientoD.cs" />
     <Compile Include="Datos\ClMascotaD.cs" />
+    <Compile Include="Datos\ClMatriculaD.cs" />
     <Compile Include="Datos\ClProcesarSQL.cs" />
     <Compile Include="Datos\ClProcesosEscuela.cs" />
     <Compile Include="Datos\ClProcesosVetD.cs" />
@@ -394,6 +395,7 @@
     <Compile Include="Entidades\ClCursoEE.cs" />
     <Compile Include="Entidades\ClEstablecimientoE.cs" />
     <Compile Include="Entidades\ClMascotaE.cs" />
+    <Compile Include="Entidades\ClMatriculaE.cs" />
     <Compile Include="Entidades\ClProcesosVetE.cs" />
     <Compile Include="Entidades\ClRepeaterEstablecimientoE.cs" />
     <Compile Include="Entidades\ClServicioEE.cs" />
@@ -406,6 +408,7 @@
     <Compile Include="Logica\ClCursoEL.cs" />
     <Compile Include="Logica\ClEstablecimientoL.cs" />
     <Compile Include="Logica\ClMascotaL.cs" />
+    <Compile Include="Logica\ClMatriculaL.cs" />
     <Compile Include="Logica\ClProcesosVetL.cs" />
     <Compile Include="Logica\ClRepeaterEstablecimientoL.cs" />
     <Compile Include="Logica\ClServicioEL.cs" />

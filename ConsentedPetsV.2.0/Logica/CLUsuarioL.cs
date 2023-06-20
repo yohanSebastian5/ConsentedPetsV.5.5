@@ -25,12 +25,11 @@ namespace ConsentedPets.Logica
             ClUsuarioD objUsuarioD = new ClUsuarioD();
             objUsuarioD.mtdActualizar(id,nombre, apellido, direccion, telefono, email, foto, genero, contraseña);
         }
-        public List<ClUsuarioE> mtdListarU(int idUsuario)
+        public ClUsuarioE mtdListarU(int idUsuario)
         {
             ClUsuarioD objUsuarioD= new ClUsuarioD();
-            List<ClUsuarioE> listaU = new List<ClUsuarioE>();
-            listaU = objUsuarioD.mtdMostrar(idUsuario);
-            return listaU;
+            ClUsuarioE objDatos = objUsuarioD.mtdMostrar(idUsuario);            
+            return objDatos;
         }
         public ClUsuarioE mtdRolU(ClUsuarioE objUe,int tipo=0)
         {
