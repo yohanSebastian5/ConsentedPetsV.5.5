@@ -39,18 +39,19 @@
                     <asp:TextBox ID="txtEdad" CssClass="quitarmargen" required="" placeholder="Edad" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
                 </div>
                 <br />
+                <br />
+                <div class="field space">
+                    <span class="fa fa-user"></span>
+                    <asp:TextBox ID="txtPrecio" CssClass="quitarmargen" required="" placeholder="Precio" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
+                </div>
+                <br />
                 <div class="field space">
                     <span class="fa fa-user"></span>
                     <asp:TextBox ID="txtGenero" CssClass="quitarmargen" required="" placeholder="Genero" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
                 </div>
                 <br />
 
-                <%--<asp:DropDownList ID="ddlGenero" runat="server" CssClass="field space"></asp:DropDownList>--%>
-
-                <%--  <div class="field space">
-                    <span class="fa fa-user"></span>
-                                     
-                </div>--%>
+             
                 <br />
                 <asp:FileUpload ID="FlFotoM" runat="server" CssClass="field space" />
                 <br />
@@ -62,7 +63,7 @@
                 <br />
                 <br />
                 <div class="field">
-                    <asp:Button CssClass="quitarmargen" ID="btnRegistrar" runat="server" Text="REGISTRAR" />
+                    <asp:Button CssClass="quitarmargen" ID="btnRegistrar" runat="server" Text="REGISTRAR" OnClick="btnRegistrar_Click" />
                 </div>
 
             </div>

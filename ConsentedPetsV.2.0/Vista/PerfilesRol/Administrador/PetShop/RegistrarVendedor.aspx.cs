@@ -7,15 +7,11 @@ using System.Web;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ConsentedPets.Entidades;
 
-namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria
+namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.PetShop
 {
-    
-    public partial class AgregarVeterinario : System.Web.UI.Page
+    public partial class RegistrarVendedor : System.Web.UI.Page
     {
-       
-        CLUsuarioL objUsuL = new CLUsuarioL();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -23,29 +19,28 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria
         [WebMethod]
         public static ClUsuarioE cargardatos(string docum)
         {
-            
             int tipo = 2;
             ClUsuarioE objUsuE = new ClUsuarioE();
             CLUsuarioL objUsuL = new CLUsuarioL();
-            objUsuE.documento=docum;
-            objUsuE = objUsuL.mtdRolU(objUsuE,tipo);
+            objUsuE.documento = docum;
+            objUsuE = objUsuL.mtdRolU(objUsuE, tipo);
             return objUsuE;
         }
         [WebMethod]
-        public static void ActualizarDatos(string docum,string espes,string expes,string profes)
+        public static void ActualizarDatos(string docum, string espes, string expes, string profes)
         {
             int tipo = 2;
-            int rol = 3;
+            int rol = 5;
             ClUsuarioE objUsuE = cargardatos(docum);
             CLUsuarioL objUsuL = new CLUsuarioL();
             objUsuE.documento = docum;
             objUsuE = objUsuL.mtdRolU(objUsuE, tipo);
-            objUsuE.especializacion= espes;
+            objUsuE.especializacion = espes;
             objUsuE.experiencia = expes;
             objUsuE.profesion = profes;
             objUsuL.mtdActualizarEmp(objUsuE);
-            objUsuL.mtdRol(objUsuE.idUsuario,rol);
-            objUsuL.mtdUsuarioE(objUsuE.idUsuario, int.Parse(HttpContext.Current.Session["Veterinaria"].ToString()));
+            objUsuL.mtdRol(objUsuE.idUsuario, rol);
+            objUsuL.mtdUsuarioE(objUsuE.idUsuario, int.Parse(HttpContext.Current.Session["Tienda"].ToString()),3);
         }
 
         public string mtdGuardar()
@@ -58,6 +53,5 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria
         {
             HttpContext.Current.Session["valor"] = valor;
         }
-
     }
 }

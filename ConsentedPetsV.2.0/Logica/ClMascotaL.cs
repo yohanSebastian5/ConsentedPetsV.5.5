@@ -14,6 +14,11 @@ namespace ConsentedPets.Logica
             ClMascotaD objMascotaD = new ClMascotaD();
             objMascotaD.mtdRegistrar(nombre, especie, raza, edad, genero, foto, condicion, idUsuario, precio);
         }
+        public void mtdRegistrarPS(string nombre, string especie, string raza, string edad, string genero, string foto, string condicion, int idTienda, int precio )
+        {
+            ClMascotaD objMascotaD = new ClMascotaD();
+            objMascotaD.mtdRegistrarMascotaPD(nombre, especie, raza, edad, genero, foto, condicion, idTienda, precio);
+        }
         public List<ClMascotaE> mtdListarMascota(int idUsuario)
         {
             ClMascotaD objDataTienda = new ClMascotaD();

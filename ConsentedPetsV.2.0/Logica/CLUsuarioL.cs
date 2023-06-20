@@ -59,5 +59,10 @@ namespace ConsentedPets.Logica
             objUsuario.mtdIngresarRol(idUsuario,idRol);
 
         }
+        public void mtdUsuarioE(int idUsuario,int idE,int id=1)
+        {
+            ClUsuarioD objD = new ClUsuarioD();
+            objD.mtdIngresarUsuarioE(idUsuario, idE, id);
+        }
     }
 }

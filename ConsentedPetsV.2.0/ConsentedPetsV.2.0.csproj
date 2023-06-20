@@ -334,10 +334,12 @@
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarProfesor.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\ListarEscuelas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\ListarTiendas.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\PetShop\ListarVendedor.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\PetShop\MascotasRegistradas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\PetShop\ProductosRegistrados.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarMascota.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarProducto.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarVendedor.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\RegistrarEscuela.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\RegistrarTienda.aspx" />
     <Content Include="Vista\PerfilesRol\css\ListarMascotas.css" />
@@ -408,6 +410,7 @@
     <Compile Include="Datos\ClProcesarSQL.cs" />
     <Compile Include="Datos\ClProcesosEscuela.cs" />
     <Compile Include="Datos\ClProcesosVetD.cs" />
+    <Compile Include="Datos\ClProductoD.cs" />
     <Compile Include="Datos\ClRepeaterEstablecimientoD.cs" />
     <Compile Include="Datos\ClServicioVetD.cs" />
     <Compile Include="Datos\ClUsuarioD.cs" />
@@ -416,6 +419,7 @@
     <Compile Include="Entidades\ClMascotaE.cs" />
     <Compile Include="Entidades\ClMatriculaE.cs" />
     <Compile Include="Entidades\ClProcesosVetE.cs" />
+    <Compile Include="Entidades\CLProductoE.cs" />
     <Compile Include="Entidades\ClRepeaterEstablecimientoE.cs" />
     <Compile Include="Entidades\ClServicioVeterinariaE.cs" />
     <Compile Include="Entidades\ClUsuarioE.cs" />
@@ -426,6 +430,7 @@
     <Compile Include="Logica\ClEstablecimientoL.cs" />
     <Compile Include="Logica\ClMascotaL.cs" />
     <Compile Include="Logica\ClProcesosVetL.cs" />
+    <Compile Include="Logica\ClProductoL.cs" />
     <Compile Include="Logica\ClRepeaterEstablecimientoL.cs" />
     <Compile Include="Logica\ClServicioVetL.cs" />
     <Compile Include="Logica\CLUsuarioL.cs" />
@@ -620,6 +625,13 @@
     <Compile Include="Vista\PerfilesRol\Administrador\PetShop\EditarPerfilP.aspx.designer.cs">
       <DependentUpon>EditarPerfilP.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\ListarVendedor.aspx.cs">
+      <DependentUpon>ListarVendedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\ListarVendedor.aspx.designer.cs">
+      <DependentUpon>ListarVendedor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\PetShop\MascotasRegistradas.aspx.cs">
       <DependentUpon>MascotasRegistradas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -654,6 +666,13 @@
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarProducto.aspx.designer.cs">
       <DependentUpon>RegistrarProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarVendedor.aspx.cs">
+      <DependentUpon>RegistrarVendedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarVendedor.aspx.designer.cs">
+      <DependentUpon>RegistrarVendedor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\RegistrarEscuela.aspx.cs">
       <DependentUpon>RegistrarEscuela.aspx</DependentUpon>
@@ -1008,6 +1027,7 @@
   <ItemGroup>
     <Folder Include="Vista\Empleados\" />
     <Folder Include="Vista\imagenes\Escuela\" />
+    <Folder Include="Vista\imagenes\ImagenesProductoCat\" />
     <Folder Include="Vista\imagenes\Tienda\" />
     <Folder Include="Vista\imagenes\Veterinaria\" />
   </ItemGroup>

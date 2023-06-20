@@ -1,4 +1,5 @@
 ﻿using ConsentedPets.Datos;
+using ConsentedPets.Entidades;
 using ConsentedPetsV._2._0.Entidades;
 using System;
 using System.Collections.Generic;

@@ -41,6 +41,8 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
             objUsuE.profesion = profes;
             objUsuL.mtdActualizarEmp(objUsuE);
             objUsuL.mtdRol(objUsuE.idUsuario, rol);
+            objUsuL.mtdUsuarioE(objUsuE.idUsuario, int.Parse(HttpContext.Current.Session["Escuela"].ToString()),2);
+
         }
 
         public string mtdGuardar()
