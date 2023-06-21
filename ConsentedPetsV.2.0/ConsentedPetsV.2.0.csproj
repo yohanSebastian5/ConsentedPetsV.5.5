@@ -486,11 +486,7 @@
     <Compile Include="Entidades\ClMascotaE.cs" />
     <Compile Include="Entidades\ClMatriculaE.cs" />
     <Compile Include="Entidades\ClProcesosVetE.cs" />
-
     <Compile Include="Entidades\ClProductoE.cs" />
-
-    <Compile Include="Entidades\CLProductoE.cs" />
-
     <Compile Include="Entidades\ClRepeaterEstablecimientoE.cs" />
     <Compile Include="Entidades\ClServicioEE.cs" />
     <Compile Include="Entidades\ClServicioVeterinariaE.cs" />
