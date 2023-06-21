@@ -30,6 +30,7 @@ namespace ConsentedPetsV._2._0.Datos
             return lista;
 
         }
+
         public void mtdRegistrarProducto(CLProductoE objE)
         {
             ClConexion conexion = new ClConexion();
@@ -85,6 +86,46 @@ namespace ConsentedPetsV._2._0.Datos
                 listaMascota.Add(objDatosMascota);
             }
             return listaMascota;
+
+        }
+        public List<CLProductoE> mtdListarVentas(int id)
+        {
+            string consulta = "select * from Compra inner join DetallesCompra on Compra.idCompra= DetallesCompra.idCompra inner join Producto on DetallesCompra.idProducto=Producto.idProducto inner join CategoriaPS on Producto.idCategoriaPS= CategoriaPS.idCategoriaPS where CategoriaPS.idTienda=1" + id;
+            ClProcesarSQL SQL = new ClProcesarSQL();
+            DataTable table = SQL.mtdSelectDesc(consulta);
+            List<CLProductoE> lista = new List<CLProductoE>();
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                CLProductoE objE = new CLProductoE();
+                objE.nombreP = table.Rows[i]["nombre"].ToString();
+                objE.fecha = (table.Rows[i]["fechaCompra"].ToString());
+                objE.cantidad = table.Rows[i]["cantidad"].ToString();
+                objE.precio = table.Rows[i]["totalDetalle"].ToString();
+                objE.nombreC = table.Rows[i]["nombre2"].ToString();
+                lista.Add(objE);
+
+            }
+            return lista;
+
+        }
+        public List<CLProductoE> mtdListarPedidos(int id)
+        {
+            string consulta = "select * from PedidosC inner join Usuario on PedidosC.idUsuario=Usuario.idUsuario where idTienda=" + id;
+            ClProcesarSQL SQL = new ClProcesarSQL();
+            DataTable table = SQL.mtdSelectDesc(consulta);
+            List<CLProductoE> lista = new List<CLProductoE>();
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                CLProductoE objE = new CLProductoE();
+                objE.nombreC = table.Rows[i]["nombre"].ToString();
+                objE.fecha = table.Rows[i]["fechaPedido"].ToString();
+                objE.descripcionC = table.Rows[i]["descripcion"].ToString();
+                objE.nombreP = table.Rows[i]["nombre1"].ToString();
+                objE.foto = table.Rows[i]["foto"].ToString();
+                lista.Add(objE);
+
+            }
+            return lista;
 
         }
 

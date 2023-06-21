@@ -14,7 +14,6 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
         protected void Page_Load(object sender, EventArgs e)
         {
             ClProcesosVetL objL = new ClProcesosVetL();
-            Session["Escuela"] = 1;
             List<ClMatriculaE> lista = objL.mtdListarMascotas(int.Parse(Session["Escuela"].ToString()));
             repCard.DataSource=lista;
             repCard.DataBind();

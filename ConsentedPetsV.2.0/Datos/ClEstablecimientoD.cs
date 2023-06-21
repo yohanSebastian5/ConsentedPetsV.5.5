@@ -135,7 +135,14 @@ namespace ConsentedPets.Datos
             conexion.CerrarConexion();
 
         }
-       
+       public void mtdEliminar(string tabla,int id)
+        {
+            string consulta = "delete from "+tabla +"where id"+tabla+"="+id;
+
+
+
+
+        }
 
 
 
