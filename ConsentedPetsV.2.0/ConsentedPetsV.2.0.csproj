@@ -322,7 +322,9 @@
     <Content Include="Vista\js\swiper\swiper-bundle.min.js" />
     <Content Include="Vista\Login.aspx" />
     <Content Include="Vista\Mascota\RegistrarMascota.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EliminarEstablecimientos.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditarPerfilE.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditaryEliminarDatos.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarActividades.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProcesos.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMascotas.aspx" />
@@ -501,12 +503,26 @@
     <Compile Include="Vista\PaginaVeterinaria.aspx.designer.cs">
       <DependentUpon>PaginaVeterinaria.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EliminarEstablecimientos.aspx.cs">
+      <DependentUpon>EliminarEstablecimientos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EliminarEstablecimientos.aspx.designer.cs">
+      <DependentUpon>EliminarEstablecimientos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditarPerfilE.aspx.cs">
       <DependentUpon>EditarPerfilE.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditarPerfilE.aspx.designer.cs">
       <DependentUpon>EditarPerfilE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditaryEliminarDatos.aspx.cs">
+      <DependentUpon>EditaryEliminarDatos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditaryEliminarDatos.aspx.designer.cs">
+      <DependentUpon>EditaryEliminarDatos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\Escuela.Master.cs">
       <DependentUpon>Escuela.Master</DependentUpon>

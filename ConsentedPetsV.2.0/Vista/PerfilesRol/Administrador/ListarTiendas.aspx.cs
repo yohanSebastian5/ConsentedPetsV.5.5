@@ -17,7 +17,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador
             int Seccion = 2;
 
             ClRepeaterEstablecimientoL objVet = new ClRepeaterEstablecimientoL();
-            List<ClRepeaterEstablecimientoE> lista = objVet.mtdRepeater(Seccion, int.Parse(Session["Usuario"].ToString()), 1);
+            List<ClRepeaterEstablecimientoE> lista = objVet.mtdRepeater(Seccion, int.Parse(Session["Usuario"].ToString()), 2);
             repVet.DataSource = lista;
             repVet.DataBind();
         }

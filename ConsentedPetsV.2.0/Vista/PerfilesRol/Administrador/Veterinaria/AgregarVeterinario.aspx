@@ -15,7 +15,8 @@
     <link href="../../../../Styles/sweetalert.css" rel="stylesheet" />
     <link href="../../../Css/AgregarVeter.css" rel="stylesheet" />
     <script src="../../../../Scripts/sweetalert.min.js"></script>
-
+    
+    <script src="../../../Bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         .search-button {
