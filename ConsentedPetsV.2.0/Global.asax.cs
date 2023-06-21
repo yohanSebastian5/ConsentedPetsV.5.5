@@ -25,6 +25,7 @@ namespace ConsentedPetsV._2._0
             Session["idVeterinaria"] = 0;
             Session["idMascota"] = 0;
             Session["idEscuela"] = 0;
+            Session["idCategoriaPS"] = 0;
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

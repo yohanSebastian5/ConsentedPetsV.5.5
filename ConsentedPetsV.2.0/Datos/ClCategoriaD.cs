@@ -20,7 +20,7 @@ namespace ConsentedPetsV._2._0.Datos
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 ClCategoriaE objCE = new ClCategoriaE();
-                objCE.idCategiraPS = int.Parse(tabla.Rows[i]["idCategoriaPS"].ToString());
+                objCE.idCategoriaPS = int.Parse(tabla.Rows[i]["idCategoriaPS"].ToString());
                 objCE.nombre = tabla.Rows[i]["nombre"].ToString();
                 objCE.descripcion = tabla.Rows[i]["descripcion"].ToString();
                 objCE.idTienda = int.Parse(tabla.Rows[i]["idTienda"].ToString());
