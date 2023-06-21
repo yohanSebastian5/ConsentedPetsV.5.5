@@ -17,7 +17,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.PetShop
             if (!IsPostBack)
             {
                 ClProductoL objL = new ClProductoL();
-                List<CLProductoE> lista = objL.mtdListarCategoria(1);
+                List<ClProductoE> lista = objL.mtdListarCategoria(1);
 
                 if (lista.Count != 0)
                 {
@@ -39,7 +39,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.PetShop
         }
         protected void mtdRegistrarProducto(object sender, EventArgs e)
         {
-            CLProductoE objE = new CLProductoE();
+            ClProductoE objE = new ClProductoE();
             ClProductoL objL = new ClProductoL();
             objE.nombreP = txtNombre.Value;
             objE.descripcionP = txtDescripcion.Value;
@@ -56,7 +56,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.PetShop
 
         protected void Button_Click(object sender, EventArgs e)
         {
-            CLProductoE objE = new CLProductoE();
+            ClProductoE objE = new ClProductoE();
             ClProductoL objL = new ClProductoL();
             objE.nombreC = txtNombreC.Value;
             objE.descripcionC = txtDescripcionC.Value;

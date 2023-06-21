@@ -32,22 +32,22 @@ namespace ConsentedPetsV._2._0.Datos
                 objPE.nombre = tabla.Rows[i]["nombre"].ToString();
                 objPE.descripcion = tabla.Rows[i]["descripcion"].ToString();
                 objPE.foto = tabla.Rows[i]["foto"].ToString();
-                objPE.precio = int.Parse(tabla.Rows[i]["precio"].ToString());
+                objPE.precioP = int.Parse(tabla.Rows[i]["precio"].ToString());
                 objPE.idCategoriaPS = int.Parse(tabla.Rows[i]["idCategoriaPS"].ToString());
                 lista.Add(objPE);
             }
             return lista;
         }
 
-        public List<CLProductoE> mtdListarCategoria(int id)
+        public List<ClProductoE> mtdListarCategoria(int id)
         {
             string consulta = "select * from CategoriaPS where idTienda="+id;
             ClProcesarSQL SQL = new ClProcesarSQL();
             DataTable table = SQL.mtdSelectDesc(consulta);
-            List<CLProductoE> lista = new List<CLProductoE>();
+            List<ClProductoE> lista = new List<ClProductoE>();
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                CLProductoE objE = new CLProductoE();
+                ClProductoE objE = new ClProductoE();
                 objE.nombreC = table.Rows[i]["nombre"].ToString();
                 objE.idCategoria = int.Parse(table.Rows[i]["idCategoriaPS"].ToString());
                 objE.descripcionC = table.Rows[i]["descripcion"].ToString();
@@ -58,7 +58,7 @@ namespace ConsentedPetsV._2._0.Datos
 
         }
 
-        public void mtdRegistrarProducto(CLProductoE objE)
+        public void mtdRegistrarProducto(ClProductoE objE)
         {
             ClConexion conexion = new ClConexion();
             SqlCommand comando = new SqlCommand();
@@ -74,7 +74,7 @@ namespace ConsentedPetsV._2._0.Datos
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
-        public void mtdRegistrarCategoria(CLProductoE objE)
+        public void mtdRegistrarCategoria(ClProductoE objE)
         {
             ClConexion conexion = new ClConexion();
             SqlCommand comando = new SqlCommand();
@@ -108,22 +108,22 @@ namespace ConsentedPetsV._2._0.Datos
                 objDatosMascota.edad = tblDataMascota.Rows[i]["edad"].ToString();
                 objDatosMascota.foto = tblDataMascota.Rows[i]["foto"].ToString();
                 objDatosMascota.condicionMedica = tblDataMascota.Rows[i]["condicionMedica"].ToString();
-                objDatosMascota.precio = float.Parse(tblDataMascota.Rows[i]["precio"].ToString());
+                objDatosMascota.precio = int.Parse(tblDataMascota.Rows[i]["precio"].ToString());
                 objDatosMascota.idTienda = int.Parse(tblDataMascota.Rows[i]["idTienda"].ToString());
                 listaMascota.Add(objDatosMascota);
             }
             return listaMascota;
 
         }
-        public List<CLProductoE> mtdListarVentas(int id)
+        public List<ClProductoE> mtdListarVentas(int id)
         {
             string consulta = "select * from Compra inner join DetallesCompra on Compra.idCompra= DetallesCompra.idCompra inner join Producto on DetallesCompra.idProducto=Producto.idProducto inner join CategoriaPS on Producto.idCategoriaPS= CategoriaPS.idCategoriaPS where CategoriaPS.idTienda=1" + id;
             ClProcesarSQL SQL = new ClProcesarSQL();
             DataTable table = SQL.mtdSelectDesc(consulta);
-            List<CLProductoE> lista = new List<CLProductoE>();
+            List<ClProductoE> lista = new List<ClProductoE>();
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                CLProductoE objE = new CLProductoE();
+                ClProductoE objE = new ClProductoE();
                 objE.nombreP = table.Rows[i]["nombre"].ToString();
                 objE.fecha = (table.Rows[i]["fechaCompra"].ToString());
                 objE.cantidad = table.Rows[i]["cantidad"].ToString();
@@ -135,15 +135,15 @@ namespace ConsentedPetsV._2._0.Datos
             return lista;
 
         }
-        public List<CLProductoE> mtdListarPedidos(int id)
+        public List<ClProductoE> mtdListarPedidos(int id)
         {
             string consulta = "select * from PedidosC inner join Usuario on PedidosC.idUsuario=Usuario.idUsuario where idTienda=" + id;
             ClProcesarSQL SQL = new ClProcesarSQL();
             DataTable table = SQL.mtdSelectDesc(consulta);
-            List<CLProductoE> lista = new List<CLProductoE>();
+            List<ClProductoE> lista = new List<ClProductoE>();
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                CLProductoE objE = new CLProductoE();
+                ClProductoE objE = new ClProductoE();
                 objE.nombreC = table.Rows[i]["nombre"].ToString();
                 objE.fecha = table.Rows[i]["fechaPedido"].ToString();
                 objE.descripcionC = table.Rows[i]["descripcion"].ToString();
