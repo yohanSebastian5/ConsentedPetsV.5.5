@@ -454,7 +454,7 @@ https://templatemo.com/tm-558-klassy-cafe
                                             <div class="col-lg-6 offset-lg-3">
                                                 <ul>
                                                     <li><a href='#tabs-1'>
-                                                        <img src=""><%# Eval("nombre") %></a></li>
+                                                        <img src="" id="idCategoria"><%# Eval("nombre") %></a></li>
 
                                                 </ul>
                                             </div>

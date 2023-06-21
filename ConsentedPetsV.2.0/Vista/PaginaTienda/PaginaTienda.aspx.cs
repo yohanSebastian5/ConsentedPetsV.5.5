@@ -30,5 +30,8 @@ namespace PaginaTienda.PaginaTienda
             repCateg.DataSource = listaC;
             repCateg.DataBind();
         }
+
+
+
     }
 }
