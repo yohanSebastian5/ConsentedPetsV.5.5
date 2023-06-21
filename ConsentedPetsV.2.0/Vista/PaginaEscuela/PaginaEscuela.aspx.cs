@@ -80,14 +80,15 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
             ClMatriculaL objML = new ClMatriculaL();
             ClMatriculaE objME = new ClMatriculaE();
             DateTime fechaActual = DateTime.Today;
-            //string fechaFormateada = fechaActual.Date.ToString("yyyy-MM-dd"); 
-             
+             objME.fechaMatricula = fechaActual.Date.ToString("dd/MM/yyyy");
+
             objME.idMascota = int.Parse(ddlMascota.SelectedValue);
             objME.idEscuela = idEscuela;
             objME.idCurso = int.Parse(ddlCurso.SelectedValue);
             objME.precio = int.Parse(precio.InnerText);            
             objML.mtdMatricula(objME);
             mtdlimpiar();
+         
         }
         public void mtdlimpiar()
         {

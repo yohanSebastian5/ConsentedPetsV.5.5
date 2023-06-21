@@ -61,6 +61,36 @@ namespace ConsentedPets.Datos
             return listaMascota;
 
         }
-       
+
+        public List<ClMascotaE> mtdMascotaVenta(int idTienda)
+        {
+            string sql = "select * from Mascota where idTienda = '" + idTienda + "'";
+            //SELECT idMascota, nombre FROM Mascota WHERE idUsuario = @idUsuario
+            ClProcesarSQL objSql = new ClProcesarSQL();
+            DataTable tblDataMascota = objSql.mtdSelectDesc(sql);
+
+            List<ClMascotaE> listaMascota = new List<ClMascotaE>();
+
+            for (int i = 0; i < tblDataMascota.Rows.Count; i++)
+            {
+                ClMascotaE objDatosMascota = new ClMascotaE();
+                objDatosMascota.idMascota = int.Parse(tblDataMascota.Rows[i]["idMascota"].ToString());
+                //objDatosMascota.nombre = tblDataMascota.Rows[i]["nombre"].ToString();
+                objDatosMascota.especie = tblDataMascota.Rows[i]["especie"].ToString();
+                objDatosMascota.raza = tblDataMascota.Rows[i]["raza"].ToString();
+                objDatosMascota.genero = tblDataMascota.Rows[i]["genero"].ToString();
+                objDatosMascota.edad = tblDataMascota.Rows[i]["edad"].ToString();
+                objDatosMascota.foto = tblDataMascota.Rows[i]["foto"].ToString();
+                //objDatosMascota.condicionMedica = tblDataMascota.Rows[i]["condicionMedica"].ToString();
+                objDatosMascota.precio = int.Parse(tblDataMascota.Rows[i]["precio"].ToString());
+                //objDatosMascota.idUsuario = int.Parse(tblDataMascota.Rows[i]["idUsuario"].ToString());
+                objDatosMascota.idTienda = int.Parse(tblDataMascota.Rows[i]["idTienda"].ToString());
+                listaMascota.Add(objDatosMascota);
+            }
+            return listaMascota;
+
+        }
+
+
     }
 }

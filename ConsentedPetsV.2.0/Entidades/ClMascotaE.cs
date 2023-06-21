@@ -15,7 +15,7 @@ namespace ConsentedPets.Entidades
         public string edad { get; set; }
         public string foto { get; set; }
         public string condicionMedica { get; set; }
-        public float precio { get; set; }
+        public int precio { get; set; }
         public int idUsuario { get; set; }
         public int idTienda { get; set; }
     }

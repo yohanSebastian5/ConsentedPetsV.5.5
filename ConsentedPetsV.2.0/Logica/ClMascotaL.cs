@@ -20,6 +20,11 @@ namespace ConsentedPets.Logica
             List<ClMascotaE> listatienda = objDataTienda.mtdListarMascota(idUsuario);
             return listatienda;
         }
-       
+        public List<ClMascotaE> mtdMascotaVenta(int idTienda)
+        {
+            ClMascotaD objDataTienda = new ClMascotaD();
+            List<ClMascotaE> listatienda = objDataTienda.mtdMascotaVenta(idTienda);
+            return listatienda;
+        }
     }
 }

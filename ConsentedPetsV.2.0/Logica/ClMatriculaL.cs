@@ -11,12 +11,12 @@ namespace ConsentedPetsV._2._0.Logica
 {
     public class ClMatriculaL
     {
-        public int mtdMatricula(ClMatriculaE objDatos)
+        public void mtdMatricula(ClMatriculaE objDatos)
         {
             ClMatriculaD objMD = new ClMatriculaD();
-            int reg = objMD.mtdMatricula(objDatos);
+            objMD.mtdMatricula(objDatos);
 
-            return reg;
+           
         }
     }
 }

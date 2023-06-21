@@ -27,7 +27,8 @@
                 </div>
 
                 <div class="col-md-2">
-                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" OnClick="btnAddMore_Click"/>
+                    <asp:Button runat="server" type="submit" class="profile-edit-btn" Text="Edit Porfil" name="btnAddMore" value="Edit Profile" OnClick="btnAddMore_Click"/>
+                    <%--<input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" OnClick="btnAddMore_Click"/>--%>
                 </div>
             </div>
             <br />

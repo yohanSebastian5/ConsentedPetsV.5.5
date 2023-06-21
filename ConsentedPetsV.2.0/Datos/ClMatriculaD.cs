@@ -10,7 +10,7 @@ namespace ConsentedPetsV._2._0.Datos
 {
     public class ClMatriculaD
     {
-        public int mtdMatricula(ClMatriculaE objDatos)
+        public void mtdMatricula(ClMatriculaE objDatos)
         {
             int cantReg = 0;
             string consulta = "insert into Registro(idMascota, idEscuela) " +
@@ -24,10 +24,10 @@ namespace ConsentedPetsV._2._0.Datos
             int idReg = int.Parse(tblID.Rows[0]["ultimoId"].ToString());
             //string fecha = objDatos.fechaMatricula.ToString();
             
-            string consulta2 = "INSERT INTO Matricula(precioTotal, idCurso, idRegistro) VALUES ('" + objDatos.precio+"','" + objDatos.idCurso+ "'," + idReg + ")";
+            string consulta2 = "INSERT INTO Matricula(fechaMatricula, precioTotal, idCurso, idRegistro) VALUES ('" + objDatos.fechaMatricula +"','" + objDatos.precio+"','" + objDatos.idCurso+ "'," + idReg + ")";
 
             cantReg = objSQL.mtdIUDConect(consulta2);
-            return cantReg;
+           
         }
     }
 }
