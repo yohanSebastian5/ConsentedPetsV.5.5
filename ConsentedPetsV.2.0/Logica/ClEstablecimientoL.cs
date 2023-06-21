@@ -23,10 +23,10 @@ namespace ConsentedPets.Logica
             List<ClEstablecimientoE> listCate = objCate.mtdListar();
             return listCate;
         }
-        public void mtdUsuarioVeterinaria(int idUsu, int idVeter)
+        public void mtdUsuarioVeterinaria(int idUsu, int idVeter,string establecimiento="Veterinaria")
         {
             ClEstablecimientoD objCate = new ClEstablecimientoD();
-            objCate.mtdRegistrarUsuarioRol(idUsu, idVeter);
+            objCate.mtdRegistrarUsuarioRol(idUsu, idVeter,establecimiento);
         }
         public ClEstablecimientoE mtdListarVet(string foto="", string esta = "Veterinaria",int id=0, int tipo = 0)
         {

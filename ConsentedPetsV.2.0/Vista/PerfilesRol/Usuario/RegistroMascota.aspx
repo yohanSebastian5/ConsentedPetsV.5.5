@@ -1,12 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vista/PerfilesRol/Usuario/PerfilUsuario.Master" AutoEventWireup="true" CodeBehind="RegistroMascota.aspx.cs" Inherits="ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario.RegistroMascota" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head"   runat="server">
     <link href="../../Css/RegistrarV.css" rel="stylesheet" />
-    <link href="../../Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <script src="../../../Scripts/sweetalert.min.js"></script>
     <link href="../../../Styles/sweetalert.css" rel="stylesheet" />
-     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    
+   
        <style>
         body {
             background-image: url('../../imagenes/fondoRegistroM.png.jpg');

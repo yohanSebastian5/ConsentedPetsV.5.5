@@ -35,7 +35,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria
         public static void ActualizarDatos(string docum,string espes,string expes,string profes)
         {
             int tipo = 2;
-            int rol = 4;
+            int rol = 3;
             ClUsuarioE objUsuE = cargardatos(docum);
             CLUsuarioL objUsuL = new CLUsuarioL();
             objUsuE.documento = docum;
@@ -45,6 +45,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria
             objUsuE.profesion = profes;
             objUsuL.mtdActualizarEmp(objUsuE);
             objUsuL.mtdRol(objUsuE.idUsuario,rol);
+            objUsuL.mtdUsuarioE(objUsuE.idUsuario, int.Parse(HttpContext.Current.Session["Veterinaria"].ToString()));
         }
 
         public string mtdGuardar()

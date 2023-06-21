@@ -17,9 +17,8 @@ namespace ConsentedPets.Vista.PerfilesRol.Administrador.EscuelaCanina
             if (!IsPostBack)
             {
                 int clase = 1;
-                int.Parse(Session["Escuela"].ToString());
                 ClEstablecimientoL objEstaL = new ClEstablecimientoL();
-                ClEstablecimientoE objEstaE = objEstaL.mtdListarVet("", "Escuela", 1, clase);
+                ClEstablecimientoE objEstaE = objEstaL.mtdListarVet("", "Escuela", int.Parse(Session["Escuela"].ToString()), clase);
                 txtNombre.Text = objEstaE.nombre;
                 txtEmail.Text = objEstaE.email;
                 txtDireccion.Text = objEstaE.direccion;
@@ -27,7 +26,7 @@ namespace ConsentedPets.Vista.PerfilesRol.Administrador.EscuelaCanina
                 string ruta = "../../../imagenes/ImagenesEstablecimiento/" + objEstaE.foto;
                 Image1.ImageUrl = ruta;
             }
-           
+
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
@@ -45,7 +44,6 @@ namespace ConsentedPets.Vista.PerfilesRol.Administrador.EscuelaCanina
             objE.foto = nombreV;
             objL.mtdActualizar(objE, "E");
             ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Informacion Atualizada!', ''" + objE.nombre + "' A sido Actualizado', 'success')", true);
-
         }
     }
 }

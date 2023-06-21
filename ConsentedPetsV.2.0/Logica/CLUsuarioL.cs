@@ -46,10 +46,10 @@ namespace ConsentedPets.Logica
             return listaVet;
         }
 
-        public List<ClUsuarioE> mtdRepeater(int idVeterinaria)
+        public List<ClUsuarioE> mtdRepeater(int idVeterinaria,int tipo=0)
         {
             ClUsuarioD objVet = new ClUsuarioD();
-            List<ClUsuarioE> listaVet = objVet.mtdListar(idVeterinaria);
+            List<ClUsuarioE> listaVet = objVet.mtdListar(idVeterinaria,tipo);
             return listaVet;
         }
         public void mtdRol(int idUsuario,int idRol=1)
@@ -58,6 +58,7 @@ namespace ConsentedPets.Logica
             objUsuario.mtdIngresarRol(idUsuario,idRol);
 
         }
+
         public void mtdActualizarDatos(ClUsuarioE objE)
         {
             ClUsuarioD objD = new ClUsuarioD();
@@ -69,6 +70,13 @@ namespace ConsentedPets.Logica
             ClUsuarioD objUs = new ClUsuarioD();
             List<ClUsuarioE> lista = objUs.mtdListarprofesor(idEcuela);
             return lista;
+        }
+
+
+        public void mtdUsuarioE(int idUsuario,int idE,int id=1)
+        {
+            ClUsuarioD objD = new ClUsuarioD();
+            objD.mtdIngresarUsuarioE(idUsuario, idE, id);
         }
 
     }

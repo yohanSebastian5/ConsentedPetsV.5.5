@@ -33,6 +33,28 @@ namespace ConsentedPets.Datos
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
+
+
+        public void mtdRegistrarMascotaPD(string nombre, string especie, string raza, string edad, string genero, string foto, string condicion, int idTienda, int precio )
+        {
+            SqlCommand comando = new SqlCommand();
+            conexion.AbrirConexion();
+            comando.CommandText = "RegistrarMascotaPS";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@nombre", nombre);
+            comando.Parameters.AddWithValue("@especie", especie);
+            comando.Parameters.AddWithValue("@raza", raza);
+            comando.Parameters.AddWithValue("@edad", edad);
+            comando.Parameters.AddWithValue("@genero", genero);
+            comando.Parameters.AddWithValue("@foto", foto);
+            comando.Parameters.AddWithValue("@condicionMedica", condicion);
+            comando.Parameters.AddWithValue("@precio", precio);
+            comando.Parameters.AddWithValue("@idTienda", idTienda);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+
+        }
         public List<ClMascotaE> mtdListarMascota(int idUsuario)
         {
             string sql = "select * from Mascota where idUsuario = '"+idUsuario+"'";

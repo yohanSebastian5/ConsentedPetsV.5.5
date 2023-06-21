@@ -13,5 +13,9 @@ namespace ConsentedPets.Vista.PerfilesRol.Administrador.Veterinaria
         {
 
         }
+        protected void link1_Click(object sender, EventArgs e)
+        {
+            Session["Clase"] = 1;
+        }
     }
 }

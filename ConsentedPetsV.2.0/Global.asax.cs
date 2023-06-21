@@ -19,13 +19,23 @@ namespace ConsentedPetsV._2._0
         {
             Session["RolUsuario"] = 0;
             Session["Usuario"] = 0;
+            Session["Servicio"] = 0;
             Session["Veterinaria"] = 0;
             Session["Tienda"] = 0;
             Session["Escuela"] = 0;
             Session["idVeterinaria"] = 0;
             Session["idMascota"] = 0;
+
+            Session["Clase"] = 0;
+            Session["Tipo"] = 0;
+
+
             Session["idEscuela"] = 0;
+
             Session["idCategoriaPS"] = 0;
+
+
+
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

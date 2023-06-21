@@ -17,18 +17,19 @@
             display: flex;
             justify-content: center;
             flex-direction: column;
+        }
 
-        }body{
-                 background: linear-gradient(#d98567, #243b55) ; 
-                 color: white;
-         }
+        body {
+            background: linear-gradient(#d98567, #243b55);
+            color: white;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
     <div class="center">
-        <h1 style="margin-top:20px; color:#78fff1">Listar Personal</h1>
+        <h1 style="margin-top: 20px; color: #78fff1">Listar Personal</h1>
         <div style="width: 1100px">
-            <table id="tblUsua" class="table" style="color:white">
+            <table id="tblUsua" class="table" style="color: white">
                 <thead style="color: #78fff1">
                     <tr>
                         <th>Nombre</th>
