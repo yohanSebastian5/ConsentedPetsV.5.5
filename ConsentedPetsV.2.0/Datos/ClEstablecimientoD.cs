@@ -83,13 +83,14 @@ namespace ConsentedPets.Datos
             return list;
 
         }
-        public void mtdRegistrarUsuarioRol(int idUsu, int idVeter)
+        public void mtdRegistrarUsuarioRol(int idUsu, int idVeter,string establecimiento="Veterinaria")
         {
+          
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "RegistrarUsuarioVeterinaria";
+            comando.CommandText = "RegistrarUsuario"+establecimiento;
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@idUsuario", idUsu);
-            comando.Parameters.AddWithValue("@idVeterinaria", idVeter);
+            comando.Parameters.AddWithValue("@id"+establecimiento, idVeter);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
@@ -99,7 +100,7 @@ namespace ConsentedPets.Datos
             string consulta="";
             if (tipo==0)
             {
-                 consulta = "select * from '"+establecimiento+"' where foto='" + foto + "'";
+                 consulta = "select * from "+establecimiento+" where foto='" + foto + "'";
             }
             else if (tipo==1)
             {
@@ -134,7 +135,14 @@ namespace ConsentedPets.Datos
             conexion.CerrarConexion();
 
         }
-       
+       public void mtdEliminar(string tabla,int id)
+        {
+            string consulta = "delete from "+tabla +"where id"+tabla+"="+id;
+
+
+
+
+        }
 
 
 

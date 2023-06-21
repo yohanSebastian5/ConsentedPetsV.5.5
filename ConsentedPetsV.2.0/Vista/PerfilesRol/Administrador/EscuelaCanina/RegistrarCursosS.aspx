@@ -2,6 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentHeadAdministrador" runat="server">
     <link href="../../css/registrar.css" rel="stylesheet" />
+    <link href="../../../../Styles/sweetalert.css" rel="stylesheet" />
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
     <!-- partial:index.partial.html -->
@@ -35,9 +37,9 @@
         </div>
         <div class="user-details register-form ">
             <h2>Datos del Curso</h2>
-            <input name="name" type="text" placeholder="Nombre" />
-            <input name="counrty" type="text" placeholder="Descripcion" />
-            <input name="city" type="text" placeholder="Precio" />
+            <input id="txtNombre" runat="server" name="name" type="text" placeholder="Nombre" />
+            <input id="txtDescripcion" runat="server" name="counrty" type="text" placeholder="Descripcion" />
+            <input id="txtPrecio" runat="server" name="city" type="text" placeholder="Precio" />
             <div class="button firstPrev">Back</div>
             <div class="button secondNext">Next</div>
         </div>
@@ -47,7 +49,7 @@
             <asp:FileUpload ID="FileUpload1" CssClass="diseño" runat="server" onchange="cargar(this)" />
             <div class="button secondPrev">Back</div>
 
-            <asp:Button class="button secondPrev w-100"  ID="Button1" runat="server" Text="Registrar" OnClick="Button1_Click" />
+            <asp:Button class="button secondPrev w-100" ID="Button1" runat="server" Text="Registrar" OnClick="Button1_Click" />
 
         </div>
     </form>
@@ -80,4 +82,6 @@
             }
         }
     </script>
+    <script src="../../../../Scripts/sweetalert.min.js"></script>
+    <script src="../../../../Scripts/sweetalert-dev.js"></script>
 </asp:Content>

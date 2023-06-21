@@ -23,7 +23,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria
             ClProcesosVetE objE = new ClProcesosVetE();
             objE.nombre = txtNombre.Value;
             objE.descripcion = txtDescripcion.Value;
-            string nombreV = txtNombre.Value  + ".png";
+            string nombreV = "Veterinaria"+txtNombre.Value  + ".png";
             string rutaImg = Path.Combine(Server.MapPath("../../../imagenes/servicios/"), nombreV);
             FlImagenV.SaveAs(rutaImg);
             objE.foto = nombreV;

@@ -50,5 +50,22 @@ namespace ConsentedPetsV._2._0.Datos
             conexion.CerrarConexion();
 
         }
+        public void mtdRegistrarProcesoE(ClProcesosVetE objE)
+        {
+            
+            SqlCommand comado = new SqlCommand();
+            conexion.AbrirConexion();
+            comado.CommandText = "RegistrarProcesoE";
+            comado.CommandType = CommandType.StoredProcedure;
+            comado.Parameters.AddWithValue("nombre", objE.nombre);
+            comado.Parameters.AddWithValue("descripcion", objE.descripcion);
+            comado.Parameters.AddWithValue("foto", objE.foto);
+            comado.Parameters.AddWithValue("idEscuela", objE.idEscuela);
+            comado.ExecuteNonQuery();
+            comado.Parameters.Clear();
+            conexion.CerrarConexion();
+
+
+        }
     }
 }

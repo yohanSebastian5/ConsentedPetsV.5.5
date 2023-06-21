@@ -101,6 +101,7 @@
     <Content Include="Vista\imagenes\imagenesProcesosV\proceso2.png" />
     <Content Include="Vista\imagenes\imagenesProcesosV\proceso3.png" />
     <Content Include="Vista\imagenes\muchi.png" />
+    <Content Include="Vista\imagenes\RActividad.jpg" />
     <Content Include="Vista\imagenes\RegistrarServicio\Iconos\diente.jpg" />
     <Content Include="Vista\imagenes\RegistrarServicio\Iconos\Urgencias.png" />
     <Content Include="Vista\imagenes\RegistrarServicio\Iconos\vacunacion.png" />
@@ -321,9 +322,36 @@
     <Content Include="Vista\js\swiper\swiper-bundle.min.js" />
     <Content Include="Vista\Login.aspx" />
     <Content Include="Vista\Mascota\RegistrarMascota.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EliminarEstablecimientos.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditarPerfilE.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditaryEliminarDatos.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarActividades.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProcesos.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMascotas.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMatriculas.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProfesores.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarServicios.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarActividad.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarProcesoE.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarProfesor.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\ListarEscuelas.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\ListarTiendas.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\PetShop\ListarPedidos.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\PetShop\ListarVendedor.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\PetShop\ListarVentas.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\PetShop\MascotasRegistradas.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\PetShop\ProductosRegistrados.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarMascota.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarProducto.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarVendedor.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\RegistrarEscuela.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\RegistrarTienda.aspx" />
+    <Content Include="Vista\PerfilesRol\css\ListarMascotas.css" />
+    <Content Include="Vista\PerfilesRol\css\ListarServicios.css" />
     <Content Include="Vista\PerfilesRol\css\registrar.css" />
+    <Content Include="Vista\PerfilesRol\css\RegistrarActividad.css" />
+    <Content Include="Vista\PerfilesRol\css\RegistrarProducto.css" />
+    <Content Include="Vista\PerfilesRol\js\ListarServicios.js" />
     <Content Include="Vista\PerfilesRol\js\Registrar.js" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarCursosS.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\ListarPersonal.aspx" />
@@ -354,6 +382,8 @@
     <Content Include="Vista\PerfilesRol\ElegirPerfil.aspx" />
     <Content Include="Vista\PerfilesRol\js\añadirVeterinaria.js" />
     <Content Include="Vista\PerfilesRol\js\datatables-simple-demo.js" />
+    <Content Include="Vista\PerfilesRol\js\RegistrarActividad.js" />
+    <Content Include="Vista\PerfilesRol\js\RegistrarProducto.js" />
     <Content Include="Vista\PerfilesRol\js\RegistrarServicioe.js" />
     <Content Include="Vista\PerfilesRol\js\scripts.js" />
     <Content Include="Vista\imagenes\persona.png" />
@@ -384,6 +414,7 @@
     <Compile Include="Datos\ClProcesarSQL.cs" />
     <Compile Include="Datos\ClProcesosEscuela.cs" />
     <Compile Include="Datos\ClProcesosVetD.cs" />
+    <Compile Include="Datos\ClProductoD.cs" />
     <Compile Include="Datos\ClRepeaterEstablecimientoD.cs" />
     <Compile Include="Datos\ClServicioED.cs" />
     <Compile Include="Datos\ClServicioVetD.cs" />
@@ -391,7 +422,9 @@
     <Compile Include="Entidades\ClCitaE.cs" />
     <Compile Include="Entidades\ClEstablecimientoE.cs" />
     <Compile Include="Entidades\ClMascotaE.cs" />
+    <Compile Include="Entidades\ClMatriculaE.cs" />
     <Compile Include="Entidades\ClProcesosVetE.cs" />
+    <Compile Include="Entidades\CLProductoE.cs" />
     <Compile Include="Entidades\ClRepeaterEstablecimientoE.cs" />
     <Compile Include="Entidades\ClServicioEE.cs" />
     <Compile Include="Entidades\ClServicioVeterinariaE.cs" />
@@ -403,6 +436,7 @@
     <Compile Include="Logica\ClEstablecimientoL.cs" />
     <Compile Include="Logica\ClMascotaL.cs" />
     <Compile Include="Logica\ClProcesosVetL.cs" />
+    <Compile Include="Logica\ClProductoL.cs" />
     <Compile Include="Logica\ClRepeaterEstablecimientoL.cs" />
     <Compile Include="Logica\ClServicioEL.cs" />
     <Compile Include="Logica\ClServicioVetL.cs" />
@@ -472,12 +506,26 @@
     <Compile Include="Vista\PaginaVeterinaria.aspx.designer.cs">
       <DependentUpon>PaginaVeterinaria.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EliminarEstablecimientos.aspx.cs">
+      <DependentUpon>EliminarEstablecimientos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EliminarEstablecimientos.aspx.designer.cs">
+      <DependentUpon>EliminarEstablecimientos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditarPerfilE.aspx.cs">
       <DependentUpon>EditarPerfilE.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditarPerfilE.aspx.designer.cs">
       <DependentUpon>EditarPerfilE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditaryEliminarDatos.aspx.cs">
+      <DependentUpon>EditaryEliminarDatos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditaryEliminarDatos.aspx.designer.cs">
+      <DependentUpon>EditaryEliminarDatos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\Escuela.Master.cs">
       <DependentUpon>Escuela.Master</DependentUpon>
@@ -486,6 +534,55 @@
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\Escuela.Master.designer.cs">
       <DependentUpon>Escuela.Master</DependentUpon>
     </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarActividades.aspx.cs">
+      <DependentUpon>ListarActividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarActividades.aspx.designer.cs">
+      <DependentUpon>ListarActividades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProcesos.aspx.cs">
+      <DependentUpon>ListarProcesos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProcesos.aspx.designer.cs">
+      <DependentUpon>ListarProcesos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMascotas.aspx.cs">
+      <DependentUpon>ListarMascotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMascotas.aspx.designer.cs">
+      <DependentUpon>ListarMascotas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMatriculas.aspx.cs">
+      <DependentUpon>ListarMatriculas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMatriculas.aspx.designer.cs">
+      <DependentUpon>ListarMatriculas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProfesores.aspx.cs">
+      <DependentUpon>ListarProfesores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProfesores.aspx.designer.cs">
+      <DependentUpon>ListarProfesores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarServicios.aspx.cs">
+      <DependentUpon>ListarServicios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarServicios.aspx.designer.cs">
+      <DependentUpon>ListarServicios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarActividad.aspx.cs">
+      <DependentUpon>RegistrarActividad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarActividad.aspx.designer.cs">
+      <DependentUpon>RegistrarActividad.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarCursosS.aspx.cs">
       <DependentUpon>RegistrarCursosS.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -493,12 +590,40 @@
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarCursosS.aspx.designer.cs">
       <DependentUpon>RegistrarCursosS.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarProcesoE.aspx.cs">
+      <DependentUpon>RegistrarProcesoE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarProcesoE.aspx.designer.cs">
+      <DependentUpon>RegistrarProcesoE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarProfesor.aspx.cs">
+      <DependentUpon>RegistrarProfesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\RegistrarProfesor.aspx.designer.cs">
+      <DependentUpon>RegistrarProfesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\ListarEscuelas.aspx.cs">
+      <DependentUpon>ListarEscuelas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\ListarEscuelas.aspx.designer.cs">
+      <DependentUpon>ListarEscuelas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\ListarPersonal.aspx.cs">
       <DependentUpon>ListarPersonal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\ListarPersonal.aspx.designer.cs">
       <DependentUpon>ListarPersonal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\ListarTiendas.aspx.cs">
+      <DependentUpon>ListarTiendas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\ListarTiendas.aspx.designer.cs">
+      <DependentUpon>ListarTiendas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\ListarVeterinarias.aspx.cs">
       <DependentUpon>ListarVeterinarias.aspx</DependentUpon>
@@ -521,6 +646,34 @@
     <Compile Include="Vista\PerfilesRol\Administrador\PetShop\EditarPerfilP.aspx.designer.cs">
       <DependentUpon>EditarPerfilP.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\ListarPedidos.aspx.cs">
+      <DependentUpon>ListarPedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\ListarPedidos.aspx.designer.cs">
+      <DependentUpon>ListarPedidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\ListarVendedor.aspx.cs">
+      <DependentUpon>ListarVendedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\ListarVendedor.aspx.designer.cs">
+      <DependentUpon>ListarVendedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\ListarVentas.aspx.cs">
+      <DependentUpon>ListarVentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\ListarVentas.aspx.designer.cs">
+      <DependentUpon>ListarVentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\MascotasRegistradas.aspx.cs">
+      <DependentUpon>MascotasRegistradas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\MascotasRegistradas.aspx.designer.cs">
+      <DependentUpon>MascotasRegistradas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\PetShop\PetShop.Master.cs">
       <DependentUpon>PetShop.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -528,12 +681,47 @@
     <Compile Include="Vista\PerfilesRol\Administrador\PetShop\PetShop.Master.designer.cs">
       <DependentUpon>PetShop.Master</DependentUpon>
     </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\ProductosRegistrados.aspx.cs">
+      <DependentUpon>ProductosRegistrados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\ProductosRegistrados.aspx.designer.cs">
+      <DependentUpon>ProductosRegistrados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarMascota.aspx.cs">
+      <DependentUpon>RegistrarMascota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarMascota.aspx.designer.cs">
+      <DependentUpon>RegistrarMascota.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarProducto.aspx.cs">
+      <DependentUpon>RegistrarProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarProducto.aspx.designer.cs">
+      <DependentUpon>RegistrarProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarVendedor.aspx.cs">
+      <DependentUpon>RegistrarVendedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarVendedor.aspx.designer.cs">
+      <DependentUpon>RegistrarVendedor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\RegistrarEscuela.aspx.cs">
       <DependentUpon>RegistrarEscuela.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\RegistrarEscuela.aspx.designer.cs">
       <DependentUpon>RegistrarEscuela.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\RegistrarTienda.aspx.cs">
+      <DependentUpon>RegistrarTienda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\RegistrarTienda.aspx.designer.cs">
+      <DependentUpon>RegistrarTienda.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\RegistrarVeterinaria.aspx.cs">
       <DependentUpon>RegistrarVeterinaria.aspx</DependentUpon>
@@ -874,6 +1062,7 @@
   <ItemGroup>
     <Folder Include="Vista\Empleados\" />
     <Folder Include="Vista\imagenes\Escuela\" />
+    <Folder Include="Vista\imagenes\ImagenesProductoCat\" />
     <Folder Include="Vista\imagenes\Tienda\" />
     <Folder Include="Vista\imagenes\Veterinaria\" />
   </ItemGroup>

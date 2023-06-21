@@ -158,6 +158,31 @@ namespace ConsentedPets.Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }
+        public void mtdIngresarUsuarioE(int idUsuario,int idE, int id = 1)
+        {
+            string consulta = "";
+            if (id== 1)
+            {
+                consulta = "Veterinaria";
+
+            }
+            if (id==2)
+            {
+                consulta = "Escuela";
+            }
+            if (id==3)
+            {
+                consulta = "Tienda";
+            }
+
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "RegistrarUsuario" + consulta;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idUsuario", idUsuario);
+            comando.Parameters.AddWithValue("@id"+consulta, idE);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+        }
 
 
 
@@ -190,13 +215,28 @@ namespace ConsentedPets.Datos
             }
             return listaProductos;
         }
-        public List<ClUsuarioE> mtdListar(int idVeterinaria)
+        public List<ClUsuarioE> mtdListar(int idVeterinaria,int tipo =0)
         {
+            string consulta = "";
+            if (tipo==0)
+            {
+                consulta = "select Usuario.* from Usuario inner join UsuarioVeterinaria on Usuario.idUsuario= UsuarioVeterinaria.idUsuario inner join UsuarioRol on " +
+            "UsuarioRol.idUsuario = Usuario.idUsuario where idVeterinaria = '" + idVeterinaria + "' and UsuarioRol.idRol = 4; ";
 
-            
-            
-            string consulta = "select Usuario.* from Usuario inner join UsuarioVeterinaria on Usuario.idUsuario= UsuarioVeterinaria.idUsuario inner join UsuarioRol on " +
-                "UsuarioRol.idUsuario = Usuario.idUsuario where idVeterinaria = '" + idVeterinaria + "' and UsuarioRol.idRol = 4; ";
+            }
+            else if (tipo==1)
+            {
+                consulta = "select Usuario.* from Usuario inner join UsuarioEscuela on Usuario.idUsuario= UsuarioEscuela.idUsuario inner join UsuarioRol on " +
+            "UsuarioRol.idUsuario = Usuario.idUsuario where idEscuela = '" + idVeterinaria + "' and UsuarioRol.idRol = 3; ";
+
+            }
+            else if (tipo==2)
+            {
+                consulta = "select Usuario.* from Usuario inner join UsuarioTienda on Usuario.idUsuario= UsuarioTienda.idUsuario inner join UsuarioRol on " +
+           "UsuarioRol.idUsuario = Usuario.idUsuario where idTienda = '" + idVeterinaria + "' and UsuarioRol.idRol = 5; ";
+
+            }
+
 
             ClProcesarSQL SQL = new ClProcesarSQL();
             DataTable tblVeterinaria = SQL.mtdSelectDesc(consulta);

@@ -14,6 +14,7 @@ namespace ConsentedPetsV._2._0.Entidades
         public int precio { get; set; }
         public int idVeterinaria { get; set; }
         public string nombreC { get; set; }
+        public string fecha { get; set; }
  
     }
 }
