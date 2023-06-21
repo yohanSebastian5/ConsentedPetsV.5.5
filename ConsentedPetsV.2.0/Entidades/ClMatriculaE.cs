@@ -15,7 +15,7 @@ namespace ConsentedPetsV._2._0.Entidades
         public int idRegistro { get; set; }
         public int idCurso { get; set; }
 
-        public string fechaMatricula { get; set; }
+        
         public string precioTotal { get; set; }
         public string nombre { get; set; }
         public string mascota { get; set; }

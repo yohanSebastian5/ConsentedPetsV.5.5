@@ -20,11 +20,11 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.PetShop
 
         }
         [WebMethod]
-        public static List<CLProductoE> mtdLista()
+        public static List<ClProductoE> mtdLista()
         {
             int tipo = int.Parse(HttpContext.Current.Session["Tienda"].ToString());
             ClProductoL objL = new ClProductoL();
-            List<CLProductoE> lista= objL.mtdListarVentas(tipo);
+            List<ClProductoE> lista= objL.mtdListarVentas(tipo);
             return lista;
         }
     }
