@@ -9,8 +9,8 @@ namespace ConsentedPets.Datos
 {
     public class ClConexion
     {
-        //private SqlConnection Conexion = new SqlConnection("Data Source=SOGAPRRBCFSD542\\SQLEXPRESS;Initial Catalog=ConsentedPets;Integrated Security=True");
-        private SqlConnection Conexion = new SqlConnection("Data Source=.;Initial Catalog=ConsentedPets;Integrated Security=True");
+        private SqlConnection Conexion = new SqlConnection("Data Source=SOGAPRRBCFSD542\\SQLEXPRESS;Initial Catalog=ConsentedPets;Integrated Security=True");
+        //private SqlConnection Conexion = new SqlConnection("Data Source=.;Initial Catalog=ConsentedPets;Integrated Security=True");
 
         //private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-T3VHGES\\SQLEXPRESS;Initial Catalog=ConsentedPets;Integrated Security=True");
         public SqlConnection AbrirConexion()

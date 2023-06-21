@@ -72,16 +72,15 @@ namespace ConsentedPets.Datos
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
-        public List<ClUsuarioE> mtdMostrar(int idUsuario)
+        public ClUsuarioE mtdMostrar (int idUsuario)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "MostrarUsuario";
             comando.Parameters.AddWithValue("idUsuario", idUsuario);
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
-            List<ClUsuarioE> listaUsuario = new List<ClUsuarioE>();
             ClUsuarioE objDatos = null;
-            while (leer.Read())
+            if (leer.Read())
             {
                 objDatos = new ClUsuarioE();
                 objDatos.idUsuario = leer.GetInt32(0);
@@ -92,15 +91,10 @@ namespace ConsentedPets.Datos
                 objDatos.foto = leer.GetString(5);
                 objDatos.direccion = leer.GetString(6);
                 objDatos.genero = leer.GetString(7);
-                objDatos.contraseña = leer.GetString(8);
-                listaUsuario.Add(objDatos);
-
+                objDatos.contraseña = leer.GetString(8);                
             }
-
-
             conexion.CerrarConexion();
-            return listaUsuario;
-
+            return objDatos;
         }
         public ClUsuarioE mtdLogin(ClUsuarioE objE,int tipo=0)
         {
@@ -261,5 +255,60 @@ namespace ConsentedPets.Datos
             return listaProductos;
         }
 
-}
+        public List<ClUsuarioE> mtdListarprofesor(int idEscuela)
+        {
+
+
+
+            string consulta = "select Usuario.* from Usuario inner join UsuarioEscuela on Usuario.idUsuario= UsuarioEscuela.idUsuario inner join UsuarioRol on " +
+                "UsuarioRol.idUsuario = Usuario.idUsuario where idEscuela = '" + idEscuela + "' and UsuarioRol.idRol = 3; ";
+
+            ClProcesarSQL SQL = new ClProcesarSQL();
+            DataTable tblVeterinaria = SQL.mtdSelectDesc(consulta);
+            List<ClUsuarioE> listaProductos = new List<ClUsuarioE>();
+            for (int i = 0; i < tblVeterinaria.Rows.Count; i++)
+            {
+                ClUsuarioE objVet = new ClUsuarioE();
+                objVet.nombre = tblVeterinaria.Rows[i]["nombre"].ToString();
+                objVet.apellido = tblVeterinaria.Rows[i]["apellido"].ToString();
+                objVet.telefono = tblVeterinaria.Rows[i]["telefono"].ToString();
+                objVet.email = tblVeterinaria.Rows[i]["email"].ToString();
+                objVet.foto = tblVeterinaria.Rows[i]["foto"].ToString();
+                objVet.direccion = tblVeterinaria.Rows[i]["direccion"].ToString();
+                objVet.genero = tblVeterinaria.Rows[i]["genero"].ToString();
+                objVet.contraseña = tblVeterinaria.Rows[i]["contraseña"].ToString();
+                objVet.especializacion = tblVeterinaria.Rows[i]["especializacion"].ToString();
+                objVet.experiencia = tblVeterinaria.Rows[i]["experiencia"].ToString();
+                objVet.profesion = tblVeterinaria.Rows[i]["profesion"].ToString();
+                objVet.idUsuario = int.Parse(tblVeterinaria.Rows[i]["idUsuario"].ToString());
+                listaProductos.Add(objVet);
+            }
+            return listaProductos;
+        }
+
+        public void mtdActualizarDatos(ClUsuarioE objE)
+        {
+
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "EditarPerfilUsuario" ;
+            comando.CommandType = CommandType.StoredProcedure;
+
+           
+            comando.Parameters.AddWithValue("@idUsuario", objE.idUsuario);
+             comando.Parameters.AddWithValue("@nombre", objE.nombre);
+            comando.Parameters.AddWithValue("@apellido", objE.apellido);
+            comando.Parameters.AddWithValue("@genero", objE.genero);
+            comando.Parameters.AddWithValue("@telefono", objE.telefono);
+            comando.Parameters.AddWithValue("@email", objE.email);
+            comando.Parameters.AddWithValue("@foto", objE.foto);
+            comando.Parameters.AddWithValue("@direccion", objE.direccion);
+            comando.Parameters.AddWithValue("@contraseña", objE.contraseña);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+
+        }
+        
+
+    }
 }

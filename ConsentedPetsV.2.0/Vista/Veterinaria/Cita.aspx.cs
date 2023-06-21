@@ -18,6 +18,7 @@ namespace ConsentedPetsV._2._0.Vista.Veterinaria
             if (!IsPostBack)
             {
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
+                idUsuario = 9;
                 ClMascotaL objData = new ClMascotaL();
                 List<ClMascotaE> listaMascota = new List<ClMascotaE>();
                 listaMascota = objData.mtdListarMascota(idUsuario);

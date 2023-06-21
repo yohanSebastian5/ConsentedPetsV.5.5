@@ -24,22 +24,22 @@ namespace ConsentedPetsV._2._0.Vista
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control heroImage.
+        /// Control idImagEstab.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage heroImage;
+        protected global::System.Web.UI.WebControls.Image idImagEstab;
 
         /// <summary>
-        /// Control repNom.
+        /// Control nom.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repNom;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nom;
 
         /// <summary>
         /// Control repServicio.

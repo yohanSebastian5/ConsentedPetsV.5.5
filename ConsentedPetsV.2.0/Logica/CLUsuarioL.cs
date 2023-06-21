@@ -25,12 +25,11 @@ namespace ConsentedPets.Logica
             ClUsuarioD objUsuarioD = new ClUsuarioD();
             objUsuarioD.mtdActualizar(id,nombre, apellido, direccion, telefono, email, foto, genero, contraseña);
         }
-        public List<ClUsuarioE> mtdListarU(int idUsuario)
+        public ClUsuarioE mtdListarU(int idUsuario)
         {
             ClUsuarioD objUsuarioD= new ClUsuarioD();
-            List<ClUsuarioE> listaU = new List<ClUsuarioE>();
-            listaU = objUsuarioD.mtdMostrar(idUsuario);
-            return listaU;
+            ClUsuarioE objDatos = objUsuarioD.mtdMostrar(idUsuario);            
+            return objDatos;
         }
         public ClUsuarioE mtdRolU(ClUsuarioE objUe,int tipo=0)
         {
@@ -59,10 +58,26 @@ namespace ConsentedPets.Logica
             objUsuario.mtdIngresarRol(idUsuario,idRol);
 
         }
+
+        public void mtdActualizarDatos(ClUsuarioE objE)
+        {
+            ClUsuarioD objD = new ClUsuarioD();
+            objD.mtdActualizarDatos(objE);
+        }
+
+        public List<ClUsuarioE> mtdProfesores(int idEcuela)
+        {
+            ClUsuarioD objUs = new ClUsuarioD();
+            List<ClUsuarioE> lista = objUs.mtdListarprofesor(idEcuela);
+            return lista;
+        }
+
+
         public void mtdUsuarioE(int idUsuario,int idE,int id=1)
         {
             ClUsuarioD objD = new ClUsuarioD();
             objD.mtdIngresarUsuarioE(idUsuario, idE, id);
         }
+
     }
 }

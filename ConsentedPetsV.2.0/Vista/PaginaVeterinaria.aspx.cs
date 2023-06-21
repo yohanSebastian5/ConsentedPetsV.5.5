@@ -20,6 +20,7 @@ namespace ConsentedPetsV._2._0.Vista
 
 
             int idUsuario = int.Parse(Session["Usuario"].ToString());
+            idUsuario = 1;
             ClMascotaL objData = new ClMascotaL();
             List<ClMascotaE> listaMascota = objData.mtdListarMascota(idUsuario);
             ddlMascota.DataSource = listaMascota;
@@ -27,41 +28,40 @@ namespace ConsentedPetsV._2._0.Vista
             ddlMascota.DataValueField = "idMascota";
             ddlMascota.DataBind();
 
-           
-                int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
-                ClServicioVetL objVet = new ClServicioVetL();
-                List<ClServicioVeterinariaE> lista = objVet.mtdRepeater(idVeterinaria);
-                ddlServicio.DataSource = lista;
-                ddlServicio.DataTextField = "nombre";
-                ddlServicio.DataValueField = "idServicioV";
-                ddlServicio.DataBind();
-                repServicio.DataSource = lista;
-                repServicio.DataBind();
 
-                CLUsuarioL objVete = new CLUsuarioL();
-                List<ClUsuarioE> listaVete = objVete.mtdRepeater(idVeterinaria);
-                repVete.DataSource = listaVete;
-                repVete.DataBind();
+            int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
+            idVeterinaria = 1;
+            idVeterinaria = 1;
+            ClServicioVetL objVet = new ClServicioVetL();
+            List<ClServicioVeterinariaE> lista = objVet.mtdRepeater(idVeterinaria);
+            ddlServicio.DataSource = lista;
+            ddlServicio.DataTextField = "nombre";
+            ddlServicio.DataValueField = "idServicioV";
+            ddlServicio.DataBind();
+            repServicio.DataSource = lista;
+            repServicio.DataBind();
 
-                ClProcesosVetL objProcesos = new ClProcesosVetL();
-                List<ClProcesosVetE> listaProcesos = objProcesos.mtdProcesos(idVeterinaria);
-                repProcesos.DataSource = listaProcesos;
-                repProcesos.DataBind();
+            CLUsuarioL objVete = new CLUsuarioL();
+            List<ClUsuarioE> listaVete = objVete.mtdRepeater(idVeterinaria);
+            repVete.DataSource = listaVete;
+            repVete.DataBind();
 
-                ClEstablecimientoL objVeterinaria = new ClEstablecimientoL();
-                List<ClEstablecimientoE> listaV = objVeterinaria.mtdEstablecimiento(idVeterinaria);                
-                if (listaV.Count > 0)
-                {
-                    string imageName = listaV[0].foto; 
-                    string imagePath = "~/Vista/imagenes/ImagenesEstablecimiento/" + imageName;
-                    heroImage.Src = ResolveUrl(imagePath);
-                }
-                repNom.DataSource = listaV;
-                repNom.DataBind();
+            ClProcesosVetL objProcesos = new ClProcesosVetL();
+            List<ClProcesosVetE> listaProcesos = objProcesos.mtdProcesos(idVeterinaria);
+            repProcesos.DataSource = listaProcesos;
+            repProcesos.DataBind();
 
-            
-        }        
-       
+            ClEstablecimientoL objVeterinaria = new ClEstablecimientoL();
+            List<ClEstablecimientoE> listaV = objVeterinaria.mtdEstablecimiento(idVeterinaria);
+            string imagePath = "~/Vista/imagenes/ImagenesEstablecimiento/" + listaV[0].foto;
+            idImagEstab.ImageUrl = imagePath;
+            nom.InnerText = lista[0].nombre;
+
+
+
+
+        }
+
         protected void calendarFecha_SelectionChanged(object sender, EventArgs e)
         {
             txtFecha.Text = calendarFecha.SelectedDate.ToString("yyyy-MM-dd");

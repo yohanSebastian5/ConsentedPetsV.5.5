@@ -30,6 +30,11 @@ namespace ConsentedPets.Datos
             return lista;
         }
 
+        public void mtdlistarEscuela()
+        {
+
+        }
+
         private ClConexion conexion = new ClConexion();
         SqlDataReader leer;
         DataTable tabla = new DataTable();

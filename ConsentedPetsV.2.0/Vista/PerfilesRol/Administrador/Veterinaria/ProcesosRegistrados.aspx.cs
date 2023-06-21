@@ -15,7 +15,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria
         {
            
                 int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
-              
+            idVeterinaria = 1;
                 ClProcesosVetL objProcesos = new ClProcesosVetL();
                 List<ClProcesosVetE> listaProcesos = objProcesos.mtdProcesos(idVeterinaria);
                 repProcesos.DataSource = listaProcesos;

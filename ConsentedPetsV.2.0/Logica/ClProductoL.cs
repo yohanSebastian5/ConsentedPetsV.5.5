@@ -1,6 +1,10 @@
+
+﻿using ConsentedPetsV._2._0.Datos;
+
 ﻿using ConsentedPets.Datos;
 using ConsentedPets.Entidades;
 using ConsentedPetsV._2._0.Datos;
+
 using ConsentedPetsV._2._0.Entidades;
 using System;
 using System.Collections.Generic;
@@ -11,6 +15,13 @@ namespace ConsentedPetsV._2._0.Logica
 {
     public class ClProductoL
     {
+
+        public List<ClProductoE> mtdProducto (int idCategoria)
+        {
+            ClProductoD objPD = new ClProductoD();
+            List<ClProductoE> lista = objPD.mtdProducto(idCategoria);
+            return lista;
+
         public List<CLProductoE> mtdListarCategoria(int id)
         {
             ClProductoD objD = new ClProductoD();
@@ -45,6 +56,7 @@ namespace ConsentedPetsV._2._0.Logica
             ClProductoD objDataTienda = new ClProductoD();
             List<CLProductoE> listatienda = objDataTienda.mtdListarPedidos(idUsuario);
             return listatienda;
+
         }
     }
 }
