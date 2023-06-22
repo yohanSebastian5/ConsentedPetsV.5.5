@@ -11,21 +11,38 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int sesion = int.Parse(Session["RolUsuario"].ToString());
-            if (sesion==1)
-            {
-                Response.Redirect("Usuario/EditarPerfil.aspx");
-            }
+            //int sesion = int.Parse(Session["RolUsuario"].ToString());
+            //if (sesion==1)
+            //{
+            //    Response.Redirect("Usuario/EditarPerfil.aspx");
+            //}
         }
 
         protected void btnUsuario_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Usuario/EditarPerfil.aspx");
+            int idUsuario = int.Parse(Session["Usuario"].ToString());
+            if (idUsuario > 0)
+            {
+                Response.Redirect("Usuario/EditarPerfil.aspx");
+            }
+            else
+            {
+                Response.Redirect("../Login.aspx");
+            }           
         }
 
         protected void btnAdministrador_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Administrador/ListarVeterinarias.aspx");
+            int idUsuario = int.Parse(Session["Usuario"].ToString());
+            if (idUsuario > 0)
+            {
+                Response.Redirect("Administrador/ListarVeterinarias.aspx");
+            }
+            else
+            {
+                Response.Redirect("../Login.aspx");
+            }
+          
         }
     }
 }
