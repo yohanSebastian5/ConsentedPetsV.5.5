@@ -46,6 +46,7 @@ namespace ConsentedPets.Vista.PerfilesRol.Administrador.Veterinaria
             objL.mtdRegistrar(objE);
             ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Servicio " + objE.nombre + "!', 'Se ha Registrado con Exito', 'success')", true);
 
+            
         }
     }
 }

@@ -15,7 +15,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
 
     <h2>Editar y Elimnar</h2>
-        <asp:DropDownList ID="ddlTipo" runat="server" OnSelectedIndexChanged="ddlTipo_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+    <asp:DropDownList ID="ddlTipo" runat="server" OnSelectedIndexChanged="ddlTipo_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
     <div id="dataTableContainer" class="table-responsive" style="width: 100%">
         <table id="tblTrabajador" class="table ">
             <thead>
@@ -31,37 +31,37 @@
     </div>
 
 
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Actualizacion de Datos</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="section">
-                            <%--<h2 class="py-3">Actualizacion de Datos</h2>--%>
-                            <div class="container">
-                                <div class="card">
-                                    <div class="card__image-container">
-                                        <img class="card__image" src="Imagenes/Halo.PNG" alt="" />
-                                    </div>
-                                    <h3>¿Esta Seguro de Eliminar el Establecimiento?</h3>
-                                   
-                                    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Actualizacion de Datos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="section">
+                        <%--<h2 class="py-3">Actualizacion de Datos</h2>--%>
+                        <div class="container">
+                            <div class="card">
+                                <div class="card__image-container">
+                                    <img class="card__image" src="Imagenes/Halo.PNG" alt="" />
+                                </div>
+                                <h3>¿Esta Seguro de Eliminar el Establecimiento?</h3>
+
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <asp:Button ID="btnEliminar" CssClass="btn btn-danger" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
-                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <asp:Button ID="btnEliminar" CssClass="btn btn-danger" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 
 
     <asp:TextBox ID="txtId" runat="server"></asp:TextBox>
@@ -85,14 +85,15 @@
                             {
                                 data: null,
                                 render: function (data, type, row) {
-                                    return '<button id="btn" type="button" class="btn btn-update btn-primary" data-id-personal="' + data.id + '" data-bs-toggle="modal"  data-bs-target="#staticBackdrop"> Eliminar </button > ';
+                                    return '<button type="button" id="btneliminar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-id="' + data.id + '">Editar</button > ';
                                 }
                             }
 
                         ]
                     });
-                    $('#tblTrabajador').on('click', 'btnEliminar', function () {
-                        var id = $(this).data('idPersonal');
+
+                    $('#tblTrabajador').on('click', '#btneliminar', function () {
+                        var id = $(this).data('idVeterinaria');
                         GuardarIdPersonal(id);
                     });
 
@@ -120,7 +121,7 @@
             });
             activarBoton();
         }
-       
+
 
     </script>
 </asp:Content>

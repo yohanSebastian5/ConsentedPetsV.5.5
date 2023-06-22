@@ -13,13 +13,13 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            btnR.ServerClick += new EventHandler(mtdRegistrarActividad);
         }
         protected void calendarFecha_SelectionChanged(object sender, EventArgs e)
         {
             txtFecha.Value= calendarFecha.SelectedDate.ToString("yyyy-MM-dd");
         }
-        public void mtdRegistrarActividad()
+        public void mtdRegistrarActividad(object sender, EventArgs e)
         {
             ClProcesosVetL objL = new ClProcesosVetL();
             ClServicioVeterinariaE objE = new ClServicioVeterinariaE();

@@ -37,7 +37,7 @@
                             </div>
                         </div>
                         <div class="formDiv" style="transition-delay: 0.6s">
-                            <button class="acceptBtn" type="submit">Registrar</button>
+                            <button class="acceptBtn" runat="server" id="btnR" type="submit">Registrar</button>
                     </div>
                 </form>
             </div>
