@@ -17,21 +17,22 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador
         {
             if (!IsPostBack)
             {
-                ddlTipo.Items.Insert(0, new ListItem("Establecimientos Registrados ", "0"));
-                ddlTipo.Items.Insert(0, new ListItem("Escuelas Registrados ", "3"));
-                ddlTipo.Items.Insert(0, new ListItem("Veterinarias Registrados ", "1"));
-                ddlTipo.Items.Insert(0, new ListItem("Tiendas Registrados ", "2"));
+                ddlTipo.Items.Insert(0, new ListItem("Establecimientos Registrados: ", "0"));
+                ddlTipo.Items.Insert(1, new ListItem("Veterinarias Registrados ", "1"));
+                ddlTipo.Items.Insert(2, new ListItem("Tiendas Registrados ", "2"));
+                ddlTipo.Items.Insert(3, new ListItem("Escuelas Registrados ", "3"));
                 ddlTipo.DataBind();
             }
+            
         }
-
+      
 
 
         [WebMethod]
         public static List<ClRepeaterEstablecimientoE> mtdLista()
         {
             int id = int.Parse(HttpContext.Current.Session["Tipo"].ToString());
-            int escuela = int.Parse(HttpContext.Current.Session["Escuela"].ToString());
+            
             int usuario = int.Parse(HttpContext.Current.Session["Usuario"].ToString());
 
             List<ClRepeaterEstablecimientoE> lista = null;
@@ -61,6 +62,15 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador
         {
             int idCategoria = int.Parse(ddlTipo.SelectedValue.ToString());
             Session["tipo"] = idCategoria;
+        }
+        [WebMethod]
+        protected void GuardarIdPersonal(string id)
+        {
+           HttpContext.Current.Session["Eliminar"]=id;
+        }
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

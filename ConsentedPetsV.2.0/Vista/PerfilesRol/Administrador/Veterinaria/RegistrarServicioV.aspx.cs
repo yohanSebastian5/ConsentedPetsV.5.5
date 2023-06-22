@@ -14,6 +14,20 @@ namespace ConsentedPets.Vista.PerfilesRol.Administrador.Veterinaria
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                ddlServicio.Items.Insert(0, new ListItem("Seleccione Servicio: ", "0"));
+                ddlServicio.Items.Insert(1, new ListItem("Belleza ", "1"));
+                ddlServicio.Items.Insert(2, new ListItem("Vacunacion ", "2"));
+                ddlServicio.Items.Insert(3, new ListItem("Profilazis", "3"));
+                ddlServicio.Items.Insert(4, new ListItem("Urgencias", "4"));
+                ddlServicio.Items.Insert(5, new ListItem("Consulta General", "5"));
+                ddlServicio.Items.Insert(6, new ListItem("Tratamiento de Heridas", "6"));
+                ddlServicio.Items.Insert(7, new ListItem("Examenes", "7"));
+                ddlServicio.Items.Insert(8, new ListItem("Radiografias", "8"));
+                ddlServicio.Items.Insert(9, new ListItem("Cirugias", "9"));
+                ddlServicio.DataBind();
+            }
             btnRegistrar.ServerClick += new EventHandler(mtdRegistrar);
         }
         public void mtdRegistrar(object sender, EventArgs e)
@@ -23,7 +37,7 @@ namespace ConsentedPets.Vista.PerfilesRol.Administrador.Veterinaria
             string nombreV = txtNombre.Text+txtPrecio  + ".png";
             string rutaImg = Path.Combine(Server.MapPath("../../../imagenes/servicios/"), nombreV);
             FlImagenU.SaveAs(rutaImg);
-            objE.idServicioV = int.Parse(Request.Form["grupo"]);
+            objE.idServicioV = int.Parse(ddlServicio.SelectedValue.ToString());
             objE.precio = int.Parse(txtPrecio.Text);
             objE.descripcion = txtDescripcio.Text;
             objE.nombre = txtNombre.Text;

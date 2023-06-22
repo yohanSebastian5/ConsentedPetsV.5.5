@@ -35,7 +35,7 @@
 
         <!-- Navbar-->
         <ul class="navbar-nav ms-auto ms-md-10 me-3 me-lg-4">
-            <a class="nav-link" href="../../../../Principal.aspx">Cerrar sesion</a>
+            <a class="nav-link" href="../../../../PaginaPrincipal.aspx">Cerrar sesion</a>
         </ul>
     </nav>
     <div id="layoutSidenav">

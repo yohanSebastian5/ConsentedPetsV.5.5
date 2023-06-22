@@ -100,6 +100,25 @@ namespace ConsentedPets.Datos
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
+        public void mtdEliminarE(int idT, int idE)
+        {
+            string establecimiento = "";
+            if (idT==1)
+            {
+
+            }
+
+
+
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "RegistrarUsuario" + establecimiento;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idUsuario",establecimiento);
+            comando.Parameters.AddWithValue("@id" + establecimiento,establecimiento );
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+        }
         public ClEstablecimientoE mtdListar(string foto="",string establecimiento="Veterinaria",int id=0,int tipo=0)
         {
             string consulta="";

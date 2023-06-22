@@ -11,7 +11,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
-    <h1 style="justify-content: center; align-items: center; display: flex; margin-top: 50px; color: white; font-size: 69px;">MASCOTAS REGISTRADAS</h1>
+    <h1 style="justify-content: center; align-items: center; display: flex; margin-top: 50px; color: white; font-size: 69px;">PEDIDOS SOLICITADOS</h1>
     <asp:Repeater ID="repCard" runat="server">
         <ItemTemplate>
             <div class="card" style="flex-direction: initial">

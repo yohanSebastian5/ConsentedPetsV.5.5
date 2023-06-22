@@ -31,7 +31,37 @@
     </div>
 
 
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Actualizacion de Datos</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="section">
+                            <%--<h2 class="py-3">Actualizacion de Datos</h2>--%>
+                            <div class="container">
+                                <div class="card">
+                                    <div class="card__image-container">
+                                        <img class="card__image" src="Imagenes/Halo.PNG" alt="" />
+                                    </div>
+                                    <h3>¿Esta Seguro de Eliminar el Establecimiento?</h3>
+                                   
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <asp:Button ID="btnEliminar" CssClass="btn btn-danger" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 
 
     <asp:TextBox ID="txtId" runat="server"></asp:TextBox>
@@ -55,13 +85,16 @@
                             {
                                 data: null,
                                 render: function (data, type, row) {
-                                    return '<button type="button" class="btn btn-update btn-primary" data-id-personal="' + data.id + '" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Editar </button > ';
+                                    return '<button id="btn" type="button" class="btn btn-update btn-primary" data-id-personal="' + data.id + '" data-bs-toggle="modal"  data-bs-target="#staticBackdrop"> Eliminar </button > ';
                                 }
                             }
 
                         ]
                     });
-
+                    $('#tblTrabajador').on('click', 'btnEliminar', function () {
+                        var id = $(this).data('idPersonal');
+                        GuardarIdPersonal(id);
+                    });
 
                 },
                 error: function (error) {
@@ -69,6 +102,25 @@
                 }
             });
         });
+
+        function GuardarIdPersonal(elementoA) {
+            $.ajax({
+                type: "POST",
+                url: "EliminarEstablecimientos.aspx/GuardarIdPersonal",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify({ tipo: elementoA }),
+                success: function (data) {
+                    console.log(valor);
+                }, error: function (xhr, textStatus, errorThrown) {
+                    // Manejar cualquier error que ocurra durante la llamada AJAX
+                    console.error(errorThrown);
+                }
+
+            });
+            activarBoton();
+        }
+       
 
     </script>
 </asp:Content>
