@@ -34,6 +34,7 @@ https://templatemo.com/tm-558-klassy-cafe
 </head>
 
 <body>
+
     <form runat="server">
         <!-- ***** Preloader Start ***** -->
         <div id="preloader">
@@ -410,11 +411,12 @@ https://templatemo.com/tm-558-klassy-cafe
                                                     <asp:Repeater runat="server" ID="repProduc">
                                                         <ItemTemplate>
                                                             <div class="tab-item">
-                                                                <img src="assets/images/tab-item-01.png" alt="">
+                                                                
+                                                                <img src='<%# ResolveUrl("~/Vista/imagenes/ImagenesProductoCat/") + Eval("foto") %>' />
                                                                 <h4><%# Eval("nombre") %></h4>
                                                                 <p><%# Eval("descripcion") %></p>
                                                                 <div class="price">
-                                                                    <h6>$10.50</h6>
+                                                                    <h6>$<%# Eval("precio") %></h6>
                                                                 </div>
 
 
