@@ -15,11 +15,12 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
 
+            if (!IsPostBack)
+            {
 
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
-                idUsuario = 5;
+               
                 CLUsuarioL objU = new CLUsuarioL();
                 ClUsuarioE objDatos = objU.mtdListarU(idUsuario);
                 txtNombre.Text = objDatos.nombre;
@@ -33,14 +34,18 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario
                 string ruta = "~/Vista/imagenes/ImagenesUsuarios/" + nombre;
                 img.Src = ResolveUrl(ruta);
                 nom.InnerText = objDatos.nombre;
-                
+            }
             
         }
-        [WebMethod]
+      
         protected void btnAddMore_Click(object sender, EventArgs e)
         {
             ClUsuarioE objE = new ClUsuarioE();
             CLUsuarioL objL = new CLUsuarioL();
+            string rutaF = txtNombre.Text + txtApellido.Text + txtTelefono.Text + ".png";
+            string rutaImg = Path.Combine(Server.MapPath("../../imagenes/ImagenesUsuarios/"), rutaF);
+            FlImagenV.SaveAs(rutaImg);
+            objE.idUsuario=int.Parse(Session["Usuario"].ToString());
             objE.nombre = txtNombre.Text;
             objE.apellido = txtApellido.Text;
             objE.genero = txtGenero.Text;
@@ -48,15 +53,12 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario
             objE.email = txtEmail.Text;
             objE.direccion = txtDireccion.Text;
             objE.contraseña = txtContraseña.Text;
-
-
-            string rutaF = txtNombre.Text + txtApellido.Text + txtTelefono.Text + ".png";
-            string rutaImg = Path.Combine(Server.MapPath("../imagenes/ImagenesUsuarios/"), rutaF);
-            FlImagenV.SaveAs(rutaImg);
+ 
+            objE.foto = rutaF;
+           
             objL.mtdActualizarDatos(objE);
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Informacion Atualizada!', ''" + objE.nombre + "' A sido Actualizado', 'success')", true);
-
-
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Informacion Atualizada " + objE.nombre + "!', 'A sido Actualizado', 'success')", true);
+            
         }
     }
 }

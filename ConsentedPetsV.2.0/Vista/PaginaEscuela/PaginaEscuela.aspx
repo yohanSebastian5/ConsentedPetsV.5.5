@@ -323,8 +323,9 @@
                                             </div>
 
                                             <div>
+                                                <asp:Button CssClass="btn btn-dark btn-block border-0 py-3" runat="server" id="btnM" text="Sign Up Now" OnClick="btnM_Click" />
+                                              
                                                 
-                                                <button class="btn btn-dark btn-block border-0 py-3 submit" runat="server" id="btnMatricula">Sign Up Now</button>
                                             </div>
 
                                         </div>
