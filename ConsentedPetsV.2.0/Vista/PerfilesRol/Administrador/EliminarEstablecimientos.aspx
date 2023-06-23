@@ -5,7 +5,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 
+   
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
 
@@ -24,6 +26,7 @@
                     <th>Telefono</th>
                     <th>Email</th>
                     <th>Direccion</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -44,9 +47,6 @@
                         <%--<h2 class="py-3">Actualizacion de Datos</h2>--%>
                         <div class="container">
                             <div class="card">
-                                <div class="card__image-container">
-                                    <img class="card__image" src="Imagenes/Halo.PNG" alt="" />
-                                </div>
                                 <h3>¿Esta Seguro de Eliminar el Establecimiento?</h3>
 
                             </div>
@@ -85,7 +85,16 @@
                             {
                                 data: null,
                                 render: function (data, type, row) {
-                                    return '<button type="button" id="btneliminar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-id="' + data.id + '">Editar</button > ';
+                                    //var btneli = document.createElement("button");
+                                    //btneli.className = 'btn btn-primary';
+                                    //btneli.innerHTML = 'eliminar';
+                                    //btneli.setAttribute = "type", "button";
+                                    //btneli.addEventListener('click', function () {
+                                    //    console.log('ddsd');
+                                    //});
+                                    //return btneli;
+                                    return '<button type="button" id="btneliminar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-id="' + data.idVeterinaria + '">Editar</button > ';
+
                                 }
                             }
 
@@ -93,7 +102,9 @@
                     });
 
                     $('#tblTrabajador').on('click', '#btneliminar', function () {
-                        var id = $(this).data('idVeterinaria');
+                        console.log('ssdsd');
+                        var id = $(this).data('id');
+                        console.log(id);
                         GuardarIdPersonal(id);
                     });
 
@@ -105,12 +116,13 @@
         });
 
         function GuardarIdPersonal(elementoA) {
+            console.log('pendejo');
             $.ajax({
                 type: "POST",
                 url: "EliminarEstablecimientos.aspx/GuardarIdPersonal",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
-                data: JSON.stringify({ tipo: elementoA }),
+                data: JSON.stringify({ id: elementoA }),
                 success: function (data) {
                     console.log(valor);
                 }, error: function (xhr, textStatus, errorThrown) {
@@ -119,9 +131,9 @@
                 }
 
             });
-            activarBoton();
         }
-
-
     </script>
+
+
+
 </asp:Content>

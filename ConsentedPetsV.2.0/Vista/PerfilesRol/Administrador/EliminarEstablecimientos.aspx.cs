@@ -64,7 +64,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador
             Session["tipo"] = idCategoria;
         }
         [WebMethod]
-        protected void GuardarIdPersonal(string id)
+        public static void GuardarIdPersonal(string id)
         {
            HttpContext.Current.Session["Eliminar"]=id;
         }
