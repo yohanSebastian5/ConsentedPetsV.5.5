@@ -34,8 +34,10 @@ https://templatemo.com/tm-558-klassy-cafe
 </head>
 
 <body>
-
     <form runat="server">
+
+
+
         <!-- ***** Preloader Start ***** -->
         <div id="preloader">
             <div class="jumper">
@@ -272,77 +274,77 @@ https://templatemo.com/tm-558-klassy-cafe
                     </div>
                     <div class="col-lg-6">
                         <div class="contact-form">
-                          
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <h4>Table Reservation</h4>
-                                    </div>
-                                    <div class="col-lg-6 col-sm-12">
-                                        <fieldset>
-                                            <input name="name" type="text" id="name" placeholder="Your Name*" >
-                                        </fieldset>
-                                    </div>
-                                    <div class="col-lg-6 col-sm-12">
-                                        <fieldset>
-                                            <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address" >
-                                        </fieldset>
-                                    </div>
-                                    <div class="col-lg-6 col-sm-12">
-                                        <fieldset>
-                                            <input name="phone" type="text" id="phone" placeholder="Phone Number*" >
-                                        </fieldset>
-                                    </div>
-                                    <div class="col-md-6 col-sm-12">
-                                        <fieldset>
-                                            <select value="number-guests" name="number-guests" id="number-guests">
-                                                <option value="number-guests">Number Of Guests</option>
-                                                <option name="1" id="1">1</option>
-                                                <option name="2" id="2">2</option>
-                                                <option name="3" id="3">3</option>
-                                                <option name="4" id="4">4</option>
-                                                <option name="5" id="5">5</option>
-                                                <option name="6" id="6">6</option>
-                                                <option name="7" id="7">7</option>
-                                                <option name="8" id="8">8</option>
-                                                <option name="9" id="9">9</option>
-                                                <option name="10" id="10">10</option>
-                                                <option name="11" id="11">11</option>
-                                                <option name="12" id="12">12</option>
-                                            </select>
-                                        </fieldset>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div id="filterDate2">
-                                            <div class="input-group date" data-date-format="dd/mm/yyyy">
-                                                <input name="date" id="date" type="text" class="form-control" placeholder="dd/mm/yyyy">
-                                                <div class="input-group-addon">
-                                                    <span class="glyphicon glyphicon-th"></span>
-                                                </div>
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h4>Table Reservation</h4>
+                                </div>
+                                <div class="col-lg-6 col-sm-12">
+                                    <fieldset>
+                                        <input name="name" type="text" id="name" placeholder="Your Name*">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-6 col-sm-12">
+                                    <fieldset>
+                                        <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-6 col-sm-12">
+                                    <fieldset>
+                                        <input name="phone" type="text" id="phone" placeholder="Phone Number*">
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <fieldset>
+                                        <select value="number-guests" name="number-guests" id="number-guests">
+                                            <option value="number-guests">Number Of Guests</option>
+                                            <option name="1" id="1">1</option>
+                                            <option name="2" id="2">2</option>
+                                            <option name="3" id="3">3</option>
+                                            <option name="4" id="4">4</option>
+                                            <option name="5" id="5">5</option>
+                                            <option name="6" id="6">6</option>
+                                            <option name="7" id="7">7</option>
+                                            <option name="8" id="8">8</option>
+                                            <option name="9" id="9">9</option>
+                                            <option name="10" id="10">10</option>
+                                            <option name="11" id="11">11</option>
+                                            <option name="12" id="12">12</option>
+                                        </select>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div id="filterDate2">
+                                        <div class="input-group date" data-date-format="dd/mm/yyyy">
+                                            <input name="date" id="date" type="text" class="form-control" placeholder="dd/mm/yyyy">
+                                            <div class="input-group-addon">
+                                                <span class="glyphicon glyphicon-th"></span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-sm-12">
-                                        <fieldset>
-                                            <select value="time" name="time" id="time">
-                                                <option value="time">Time</option>
-                                                <option name="Breakfast" id="Breakfast">Breakfast</option>
-                                                <option name="Lunch" id="Lunch">Lunch</option>
-                                                <option name="Dinner" id="Dinner">Dinner</option>
-                                            </select>
-                                        </fieldset>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <fieldset>
-                                            <textarea name="message" rows="6" id="message" placeholder="Message" ></textarea>
-                                        </fieldset>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <fieldset>
-                                            <button type="submit" id="form-submit" class="main-button-icon">Make A Reservation</button>
-                                        </fieldset>
-                                    </div>
                                 </div>
- 
+                                <div class="col-md-6 col-sm-12">
+                                    <fieldset>
+                                        <select value="time" name="time" id="time">
+                                            <option value="time">Time</option>
+                                            <option name="Breakfast" id="Breakfast">Breakfast</option>
+                                            <option name="Lunch" id="Lunch">Lunch</option>
+                                            <option name="Dinner" id="Dinner">Dinner</option>
+                                        </select>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <textarea name="message" rows="6" id="message" placeholder="Message"></textarea>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <button type="submit" id="form-submit" class="main-button-icon">Make A Reservation</button>
+                                    </fieldset>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -351,97 +353,103 @@ https://templatemo.com/tm-558-klassy-cafe
         <!-- ***** Reservation Area Ends ***** -->
 
         <!-- ***** Menu Area Starts ***** -->
+
         <section class="section" id="offers">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 offset-lg-4 text-center">
-                        <div class="section-heading">
-                            <h6>Klassy Week</h6>
-                            <h2>This Week’s Special Meal Offers</h2>
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 offset-lg-4 text-center">
+                                <div class="section-heading">
+                                    <h6>Products</h6>
+                                    <h2>The best products for your pets</h2>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="row" id="tabs">
+                        <div class="row">
                             <div class="col-lg-12">
+                                <div class="row" id="tabs">
+                                    <div class="col-lg-12">
 
 
-                                <div class="heading-tabs">
-                                    <div class="row">
+                                        <div class="heading-tabs">
+                                            <div class="row">
 
 
-                                        <div class="col-lg-6 offset-lg-3">
-                                            <ul>
-                                                <asp:Repeater runat="server" ID="repCateg">
-                                                    <ItemTemplate>
-                                                        <li>
-                                                            <h2 style="display: none" id="idV" class="Pet-text" contenteditable="inherit"><%#Eval("idCategoriaPS") %></h2>
-                                                            <a runat="server" id="idCategoria" onclick="listarVet(this)" href='#tabs-1 '>
-                                                                <%--  <a href="PaginaTienda.aspx?idCategoriaPS=<%# Session["idCategoriaPS"] %>"></a> --%> <%# Eval("nombre") %>
-                                                            </a>
+                                                <div class="col-lg-6 offset-lg-3">
+                                                    <ul>
+                                                        <asp:Repeater runat="server" ID="repCateg">
+                                                            <ItemTemplate>
+                                                                <li>
+                                                                    <h2 style="display: none" id="idV" class="Pet-text" contenteditable="inherit"><%#Eval("idCategoriaPS") %></h2>
+                                                                    <a runat="server" id="idCategoria" onclick="listarVet(this)" href='#tabs-1 '>
+                                                                        <%--  <a href="PaginaTienda.aspx?idCategoriaPS=<%# Session["idCategoriaPS"] %>"></a> --%> <%# Eval("nombre") %>
+                                                                    </a>
 
-                                                        </li>
-
-
+                                                                </li>
 
 
-                                                    </ItemTemplate>
-                                                </asp:Repeater>
-                                                <asp:Button ID="btnProductos" Style="display:none" OnClick="btnProductos_Click"  runat="server" Text="Button" />
-                                                <%--<input type="hidden" runat="server" id="hdnCategoriaSeleccionada" />--%>
-                                            </ul>
+
+
+                                                            </ItemTemplate>
+                                                        </asp:Repeater>
+                                                        <asp:Button ID="btnProductos" Style="display: none" OnClick="btnProductos_Click" runat="server" Text="Button" />
+                                                        <%--<input type="hidden" runat="server" id="hdnCategoriaSeleccionada" />--%>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+
                                         </div>
 
                                     </div>
-
-                                </div>
-
-                            </div>
-                            <div class="col-lg-12">
-                                <section class='tabs-content' style="width: 100%">
-                                    <article id='tabs-1'>
+                                    <div class="col-lg-12">
+                                        <section class='tabs-content' style="width: 100%">
+                                            <article id='tabs-1'>
 
 
-                                        <div class="row">
+                                                <div class="row">
 
 
-                                            <div class="col-lg-12">
-                                                <div class="list-container col-lg-12">
-                                                    <asp:Repeater runat="server" ID="repProduc">
-                                                        <ItemTemplate>
-                                                            <div class="tab-item">
-                                                                
-                                                                <img src='<%# ResolveUrl("~/Vista/imagenes/ImagenesProductoCat/") + Eval("foto") %>' />
-                                                                <h4><%# Eval("nombre") %></h4>
-                                                                <p><%# Eval("descripcion") %></p>
-                                                                <div class="price">
-                                                                    <h6>$<%# Eval("precio") %></h6>
-                                                                </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="list-container col-lg-12">
+                                                            <asp:Repeater runat="server" ID="repProduc">
+                                                                <ItemTemplate>
+                                                                    <div class="tab-item">
+
+                                                                        <img style="width: 65px; height:70px;" src='<%# ResolveUrl("~/Vista/imagenes/ImagenesProductoCat/") + Eval("foto") %>' />
+                                                                        <h4><%# Eval("nombre") %></h4>
+                                                                        <p><%# Eval("descripcion") %></p>
+                                                                        <div class="price">
+                                                                            <h6>$ <%# Eval("precioP") %></h6>
+                                                                        </div>
 
 
 
-                                                            </div>
-                                                        </ItemTemplate>
-                                                    </asp:Repeater>
+                                                                    </div>
+                                                                </ItemTemplate>
+                                                            </asp:Repeater>
 
-                                                    <!-- Aquí puedes agregar más elementos -->
+                                                            <!-- Aquí puedes agregar más elementos -->
+                                                        </div>
+                                                    </div>
+
+
+
                                                 </div>
-                                            </div>
+
+                                            </article>
 
 
-
-                                        </div>
-
-                                    </article>
-
-
-                                </section>
+                                        </section>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
         </section>
 
         <!-- ***** Chefs Area Ends ***** -->
@@ -479,8 +487,9 @@ https://templatemo.com/tm-558-klassy-cafe
                 </div>
             </div>
         </footer>
-    </form>
 
+
+    </form>
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
 
