@@ -7,7 +7,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="../../../Styles/sweetalert.css" rel="stylesheet" />
     <script src="../../../Scripts/sweetalert.min.js"></script>
-    <script src="../../../Scripts/sweetalert-dev.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
 

@@ -33,6 +33,7 @@ namespace ConsentedPetsV._2._0
             Session["idEscuela"] = 0;
 
             Session["idCategoriaPS"] = 0;
+            Session["foto"] = "";
 
 
 

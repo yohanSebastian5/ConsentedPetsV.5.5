@@ -7,7 +7,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.js" integrity="sha256-mkdmXjMvBcpAyyFNCVdbwg4v+ycJho65QLDwVE3ViDs=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link href="../../css/RegistrarActividad.css" rel="stylesheet" />
-</asp:Content>
+    <script src="../../../../Scripts/sweetalert.min.js"></script>
+    <link href="../../../../Styles/sweetalert.css" rel="stylesheet" />
+</asp:Content>       
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
     <!-- partial:index.partial.html -->
     <!-- NORMALIZED CSS INSTALLED-->

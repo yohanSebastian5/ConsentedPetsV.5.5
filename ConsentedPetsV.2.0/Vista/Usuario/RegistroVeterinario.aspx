@@ -6,6 +6,8 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="StyleU/Style.css" rel="stylesheet" />
+    <script src="../../Scripts/sweetalert.min.js"></script>
+    <link href="../../Styles/sweetalert.css" rel="stylesheet" />
     <title></title>
 </head>
 <body>

@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentHeadAdministrador" runat="server">
     <link href="../../css/registrar.css" rel="stylesheet" />
     <link href="../../../../Styles/sweetalert.css" rel="stylesheet" />
-
+    <script src="../../../../Scripts/sweetalert.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
     <!-- partial:index.partial.html -->

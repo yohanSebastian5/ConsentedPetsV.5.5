@@ -16,16 +16,21 @@ namespace ConsentedPets.Vista.PerfilesRol.Administrador.Veterinaria
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int clase = 1;
-        
-            ClEstablecimientoL objEstaL = new ClEstablecimientoL();
-            ClEstablecimientoE objEstaE = objEstaL.mtdListarVet("","Veterinaria", int.Parse(Session["Veterinaria"].ToString()), clase);
-            txtNombre.Text = objEstaE.nombre;
-            txtEmail.Text = objEstaE.email;
-            txtDireccion.Text = objEstaE.direccion;
-            txtTelefono.Text = objEstaE.telefono;
-            string ruta = "../../../imagenes/ImagenesEstablecimiento/"+objEstaE.foto;
-            Image1.ImageUrl = ruta;
+            if (!IsPostBack)
+            {
+                int clase = 1;
+
+                ClEstablecimientoL objEstaL = new ClEstablecimientoL();
+                ClEstablecimientoE objEstaE = objEstaL.mtdListarVet("", "Veterinaria", int.Parse(Session["Veterinaria"].ToString()), clase);
+                txtNombre.Text = objEstaE.nombre;
+                txtEmail.Text = objEstaE.email;
+                txtDireccion.Text = objEstaE.direccion;
+                txtTelefono.Text = objEstaE.telefono;
+                Session["foto"] = objEstaE.foto;
+                string ruta = "../../../imagenes/ImagenesEstablecimiento/" + objEstaE.foto;
+                Image1.ImageUrl = ruta;
+
+            }
 
         }
 
@@ -37,9 +42,22 @@ namespace ConsentedPets.Vista.PerfilesRol.Administrador.Veterinaria
             objE.telefono = txtTelefono.Text;
             objE.direccion= txtDireccion.Text;
             objE.email = txtEmail.Text;
-            string nombreV = 1 + txtNombre.Text + txtTelefono.Text + ".png";
-            string rutaImg = Path.Combine(Server.MapPath("~/Vista/imagenes/ImagenesEstablecimiento/"), nombreV);
-            FlImagenV.SaveAs(rutaImg);
+            string foto = "";
+            if (FlImagenV.HasFile)
+            {
+
+                string nombreV = 1 + txtNombre.Text + txtTelefono.Text + ".png";
+                string rutaImg = Path.Combine(Server.MapPath("~/Vista/imagenes/ImagenesEstablecimiento/"), nombreV);
+                FlImagenV.SaveAs(rutaImg);
+                foto = nombreV;
+            }
+            else
+            {
+                foto= Session["foto"].ToString();
+            }
+
+            objE.foto = foto;
+            objE.id= int.Parse(Session["Veterinaria"].ToString());
             objL.mtdActualizar(objE,"V");
             ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Informacion Atualizada!', ''"+objE.nombre+"' A sido Actualizado', 'success')", true);
 

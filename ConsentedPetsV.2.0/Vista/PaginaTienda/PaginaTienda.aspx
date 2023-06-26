@@ -22,6 +22,9 @@ https://templatemo.com/tm-558-klassy-cafe
 
 -->
     <!-- Additional CSS Files -->
+    <link href="../../Styles/sweetalert.css" rel="stylesheet" />
+    <script src="../../Scripts/sweetalert.min.js"></script>
+    <script src="../../Scripts/sweetalert-dev.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">

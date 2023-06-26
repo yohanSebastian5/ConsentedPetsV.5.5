@@ -43,7 +43,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario
             ClUsuarioE objE = new ClUsuarioE();
             CLUsuarioL objL = new CLUsuarioL();
             string rutaF = txtNombre.Text + txtApellido.Text + txtTelefono.Text + ".png";
-            string rutaImg = Path.Combine(Server.MapPath("../../imagenes/ImagenesUsuarios/"), rutaF);
+            string rutaImg = Path.Combine(Server.MapPath("~/Vista/imagenes/ImagenesUsuarios/"), rutaF);
             FlImagenV.SaveAs(rutaImg);
             objE.idUsuario=int.Parse(Session["Usuario"].ToString());
             objE.nombre = txtNombre.Text;
@@ -57,8 +57,12 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario
             objE.foto = rutaF;
            
             objL.mtdActualizarDatos(objE);
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Informacion Atualizada " + objE.nombre + "!', 'A sido Actualizado', 'success')", true);
-            
+            if (objL != null)
+            {
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Informacion Atualizada " + objE.nombre + "!', 'A sido Actualizado', 'success')", true);
+
+            }
+
         }
     }
 }

@@ -20,7 +20,7 @@ namespace ConsentedPetsV._2._0.Vista
 
 
             int idUsuario = int.Parse(Session["Usuario"].ToString());
-            idUsuario = 1;
+          
             ClMascotaL objData = new ClMascotaL();
             List<ClMascotaE> listaMascota = objData.mtdListarMascota(idUsuario);
             ddlMascota.DataSource = listaMascota;
@@ -30,8 +30,7 @@ namespace ConsentedPetsV._2._0.Vista
 
 
             int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
-            idVeterinaria = 1;
-            idVeterinaria = 1;
+            
             ClServicioVetL objVet = new ClServicioVetL();
             List<ClServicioVeterinariaE> lista = objVet.mtdRepeater(idVeterinaria);
             ddlServicio.DataSource = lista;
