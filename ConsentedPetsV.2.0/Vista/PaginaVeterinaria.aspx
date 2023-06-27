@@ -28,7 +28,9 @@
     <link href="PaginaVeterinaria/css/stiloProcesos.css" rel="stylesheet" />
     <!-- Customized Bootstrap Stylesheet -->
     <link href="PaginaVeterinaria/css/style.css" rel="stylesheet" />
+    <script src="../Scripts/sweetalert.min.js"></script>
 
+    <link href="../Styles/sweetalert.css" rel="stylesheet" />
 </head>
 
 <body>

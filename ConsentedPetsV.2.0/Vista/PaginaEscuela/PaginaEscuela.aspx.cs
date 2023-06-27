@@ -126,6 +126,10 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
             objME.precio = int.Parse(precio.InnerText);
             objML.mtdMatricula(objME);
             mtdlimpiar();
+            
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Su Mascota" + objME.nombre + "!', 'A sido matriculada', 'success')", true);
+
+            
         }
     }
 }

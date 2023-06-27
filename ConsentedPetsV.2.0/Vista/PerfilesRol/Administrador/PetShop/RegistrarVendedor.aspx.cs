@@ -41,6 +41,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.PetShop
             objUsuL.mtdActualizarEmp(objUsuE);
             objUsuL.mtdRol(objUsuE.idUsuario, rol);
             objUsuL.mtdUsuarioE(objUsuE.idUsuario, int.Parse(HttpContext.Current.Session["Tienda"].ToString()),3);
+
         }
 
         public string mtdGuardar()

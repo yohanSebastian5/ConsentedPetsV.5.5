@@ -41,7 +41,9 @@ namespace ConsentedPets.Vista.PerfilesRol.Administrador.PetShop
             FlImagenV.SaveAs(rutaImg);
             objE.foto = nombreV;
             objL.mtdActualizar(objE, "T");
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Informacion Atualizada!', ''" + objE.nombre + "' A sido Actualizado', 'success')", true);
+           
+            
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Informacion Atualizada! " + objE.nombre + "' A sido Actualizado', 'success')", true);
         }
     }
 }
