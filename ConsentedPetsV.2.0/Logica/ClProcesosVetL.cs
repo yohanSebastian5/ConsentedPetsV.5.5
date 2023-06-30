@@ -71,5 +71,10 @@ namespace ConsentedPetsV._2._0.Logica
             return lista;
 
         }
+        public void mtdRegistrarActividad(ClServicioVeterinariaE objE)
+        {
+            ClProcesosEscuela objD = new ClProcesosEscuela();
+            objD.mtdRegistrarActividad(objE);
+        }
     }
 }

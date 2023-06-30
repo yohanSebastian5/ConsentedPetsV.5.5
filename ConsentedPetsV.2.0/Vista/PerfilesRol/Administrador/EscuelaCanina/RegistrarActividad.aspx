@@ -24,19 +24,22 @@
                     <div class="formContainer">
                         <div class="formDiv" style="transition-delay: 0.2s">
                             <p>Nombre</p>
-                            <input type="text" required="" />
+                            <input type="text" id="txtnombre" runat="server" required="" />
                         </div>
                         <div class="formDiv" style="transition-delay: 0.4s">
                             <p>Descripcion</p>
-                            <input type="text" required="" />
+                            <input type="text" id="txtDescripcion" runat="server" required="" />
                         </div>
                           <div class="formDiv" style="transition-delay: 0.6s">
-                            <p>Fecha</p>
-                              <asp:Calendar runat="server"></asp:Calendar>
-                            <input type="email" required="" />
+                           <div class="mb-3">
+                                <label for="fechaCita">Fecha de la Cita</label>
+                                    <asp:Calendar ID="calendarFecha" runat="server" OnSelectionChanged="calendarFecha_SelectionChanged"></asp:Calendar>
+                                    <input type="text" id="txtFecha" runat="server" required="" />
+                                </div>
+                            </div>
                         </div>
                         <div class="formDiv" style="transition-delay: 0.6s">
-                            <button class="acceptBtn" type="submit">Registrar</button>
+                            <button class="acceptBtn" runat="server" id="btnR" type="submit">Registrar</button>
                     </div>
                 </form>
             </div>
