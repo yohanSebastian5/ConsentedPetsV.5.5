@@ -40,9 +40,17 @@ namespace ConsentedPets.Datos
                 seccion = "select * from Tienda inner join UsuarioTienda on Tienda.idTienda=UsuarioTienda.idTienda where UsuarioTienda.idUsuario='" + usuario + "'";
                 seccion2 = "Tienda";
             }
-            
+            string consulta = "";
+            if (usuario==0)
+            {
 
-            string consulta = seccion+seccion2;
+                 consulta = seccion + seccion2;
+            }
+            else
+            {
+
+                consulta = seccion;
+            }
             ClProcesarSQL SQL = new ClProcesarSQL();
             DataTable tblVeterinaria = SQL.mtdSelectDesc(consulta);
             List<ClRepeaterEstablecimientoE> listaProductos = new List<ClRepeaterEstablecimientoE>();

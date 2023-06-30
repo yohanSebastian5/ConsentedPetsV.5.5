@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vista/PerfilesRol/Administrador/PerfilAdmin.Master" AutoEventWireup="true" CodeBehind="RegistrarEscuela.aspx.cs" Inherits="ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.RegistrarEscuela" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentHeadAdministrador" runat="server">
     <link href="../css/añadirVeterinaria.css" rel="stylesheet" />
+    <link href="../../../Styles/sweetalert.css" rel="stylesheet" />
+    <script src="../../../Scripts/sweetalert.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
      <div class="page">

@@ -50,9 +50,13 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.PetShop
             FileUpload1.SaveAs(ruta);
             objE.foto = nombre;
             objL.mtdRegistrarProducto(objE);
+
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡El Producto " + objE.nombre + "!', 'A sido registrado', 'success')", true);
+
+
         }
-        
-      
+
+
 
         protected void Button_Click(object sender, EventArgs e)
         {
@@ -62,6 +66,10 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.PetShop
             objE.descripcionC = txtDescripcionC.Value;
             objE.idTienda = int.Parse(Session["Tienda"].ToString());
             objL.mtdRegistrarCategoria(objE);
+            
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡La Categoria " + objE.nombre + "!', 'A sido registrada', 'success')", true);
+
+            
         }
     }
 }

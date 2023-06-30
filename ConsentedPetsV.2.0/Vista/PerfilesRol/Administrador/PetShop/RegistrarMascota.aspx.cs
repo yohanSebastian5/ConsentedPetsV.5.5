@@ -24,7 +24,10 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.PetShop
             string rutaImg = Path.Combine(Server.MapPath("../imagenes/ImagenesMascota/"), nombreV);
             FlFotoM.SaveAs(rutaImg);
             objMascotaL.mtdRegistrarPS(txtNombre.Text, txtEspecie.Text, txtRaza.Text, txtEdad.Text, txtGenero.Text, nombreV, txtCondicion.Text, int.Parse(Session["Tienda"].ToString()),int.Parse(txtPrecio.Text));
+            
+                //ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Informacion Guardada " + objE.nombre + "!', 'A sido Actualizado', 'success')", true);
 
+            
         }
     }
 }

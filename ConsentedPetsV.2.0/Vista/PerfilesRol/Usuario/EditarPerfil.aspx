@@ -1,18 +1,21 @@
-﻿<%@ Page Title="" Language="C#"  EnableEventValidation="true" MasterPageFile="~/Vista/PerfilesRol/Usuario/PerfilUsuario.Master" AutoEventWireup="true" CodeBehind="EditarPerfil.aspx.cs" Inherits="ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario.EditarPerfil" %>
+﻿<%@ Page Title="" Language="C#"  EnableEventValidation="false" MasterPageFile="~/Vista/PerfilesRol/Usuario/PerfilUsuario.Master" AutoEventWireup="true" CodeBehind="EditarPerfil.aspx.cs" Inherits="ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario.EditarPerfil" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
-
-
     <link href="../../Css/EditarPerfilUsuario.css" rel="stylesheet" />
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="../../../Styles/sweetalert.css" rel="stylesheet" />
+    <script src="../../../Scripts/sweetalert.min.js"></script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
+
+
+    
     <!------ Include the above in your HEAD tag ---------->
 
     <div class="container emp-profile">
-        <form method="post">
+        <form >
             <div class="row">
 
                 <div class="col-md-6">

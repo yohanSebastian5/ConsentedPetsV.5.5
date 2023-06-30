@@ -42,6 +42,11 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
             objUsuL.mtdActualizarEmp(objUsuE);
             objUsuL.mtdRol(objUsuE.idUsuario, rol);
             objUsuL.mtdUsuarioE(objUsuE.idUsuario, int.Parse(HttpContext.Current.Session["Escuela"].ToString()),2);
+           
+
+                //ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡El Profesor " + objE.nombre + "!', 'A sido Actualizado', 'success')", true);
+                //ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Registro Exitoso !', 'Proceso Registrado ', 'success')", true);
+
 
         }
 

@@ -21,7 +21,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-
+    <link href="../../Styles/sweetalert.css" rel="stylesheet" />
+    <script src="../../Scripts/sweetalert-dev.js"></script>
+    <script src="../../Scripts/sweetalert.min.js"></script>
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
@@ -323,8 +325,9 @@
                                             </div>
 
                                             <div>
+                                                <asp:Button CssClass="btn btn-dark btn-block border-0 py-3" runat="server" id="btnM" text="Sign Up Now" OnClick="btnM_Click" />
+                                              
                                                 
-                                                <button class="btn btn-dark btn-block border-0 py-3 submit" runat="server" id="btnMatricula">Sign Up Now</button>
                                             </div>
 
                                         </div>

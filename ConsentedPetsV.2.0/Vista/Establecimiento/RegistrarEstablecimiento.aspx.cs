@@ -33,6 +33,10 @@ namespace ConsentedPets.Vista.Veterinaria
                 ddlTipo.DataBind();
                 ddlTipo.Items.Insert(0, new ListItem("Tipo de Establecimiento: ", "0"));
 
+                
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Informacion Guardada !', 'Establecimiento Registrado', 'success')", true);
+
+                
             }
 
         }

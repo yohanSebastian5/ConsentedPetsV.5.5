@@ -28,7 +28,9 @@
     <link href="PaginaVeterinaria/css/stiloProcesos.css" rel="stylesheet" />
     <!-- Customized Bootstrap Stylesheet -->
     <link href="PaginaVeterinaria/css/style.css" rel="stylesheet" />
+    <script src="../Scripts/sweetalert.min.js"></script>
 
+    <link href="../Styles/sweetalert.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -268,7 +270,7 @@
 
 
         <!--hast aqui va el ajax-->
-        --%>
+   
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>

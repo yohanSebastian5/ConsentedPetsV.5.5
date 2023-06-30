@@ -24,7 +24,7 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
                 int idEscuela = int.Parse(Session["Escuela"].ToString());
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
                 idEscuela = 1;
-                idUsuario = 9;
+                idUsuario = 5;
                 ClServicioEL objServicio = new ClServicioEL();
                 List<ClServicioEE> lista = objServicio.mtdServicio(idEscuela);
                 repServicio.DataSource = lista;
@@ -69,27 +69,10 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
 
 
             }
-            btnMatricula.ServerClick += new EventHandler(mtdRegistrar);
+          
 
         }
-        protected void mtdRegistrar(object sender, EventArgs e)
-        {
-
-            int idEscuela = int.Parse(Session["Escuela"].ToString());
-            idEscuela = 1;
-            ClMatriculaL objML = new ClMatriculaL();
-            ClMatriculaE objME = new ClMatriculaE();
-            DateTime fechaActual = DateTime.Today;
-             objME.fechaMatricula = fechaActual.Date.ToString("dd/MM/yyyy");
-
-            objME.idMascota = int.Parse(ddlMascota.SelectedValue);
-            objME.idEscuela = idEscuela;
-            objME.idCurso = int.Parse(ddlCurso.SelectedValue);
-            objME.precio = int.Parse(precio.InnerText);            
-            objML.mtdMatricula(objME);
-            mtdlimpiar();
-         
-        }
+       
         public void mtdlimpiar()
         {
             ddlCurso.SelectedIndex = 0;
@@ -125,6 +108,28 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
             ddlCurso.DataBind();
             ddlCurso.Items.Insert(0, new ListItem("Seleccione un curso del servicio:", "0"));
 
+        }
+
+        protected void btnM_Click(object sender, EventArgs e)
+        {
+
+            int idEscuela = int.Parse(Session["Escuela"].ToString());
+            idEscuela = 1;
+            ClMatriculaL objML = new ClMatriculaL();
+            ClMatriculaE objME = new ClMatriculaE();
+            DateTime fechaActual = DateTime.Today;
+            objME.fechaMatricula = fechaActual.Date.ToString("dd/MM/yyyy");
+
+            objME.idMascota = 1; // int.Parse(ddlMascota.SelectedValue);
+            objME.idEscuela = idEscuela;
+            objME.idCurso = int.Parse(ddlCurso.SelectedValue);
+            objME.precio = int.Parse(precio.InnerText);
+            objML.mtdMatricula(objME);
+            mtdlimpiar();
+            
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Su Mascota" + objME.nombre + "!', 'A sido matriculada', 'success')", true);
+
+            
         }
     }
 }

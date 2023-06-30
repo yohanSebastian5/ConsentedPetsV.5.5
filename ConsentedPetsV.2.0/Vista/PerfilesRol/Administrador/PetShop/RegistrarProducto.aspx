@@ -3,7 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentHeadAdministrador" runat="server">
     <link href="../../css/RegistrarProducto.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-
+    <link href="../../../../Styles/sweetalert.css" rel="stylesheet" />
+    <script src="../../../../Scripts/sweetalert.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
     <div class="container">

@@ -25,7 +25,8 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario
             string rutaImg = Path.Combine(Server.MapPath("../imagenes/ImagenesMascota/"), nombreV);
             FlFotoM.SaveAs(rutaImg);
             objMascotaL.mtdRegistrar(txtNombre.Text, txtEspecie.Text, txtRaza.Text, txtEdad.Text, txtGenero.Text, nombreV, txtCondicion.Text, idUsuario, idVeterinaria);
-            
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡La Mascota!', 'A sido registrada', 'success')", true);
+
         }
     }
 }

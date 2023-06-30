@@ -7,6 +7,8 @@
 
     <title></title>
     <link href="StyleU/Style.css" rel="stylesheet" />
+    <script src="../../Scripts/sweetalert.min.js"></script>
+    <link href="../../Styles/sweetalert.css" rel="stylesheet" />
 </head>
 <body style="background: #ed940ca1;">
     <%--<section class="login">--%>

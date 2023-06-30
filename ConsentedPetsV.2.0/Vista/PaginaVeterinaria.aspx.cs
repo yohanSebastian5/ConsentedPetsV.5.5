@@ -20,7 +20,7 @@ namespace ConsentedPetsV._2._0.Vista
 
 
             int idUsuario = int.Parse(Session["Usuario"].ToString());
-            idUsuario = 1;
+            idUsuario = 9;
             ClMascotaL objData = new ClMascotaL();
             List<ClMascotaE> listaMascota = objData.mtdListarMascota(idUsuario);
             ddlMascota.DataSource = listaMascota;
@@ -30,7 +30,6 @@ namespace ConsentedPetsV._2._0.Vista
 
 
             int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
-            idVeterinaria = 1;
             idVeterinaria = 1;
             ClServicioVetL objVet = new ClServicioVetL();
             List<ClServicioVeterinariaE> lista = objVet.mtdRepeater(idVeterinaria);
@@ -79,10 +78,9 @@ namespace ConsentedPetsV._2._0.Vista
 
             objCita.mtdRegistrar(mascota, fechaCita, hora, estado);
 
-            if (objCita != null)
-            {
+            
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Cita Registrada !', 'Haz Registrado una Cita', 'success')", true);
-            }
+            
 
         }
     }
