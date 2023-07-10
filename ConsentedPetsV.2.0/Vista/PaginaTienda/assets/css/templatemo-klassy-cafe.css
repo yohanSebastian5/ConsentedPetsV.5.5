@@ -754,7 +754,7 @@ banner
   vertical-align:middle;
 }
 
-.Modern-Slider .NextArrow {
+/*.Modern-Slider .NextArrow {
   position:absolute;
   top:50%;
   transform: translateY(-25px);
@@ -803,7 +803,7 @@ banner
   opacity: 0.3;
   transition: all .3s;
 }
-
+*/
 .Modern-Slider .PrevArrow:hover {
   opacity: 1;
 }

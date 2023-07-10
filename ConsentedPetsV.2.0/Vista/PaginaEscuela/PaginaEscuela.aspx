@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>ECOURSES - Online Courses HTML Template</title>
+    <title>Consented Pets</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -85,13 +85,12 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav py-0">
-                            <a href="" class="nav-item nav-link active">Home</a>
+                            <a href="../Escuela.aspx" class="nav-item nav-link active">Home</a>
                             <a href="#About" class="nav-item nav-link">About</a>
                             <a href="#Services" class="nav-item nav-link">Services</a>
                             <a href="#Courses" class="nav-item nav-link">Courses</a>
                             <a href="#Teachers" class="nav-item nav-link">Teachers</a>
                             <a href="#Testimonial" class="nav-item nav-link">Testimonial</a>
-                            
                         </div>
                         <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="#Register">Register your pet</a>
                     </div>

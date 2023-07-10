@@ -29,6 +29,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="PaginaVeterinaria/css/style.css" rel="stylesheet" />
     <script src="../Scripts/sweetalert.min.js"></script>
+    <script src="../Scripts/sweetalert-dev.js"></script>
 
     <link href="../Styles/sweetalert.css" rel="stylesheet" />
 </head>
@@ -288,6 +289,7 @@
                                 <label for="mascota">Nombre de la Mascota</label>
                                 <asp:DropDownList ID="ddlMascota" CssClass="cajas" runat="server"></asp:DropDownList>
 
+
                             </div>
                             <div class="mb-3">
                                 <label for="servicio">Servicio Requerido</label>
@@ -304,12 +306,13 @@
 
                             <div class="mb-3">
                                 <label for="fechaSeleccionada">Fecha Seleccionada:</label>
-                                <asp:TextBox ID="txtFecha" runat="server" ReadOnly="true"></asp:TextBox>
+                                <asp:TextBox ID="txtFecha" runat="server" ReadOnly="true" ></asp:TextBox>
                             </div>
 
                             <div class="mb-3">
                                 <label for="hora">Hora de la Cita</label>
                                 <asp:DropDownList ID="ddlHora" CssClass="form-select" runat="server">
+                                    <asp:ListItem Text=""></asp:ListItem>
                                     <asp:ListItem Value="08:00 am">08:00 am</asp:ListItem>
                                     <asp:ListItem Value="08:30 am">08:30 am</asp:ListItem>
                                     <asp:ListItem Value="09:00 am">09:00 am</asp:ListItem>
@@ -340,10 +343,8 @@
                             <div class="mb-3">
                                 <label for="estadoCita">Estado</label>
                                 <asp:DropDownList ID="ddlEstado" CssClass="form-select" runat="server">
-                                    <asp:ListItem Value="">Seleccione el estado</asp:ListItem>
+                                    <asp:ListItem Text=""></asp:ListItem>
                                     <asp:ListItem Value="pendiente">Pendiente</asp:ListItem>
-                                    <asp:ListItem Value="confirmada">Confirmada</asp:ListItem>
-                                    <asp:ListItem Value="cancelada">Cancelada</asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                             <asp:Button ID="btnAgendarCita" runat="server" Text="Agendar Cita" OnClick="btnAgendarCita_Click1" />

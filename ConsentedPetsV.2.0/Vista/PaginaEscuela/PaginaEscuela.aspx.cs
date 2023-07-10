@@ -23,8 +23,6 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
 
                 int idEscuela = int.Parse(Session["Escuela"].ToString());
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
-                idEscuela = 1;
-                idUsuario = 5;
                 ClServicioEL objServicio = new ClServicioEL();
                 List<ClServicioEE> lista = objServicio.mtdServicio(idEscuela);
                 repServicio.DataSource = lista;
@@ -35,7 +33,6 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
                 ddlServicio.DataValueField = "idServicioE";
                 ddlServicio.DataBind();
                 ddlServicio.Items.Insert(0, new ListItem("Seleccione un servicio:", "0"));
-                //ddlCurso.Items.Insert(0, new ListItem("Seleccione un curso del servicio:", "0"));
 
 
                 ClCursoEL objCurso = new ClCursoEL();
@@ -92,9 +89,7 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
             idMostrarDescripcion.InnerText = cursoSelec.descripcion;
             precio.InnerText = ((int)cursoSelec.precio).ToString();
 
-            //precio = cursoSelec.precio;
-
-            //fechaSeleccionadaTextBox.Text = calendarFecha.SelectedDate.ToString("yyyy-MM-dd");
+            
         }
         protected void ddlServicio_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -114,13 +109,13 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
         {
 
             int idEscuela = int.Parse(Session["Escuela"].ToString());
-            idEscuela = 1;
+          
             ClMatriculaL objML = new ClMatriculaL();
             ClMatriculaE objME = new ClMatriculaE();
             DateTime fechaActual = DateTime.Today;
             objME.fechaMatricula = fechaActual.Date.ToString("dd/MM/yyyy");
 
-            objME.idMascota = 1; // int.Parse(ddlMascota.SelectedValue);
+            objME.idMascota = int.Parse(ddlMascota.SelectedValue);
             objME.idEscuela = idEscuela;
             objME.idCurso = int.Parse(ddlCurso.SelectedValue);
             objME.precio = int.Parse(precio.InnerText);

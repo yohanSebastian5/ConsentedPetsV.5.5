@@ -9,10 +9,10 @@ namespace ConsentedPetsV._2._0.Logica
 {
     public class ClCitaL
     {
-        public void mtdRegistrar(int mascota, string fechaCita, string hora, string estado)
+        public void mtdRegistrar(ClCitaE objHis)
         {
             ClCitaD objCita = new ClCitaD();
-            objCita.mtdCita(mascota, fechaCita, hora, estado);
+            objCita.mtdCita(objHis);
 
         }
 
@@ -21,11 +21,6 @@ namespace ConsentedPetsV._2._0.Logica
             ClCitaD objCitaD = new ClCitaD();
             List<ClCitaE> lista = objCitaD.mtdListar(id, tipo);
             return lista;
-
-        }
-        public void mtdHistrorial(int idUsuario, int precio, int idServicio, string descripcion)
-        {
-            
 
         }
     }

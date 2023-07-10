@@ -17,22 +17,34 @@ namespace PaginaTienda.PaginaTienda
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idTienda = int.Parse(Session["Tienda"].ToString());
-            int idUsuario = int.Parse(Session["Usuario"].ToString());
-            idTienda = 1;
-            idUsuario = 1;
 
-            ClMascotaL objMascotaL = new ClMascotaL();
-            List<ClMascotaE> lista = objMascotaL.mtdMascotaVenta(idTienda);
-            repMascotaVenta.DataSource = lista;
-            repMascotaVenta.DataBind();
+            if (!IsPostBack)
+            {
 
-            ClCategoriaL obj = new ClCategoriaL();
-            List<ClCategoriaE> listaC = obj.mtdCategoria(idTienda);
-            repCateg.DataSource = listaC;
-            repCateg.DataBind();
 
-           
+                int idTienda = int.Parse(Session["Tienda"].ToString());
+                int idUsuario = int.Parse(Session["Usuario"].ToString());
+             
+
+                ClMascotaL objMascotaL = new ClMascotaL();
+                List<ClMascotaE> lista = objMascotaL.mtdMascotaVenta(idTienda);
+                repMascotaVenta.DataSource = lista;
+                repMascotaVenta.DataBind();
+
+                ClCategoriaL obj = new ClCategoriaL();
+                List<ClCategoriaE> listaC = obj.mtdCategoria(idTienda);
+                repCateg.DataSource = listaC;
+                repCateg.DataBind();
+
+
+                ClEstablecimientoL objEs = new ClEstablecimientoL();
+                ClEstablecimientoE objE = objEs.mtdListarVet("", "Tienda", idTienda, 1);
+                string image = "../imagenes/ImagenesEstablecimiento/" + objE.foto;
+
+                foto.ImageUrl = image;
+                nombre.InnerText = objE.nombre;
+        
+            }
 
             
         }

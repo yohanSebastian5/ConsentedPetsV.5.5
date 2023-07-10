@@ -15,6 +15,24 @@ namespace PaginaTienda.PaginaTienda
     {
 
         /// <summary>
+        /// Control nombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nombre;
+
+        /// <summary>
+        /// Control foto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image foto;
+
+        /// <summary>
         /// Control repMascotaVenta.
         /// </summary>
         /// <remarks>
