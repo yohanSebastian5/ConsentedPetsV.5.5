@@ -85,7 +85,24 @@
 
             });
         });
+        function listarVet(elementoA) {
+            var valor = elementoA.previousElementSibling.innerText;;
+            $.ajax({
+                type: "POST",
+                url: "ListarProcesos.aspx/ListarV",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify({ tipo: valor }),
+                success: function (data) {
+                    console.log(valor);
+                }, error: function (xhr, textStatus, errorThrown) {
+                    // Manejar cualquier error que ocurra durante la llamada AJAX
+                    console.error(errorThrown);
+                }
 
+            });
+            activarBoton();
+        }
 
     </script>
 

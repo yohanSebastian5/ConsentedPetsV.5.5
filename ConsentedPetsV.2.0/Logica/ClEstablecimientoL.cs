@@ -46,6 +46,11 @@ namespace ConsentedPets.Logica
             ClEstablecimientoD objD = new ClEstablecimientoD();
             objD.mtdActualizar(objE, tipo);
         }
+        public void mtdEliminarE(int idE, int tipo)
+        {
+            ClEstablecimientoD objD = new ClEstablecimientoD();
+            objD.mtdEliminarE (idE, tipo);
+        }
 
     }
 }

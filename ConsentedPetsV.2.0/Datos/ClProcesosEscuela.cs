@@ -122,6 +122,7 @@ namespace ConsentedPetsV._2._0.Datos
             for (int i = 0; i < tble.Rows.Count; i++)
             {
                 ClServicioVeterinariaE objE = new ClServicioVeterinariaE();
+                objE.idCurso = int.Parse(tble.Rows[i]["idCursoE"].ToString());
                 objE.nombre = tble.Rows[i]["nombre"].ToString();
                 objE.descripcion = tble.Rows[i]["descripcion"].ToString();
                 objE.precio =int.Parse( tble.Rows[i]["valorServicio"].ToString());
@@ -140,6 +141,7 @@ namespace ConsentedPetsV._2._0.Datos
             for (int i = 0; i < tble.Rows.Count; i++)
             {
                 ClServicioVeterinariaE objE = new ClServicioVeterinariaE();
+                objE.id = int.Parse(tble.Rows[i]["idHistorialE"].ToString());
                 objE.nombre = tble.Rows[i]["nombre"].ToString();
                 objE.descripcion = tble.Rows[i]["descripcion"].ToString();
                 objE.foto =tble.Rows[i]["foto"].ToString();
@@ -147,9 +149,17 @@ namespace ConsentedPetsV._2._0.Datos
             }
             return lista;
         }
-        public List<ClServicioVeterinariaE> mtdListarActividades(int id)
+        public List<ClServicioVeterinariaE> mtdListarActividades(int id,int tipo=0)
         {
-            string consulta = "select * from Actividades where idEscuela=" + id;
+            string consulta = "";
+            if (tipo==0)
+            {
+                consulta = "select * from Actividades where idEscuela=" + id;
+
+            }else
+            {
+                consulta = "select * from Actividades where idActividades=" + id;
+            }
 
             ClProcesarSQL SQL = new ClProcesarSQL();
             DataTable tble = SQL.mtdSelectDesc(consulta);
@@ -157,6 +167,7 @@ namespace ConsentedPetsV._2._0.Datos
             for (int i = 0; i < tble.Rows.Count; i++)
             {
                 ClServicioVeterinariaE objE = new ClServicioVeterinariaE();
+                objE.id= int.Parse(tble.Rows[i]["idActividades"].ToString());
                 objE.nombre = tble.Rows[i]["nombre"].ToString();
                 objE.descripcion = tble.Rows[i]["descripcion"].ToString();
                 objE.fecha = tble.Rows[i]["fecha"].ToString();
@@ -175,6 +186,23 @@ namespace ConsentedPetsV._2._0.Datos
             comando.Parameters.AddWithValue("@descripcion", objE.descripcion);
             comando.Parameters.AddWithValue("@fecha", objE.fecha);
             comando.Parameters.AddWithValue("@idEscuela", objE.idServicioV);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+
+        }
+        public void mtdActualizarActividad(ClServicioVeterinariaE objE)
+        {
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "EditarActividad";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@nombre", objE.nombre);
+            comando.Parameters.AddWithValue("@descripcion", objE.descripcion);
+            comando.Parameters.AddWithValue("@fecha", objE.fecha);
+            comando.Parameters.AddWithValue("@idEscuela", objE.idServicioV);
+            comando.Parameters.AddWithValue("@id", objE.id);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();

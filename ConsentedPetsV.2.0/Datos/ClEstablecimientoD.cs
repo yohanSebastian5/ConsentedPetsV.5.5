@@ -100,23 +100,38 @@ namespace ConsentedPets.Datos
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
-        public void mtdEliminarE(int idT, int idE)
+        public void mtdEliminarE(int idE, int tipo)
         {
             string establecimiento = "";
-            if (idT==1)
+            if (tipo==1)
             {
-
+               establecimiento = "Veterinaria";
+            }
+            else if (tipo==2)
+            {
+                establecimiento = "Tienda";
+            }
+            else if (tipo==3)
+            {
+                establecimiento = "Escuela";
             }
 
 
 
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "RegistrarUsuario" + establecimiento;
+            comando.CommandText = "Eliminar" + establecimiento;
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idUsuario",establecimiento);
-            comando.Parameters.AddWithValue("@id" + establecimiento,establecimiento );
+            comando.Parameters.AddWithValue("@id" ,idE);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
+
+            comando.CommandText = "Eliminar" + establecimiento+"Usuario";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id", idE);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+
+
             conexion.CerrarConexion();
         }
         public ClEstablecimientoE mtdListar(string foto="",string establecimiento="Veterinaria",int id=0,int tipo=0)

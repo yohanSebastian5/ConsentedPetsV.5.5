@@ -8,6 +8,7 @@ using ConsentedPets.Entidades;
 using System.Runtime.Remoting.Messaging;
 using static System.Collections.Specialized.BitVector32;
 using ConsentedPets.Vista.PerfilesRol.Administrador.Veterinaria;
+using ConsentedPets.Logica;
 
 namespace ConsentedPets.Datos
 {
@@ -79,6 +80,7 @@ namespace ConsentedPets.Datos
             comando.Parameters.AddWithValue("idUsuario", idUsuario);
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
+            Encrypt encry = new Encrypt();
             ClUsuarioE objDatos = null;
             if (leer.Read())
             {
@@ -91,7 +93,8 @@ namespace ConsentedPets.Datos
                 objDatos.foto = leer.GetString(5);
                 objDatos.direccion = leer.GetString(6);
                 objDatos.genero = leer.GetString(7);
-                objDatos.contraseña = leer.GetString(8);                
+                string contra = encry.descifrarTexto(leer.GetString(8));
+                objDatos.contraseña = contra;                
             }
             conexion.CerrarConexion();
             return objDatos;
@@ -102,6 +105,9 @@ namespace ConsentedPets.Datos
             if (tipo ==0)
             {
                consulta= "select Usuario.*,UsuarioRol.idRol from Usuario inner join UsuarioRol on Usuario.idUsuario=UsuarioRol.idUsuario where email='" + objE.email + "' and contraseña='" + objE.contraseña + "'";
+            }else if(tipo==1)
+            {
+                consulta = "select * from Usuario where email='" + objE.email + "'";
             }
             else if (tipo==2)
             {
@@ -209,7 +215,7 @@ namespace ConsentedPets.Datos
             }
             return listaProductos;
         }
-        public List<ClUsuarioE> mtdListar(int idVeterinaria,int tipo =0)
+        public List<ClUsuarioE> mtdListar(int idVeterinaria,int tipo =0,int id=0)
         {
             string consulta = "";
             if (tipo==0)
@@ -229,6 +235,10 @@ namespace ConsentedPets.Datos
                 consulta = "select Usuario.* from Usuario inner join UsuarioTienda on Usuario.idUsuario= UsuarioTienda.idUsuario inner join UsuarioRol on " +
            "UsuarioRol.idUsuario = Usuario.idUsuario where idTienda = '" + idVeterinaria + "' and UsuarioRol.idRol = 5; ";
 
+            }
+            else if (tipo == 3)
+            {
+                consulta = "select * from Usuario where idUsuario="+id;
             }
 
 

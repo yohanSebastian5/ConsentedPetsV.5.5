@@ -32,14 +32,12 @@ namespace ConsentedPetsV._2._0.Vista
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
             ClUsuarioE objUsuE = new ClUsuarioE();
+            Encrypt encry = new Encrypt();
             objUsuE.email = txtUsuario.Value;
-            objUsuE.contraseña = txtContraseña.Value;
+            string contraseña = encry.cifrarT(txtContraseña.Value);
+            objUsuE.contraseña = contraseña;
             CLUsuarioL objUsuL = new CLUsuarioL();
             objUsuE = objUsuL.mtdRolU(objUsuE);
-
-
-           
-
 
             if (objUsuE.nombre != null)
             {

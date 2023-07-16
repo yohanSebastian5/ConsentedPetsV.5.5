@@ -46,10 +46,10 @@ namespace ConsentedPets.Logica
             return listaVet;
         }
 
-        public List<ClUsuarioE> mtdRepeater(int idVeterinaria,int tipo=0)
+        public List<ClUsuarioE> mtdRepeater(int idVeterinaria,int tipo=0,int id=0)
         {
             ClUsuarioD objVet = new ClUsuarioD();
-            List<ClUsuarioE> listaVet = objVet.mtdListar(idVeterinaria,tipo);
+            List<ClUsuarioE> listaVet = objVet.mtdListar(idVeterinaria,tipo,id);
             return listaVet;
         }
         public void mtdRol(int idUsuario,int idRol=1)

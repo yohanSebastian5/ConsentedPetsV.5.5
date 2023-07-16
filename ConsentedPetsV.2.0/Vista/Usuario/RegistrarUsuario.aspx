@@ -25,11 +25,11 @@
                     <asp:TextBox ID="txtNombre" runat="server" placeholder="Nombre"></asp:TextBox>
                     <asp:TextBox ID="txtApellido" runat="server" placeholder="Apellido"></asp:TextBox>
                     <asp:TextBox ID="txtTelefono" runat="server" placeholder="Telefono"></asp:TextBox>
-                    <asp:TextBox ID="txtEmail" runat="server" placeholder="Email"></asp:TextBox>
+                    <asp:TextBox ID="txtEmail" TextMode="Email" runat="server" placeholder="Email"></asp:TextBox>
                     <asp:FileUpload ID="FlImagenU" runat="server" />
                     <asp:TextBox ID="txtDireccion" runat="server" placeholder="Direccion"></asp:TextBox>
                     <asp:TextBox ID="txtGenero" runat="server" placeholder="Genero"></asp:TextBox>
-                    <asp:TextBox ID="txtContraseña" runat="server" placeholder="Contraseña"></asp:TextBox>
+                    <asp:TextBox ID="txtContraseña" TextMode="Password" runat="server" placeholder="Contraseña"></asp:TextBox>
 
 
                     <button runat="server" id="btnRegistrar" class="submit">Registrar</button>

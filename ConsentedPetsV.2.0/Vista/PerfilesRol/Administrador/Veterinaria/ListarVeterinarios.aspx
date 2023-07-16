@@ -41,6 +41,9 @@
                         <th>Especializacion</th>
                         <th>Experiencia</th>
                         <th>Profesion</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -49,6 +52,62 @@
             </table>
         </div>
     </div>
+    <form runat="server">
+        <div style="color:lightslategray" class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Eliminacion de Datos</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="section">
+                            <%--<h2 class="py-3">Actualizacion de Datos</h2>--%>
+                            <div class="container">
+                                <div class="card">
+                                    <h3>¿Esta Seguro de Eliminar el Profesor?</h3>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <asp:Button ID="btnEliminar" CssClass="btn btn-danger" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="color:lightslategray" class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel2">Actualizacion de Datos</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="color:lightslategray">
+                        <div class="section">
+                            <div class="container">
+                                <div class="card">
+                                    <h3>Datos del Empleado</h3>
+                                    <asp:Label ID="Label1" runat="server" Text="Especializacion"></asp:Label>
+                                    <asp:TextBox ID="txtEspecializacion" runat="server"></asp:TextBox> 
+                                    <asp:Label ID="Label12" runat="server" Text="Experiencia"></asp:Label>
+                                    <asp:TextBox ID="txtExperiencia" runat="server"></asp:TextBox>
+                                    <asp:Label ID="Label13" runat="server" Text="Profesion"></asp:Label>
+                                    <asp:TextBox ID="txtProfesion" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <asp:Button ID="Button1" CssClass="btn btn-danger" runat="server" Text="Editar" OnClick="Button1_Click" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
     <script>
         $(document).ready(function () {
             var id = 0;
@@ -71,8 +130,31 @@
                             { data: "genero" },
                             { data: "especializacion" },
                             { data: "experiencia" },
-                            { data: "profesion" }
+                            { data: "profesion" },
+                            {
+                                data: null,
+                                render: function (data, type, row) {
+                                    return '<button type="button" id="btnEditar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" data-id="' + data.idUsuario + '">Editar</button > ';
+
+                                }
+                            },
+                            {
+                                data: null,
+                                render: function (data, type, row) {
+                                    return '<button type="button" id="btneliminar" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-id="' + data.idUsuario + '">Eliminar</button > ';
+
+                                }
+                            }
                         ]
+                    });
+                    $('#tblUsua').on('click', '#btneliminar', function () {
+                        var id = $(this).data('id');
+                        GuardarIdPersonal(id);
+                    });
+                    $('#tblUsua').on('click', '#btnEditar', function () {
+                        var id = $(this).data('id');
+                        GuardarIdPersonal(id);
+                        cargardatos(id);
                     });
                 },
                 error: function (error) {
@@ -80,6 +162,41 @@
                 }
             });
         });
+
+        function GuardarIdPersonal(elementoA) {
+            $.ajax({
+                type: "POST",
+                url: "ListarVeterinarios.aspx/GuardarIdPersonal",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify({ id: elementoA }),
+                success: function (data) {
+                    console.log(valor);
+                }, error: function (xhr, textStatus, errorThrown) {
+                    // Manejar cualquier error que ocurra durante la llamada AJAX
+                    console.error(errorThrown);
+                }
+
+            });
+        }
+        function cargardatos(idProducto) {
+            $.ajax({
+                type: "POST",
+                url: "ListarVeterinarios.aspx/cargardatos",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify({ id: idProducto }),
+                success: function (dat) {
+                    var Carga = dat.d;
+                    document.getElementById('<%= txtProfesion.ClientID %>').value = Carga[0]["profesion"];
+                    document.getElementById('<%= txtEspecializacion.ClientID %>').value = Carga[0]["especializacion"];
+                    document.getElementById('<%= txtExperiencia.ClientID %>').value = Carga[0]["experiencia"];
+                }, error: function (xhr, textStatus, errorThrown) {
+                    // Manejar cualquier error que ocurra durante la llamada AJAX
+                    console.error(errorThrown);
+                }
+            });
+        }
     </script>
 
 </asp:Content>

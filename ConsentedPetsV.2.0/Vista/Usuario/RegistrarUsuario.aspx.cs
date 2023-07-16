@@ -22,13 +22,15 @@ namespace ProcsosAparteProyecto
         {
             int tipo = 1;
             CLUsuarioL objUsuarioL = new CLUsuarioL();
+            Encrypt encri = new Encrypt();
             ClUsuarioE objUsuarioE = new ClUsuarioE();
             string nombreV = txtNombre.Text + txtApellido.Text +txtTelefono.Text+ ".png";
             string rutaImg = Path.Combine(Server.MapPath("../imagenes/ImagenesUsuarios/"), nombreV);
             FlImagenU.SaveAs(rutaImg);
             objUsuarioE.email = txtEmail.Text;
-            objUsuarioE.contraseña= txtContraseña.Text;
-            objUsuarioL.mtdRegistrar(txtDocumento.Text, txtNombre.Text, txtApellido.Text, txtDireccion.Text, txtTelefono.Text, txtEmail.Text, nombreV, txtGenero.Text, txtContraseña.Text);
+            string contraseña = encri.cifrarT(txtContraseña.Text);
+            objUsuarioE.contraseña= contraseña;
+            objUsuarioL.mtdRegistrar(txtDocumento.Text, txtNombre.Text, txtApellido.Text, txtDireccion.Text, txtTelefono.Text, txtEmail.Text, nombreV, txtGenero.Text, contraseña);
             objUsuarioE= objUsuarioL.mtdRolU(objUsuarioE,tipo);
             objUsuarioL.mtdRol(objUsuarioE.idUsuario);
             if (tipo==1)

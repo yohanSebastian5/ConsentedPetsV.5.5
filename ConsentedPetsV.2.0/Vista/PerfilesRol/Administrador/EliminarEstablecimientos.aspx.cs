@@ -70,7 +70,15 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-           
+
+            ClEstablecimientoL objL = new ClEstablecimientoL();
+            int tipo = int.Parse(HttpContext.Current.Session["Tipo"].ToString());
+            int idE = int.Parse(HttpContext.Current.Session["Eliminar"].ToString());
+            objL.mtdEliminarE(idE,tipo);
+
+
+
         }
+
     }
 }
