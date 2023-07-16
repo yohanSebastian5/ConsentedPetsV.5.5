@@ -5,9 +5,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 
-   
+
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <link href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
+    <link href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.13.4/datatables.min.css" rel="stylesheet" />
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
 
@@ -15,10 +15,11 @@
     <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
     <script src="../../../Scripts/sweetalert.min.js"></script>
     <link href="../../../Styles/sweetalert.css" rel="stylesheet" />
+    <link href="../../Css/EliminarEstablecimiento.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
 
-    <h2>Editar y Elimnar</h2>
+    <h2 class="Title">ELIMINAR ESTABLECIMIENTO</h2>
     <asp:DropDownList ID="ddlTipo" runat="server" OnSelectedIndexChanged="ddlTipo_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
     <div id="dataTableContainer" class="table-responsive" style="width: 100%">
         <table id="tblTrabajador" class="table ">
@@ -60,14 +61,8 @@
                     </div>
                 </div>
             </div>
-        </div>
     </div>
-
-    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-
-
-    <asp:TextBox ID="txtId" runat="server"></asp:TextBox>
-
+    </div>
     <script>
         $(document).ready(function () {
             $.ajax({

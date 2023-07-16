@@ -65,7 +65,7 @@
                             <%--<h2 class="py-3">Actualizacion de Datos</h2>--%>
                             <div class="container">
                                 <div class="card">
-                                    <h3>¿Esta Seguro de Eliminar el Profesor?</h3>
+                                    <h3>¿Esta Seguro de Eliminar el Veterinario?</h3>
 
                                 </div>
                             </div>

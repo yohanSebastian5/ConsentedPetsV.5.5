@@ -51,20 +51,20 @@
                             </a>
                             <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="RegistrarVeterinaria.aspx">Registrar Veterinarias</a>
-                                    <a class="nav-link" href="ListarVeterinarias.aspx">Listar Veterinaria</a>
+                                    <a class="nav-link" href="RegistrarVeterinaria.aspx">Registrar Veterinaria</a>
+                                    <a class="nav-link" href="ListarVeterinarias.aspx">Listar Veterinarias</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts3" aria-expanded="false" aria-controls="collapseLayouts3">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Pet Shop
+                                Pet Shops
                                
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseLayouts3" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="RegistrarTienda.aspx">Registrar tienda de mascotas</a>
-                                    <a class="nav-link" href="ListarTiendas.aspx">Listar tienda de mascotas</a>
+                                    <a class="nav-link" href="ListarTiendas.aspx">Listar tiendas de mascotas</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts4" aria-expanded="false" aria-controls="collapseLayouts4">
@@ -76,7 +76,7 @@
                             <div class="collapse" id="collapseLayouts4" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="RegistrarEscuela.aspx">Registrar escuela canina</a>
-                                    <a class="nav-link" href="ListarEscuelas.aspx">Listar escuela canina</a>
+                                    <a class="nav-link" href="ListarEscuelas.aspx">Listar escuelas caninas</a>
                                 </nav>
                             </div>
 
@@ -96,6 +96,22 @@
                             <div class="collapse" id="collapseLayouts1111" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="ListarPersonal.aspx">Listar empleados</a>
+                                </nav>
+                            </div>
+
+                            
+                            <div class="sb-sidenav-menu-heading">OPCIONES ESTABLECIMIENTOS</div>
+
+
+
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts11111" aria-expanded="false" aria-controls="collapseLayouts11111">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                               Eliminacion de Establecimientos
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts11111" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="EliminarEstablecimientos.aspx">Eliminar Negocio</a>
                                 </nav>
                             </div>
                         </div>

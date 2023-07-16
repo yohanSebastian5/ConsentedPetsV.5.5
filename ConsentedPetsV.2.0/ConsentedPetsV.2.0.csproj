@@ -91,6 +91,7 @@
     <Content Include="Vista\Bootstrap\css\bootstrap.rtl.min.css" />
     <Content Include="Vista\Css\AgregarVeter.css" />
     <Content Include="Vista\Css\EditarPerfilUsuario.css" />
+    <Content Include="Vista\Css\EliminarEstablecimiento.css" />
     <Content Include="Vista\Css\MascotasRegistradasUsuario.css" />
     <Content Include="Vista\Css\script.js" />
     <Content Include="Vista\imagenes\ImagenesMascota\mascota1.png" />
