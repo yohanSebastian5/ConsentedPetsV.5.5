@@ -14,11 +14,20 @@ namespace ConsentedPetsV._2._0.Datos
     public class ClServicioVetD
     {
         private ClConexion conexion = new ClConexion();
-        public List<ClServicioVeterinariaE> mtdListar( int idVeterinaria)
+        public List<ClServicioVeterinariaE> mtdListar( int idVeterinaria,int tipo=0)
         {
+            string consulta = "";
+            if (tipo==0)
+            {
+                consulta = "select * from ServicioV where idVeterinaria = '" + idVeterinaria + "'";
 
+            }
+            else
+            {
+                consulta = "select * from ServicioV where idServicioV = '" + idVeterinaria + "'";
 
-            string consulta = "select * from ServicioV where idVeterinaria = '"+idVeterinaria+"'";
+            }
+
             ClProcesarSQL SQL = new ClProcesarSQL();
             DataTable tblVeterinaria = SQL.mtdSelectDesc(consulta);
             List<ClServicioVeterinariaE> listaProductos = new List<ClServicioVeterinariaE>();
@@ -48,7 +57,7 @@ namespace ConsentedPetsV._2._0.Datos
             comando.Parameters.AddWithValue("@nombre", objservicioE.nombre);
             comando.Parameters.AddWithValue("@precio",objservicioE.precio );
             comando.Parameters.AddWithValue("@idVeterinaria", objservicioE.idVeterinaria);
-            comando.Parameters.AddWithValue("@idServicioV", objservicioE.idServicioV);
+            comando.Parameters.AddWithValue("@idServicioVe", objservicioE.idServicioV);
             comando.Parameters.AddWithValue("@foto", objservicioE.foto);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();

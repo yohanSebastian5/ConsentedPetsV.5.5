@@ -18,40 +18,38 @@
     <link href="../../Css/EliminarEstablecimiento.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
-
-    <h2 class="Title">ELIMINAR ESTABLECIMIENTO</h2>
-    <asp:DropDownList ID="ddlTipo" runat="server" OnSelectedIndexChanged="ddlTipo_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
-    <div id="dataTableContainer" class="table-responsive" style="width: 100%">
-        <table id="tblTrabajador" class="table ">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Telefono</th>
-                    <th>Email</th>
-                    <th>Direccion</th>
-                    <th>Eliminar</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+    <div class="">
+        <h2 class="Title" >ELIMINAR ESTABLECIMIENTO</h2>
+        <asp:DropDownList ID="ddlTipo" runat="server" CssClass="tipos"  OnSelectedIndexChanged="ddlTipo_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+        <div id="dataTableContainer" class="table-responsive tabla" style="width: 100%">
+            <table id="tblTrabajador" class="table ">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Telefono</th>
+                        <th>Email</th>
+                        <th>Direccion</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
     </div>
-
 
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content" style="width: 700px;">
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">Actualizacion de Datos</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="section">
-                        <%--<h2 class="py-3">Actualizacion de Datos</h2>--%>
                         <div class="container">
                             <div class="card">
                                 <h3>¿Esta Seguro de Eliminar el Establecimiento?</h3>
-
                             </div>
                         </div>
                     </div>
@@ -61,7 +59,7 @@
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
     </div>
     <script>
         $(document).ready(function () {
@@ -90,7 +88,7 @@
                                     //    console.log('ddsd');
                                     //});
                                     //return btneli;
-                                    return '<button type="button" id="btneliminar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-id="' + data.idVeterinaria + '">Editar</button > ';
+                                    return '<button type="button" id="btneliminar" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-id="' + data.idVeterinaria + '">Eliminar</button > ';
 
                                 }
                             }

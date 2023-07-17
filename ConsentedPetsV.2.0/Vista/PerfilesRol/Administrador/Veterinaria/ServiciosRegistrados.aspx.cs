@@ -1,9 +1,13 @@
-﻿using ConsentedPetsV._2._0.Entidades;
+﻿using ConsentedPets.Entidades;
+using ConsentedPets.Logica;
+using ConsentedPets.Vista.PerfilesRol.Administrador.Veterinaria;
+using ConsentedPetsV._2._0.Entidades;
 using ConsentedPetsV._2._0.Logica;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -13,17 +17,36 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-    
+            if (!IsPostBack)
+            {
                 int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
-            idVeterinaria = 1;
+                idVeterinaria = 1;
                 ClServicioVetL objVet = new ClServicioVetL();
                 List<ClServicioVeterinariaE> lista = objVet.mtdRepeater(idVeterinaria);
-                
+
                 repServicio.DataSource = lista;
                 repServicio.DataBind();
 
-            
+            }
+
+
+        }
+
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+        [WebMethod]
+        public static void ListarV(string tipo)
+        {
+            HttpContext.Current.Session["Eliminar"] = tipo;
+        }
+        [WebMethod]
+        public static List<ClServicioVeterinariaE> cargardatos(string tipo)
+        {
+            ClServicioVetL objVet = new ClServicioVetL();
+            List<ClServicioVeterinariaE> lista = objVet.mtdRepeater(int.Parse(tipo),1);
+            return lista;
         }
     }
 }

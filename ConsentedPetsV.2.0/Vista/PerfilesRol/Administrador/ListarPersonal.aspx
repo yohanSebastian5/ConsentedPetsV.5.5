@@ -10,12 +10,12 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
-    
+    <link href="../../Css/EliminarEstablecimiento.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
-    <h1>Listar Personal</h1>
-    <div style="width: 1100px">
-        <table id="tblUsua" class="table" >
+    <h1 class="Title">Listar Personal</h1>
+    <div class="table-responsive tabla" style="width: 100%">
+        <table id="tblUsua" class=" table " >
             <thead style="color: #0070ff">
                 <tr>
                     <th>Nombre</th>

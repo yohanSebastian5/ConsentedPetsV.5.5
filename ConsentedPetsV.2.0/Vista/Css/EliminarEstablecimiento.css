@@ -1,7 +1,17 @@
 ﻿.Title {
     justify-content: center;
     display: flex;
+    margin:20px;
 }
 body {
-    background-color: #baf3e3;
+    background-color: #8e9794;
+}
+.tabla {
+    border: 2px solid;
+    padding: 20px;
+}
+.tipos {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    font-size:20px;
 }
