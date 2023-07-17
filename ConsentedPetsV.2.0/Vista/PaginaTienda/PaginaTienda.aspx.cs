@@ -1,15 +1,20 @@
 ﻿using ConsentedPets.Entidades;
 using ConsentedPets.Logica;
+using ConsentedPetsV._2._0.Datos;
 using ConsentedPetsV._2._0.Entidades;
 using ConsentedPetsV._2._0.Logica;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using System.Runtime.Remoting;
 using System.Web;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using Newtonsoft.Json;
 
 namespace PaginaTienda.PaginaTienda
 {
@@ -18,37 +23,92 @@ namespace PaginaTienda.PaginaTienda
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (!IsPostBack)
-            {
+
+            int idTienda = int.Parse(Session["Tienda"].ToString());
+            idTienda = 1;
+            int idUsuario = int.Parse(Session["Usuario"].ToString());
+            idUsuario = 19;
+
+            ClMascotaL objMascotaL = new ClMascotaL();
+            List<ClMascotaE> lista = objMascotaL.mtdMascotaVenta(idTienda);
+            repMascotaVenta.DataSource = lista;
+            repMascotaVenta.DataBind();
+
+            ClCategoriaL obj = new ClCategoriaL();
+            List<ClCategoriaE> listaC = obj.mtdCategoria(idTienda);
+            repCateg.DataSource = listaC;
+            repCateg.DataBind();
 
 
-                int idTienda = int.Parse(Session["Tienda"].ToString());
-                int idUsuario = int.Parse(Session["Usuario"].ToString());
-             
-
-                ClMascotaL objMascotaL = new ClMascotaL();
-                List<ClMascotaE> lista = objMascotaL.mtdMascotaVenta(idTienda);
-                repMascotaVenta.DataSource = lista;
-                repMascotaVenta.DataBind();
-
-                ClCategoriaL obj = new ClCategoriaL();
-                List<ClCategoriaE> listaC = obj.mtdCategoria(idTienda);
-                repCateg.DataSource = listaC;
-                repCateg.DataBind();
-
-
-                ClEstablecimientoL objEs = new ClEstablecimientoL();
-                ClEstablecimientoE objE = objEs.mtdListarVet("", "Tienda", idTienda, 1);
-                string image = "../imagenes/ImagenesEstablecimiento/" + objE.foto;
-
-                foto.ImageUrl = image;
-                nombre.InnerText = objE.nombre;
+            ClEstablecimientoL objEs = new ClEstablecimientoL();
+            ClEstablecimientoE objE = objEs.mtdListarVet("", "Tienda", idTienda, 1);
+            string image = "../imagenes/ImagenesEstablecimiento/" + objE.foto;
+            foto.ImageUrl = image;
+            Imag.ImageUrl = image;
+            Image2.ImageUrl = image;
+            nombre1.InnerText = objE.nombre;
         
+            ema.InnerText = objE.email;
+            nombre.InnerText = objE.nombre;
+            
+            emails.InnerText = objE.email;
+            telefono.InnerText = objE.telefono;
+
+
+            ClEstablecimientoL objDato1 = new ClEstablecimientoL();
+            ClEstablecimientoE objDato2 = objDato1.mtdGmail(idTienda);
+            objDato2.email = emails.InnerText;
+            objDato2.telefono = telefono.InnerText;
+
+            string destino = objDato2.email;
+            string name = Request.Form["name"];
+            string email = Request.Form["email"];
+            string phone = Request.Form["phone"];
+            string cantidad = Request.Form["cantidad"];
+            string message = Request.Form["message"];
+            if (!string.IsNullOrEmpty(email))
+            {
+                mtdPedido(destino, name, email, phone, cantidad, message);
             }
 
-            
+
+
+
+
         }
 
+        protected void mtdPedido(string destino, string name, string email, string phone, string cantidad, string message)
+        {
+            int idTienda = int.Parse(Session["Tienda"].ToString());
+            idTienda = 1;
+            int idUsuario = int.Parse(Session["Usuario"].ToString());
+            idUsuario = 19;
+            ClPedidoL objDato1 = new ClPedidoL();
+            ClPedidoE objDato2 = new ClPedidoE();
+            string remitente = email;
+            string contraseña = "ftatqdsdoxfdhzgw";
+            string mensajeCompleto = $"Solicitud de producto\n\nEmail: {email}\n\nTelefono: {phone}\n\nNombre del producto: {name}\n\nCantidad:{cantidad}\n\nDescripción: {message}";
+            MailMessage mensaje = new MailMessage(remitente, destino, name, mensajeCompleto);
+            SmtpClient clienteSmtp = new SmtpClient("smtp.gmail.com", 587);
+            clienteSmtp.EnableSsl = true;
+            clienteSmtp.Credentials = new NetworkCredential(remitente, contraseña);
+            clienteSmtp.Send(mensaje);
+            mensaje.Dispose();
+            clienteSmtp.Dispose();
+
+            
+            objDato2.name = name;
+            objDato2.message = message;
+            DateTime fechaActual = DateTime.Today;
+            objDato2.fecha = fechaActual.Date.ToString("dd/MM/yyyy");
+            objDato2.idUsuario = idUsuario;
+            objDato2.idTienda = idTienda;
+            objDato1.mtdGuardarPedido(objDato2);
+            
+           
+        }
+
+        
 
         [WebMethod]
         public static void ListarV(string tipo)
@@ -71,6 +131,56 @@ namespace PaginaTienda.PaginaTienda
             List<ClProductoE> listaP = objPL.mtdProducto(int.Parse(Session["idCategoriaPS"].ToString()));
             repProduc.DataSource = listaP;
             repProduc.DataBind();
+        }
+
+        protected void agregarAlCarrito_Click(object sender, EventArgs e)
+        {
+            List<ClProductoE> lista = new List<ClProductoE>();
+            List<ClProductoE> lista2 = new List<ClProductoE>();
+            foreach (RepeaterItem item in repProduc.Items)
+            {
+                if (item.ItemType == ListItemType.Item || item.ItemType == ListItemType.AlternatingItem)
+                {
+                    ClProductoE objE = new ClProductoE();
+                    Label lblId = (Label)item.FindControl("idProducto");
+                    objE.idProducto = int.Parse(lblId.Text);
+                    Image img = (Image)item.FindControl("img");
+                    objE.foto = img.ImageUrl;
+                    Label precio = (Label)item.FindControl("precioP");
+                    objE.precioP = int.Parse(precio.Text);
+                    Label nombre = (Label)item.FindControl("nombre");
+                    objE.nombre = nombre.Text;
+                    Label descrip = (Label)item.FindControl("descripcion");
+                    objE.descripcion = descrip.Text;
+
+                    lista.Add(objE);
+
+                }
+            }
+            int tipo = int.Parse(Session["Tipo"].ToString());
+            for (int i = 0; i < lista.Count; i++)
+            {
+                if (lista[i].idProducto == tipo)
+                {
+                    lista2.Add(lista[i]);
+                }
+
+
+            }
+
+            string producto = JsonConvert.SerializeObject(lista2);
+
+            ScriptManager.RegisterStartupScript(this, GetType(), "carritodeCompras", $"agregarAlCarrito('{producto}');", true);
+
+
+        }
+
+
+
+        [WebMethod]
+        public static void Listar(string tipo)
+        {
+            HttpContext.Current.Session["Tipo"] = tipo;
         }
     }
 }

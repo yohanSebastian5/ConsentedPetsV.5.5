@@ -25,6 +25,7 @@ https://templatemo.com/tm-558-klassy-cafe
     <link href="../../Styles/sweetalert.css" rel="stylesheet" />
     <script src="../../Scripts/sweetalert.min.js"></script>
     <script src="../../Scripts/sweetalert-dev.js"></script>
+    <script src="assets/js/carritodeCompras.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
@@ -60,37 +61,21 @@ https://templatemo.com/tm-558-klassy-cafe
                         <nav class="main-nav">
                             <!-- ***** Logo Start ***** -->
                             <a href="index.html" class="logo">
-                                <img src="assets/images/klassy-logo.png" align="klassy cafe html template">
+                                <asp:Image ID="Imag" runat="server" Style="width: 70px; height=70px;" />
+                                <h4 id="nombre1" runat="server" style="color: black; font-size: 14px;"><%# Eval("nombre") %></h4>
                             </a>
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
                             <ul class="nav">
                                 <li class="scroll-to-section"><a href="../PetShop.aspx" class="active">Home</a></li>
-                                <li class="scroll-to-section"><a href="#about">About</a></li>
 
-                                <!-- 
-                            <li class="submenu">
-                                <a href="javascript:;">Drop Down</a>
-                                <ul>
-                                    <li><a href="#">Drop Down Page 1</a></li>
-                                    <li><a href="#">Drop Down Page 2</a></li>
-                                    <li><a href="#">Drop Down Page 3</a></li>
-                                </ul>
-                            </li>
-                        -->
-                                <li class="scroll-to-section"><a href="#menu">Menu</a></li>
-                                <li class="scroll-to-section"><a href="#chefs">Chefs</a></li>
-                                <li class="submenu">
-                                    <a href="javascript:;">Features</a>
-                                    <ul>
-                                        <li><a href="#">Features Page 1</a></li>
-                                        <li><a href="#">Features Page 2</a></li>
-                                        <li><a href="#">Features Page 3</a></li>
-                                        <li><a href="#">Features Page 4</a></li>
-                                    </ul>
-                                </li>
+
+
+                                <li class="scroll-to-section"><a href="#menu">Mascotas</a></li>
+
                                 <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
-                                <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li>
+                                <li class="scroll-to-section"><a href="#reservation">Pedido</a></li>
+                                <li class="scroll-to-section"><a href="#offers">Productos</a></li>
                             </ul>
                             <a class='menu-trigger'>
                                 <span>Menu</span>
@@ -110,7 +95,7 @@ https://templatemo.com/tm-558-klassy-cafe
                     <div class="col-lg-4">
                         <div class="left-content">
                             <div class="inner-content">
-                                <h4 id="nombre" runat="server">KlassyCafe</h4>
+                                <h4 id="nombre" runat="server"><%# Eval("nombre") %></h4>
                                 <h6>ENCUENTRA TODO LO QUE BUSCAS PARA CONSENTIR A TU MASCOTA</h6>
                                 <div class="main-white-button scroll-to-section">
                                     <a href="#reservation">Pide el mejor producto para tu mascota</a>
@@ -124,12 +109,12 @@ https://templatemo.com/tm-558-klassy-cafe
                                 <!-- Item -->
                                 <div class="item">
                                     <div class="img-fill">
-                                        <asp:Image id="foto" runat="server"/>
-                                       
+                                        <asp:Image ID="foto" runat="server" />
+
                                     </div>
                                 </div>
                                 <!-- // Item -->
-                               <%-- <!-- Item -->
+                                <%-- <!-- Item -->
                                 <div class="item">
                                     <div class="img-fill">
                                         <img src="assets/images/slide-02.jpg" alt="">
@@ -152,7 +137,7 @@ https://templatemo.com/tm-558-klassy-cafe
         <!-- ***** Main Banner Area End ***** -->
 
         <!-- ***** About Area Starts ***** -->
-        <section class="section" id="about">
+        <%--        <section class="section" id="about">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-xs-12">
@@ -190,7 +175,7 @@ https://templatemo.com/tm-558-klassy-cafe
                     </div>
                 </div>
             </div>
-        </section>
+        </section>--%>
         <!-- ***** About Area Ends ***** -->
 
         <!-- ***** Menu Area Starts ***** -->
@@ -228,7 +213,7 @@ https://templatemo.com/tm-558-klassy-cafe
                                                 Genero: <%# Eval("genero") %>
                                             </p>
                                             <div class="main-text-button">
-                                                <div class="scroll-to-section"><a href="#reservation">Comprar <i class="fa fa-angle-down"></i></a></div>
+                                                <div class="scroll-to-section"><a href="#reservation">Agregar al carrito <i class="fa fa-angle-down"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -253,24 +238,24 @@ https://templatemo.com/tm-558-klassy-cafe
                         <div class="left-text-content">
                             <div class="section-heading">
                                 <h6>Contact Us</h6>
-                                <h2>Here You Can Make A Reservation Or Just walkin to our cafe</h2>
+                                <h2>Aquí tú puedes hacer un pedido</h2>
                             </div>
-                            <p>Donec pretium est orci, non vulputate arcu hendrerit a. Fusce a eleifend riqsie, namei sollicitudin urna diam, sed commodo purus porta ut.</p>
+                            <p>Solicita el mejor producto para tu mascota.</p>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="phone">
                                         <i class="fa fa-phone"></i>
-                                        <h4>Phone Numbers</h4>
-                                        <span><a href="#">080-090-0990</a><br>
-                                            <a href="#">080-090-0880</a></span>
+                                        <h4>Número telefonico</h4>
+                                        <span><a id="telefono" runat="server"><%# Eval("telefono") %></a><br>
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="message">
                                         <i class="fa fa-envelope"></i>
                                         <h4>Emails</h4>
-                                        <span><a href="#">hello@company.com</a><br>
-                                            <a href="#">info@company.com</a></span>
+                                        <span><a id="emails" runat="server"><%# Eval("email") %></a><br>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -281,11 +266,10 @@ https://templatemo.com/tm-558-klassy-cafe
 
                             <div class="row">
                                 <div class="col-lg-12">
-                                    
                                 </div>
                                 <div class="col-lg-6 col-sm-12">
                                     <fieldset>
-                                        <input name="name" type="text" id="name" placeholder="Nombre">
+                                        <input name="name" type="text" id="name" placeholder="Nombre del producto">
                                     </fieldset>
                                 </div>
                                 <div class="col-lg-6 col-sm-12">
@@ -299,13 +283,13 @@ https://templatemo.com/tm-558-klassy-cafe
                                     </fieldset>
                                 </div>
 
-                                 <div class="col-lg-6 col-sm-12">
+                                <div class="col-lg-6 col-sm-12">
                                     <fieldset>
-                                        <input name="phone" type="text" id="cantidad" placeholder="Cantidad">
+                                        <input name="cantidad" type="text" id="cantidad" placeholder="Cantidad">
                                     </fieldset>
                                 </div>
 
-                                
+
                                 <div class="col-lg-12">
                                     <fieldset>
                                         <textarea name="message" rows="6" id="message" placeholder="Descripcion del producto"></textarea>
@@ -324,6 +308,9 @@ https://templatemo.com/tm-558-klassy-cafe
             </div>
         </section>
         <!-- ***** Reservation Area Ends ***** -->
+
+     
+
 
         <!-- ***** Menu Area Starts ***** -->
 
@@ -356,8 +343,7 @@ https://templatemo.com/tm-558-klassy-cafe
                                                             <ItemTemplate>
                                                                 <li>
                                                                     <h2 style="display: none" id="idV" class="Pet-text" contenteditable="inherit"><%#Eval("idCategoriaPS") %></h2>
-                                                                    <a runat="server" id="idCategoria" onclick="listarVet(this)" href='#tabs-1 '>
-                                                                        <%--  <a href="PaginaTienda.aspx?idCategoriaPS=<%# Session["idCategoriaPS"] %>"></a> --%> <%# Eval("nombre") %>
+                                                                    <a runat="server" id="idCategoria" onclick="listarVet(this)" href='#tabs-1 '><%# Eval("nombre") %>
                                                                     </a>
 
                                                                 </li>
@@ -391,16 +377,27 @@ https://templatemo.com/tm-558-klassy-cafe
                                                                 <ItemTemplate>
                                                                     <div class="tab-item">
 
-                                                                        <img style="width: 65px; height:70px;" src='<%# ResolveUrl("~/Vista/imagenes/ImagenesProductoCat/") + Eval("foto") %>' />
-                                                                        <h4><%# Eval("nombre") %></h4>
-                                                                        <p><%# Eval("descripcion") %></p>
+                                                                        <img style="width: 65px; height: 70px;" id="img" runat="server" src='<%# ResolveUrl("~/Vista/imagenes/ImagenesProductoCat/") + Eval("foto") %>' />
+                                                                        <h4 ><asp:Label id="nombre" runat="server" Text='<%# Eval("nombre") %>'></asp:Label></h4>
+                                                                        <p>
+                                                                            <asp:Label ID="descripcion" runat="server" Text='<%# Eval("descripcion") %>'></asp:Label></p>
                                                                         <div class="price">
-                                                                            <h6>$ <%# Eval("precioP") %></h6>
+                                                                            <h6>$<asp:Label ID="precioP" runat="server" Text='<%# Eval("precioP") %>'> <a>Comprar</a></asp:Label>
+                                                                            </h6>
+                                                                            <a class="add-to-cart-btn" onclick="listar(this)">Comprar </a>
+
+                                                                            <asp:Button ID="agregarAlCarrito" runat="server" CssClass="add-to-cart-btn ocultar" Text="Agregar al carrito" OnClick="agregarAlCarrito_Click" />
                                                                         </div>
+                                                                        <asp:Label ID="idProducto" runat="server" Text='<%# Eval("idProducto")  %>' Visible="false"></asp:Label></h5>
+                                                                        <h2 class="ocultar"><%# Eval("idProducto")  %></h2>
 
 
 
-                                                                    </div>
+                                                                            
+
+                                                                            </div>
+                                                                          
+                                                                        </div>
                                                                 </ItemTemplate>
                                                             </asp:Repeater>
 
@@ -427,6 +424,36 @@ https://templatemo.com/tm-558-klassy-cafe
 
         <!-- ***** Chefs Area Ends ***** -->
 
+
+           <button id="btnAbrirModal" class="cart-button" type="button" data-toggle="modal" data-target="#myModal">
+            Abrir Carrito de Compras<span id="count" class="badge text-bg-danger"></span>
+        </button>
+        <!-- Ventana modal -->
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark text-light">
+                        <h4 class="modal-title" id="myModalLabel">Carrito de Compras</h4>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="carritoProductos">
+                            <!-- Aquí se mostrarán los datos del carrito de compras -->
+
+                        </div>
+                        <div class="modal-footer">
+                            <button id="btnVaciarCarrito" type="button" class="btn btn-warning" data-dismiss="modal" onclick="vaciarCarrito()">Vaciar Carrito</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
         <!-- ***** Footer Start ***** -->
         <footer>
             <div class="container">
@@ -444,16 +471,13 @@ https://templatemo.com/tm-558-klassy-cafe
                     <div class="col-lg-4">
                         <div class="logo">
                             <a href="index.html">
-                                <img src="assets/images/white-logo.png" alt=""></a>
+                                <asp:Image ID="Image2" runat="server" Style="width: 70px; height:70px;" /></a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-xs-12">
                         <div class="left-text-content">
-                            <p>
-                                © Copyright Klassy Cafe Co.
-                        
-                        <br>
-                                Design: TemplateMo
+                            <p id="ema" runat="server">
+                                @ <%# Eval("email") %>
                             </p>
                         </div>
                     </div>
@@ -502,6 +526,38 @@ https://templatemo.com/tm-558-klassy-cafe
 
     </script>
 
+    <script>
+        function listar(elementoA) {
+            var valor = elementoA.previousElementSibling.innerText;
+            $.ajax({
+                type: "POST",
+                url: "PaginaTienda.aspx/Listar",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify({ tipo: valor }),
+                success: function (data) {
+                    console.log(valor);
+                }, error: function (xhr, textStatus, errorThrown) {
+                    // Manejar cualquier error que ocurra durante la llamada AJAX
+                    console.error(errorThrown);
+                }
+
+            });
+            activarBoton();
+        }
+        function activarBoton() {
+            // Obtiene una referencia al botón
+            console.log("bvb");
+            var boton = document.getElementById('<%= agregarAlCarrito.ClientID %>');
+
+            // Simula el clic en el botón
+            if (boton) {
+                boton.click();
+            }
+        }
+
+    </script>
+
     <%-- <script type="text/javascript">
         function SeleccionarCategoria(idCategoria) {
             document.getElementById('<%= hdnCategoriaSeleccionada.ClientID %>').value = idCategoria;
@@ -540,7 +596,7 @@ https://templatemo.com/tm-558-klassy-cafe
         }
 
     </script>
-
+    <script src="assets/js/carritodeCompras.js"></script>
 
 </body>
 </html>

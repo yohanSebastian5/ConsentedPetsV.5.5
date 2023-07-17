@@ -69,6 +69,33 @@ namespace ConsentedPetsV._2._0.Vista
         protected global::System.Web.UI.WebControls.Repeater repVete;
 
         /// <summary>
+        /// Control comentario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea comentario;
+
+        /// <summary>
+        /// Control estrella.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl estrella;
+
+        /// <summary>
+        /// Control btnEnviarComentario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnEnviarComentario;
+
+        /// <summary>
         /// Control ScriptManager1.
         /// </summary>
         /// <remarks>

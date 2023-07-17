@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -251,6 +254,7 @@
     <Content Include="Vista\PaginaTienda\assets\images\white-logo.png" />
     <Content Include="Vista\PaginaTienda\assets\js\accordions.js" />
     <Content Include="Vista\PaginaTienda\assets\js\bootstrap.min.js" />
+    <Content Include="Vista\PaginaTienda\assets\js\carritodeCompras.js" />
     <Content Include="Vista\PaginaTienda\assets\js\custom.js" />
     <Content Include="Vista\PaginaTienda\assets\js\datepicker.js" />
     <Content Include="Vista\PaginaTienda\assets\js\imgfix.min.js" />
@@ -500,13 +504,16 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\ClActividadD.cs" />
     <Compile Include="Datos\ClCategoriaD.cs" />
     <Compile Include="Datos\ClCitaD.cs" />
+    <Compile Include="Datos\ClComentarioD.cs" />
     <Compile Include="Datos\ClConexion.cs" />
     <Compile Include="Datos\ClCursoED.cs" />
     <Compile Include="Datos\ClEstablecimientoD.cs" />
     <Compile Include="Datos\ClMascotaD.cs" />
     <Compile Include="Datos\ClMatriculaD.cs" />
+    <Compile Include="Datos\ClPedidoD.cs" />
     <Compile Include="Datos\ClProcesarSQL.cs" />
     <Compile Include="Datos\ClProcesosEscuela.cs" />
     <Compile Include="Datos\ClProcesosVetD.cs" />
@@ -515,12 +522,15 @@
     <Compile Include="Datos\ClServicioED.cs" />
     <Compile Include="Datos\ClServicioVetD.cs" />
     <Compile Include="Datos\ClUsuarioD.cs" />
+    <Compile Include="Entidades\ClActividadE.cs" />
     <Compile Include="Entidades\ClCategoriaE.cs" />
     <Compile Include="Entidades\ClCitaE.cs" />
+    <Compile Include="Entidades\ClComentarioE.cs" />
     <Compile Include="Entidades\ClCursoEE.cs" />
     <Compile Include="Entidades\ClEstablecimientoE.cs" />
     <Compile Include="Entidades\ClMascotaE.cs" />
     <Compile Include="Entidades\ClMatriculaE.cs" />
+    <Compile Include="Entidades\ClPedidoE.cs" />
     <Compile Include="Entidades\ClProcesosVetE.cs" />
     <Compile Include="Entidades\ClProductoE.cs" />
     <Compile Include="Entidades\ClRepeaterEstablecimientoE.cs" />
@@ -530,12 +540,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logica\ClActividadL.cs" />
     <Compile Include="Logica\ClCategoriaL.cs" />
     <Compile Include="Logica\ClCitaL.cs" />
+    <Compile Include="Logica\ClComentarioL.cs" />
     <Compile Include="Logica\ClCursoEL.cs" />
     <Compile Include="Logica\ClEstablecimientoL.cs" />
     <Compile Include="Logica\ClMascotaL.cs" />
     <Compile Include="Logica\ClMatriculaL.cs" />
+    <Compile Include="Logica\ClPedidoL.cs" />
     <Compile Include="Logica\ClProcesosVetL.cs" />
     <Compile Include="Logica\ClProductoL.cs" />
     <Compile Include="Logica\ClRepeaterEstablecimientoL.cs" />

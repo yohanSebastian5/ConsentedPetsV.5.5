@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
@@ -16,13 +17,16 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             if (!IsPostBack)
             {
-                
+
 
                 int idEscuela = int.Parse(Session["Escuela"].ToString());
+                idEscuela = 1;
+
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
+                idUsuario = 9;
                 ClServicioEL objServicio = new ClServicioEL();
                 List<ClServicioEE> lista = objServicio.mtdServicio(idEscuela);
                 repServicio.DataSource = lista;
@@ -65,11 +69,15 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
                 nom.InnerText = obj.nombre;
 
 
+                
+                
+                
+
             }
-          
+
 
         }
-       
+
         public void mtdlimpiar()
         {
             ddlCurso.SelectedIndex = 0;
@@ -89,7 +97,7 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
             idMostrarDescripcion.InnerText = cursoSelec.descripcion;
             precio.InnerText = ((int)cursoSelec.precio).ToString();
 
-            
+
         }
         protected void ddlServicio_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -109,7 +117,7 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
         {
 
             int idEscuela = int.Parse(Session["Escuela"].ToString());
-          
+            idEscuela = 1;
             ClMatriculaL objML = new ClMatriculaL();
             ClMatriculaE objME = new ClMatriculaE();
             DateTime fechaActual = DateTime.Today;
@@ -121,10 +129,29 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
             objME.precio = int.Parse(precio.InnerText);
             objML.mtdMatricula(objME);
             mtdlimpiar();
-            
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Su Mascota" + objME.nombre + "!', 'A sido matriculada', 'success')", true);
 
-            
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Su Mascota" + objME.nombre + "!', 'A sido matriculada', 'success')", true);
+
+
         }
+
+        protected void btnEnviarComentario_Click(object sender, EventArgs e)
+        {
+            int idEscuela = int.Parse(Session["Escuela"].ToString());
+            idEscuela = 1;
+            int idUsuario = int.Parse(Session["Usuario"].ToString());
+            idUsuario = 9;
+            ClComentarioL objL = new ClComentarioL();
+            ClComentarioE objE = new ClComentarioE();
+            objE.comentario = comentario.InnerText;
+            objE.calificacion = int.Parse(Request.Form["estrella"]); // Obtener el valor de la estrella seleccionada
+            objE.idUsuario = idUsuario;
+            objE.idEscuela = idEscuela;
+            objL.mtdRegistrar(objE);
+        }
+
+
+
+
     }
 }

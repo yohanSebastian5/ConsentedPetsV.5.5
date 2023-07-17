@@ -267,7 +267,33 @@
         <!-- Testimonial End -->
 
 
+        <%--modal--%>
 
+        <button class="btn btn-primary" id="abrirModal">Abrir Modal</button>
+
+        
+        <div id="miModal" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar">&times;</span>
+                <h2>Deja un comentario</h2>
+                <textarea id="comentario" runat="server" rows="4" cols="50"></textarea>
+                <div class="calificacion">
+                    <p>Calificación:</p>
+                    <div class="estrellas" id="estrella" runat="server">
+                        <span class="estrella" data-valor="1">&#9734;</span>
+                        <span class="estrella" data-valor="2">&#9734;</span>
+                        <span class="estrella" data-valor="3">&#9734;</span>
+                        <span class="estrella" data-valor="4">&#9734;</span>
+                        <span class="estrella" data-valor="5">&#9734;</span>
+                    </div>
+
+
+
+                </div>
+                <button class="btn btn-primary" id="btnEnviarComentario" runat="server" type="submit">Enviar comentario</button>
+                
+            </div>
+        </div>
 
 
         <!--hast aqui va el ajax-->
@@ -415,6 +441,52 @@
 
         <!-- Template Javascript -->
         <script src="PaginaVeterinaria/js/main.js"></script>
+        <script>
+            document.getElementById("abrirModal").addEventListener("click", function (event) {
+                event.preventDefault();
+                document.getElementById("miModal").style.display = "block";
+                marcarEstrellas(0); // Marcar las estrellas como vacías al abrir la modal
+            });
+
+            document.getElementsByClassName("cerrar")[0].addEventListener("click", function (event) {
+                event.preventDefault();
+                document.getElementById("miModal").style.display = "none";
+            });
+
+            var estrellas = document.getElementsByClassName("estrella");
+            var valorSeleccionado = 0;
+
+            for (var i = 0; i < estrellas.length; i++) {
+                estrellas[i].addEventListener("click", function (event) {
+                    event.preventDefault();
+                    valorSeleccionado = parseInt(this.getAttribute("data-valor"));
+                    console.log("Valor seleccionado: " + valorSeleccionado);
+                    marcarEstrellas(valorSeleccionado);
+                });
+            }
+
+            function marcarEstrellas(valor) {
+                for (var i = 0; i < estrellas.length; i++) {
+                    if (i < valor) {
+                        estrellas[i].innerHTML = "&#9733;"; // Símbolo de estrella rellena
+                        estrellas[i].classList.add("seleccionada");
+                    } else {
+                        estrellas[i].innerHTML = "&#9734;"; // Símbolo de estrella vacía
+                        estrellas[i].classList.remove("seleccionada");
+                    }
+                }
+            }
+
+            document.getElementById("btnEnviarComentario").addEventListener("click", function (event) {
+                event.preventDefault();
+                var comentario = document.getElementById("comentario").value;
+                console.log("Comentario: " + comentario);
+                console.log("Valor seleccionado: " + valorSeleccionado);
+                document.getElementById("miModal").style.display = "none";
+            });
+
+
+        </script>
     </form>
 </body>
 

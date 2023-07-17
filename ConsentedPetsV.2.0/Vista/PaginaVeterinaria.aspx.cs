@@ -22,9 +22,9 @@ namespace ConsentedPetsV._2._0.Vista
             {
 
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
-             
+                idUsuario = 9;
                 int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
-               
+                idVeterinaria = 1;
                 ClMascotaL objData = new ClMascotaL();
                 List<ClMascotaE> listaMascota = objData.mtdListarMascota(idUsuario);
                 ddlMascota.DataSource = listaMascota;
@@ -60,7 +60,7 @@ namespace ConsentedPetsV._2._0.Vista
                
                 nom.InnerText = listaV[0].nombre;
 
-
+                btnEnviarComentario.ServerClick += new EventHandler(btnEnviarComentario_Click);
             }
 
 
@@ -76,7 +76,7 @@ namespace ConsentedPetsV._2._0.Vista
         {
             int idServicio = int.Parse(ddlServicio.SelectedValue);
             int idUsuario = int.Parse(Session["Usuario"].ToString());
-              
+            idUsuario = 9;
             ClServicioVetL objS = new ClServicioVetL();
             ClServicioVeterinariaE objSe = objS.mtdListarSer(idServicio);
             ClCitaL objCita = new ClCitaL();
@@ -107,6 +107,19 @@ namespace ConsentedPetsV._2._0.Vista
             ddlEstado.SelectedIndex = 0;
             ddlServicio.SelectedIndex = 0;
          
+
+        }
+        protected void btnEnviarComentario_Click(object sender, EventArgs e)
+        {
+            int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
+            int idUsuario = int.Parse(Session["Usuario"].ToString());
+            ClComentarioL objL = new ClComentarioL();
+            ClComentarioE objE = new ClComentarioE();
+            objE.comentario = comentario.InnerText;
+            objE.calificacion = int.Parse(estrella.InnerText);
+            objE.idUsuario = idUsuario;
+            objE.idVeterinaria = idVeterinaria;
+            objL.mtdRegistrar(objE);
 
         }
     }

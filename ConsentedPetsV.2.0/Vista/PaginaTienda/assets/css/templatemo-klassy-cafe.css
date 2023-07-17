@@ -96,7 +96,7 @@ a {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0px;
   margin-bottom: 0px;
-  width:400px;
+  width: 400px;
 }
 
 ul {
@@ -1434,7 +1434,7 @@ offers
   position: absolute;
   top: 15px;
   right: 0;
-  width: 90px;
+  width: 190px;
   height: 70px;
   background-color: #fb5849;
   display: inline-block;
@@ -1653,4 +1653,103 @@ responsive
   100% {
     opacity: 0;
   }
+}
+.fancy-heading {
+    text-align: center;
+    font-size: 32px;
+    color: #333;
+    margin-top: 20px;
+}
+
+.container-fluid {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.card {
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.card-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cta {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+    .cta:hover {
+        background-color: #555;
+    }
+
+.add-to-cart-btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .add-to-cart-btn:hover {
+        background-color: #555;
+    }
+
+.cart-button {
+    display: block;
+    margin: 20px auto;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .cart-button:hover {
+        background-color: #555;
+    }
+
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.ocultar {
+    display: none
 }
