@@ -44,8 +44,19 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria
         [WebMethod]
         public static List<ClServicioVeterinariaE> cargardatos(string tipo)
         {
-            ClServicioVetL objVet = new ClServicioVetL();
-            List<ClServicioVeterinariaE> lista = objVet.mtdRepeater(int.Parse(tipo),1);
+            List<ClServicioVeterinariaE> lista= null;
+            try
+            {
+                ClServicioVetL objVet = new ClServicioVetL();
+                lista= objVet.mtdRepeater(int.Parse(tipo), 1);
+               ;
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+                
+            }
             return lista;
         }
     }

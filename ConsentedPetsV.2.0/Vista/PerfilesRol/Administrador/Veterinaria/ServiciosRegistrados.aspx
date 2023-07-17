@@ -32,7 +32,7 @@
                                             <labe>Precio: </labe>
                                             <%#Eval("precio")%></a>
                                         <h2 style="display: none" id="idV" class="Pet-text" contenteditable="inherit"><%#Eval("idServicioV") %></h2>
-                                        <a id="enlace" onclick="listarVet(this)" class="btn-primary ">Editar 
+                                        <a id="enlace" onclick="cargardatos(this)" class="btn-primary ">Editar 
 
                                     </div>
                                 </div>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <div style="color: lightslategray" class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div style="color: lightslategray"; class="modal fade" id="ModalEditar">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -99,26 +99,26 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                    <asp:Button ID="Button1" CssClass="btn btn-danger" runat="server" Text="Editar" />
+                                    <asp:Button ID="Button1" CssClass="btn btn-danger" runat="server" OnClientClick="modal(this)" Text="Editar" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <asp:Button ID="Button2" CssClass=" btn-danger" runat="server" Text="Editar" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" />
+                </div><%--<button type="button" id="Button2" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#ModalEditar">Cerrar</button>--%>
+                <asp:Button ID="Button2" CssClass="btn-danger" runat="server" Text="Editar" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#ModalEditar" />
 
 
             </ContentTemplate>
         </asp:UpdatePanel>
 
     </form>
-    <button type="button" id="btnEditar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" style="display: none">Editar</button>
+    <%--<button type="button" id="btnEditar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" style="display: none">Editar</button>--%>
 
 
     <!-- Services End -->
     <script>
         function listarVet(elementoA) {
-            var valor = elementoA.previousElementSibling.innerText;;
+            var valor = elementoA.previousElementSibling.innerText;
             $.ajax({
                 type: "POST",
                 url: "ServiciosRegistrados.aspx/ListarV",
@@ -134,7 +134,9 @@
 
             });
             cargardatos(valor);
-            activarBoton();
+        }
+        function modal(x) {
+            document.getElementById("ModalEditar").style.display = "block";
         }
         function activarBoton() {
             // Obtiene una referencia al botón
@@ -145,13 +147,14 @@
                 boton.click();
             }
         }
-        function cargardatos(id) {
+        function cargardatos(elementoA) {
+            var valor = elementoA.previousElementSibling.innerText;
             $.ajax({
                 type: "POST",
                 url: "ServiciosRegistrados.aspx/cargardatos",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
-                data: JSON.stringify({tipo:id  }),
+                data: JSON.stringify({ tipo: valor }),
                 success: function (dat) {
                     var Carga = dat.d;
                     document.getElementById('<%= txtNombre.ClientID %>').value = Carga[0]["nombre"];
@@ -162,7 +165,8 @@
                     console.error(errorThrown);
                 }
             });
-         }
+
+        }
 
     </script>
 
