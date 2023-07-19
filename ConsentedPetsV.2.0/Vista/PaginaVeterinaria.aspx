@@ -266,17 +266,17 @@
         </div>
         <!-- Testimonial End -->
 
+  <%--modal--%>
 
-        <%--modal--%>
+        <button class="btn btn-primary" id="abrirModal">Haz un Comentario</button>
 
-        <button class="btn btn-primary" id="abrirModal">Abrir Modal</button>
 
-        
         <div id="miModal" class="modal">
             <div class="modal-contenido">
                 <span class="cerrar">&times;</span>
                 <h2>Deja un comentario</h2>
-                <textarea id="comentario" runat="server" rows="4" cols="50"></textarea>
+                <textarea id="comentario" rows="4" cols="50" runat="server" style="width: 357px;"></textarea>
+
                 <div class="calificacion">
                     <p>Calificación:</p>
                     <div class="estrellas" id="estrella" runat="server">
@@ -285,16 +285,20 @@
                         <span class="estrella" data-valor="3">&#9734;</span>
                         <span class="estrella" data-valor="4">&#9734;</span>
                         <span class="estrella" data-valor="5">&#9734;</span>
+
                     </div>
 
 
 
                 </div>
-                <button class="btn btn-primary" id="btnEnviarComentario" runat="server" type="submit">Enviar comentario</button>
-                
+
+                <input type="hidden" id="valorEstrellaHidden" name="valorEstrellaHidden" runat="server" />
+
+                <asp:Button ID="btnEnviarComentario" runat="server" CssClass="btn btn-primary" Text="Enviar comentario" OnClick="btnEnviarComentario_Click" />
+
+
             </div>
         </div>
-
 
         <!--hast aqui va el ajax-->
    
@@ -441,52 +445,61 @@
 
         <!-- Template Javascript -->
         <script src="PaginaVeterinaria/js/main.js"></script>
-        <script>
-            document.getElementById("abrirModal").addEventListener("click", function (event) {
-                event.preventDefault();
-                document.getElementById("miModal").style.display = "block";
-                marcarEstrellas(0); // Marcar las estrellas como vacías al abrir la modal
-            });
+         <script>
+             document.getElementById("abrirModal").addEventListener("click", function (event) {
+                 event.preventDefault();
+                 document.getElementById("miModal").style.display = "block";
+                 marcarEstrellas(0); // Marcar las estrellas como vacías al abrir la modal
+             });
 
-            document.getElementsByClassName("cerrar")[0].addEventListener("click", function (event) {
-                event.preventDefault();
-                document.getElementById("miModal").style.display = "none";
-            });
-
-            var estrellas = document.getElementsByClassName("estrella");
-            var valorSeleccionado = 0;
-
-            for (var i = 0; i < estrellas.length; i++) {
-                estrellas[i].addEventListener("click", function (event) {
-                    event.preventDefault();
-                    valorSeleccionado = parseInt(this.getAttribute("data-valor"));
-                    console.log("Valor seleccionado: " + valorSeleccionado);
-                    marcarEstrellas(valorSeleccionado);
-                });
-            }
-
-            function marcarEstrellas(valor) {
-                for (var i = 0; i < estrellas.length; i++) {
-                    if (i < valor) {
-                        estrellas[i].innerHTML = "&#9733;"; // Símbolo de estrella rellena
-                        estrellas[i].classList.add("seleccionada");
-                    } else {
-                        estrellas[i].innerHTML = "&#9734;"; // Símbolo de estrella vacía
-                        estrellas[i].classList.remove("seleccionada");
-                    }
-                }
-            }
-
-            document.getElementById("btnEnviarComentario").addEventListener("click", function (event) {
-                event.preventDefault();
-                var comentario = document.getElementById("comentario").value;
-                console.log("Comentario: " + comentario);
-                console.log("Valor seleccionado: " + valorSeleccionado);
-                document.getElementById("miModal").style.display = "none";
-            });
+             document.getElementsByClassName("cerrar")[0].addEventListener("click", function (event) {
+                 event.preventDefault();
+                 document.getElementById("miModal").style.display = "none";
+             });
 
 
-        </script>
+             var estrellas = document.getElementsByClassName("estrella");
+             for (var i = 0; i < estrellas.length; i++) {
+                 estrellas[i].addEventListener("click", function (event) {
+                     event.preventDefault();
+                     var valorEstrella = parseInt(this.getAttribute("data-valor")); // Almacenar el valor en la variable global
+
+                     marcarEstrellas(valorEstrella);
+                     document.getElementById("valorEstrellaHidden").value = valorEstrella;
+                     // Enviar el valor al servidor utilizando AJAX
+                     $.ajax({
+                         url: 'PaginaVeterinaria.aspx/btnEnviarComentario_Click',
+                         type: 'POST',
+                         data: { valor: valorEstrella },
+                         success: function (response) {
+                             // Manejar la respuesta del servidor si es necesario
+                             console.log(response);
+                         },
+                         error: function (xhr, status, error) {
+                             // Manejar el error si ocurre
+                             console.log(error);
+                         }
+                     });
+                 });
+             }
+
+
+             function marcarEstrellas(valor) {
+                 for (var i = 0; i < estrellas.length; i++) {
+                     if (i < valor) {
+                         estrellas[i].innerHTML = "&#9733;"; // Símbolo de estrella rellena
+                         estrellas[i].classList.add("seleccionada");
+                     } else {
+                         estrellas[i].innerHTML = "&#9734;"; // Símbolo de estrella vacía
+                         estrellas[i].classList.remove("seleccionada");
+                     }
+                 }
+             }
+
+
+
+
+         </script>
     </form>
 </body>
 

@@ -123,6 +123,42 @@ namespace PaginaTienda.PaginaTienda
         protected global::System.Web.UI.WebControls.Repeater repProduc;
 
         /// <summary>
+        /// Control comentario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea comentario;
+
+        /// <summary>
+        /// Control estrella.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl estrella;
+
+        /// <summary>
+        /// Control valorEstrellaHidden.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden valorEstrellaHidden;
+
+        /// <summary>
+        /// Control btnEnviarComentario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEnviarComentario;
+
+        /// <summary>
         /// Control Image2.
         /// </summary>
         /// <remarks>

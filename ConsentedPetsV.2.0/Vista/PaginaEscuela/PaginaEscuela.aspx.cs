@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
@@ -134,17 +135,17 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
 
 
         }
-
+        [WebMethod]
         protected void btnEnviarComentario_Click(object sender, EventArgs e)
         {
             int idEscuela = int.Parse(Session["Escuela"].ToString());
             idEscuela = 1;
             int idUsuario = int.Parse(Session["Usuario"].ToString());
-            idUsuario = 9;
+            idUsuario = 19;
             ClComentarioL objL = new ClComentarioL();
             ClComentarioE objE = new ClComentarioE();
             objE.comentario = comentario.InnerText;
-            objE.calificacion = int.Parse(Request.Form["estrella"]); // Obtener el valor de la estrella seleccionada
+            objE.calificacion = int.Parse(valorEstrellaHidden.Value); // Obtener el valor de la estrella seleccionada
             objE.idUsuario = idUsuario;
             objE.idEscuela = idEscuela;
             objL.mtdRegistrar(objE);

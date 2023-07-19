@@ -96,6 +96,15 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl estrella;
 
         /// <summary>
+        /// Control valorEstrellaHidden.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden valorEstrellaHidden;
+
+        /// <summary>
         /// Control btnEnviarComentario.
         /// </summary>
         /// <remarks>

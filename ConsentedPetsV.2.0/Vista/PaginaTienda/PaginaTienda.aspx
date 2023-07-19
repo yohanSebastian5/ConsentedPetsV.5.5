@@ -422,6 +422,38 @@ https://templatemo.com/tm-558-klassy-cafe
             </asp:UpdatePanel>
         </section>
 
+          <button class="btn btn-primary" id="abrirModal">Haz un Comentario</button>
+
+
+        <div id="miModal" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar">&times;</span>
+                <h2>Deja un comentario</h2>
+                <textarea id="comentario" rows="4" cols="50" runat="server" style="width: 357px;"></textarea>
+
+                <div class="calificacion">
+                    <p>Calificación:</p>
+                    <div class="estrellas" id="estrella" runat="server">
+                        <span class="estrella" data-valor="1">&#9734;</span>
+                        <span class="estrella" data-valor="2">&#9734;</span>
+                        <span class="estrella" data-valor="3">&#9734;</span>
+                        <span class="estrella" data-valor="4">&#9734;</span>
+                        <span class="estrella" data-valor="5">&#9734;</span>
+
+                    </div>
+
+
+
+                </div>
+
+                <input type="hidden" id="valorEstrellaHidden" name="valorEstrellaHidden" runat="server" />
+
+                <asp:Button ID="btnEnviarComentario" runat="server" CssClass="btn btn-primary" Text="Enviar comentario" OnClick="btnEnviarComentario_Click" />
+
+
+            </div>
+        </div>
+
         <!-- ***** Chefs Area Ends ***** -->
 
 
@@ -526,7 +558,7 @@ https://templatemo.com/tm-558-klassy-cafe
 
     </script>
 
-    <script>
+<%--    <script>
         function listar(elementoA) {
             var valor = elementoA.previousElementSibling.innerText;
             $.ajax({
@@ -556,7 +588,7 @@ https://templatemo.com/tm-558-klassy-cafe
             }
         }
 
-    </script>
+    </script>--%>
 
     <%-- <script type="text/javascript">
         function SeleccionarCategoria(idCategoria) {
@@ -596,6 +628,61 @@ https://templatemo.com/tm-558-klassy-cafe
         }
 
     </script>
+      <script>
+          document.getElementById("abrirModal").addEventListener("click", function (event) {
+              event.preventDefault();
+              document.getElementById("miModal").style.display = "block";
+              marcarEstrellas(0); // Marcar las estrellas como vacías al abrir la modal
+          });
+
+          document.getElementsByClassName("cerrar")[0].addEventListener("click", function (event) {
+              event.preventDefault();
+              document.getElementById("miModal").style.display = "none";
+          });
+
+
+          var estrellas = document.getElementsByClassName("estrella");
+          for (var i = 0; i < estrellas.length; i++) {
+              estrellas[i].addEventListener("click", function (event) {
+                  event.preventDefault();
+                  var valorEstrella = parseInt(this.getAttribute("data-valor")); // Almacenar el valor en la variable global
+
+                  marcarEstrellas(valorEstrella);
+                  document.getElementById("valorEstrellaHidden").value = valorEstrella;
+                  // Enviar el valor al servidor utilizando AJAX
+                  $.ajax({
+                      url: 'PaginaTienda.aspx/btnEnviarComentario_Click',
+                      type: 'POST',
+                      data: { valor: valorEstrella },
+                      success: function (response) {
+                          // Manejar la respuesta del servidor si es necesario
+                          console.log(response);
+                      },
+                      error: function (xhr, status, error) {
+                          // Manejar el error si ocurre
+                          console.log(error);
+                      }
+                  });
+              });
+          }
+
+
+          function marcarEstrellas(valor) {
+              for (var i = 0; i < estrellas.length; i++) {
+                  if (i < valor) {
+                      estrellas[i].innerHTML = "&#9733;"; // Símbolo de estrella rellena
+                      estrellas[i].classList.add("seleccionada");
+                  } else {
+                      estrellas[i].innerHTML = "&#9734;"; // Símbolo de estrella vacía
+                      estrellas[i].classList.remove("seleccionada");
+                  }
+              }
+          }
+
+
+
+
+      </script>
     <script src="assets/js/carritodeCompras.js"></script>
 
 </body>

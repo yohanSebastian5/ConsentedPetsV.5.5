@@ -25,9 +25,9 @@ namespace PaginaTienda.PaginaTienda
 
 
             int idTienda = int.Parse(Session["Tienda"].ToString());
-            idTienda = 1;
+            //idTienda = 1;
             int idUsuario = int.Parse(Session["Usuario"].ToString());
-            idUsuario = 19;
+            //idUsuario = 19;
 
             ClMascotaL objMascotaL = new ClMascotaL();
             List<ClMascotaE> lista = objMascotaL.mtdMascotaVenta(idTienda);
@@ -80,9 +80,9 @@ namespace PaginaTienda.PaginaTienda
         protected void mtdPedido(string destino, string name, string email, string phone, string cantidad, string message)
         {
             int idTienda = int.Parse(Session["Tienda"].ToString());
-            idTienda = 1;
+            //idTienda = 1;
             int idUsuario = int.Parse(Session["Usuario"].ToString());
-            idUsuario = 19;
+                                                                                           
             ClPedidoL objDato1 = new ClPedidoL();
             ClPedidoE objDato2 = new ClPedidoE();
             string remitente = email;
@@ -181,6 +181,21 @@ namespace PaginaTienda.PaginaTienda
         public static void Listar(string tipo)
         {
             HttpContext.Current.Session["Tipo"] = tipo;
+        }
+        [WebMethod]
+        protected void btnEnviarComentario_Click(object sender, EventArgs e)
+        {
+            int idTienda = int.Parse(Session["Tienda"].ToString());
+
+            int idUsuario = int.Parse(Session["Usuario"].ToString());
+
+            ClComentarioL objL = new ClComentarioL();
+            ClComentarioE objE = new ClComentarioE();
+            objE.comentario = comentario.InnerText;
+            objE.calificacion = int.Parse(valorEstrellaHidden.Value); // Obtener el valor de la estrella seleccionada
+            objE.idUsuario = idUsuario;
+            objE.idEscuela = idTienda;
+            objL.mtdRegistrar(objE);
         }
     }
 }

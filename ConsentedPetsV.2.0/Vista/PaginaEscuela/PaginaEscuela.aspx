@@ -312,14 +312,14 @@
 
         <%--modal--%>
 
-        <button class="btn btn-primary" id="abrirModal">Has un Comentario</button>
+        <button class="btn btn-primary" id="abrirModal">Haz un Comentario</button>
 
 
         <div id="miModal" class="modal">
             <div class="modal-contenido">
                 <span class="cerrar">&times;</span>
                 <h2>Deja un comentario</h2>
-                <textarea id="comentario" rows="4" cols="50" runat="server"></textarea>
+                <textarea id="comentario" rows="4" cols="50" runat="server" style="width: 357px;"></textarea>
 
                 <div class="calificacion">
                     <p>Calificación:</p>
@@ -335,6 +335,8 @@
 
 
                 </div>
+
+                <input type="hidden" id="valorEstrellaHidden" name="valorEstrellaHidden" runat="server" />
 
                 <asp:Button ID="btnEnviarComentario" runat="server" CssClass="btn btn-primary" Text="Enviar comentario" OnClick="btnEnviarComentario_Click" />
 
@@ -528,18 +530,32 @@
             document.getElementById("miModal").style.display = "none";
         });
 
-        var estrellas = document.getElementsByClassName("estrella");
-        var valorSeleccionado = 0;
 
+        var estrellas = document.getElementsByClassName("estrella");
         for (var i = 0; i < estrellas.length; i++) {
             estrellas[i].addEventListener("click", function (event) {
                 event.preventDefault();
-                valorSeleccionado = parseInt(this.getAttribute("data-valor"));
+             var   valorEstrella = parseInt(this.getAttribute("data-valor")); // Almacenar el valor en la variable global
 
-                console.log("Valor seleccionado: " + valorSeleccionado);
-                marcarEstrellas(valorSeleccionado);
+                marcarEstrellas(valorEstrella);
+                document.getElementById("valorEstrellaHidden").value = valorEstrella;
+                // Enviar el valor al servidor utilizando AJAX
+                $.ajax({
+                    url: 'PaginaEscuela.aspx/btnEnviarComentario_Click',
+                    type: 'POST',
+                    data: { valor: valorEstrella },
+                    success: function (response) {
+                        // Manejar la respuesta del servidor si es necesario
+                        console.log(response);
+                    },
+                    error: function (xhr, status, error) {
+                        // Manejar el error si ocurre
+                        console.log(error);
+                    }
+                });
             });
         }
+      
 
         function marcarEstrellas(valor) {
             for (var i = 0; i < estrellas.length; i++) {

@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.DynamicData;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -22,9 +23,9 @@ namespace ConsentedPetsV._2._0.Vista
             {
 
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
-                idUsuario = 9;
+                //idUsuario = 9;
                 int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
-                idVeterinaria = 1;
+                //idVeterinaria = 1;
                 ClMascotaL objData = new ClMascotaL();
                 List<ClMascotaE> listaMascota = objData.mtdListarMascota(idUsuario);
                 ddlMascota.DataSource = listaMascota;
@@ -60,7 +61,7 @@ namespace ConsentedPetsV._2._0.Vista
                
                 nom.InnerText = listaV[0].nombre;
 
-                btnEnviarComentario.ServerClick += new EventHandler(btnEnviarComentario_Click);
+               
             }
 
 
@@ -109,18 +110,21 @@ namespace ConsentedPetsV._2._0.Vista
          
 
         }
+        
+        [WebMethod]
         protected void btnEnviarComentario_Click(object sender, EventArgs e)
         {
             int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
+            
             int idUsuario = int.Parse(Session["Usuario"].ToString());
+          
             ClComentarioL objL = new ClComentarioL();
             ClComentarioE objE = new ClComentarioE();
             objE.comentario = comentario.InnerText;
-            objE.calificacion = int.Parse(estrella.InnerText);
+            objE.calificacion = int.Parse(valorEstrellaHidden.Value); // Obtener el valor de la estrella seleccionada
             objE.idUsuario = idUsuario;
-            objE.idVeterinaria = idVeterinaria;
+            objE.idEscuela = idVeterinaria;
             objL.mtdRegistrar(objE);
-
         }
     }
 }
