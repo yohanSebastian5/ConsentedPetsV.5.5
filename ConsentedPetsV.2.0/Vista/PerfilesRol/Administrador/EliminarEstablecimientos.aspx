@@ -18,12 +18,12 @@
     <link href="../../Css/EliminarEstablecimiento.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
-    <div class="">
-        <h2 class="Title" >ELIMINAR ESTABLECIMIENTO</h2>
-        <asp:DropDownList ID="ddlTipo" runat="server" CssClass="tipos"  OnSelectedIndexChanged="ddlTipo_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
-        <div id="dataTableContainer" class="table-responsive tabla" style="width: 100%">
+    <h2 class="Title" >ELIMINAR ESTABLECIMIENTO</h2>
+    <asp:DropDownList ID="ddlTipo" runat="server" CssClass="tipos"  style="width: 20%; color: #125a99;" OnSelectedIndexChanged="ddlTipo_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+    <div class=" d-flex justify-content-center">
+        <div id="dataTableContainer" class="table-responsive tabla" style="width: 1450px; justify-content:center">
             <table id="tblTrabajador" class="table ">
-                <thead>
+                <thead style="color: #125a99;">
                     <tr>
                         <th>Nombre</th>
                         <th>Telefono</th>
@@ -36,6 +36,7 @@
             </table>
         </div>
     </div>
+    
 
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -54,7 +55,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                         <asp:Button ID="btnEliminar" CssClass="btn btn-danger" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
                     </div>
                 </div>

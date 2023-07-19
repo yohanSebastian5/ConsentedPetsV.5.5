@@ -42,22 +42,14 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria
             HttpContext.Current.Session["Eliminar"] = tipo;
         }
         [WebMethod]
-        public static List<ClServicioVeterinariaE> cargardatos(string tipo)
+        public static List<ClServicioVeterinariaE> cargardatos()
         {
-            List<ClServicioVeterinariaE> lista= null;
-            try
-            {
-                ClServicioVetL objVet = new ClServicioVetL();
-                lista= objVet.mtdRepeater(int.Parse(tipo), 1);
-               ;
-            }
-            catch (Exception e)
-            {
-
-                Console.WriteLine(e.Message);
-                
-            }
+            int tipo = int.Parse(HttpContext.Current.Session["Eliminar"].ToString());
+            List<ClServicioVeterinariaE> lista = null;
+            ClServicioVetL objVet = new ClServicioVetL();
+            lista = objVet.mtdRepeater(tipo, 1);
             return lista;
         }
+
     }
 }

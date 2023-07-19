@@ -458,7 +458,6 @@
     <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarCitas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarVeterinarios.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\RegistrarProceso.aspx" />
-    <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarServicios.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarVeterinarios.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\ProcesosRegistrados.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\RegistrarServicioV.aspx" />
@@ -869,13 +868,6 @@
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarCitas.aspx.designer.cs">
       <DependentUpon>ListarCitas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarServicios.aspx.cs">
-      <DependentUpon>ListarServicios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarServicios.aspx.designer.cs">
-      <DependentUpon>ListarServicios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarVeterinarios.aspx.cs">
       <DependentUpon>ListarVeterinarios.aspx</DependentUpon>

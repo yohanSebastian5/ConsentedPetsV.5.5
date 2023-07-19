@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vista/PerfilesRol/Administrador/PerfilAdmin.Master" AutoEventWireup="true" CodeBehind="ListarPersonal.aspx.cs" Inherits="ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.ListarPersonal" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentHeadAdministrador" runat="server">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -14,25 +15,27 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
     <h1 class="Title">Listar Personal</h1>
-    <div class="table-responsive tabla" style="width: 100%">
-        <table id="tblUsua" class=" table " >
-            <thead style="color: #0070ff">
-                <tr>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Telefono</th>
-                    <th>Email</th>
-                    <th>Direccion</th>
-                    <th>Genero</th>
-                    <th>Especializacion</th>
-                    <th>Experiencia</th>
-                    <th>Profesion</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-            <tfoot>
-            </tfoot>
-        </table>
+    <div class="d-flex justify-content-center">
+        <div class="table-responsive tabla" style="width: 1435px">
+            <table id="tblUsua" class=" table ">
+                <thead style="color: #125a99;">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Telefono</th>
+                        <th>Email</th>
+                        <th>Direccion</th>
+                        <th>Genero</th>
+                        <th>Especializacion</th>
+                        <th>Experiencia</th>
+                        <th>Profesion</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+        </div>
     </div>
     <script>
         $(document).ready(function () {

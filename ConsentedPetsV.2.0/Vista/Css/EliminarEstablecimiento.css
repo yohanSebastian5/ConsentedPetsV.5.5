@@ -1,10 +1,11 @@
 ﻿.Title {
     justify-content: center;
     display: flex;
-    margin:20px;
+    margin: 20px;
+    color: #125a99;
 }
 body {
-    background-color: #8e9794;
+    background-color: #d3f7f7;
 }
 .tabla {
     border: 2px solid;
@@ -12,6 +13,6 @@ body {
 }
 .tipos {
     margin-bottom: 20px;
-    margin-left: 20px;
+    margin-left: 132px;
     font-size:20px;
 }
