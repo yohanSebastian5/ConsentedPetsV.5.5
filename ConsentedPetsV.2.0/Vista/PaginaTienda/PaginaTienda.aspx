@@ -25,7 +25,7 @@ https://templatemo.com/tm-558-klassy-cafe
     <link href="../../Styles/sweetalert.css" rel="stylesheet" />
     <script src="../../Scripts/sweetalert.min.js"></script>
     <script src="../../Scripts/sweetalert-dev.js"></script>
-    <script src="assets/js/carritodeCompras.js"></script>
+    
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
@@ -136,47 +136,7 @@ https://templatemo.com/tm-558-klassy-cafe
         </div>
         <!-- ***** Main Banner Area End ***** -->
 
-        <!-- ***** About Area Starts ***** -->
-        <%--        <section class="section" id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-xs-12">
-                        <div class="left-text-content">
-                            <div class="section-heading">
-                                <h6>About Us</h6>
-                                <h2>We Leave A Delicious Memory For You</h2>
-                            </div>
-                            <p>
-                                Klassy Cafe is one of the best <a href="https://templatemo.com/tag/restaurant" target="_blank" rel="sponsored">restaurant HTML templates</a> with Bootstrap v4.5.2 CSS framework. You can download and feel free to use this website template layout for your restaurant business. You are allowed to use this template for commercial purposes.
-                            <br>
-                                <br>
-                                You are NOT allowed to redistribute the template ZIP file on any template donwnload website. Please contact us for more information.
-                            </p>
-                            <div class="row">
-                                <div class="col-4">
-                                    <img src="assets/images/about-thumb-01.jpg" alt="">
-                                </div>
-                                <div class="col-4">
-                                    <img src="assets/images/about-thumb-02.jpg" alt="">
-                                </div>
-                                <div class="col-4">
-                                    <img src="assets/images/about-thumb-03.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-xs-12">
-                        <div class="right-content">
-                            <div class="thumb">
-                                <a rel="nofollow" href="http://youtube.com"><i class="fa fa-play"></i></a>
-                                <img src="assets/images/about-video-bg.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>--%>
-        <!-- ***** About Area Ends ***** -->
+
 
         <!-- ***** Menu Area Starts ***** -->
         <section class="section" id="menu">
@@ -309,7 +269,75 @@ https://templatemo.com/tm-558-klassy-cafe
         </section>
         <!-- ***** Reservation Area Ends ***** -->
 
-     
+        <!-- Testimonial Start -->
+        <div class="container-fluid py-5" id="comentarios">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h1 class="section-title position-relative text-center mb-5">Clients Say About Our Famous Ice Cream</h1>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="owl-carousel testimonial-carousel">
+                            <div class="text-center">
+                                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                                <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
+                                <img class="img-fluid mx-auto mb-3" src="PaginaVeterinaria/img/testimonial-1.jpg" alt="">
+                                <h5 class="font-weight-bold m-0">Client Name</h5>
+                                <span>Profession</span>
+                            </div>
+                            <div class="text-center">
+                                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                                <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
+                                <img class="img-fluid mx-auto mb-3" src="PaginaVeterinaria/img/testimonial-2.jpg" alt="">
+                                <h5 class="font-weight-bold m-0">Client Name</h5>
+                                <span>Profession</span>
+                            </div>
+                            <div class="text-center">
+                                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                                <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
+                                <img class="img-fluid mx-auto mb-3" src="PaginaVeterinaria/img/testimonial-3.jpg" alt="">
+                                <h5 class="font-weight-bold m-0">Client Name</h5>
+                                <span>Profession</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
+        <button class="btn btn-primary" id="abrirModal">Haz un Comentario</button>
+
+
+        <div id="miModal" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar">&times;</span>
+                <h2>Deja un comentario</h2>
+                <textarea id="comentario" rows="4" cols="50" runat="server" style="width: 357px;"></textarea>
+
+                <div class="calificacion">
+                    <p>Calificación:</p>
+                    <div class="estrellas" id="estrella" runat="server">
+                        <span class="estrella" data-valor="1">&#9734;</span>
+                        <span class="estrella" data-valor="2">&#9734;</span>
+                        <span class="estrella" data-valor="3">&#9734;</span>
+                        <span class="estrella" data-valor="4">&#9734;</span>
+                        <span class="estrella" data-valor="5">&#9734;</span>
+
+                    </div>
+
+
+
+                </div>
+
+                <input type="hidden" id="valorEstrellaHidden" name="valorEstrellaHidden" runat="server" />
+
+                <asp:Button ID="btnEnviarComentario" runat="server" CssClass="btn btn-primary" Text="Enviar comentario" OnClick="btnEnviarComentario_Click" />
+
+
+            </div>
+        </div>
 
 
         <!-- ***** Menu Area Starts ***** -->
@@ -378,26 +406,12 @@ https://templatemo.com/tm-558-klassy-cafe
                                                                     <div class="tab-item">
 
                                                                         <img style="width: 65px; height: 70px;" id="img" runat="server" src='<%# ResolveUrl("~/Vista/imagenes/ImagenesProductoCat/") + Eval("foto") %>' />
-                                                                        <h4 ><asp:Label id="nombre" runat="server" Text='<%# Eval("nombre") %>'></asp:Label></h4>
-                                                                        <p>
-                                                                            <asp:Label ID="descripcion" runat="server" Text='<%# Eval("descripcion") %>'></asp:Label></p>
+                                                                        <h4 id="nombre" runat="server"><%# Eval("nombre") %></h4>
+                                                                        <p id="descripcion" runat="server"><%# Eval("descripcion") %></p>
                                                                         <div class="price">
-                                                                            <h6>$<asp:Label ID="precioP" runat="server" Text='<%# Eval("precioP") %>'> <a>Comprar</a></asp:Label>
-                                                                            </h6>
-                                                                            <a class="add-to-cart-btn" onclick="listar(this)">Comprar </a>
-
-                                                                            <asp:Button ID="agregarAlCarrito" runat="server" CssClass="add-to-cart-btn ocultar" Text="Agregar al carrito" OnClick="agregarAlCarrito_Click" />
+                                                                            <h6 id="precioP" runat="server">$<%# Eval("precioP") %> <a>Comprar</a></h6>
                                                                         </div>
-                                                                        <asp:Label ID="idProducto" runat="server" Text='<%# Eval("idProducto")  %>' Visible="false"></asp:Label></h5>
-                                                                        <h2 class="ocultar"><%# Eval("idProducto")  %></h2>
-
-
-
-                                                                            
-
-                                                                            </div>
-                                                                          
-                                                                        </div>
+                                                                    </div>
                                                                 </ItemTemplate>
                                                             </asp:Repeater>
 
@@ -422,42 +436,11 @@ https://templatemo.com/tm-558-klassy-cafe
             </asp:UpdatePanel>
         </section>
 
-          <button class="btn btn-primary" id="abrirModal">Haz un Comentario</button>
-
-
-        <div id="miModal" class="modal">
-            <div class="modal-contenido">
-                <span class="cerrar">&times;</span>
-                <h2>Deja un comentario</h2>
-                <textarea id="comentario" rows="4" cols="50" runat="server" style="width: 357px;"></textarea>
-
-                <div class="calificacion">
-                    <p>Calificación:</p>
-                    <div class="estrellas" id="estrella" runat="server">
-                        <span class="estrella" data-valor="1">&#9734;</span>
-                        <span class="estrella" data-valor="2">&#9734;</span>
-                        <span class="estrella" data-valor="3">&#9734;</span>
-                        <span class="estrella" data-valor="4">&#9734;</span>
-                        <span class="estrella" data-valor="5">&#9734;</span>
-
-                    </div>
-
-
-
-                </div>
-
-                <input type="hidden" id="valorEstrellaHidden" name="valorEstrellaHidden" runat="server" />
-
-                <asp:Button ID="btnEnviarComentario" runat="server" CssClass="btn btn-primary" Text="Enviar comentario" OnClick="btnEnviarComentario_Click" />
-
-
-            </div>
-        </div>
 
         <!-- ***** Chefs Area Ends ***** -->
 
 
-           <button id="btnAbrirModal" class="cart-button" type="button" data-toggle="modal" data-target="#myModal">
+        <button id="btnAbrirModal" class="cart-button" type="button" data-toggle="modal" data-target="#myModal">
             Abrir Carrito de Compras<span id="count" class="badge text-bg-danger"></span>
         </button>
         <!-- Ventana modal -->
@@ -503,7 +486,7 @@ https://templatemo.com/tm-558-klassy-cafe
                     <div class="col-lg-4">
                         <div class="logo">
                             <a href="index.html">
-                                <asp:Image ID="Image2" runat="server" Style="width: 70px; height:70px;" /></a>
+                                <asp:Image ID="Image2" runat="server" Style="width: 70px; height: 70px;" /></a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-xs-12">
@@ -558,43 +541,7 @@ https://templatemo.com/tm-558-klassy-cafe
 
     </script>
 
-<%--    <script>
-        function listar(elementoA) {
-            var valor = elementoA.previousElementSibling.innerText;
-            $.ajax({
-                type: "POST",
-                url: "PaginaTienda.aspx/Listar",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                data: JSON.stringify({ tipo: valor }),
-                success: function (data) {
-                    console.log(valor);
-                }, error: function (xhr, textStatus, errorThrown) {
-                    // Manejar cualquier error que ocurra durante la llamada AJAX
-                    console.error(errorThrown);
-                }
 
-            });
-            activarBoton();
-        }
-        function activarBoton() {
-            // Obtiene una referencia al botón
-            console.log("bvb");
-            var boton = document.getElementById('<%= agregarAlCarrito.ClientID %>');
-
-            // Simula el clic en el botón
-            if (boton) {
-                boton.click();
-            }
-        }
-
-    </script>--%>
-
-    <%-- <script type="text/javascript">
-        function SeleccionarCategoria(idCategoria) {
-            document.getElementById('<%= hdnCategoriaSeleccionada.ClientID %>').value = idCategoria;
-        }
-    </script>--%>
 
     <script>
         function listarVet(elementoA) {
@@ -628,61 +575,61 @@ https://templatemo.com/tm-558-klassy-cafe
         }
 
     </script>
-      <script>
-          document.getElementById("abrirModal").addEventListener("click", function (event) {
-              event.preventDefault();
-              document.getElementById("miModal").style.display = "block";
-              marcarEstrellas(0); // Marcar las estrellas como vacías al abrir la modal
-          });
+    <script>
+        document.getElementById("abrirModal").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("miModal").style.display = "block";
+            marcarEstrellas(0); // Marcar las estrellas como vacías al abrir la modal
+        });
 
-          document.getElementsByClassName("cerrar")[0].addEventListener("click", function (event) {
-              event.preventDefault();
-              document.getElementById("miModal").style.display = "none";
-          });
-
-
-          var estrellas = document.getElementsByClassName("estrella");
-          for (var i = 0; i < estrellas.length; i++) {
-              estrellas[i].addEventListener("click", function (event) {
-                  event.preventDefault();
-                  var valorEstrella = parseInt(this.getAttribute("data-valor")); // Almacenar el valor en la variable global
-
-                  marcarEstrellas(valorEstrella);
-                  document.getElementById("valorEstrellaHidden").value = valorEstrella;
-                  // Enviar el valor al servidor utilizando AJAX
-                  $.ajax({
-                      url: 'PaginaTienda.aspx/btnEnviarComentario_Click',
-                      type: 'POST',
-                      data: { valor: valorEstrella },
-                      success: function (response) {
-                          // Manejar la respuesta del servidor si es necesario
-                          console.log(response);
-                      },
-                      error: function (xhr, status, error) {
-                          // Manejar el error si ocurre
-                          console.log(error);
-                      }
-                  });
-              });
-          }
+        document.getElementsByClassName("cerrar")[0].addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("miModal").style.display = "none";
+        });
 
 
-          function marcarEstrellas(valor) {
-              for (var i = 0; i < estrellas.length; i++) {
-                  if (i < valor) {
-                      estrellas[i].innerHTML = "&#9733;"; // Símbolo de estrella rellena
-                      estrellas[i].classList.add("seleccionada");
-                  } else {
-                      estrellas[i].innerHTML = "&#9734;"; // Símbolo de estrella vacía
-                      estrellas[i].classList.remove("seleccionada");
-                  }
-              }
-          }
+        var estrellas = document.getElementsByClassName("estrella");
+        for (var i = 0; i < estrellas.length; i++) {
+            estrellas[i].addEventListener("click", function (event) {
+                event.preventDefault();
+                var valorEstrella = parseInt(this.getAttribute("data-valor")); // Almacenar el valor en la variable global
+
+                marcarEstrellas(valorEstrella);
+                document.getElementById("valorEstrellaHidden").value = valorEstrella;
+                // Enviar el valor al servidor utilizando AJAX
+                $.ajax({
+                    url: 'PaginaTienda.aspx/btnEnviarComentario_Click',
+                    type: 'POST',
+                    data: { valor: valorEstrella },
+                    success: function (response) {
+                        // Manejar la respuesta del servidor si es necesario
+                        console.log(response);
+                    },
+                    error: function (xhr, status, error) {
+                        // Manejar el error si ocurre
+                        console.log(error);
+                    }
+                });
+            });
+        }
+
+
+        function marcarEstrellas(valor) {
+            for (var i = 0; i < estrellas.length; i++) {
+                if (i < valor) {
+                    estrellas[i].innerHTML = "&#9733;"; // Símbolo de estrella rellena
+                    estrellas[i].classList.add("seleccionada");
+                } else {
+                    estrellas[i].innerHTML = "&#9734;"; // Símbolo de estrella vacía
+                    estrellas[i].classList.remove("seleccionada");
+                }
+            }
+        }
 
 
 
 
-      </script>
+    </script>
     <script src="assets/js/carritodeCompras.js"></script>
 
 </body>

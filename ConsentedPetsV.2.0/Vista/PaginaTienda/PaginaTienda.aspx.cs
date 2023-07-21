@@ -25,9 +25,9 @@ namespace PaginaTienda.PaginaTienda
 
 
             int idTienda = int.Parse(Session["Tienda"].ToString());
-            //idTienda = 1;
+            idTienda = 1;
             int idUsuario = int.Parse(Session["Usuario"].ToString());
-            //idUsuario = 19;
+            idUsuario = 19;
 
             ClMascotaL objMascotaL = new ClMascotaL();
             List<ClMascotaE> lista = objMascotaL.mtdMascotaVenta(idTienda);
@@ -133,55 +133,8 @@ namespace PaginaTienda.PaginaTienda
             repProduc.DataBind();
         }
 
-        protected void agregarAlCarrito_Click(object sender, EventArgs e)
-        {
-            List<ClProductoE> lista = new List<ClProductoE>();
-            List<ClProductoE> lista2 = new List<ClProductoE>();
-            foreach (RepeaterItem item in repProduc.Items)
-            {
-                if (item.ItemType == ListItemType.Item || item.ItemType == ListItemType.AlternatingItem)
-                {
-                    ClProductoE objE = new ClProductoE();
-                    Label lblId = (Label)item.FindControl("idProducto");
-                    objE.idProducto = int.Parse(lblId.Text);
-                    Image img = (Image)item.FindControl("img");
-                    objE.foto = img.ImageUrl;
-                    Label precio = (Label)item.FindControl("precioP");
-                    objE.precioP = int.Parse(precio.Text);
-                    Label nombre = (Label)item.FindControl("nombre");
-                    objE.nombre = nombre.Text;
-                    Label descrip = (Label)item.FindControl("descripcion");
-                    objE.descripcion = descrip.Text;
-
-                    lista.Add(objE);
-
-                }
-            }
-            int tipo = int.Parse(Session["Tipo"].ToString());
-            for (int i = 0; i < lista.Count; i++)
-            {
-                if (lista[i].idProducto == tipo)
-                {
-                    lista2.Add(lista[i]);
-                }
 
 
-            }
-
-            string producto = JsonConvert.SerializeObject(lista2);
-
-            ScriptManager.RegisterStartupScript(this, GetType(), "carritodeCompras", $"agregarAlCarrito('{producto}');", true);
-
-
-        }
-
-
-
-        [WebMethod]
-        public static void Listar(string tipo)
-        {
-            HttpContext.Current.Session["Tipo"] = tipo;
-        }
         [WebMethod]
         protected void btnEnviarComentario_Click(object sender, EventArgs e)
         {

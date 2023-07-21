@@ -254,7 +254,6 @@
     <Content Include="Vista\PaginaTienda\assets\images\white-logo.png" />
     <Content Include="Vista\PaginaTienda\assets\js\accordions.js" />
     <Content Include="Vista\PaginaTienda\assets\js\bootstrap.min.js" />
-    <Content Include="Vista\PaginaTienda\assets\js\carritodeCompras.js" />
     <Content Include="Vista\PaginaTienda\assets\js\custom.js" />
     <Content Include="Vista\PaginaTienda\assets\js\datepicker.js" />
     <Content Include="Vista\PaginaTienda\assets\js\imgfix.min.js" />
