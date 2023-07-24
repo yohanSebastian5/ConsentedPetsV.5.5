@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vista/PerfilesRol/Administrador/Veterinaria/Veterinaria.Master" AutoEventWireup="true" CodeBehind="ServiciosRegistrados.aspx.cs" Inherits="ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria.RegistrosRegistrados" %>
+﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/Vista/PerfilesRol/Administrador/Veterinaria/Veterinaria.Master" AutoEventWireup="true" CodeBehind="ServiciosRegistrados.aspx.cs" Inherits="ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria.RegistrosRegistrados" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentHeadAdministrador" runat="server">
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -33,7 +33,7 @@
                                             <labe>Precio: </labe>
                                             <%#Eval("precio")%></a><br />
                                         <h2 style="display: none" id="idV" class="Pet-text" contenteditable="inherit"><%#Eval("idServicioV") %></h2>
-                                        <a id="Editar" onclick="listar(this)" class="btn-primary" data-bs-toggle="modal" data-bs-target="#ModalEditar">Opciones </a>
+                                        <a id="Editar" onclick="listar(this)" class="btn-primary" data-bs-toggle="modal" data-bs-target="#ModalEditar">Editar </a>
                                         <h2 style="display: none" id="idV3" class="Pet-text" contenteditable="inherit"><%#Eval("idServicioV") %></h2>
                                         <a id="Eliminar" onclick="listar(this)" class="btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Eliminar </a>
 
@@ -66,14 +66,14 @@
                     <%--<h2 class="py-3">Actualizacion de Datos</h2>--%>
                     <div class="container">
                         <div class="card">
-                            <h3>¿Esta Seguro de Eliminar el Profesor?</h3>
+                            <h3>¿Esta Seguro de Eliminar el Servicio?</h3>
 
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <asp:Button ID="btnEliminar" CssClass="btn btn-danger" runat="server" Text="Eliminar" />
+                    <asp:Button ID="btnEliminar" CssClass="btn btn-danger" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
                 </div>
             </div>
         </div>
@@ -101,6 +101,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
+                    <asp:Button ID="Button12" CssClass="btn btn-close" runat="server" Text="Cerrar"  />
                     <asp:Button ID="Button1" CssClass="btn btn-secondary" runat="server" Text="Editar" OnClick="btnEditar_Click" />
                 </div>
             </div>

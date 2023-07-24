@@ -64,6 +64,26 @@ namespace ConsentedPetsV._2._0.Datos
             conexion.CerrarConexion();
 
         }
+        public void mtdEditarS(ClServicioVeterinariaE objservicioE)
+        {
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "EditarServicio";
+
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@descripcion", objservicioE.descripcion);
+            comando.Parameters.AddWithValue("@nombre", objservicioE.nombre);
+            comando.Parameters.AddWithValue("@precio", objservicioE.precio);
+            comando.Parameters.AddWithValue("@idVeterinaria", objservicioE.idVeterinaria);
+            comando.Parameters.AddWithValue("@idServicioVe", objservicioE.idServicioV);
+            comando.Parameters.AddWithValue("@foto", objservicioE.foto);
+            comando.Parameters.AddWithValue("@id", objservicioE.id);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+
+        }
     }
     
 }

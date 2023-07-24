@@ -31,5 +31,10 @@ namespace ConsentedPetsV._2._0.Logica
             ClServicioVetD objD = new ClServicioVetD();
             objD.mtdRegistrarS(objServis);
         }
+        public void mtdActualizar(ClServicioVeterinariaE objServis)
+        {
+            ClServicioVetD objD = new ClServicioVetD();
+            objD.mtdEditarS(objServis);
+        }
     }
 }

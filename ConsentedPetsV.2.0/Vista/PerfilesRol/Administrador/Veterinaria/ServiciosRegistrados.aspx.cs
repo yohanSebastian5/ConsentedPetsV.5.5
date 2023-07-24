@@ -5,6 +5,7 @@ using ConsentedPetsV._2._0.Entidades;
 using ConsentedPetsV._2._0.Logica;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -34,6 +35,30 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria
 
         protected void btnEditar_Click(object sender, EventArgs e)
         {
+            ClServicioVeterinariaE objE = new ClServicioVeterinariaE();
+            ClServicioVetL objL = new ClServicioVetL();
+            string foto="";
+            if (FileUpload1.HasFile)
+            {
+
+                string nombreV = txtNombre.Text + txtPrecio + ".png";
+                string rutaImg = Path.Combine(Server.MapPath("../../../imagenes/servicios/"), nombreV);
+                FileUpload1.SaveAs(rutaImg);
+                foto = nombreV;
+            }
+            else
+            {
+                foto = Session["foto"].ToString();
+            }
+            objE.idServicioV = int.Parse(Session["Servicio"].ToString());
+            objE.precio = int.Parse(txtPrecio.Text);
+            objE.descripcion = txtDescripcion.Text;
+            objE.nombre = txtNombre.Text;
+            objE.id= int.Parse(Session["Eliminar"].ToString());
+            objE.idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
+            objE.foto = foto;
+            objL.mtdActualizar(objE);
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Servicio " + objE.nombre + "!', 'Se ha Actualizado con Exito', 'success')", true);
 
         }
         [WebMethod]
@@ -48,8 +73,20 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria
             List<ClServicioVeterinariaE> lista = null;
             ClServicioVetL objVet = new ClServicioVetL();
             lista = objVet.mtdRepeater(tipo, 1);
+            HttpContext.Current.Session["Servicio"] = lista[0].idServicioV;
+            HttpContext.Current.Session["foto"] = lista[0].foto;
             return lista;
         }
 
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            ClEliminarL objL = new ClEliminarL();
+            ClEliminarE objE = new ClEliminarE();
+            int id= int.Parse(Session["Eliminar"].ToString());
+            objL.mtdEliminarServicioV(id);
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Servicio Eliminado!', 'Se ha Elimi| nado con Exito', 'success')", true);
+
+
+        }
     }
 }
