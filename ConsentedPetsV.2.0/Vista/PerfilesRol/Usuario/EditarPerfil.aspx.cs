@@ -22,6 +22,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
                
                 CLUsuarioL objU = new CLUsuarioL();
+                Encrypt encry = new Encrypt();
                 ClUsuarioE objDatos = objU.mtdListarU(idUsuario);
                 txtNombre.Text = objDatos.nombre;
                 txtApellido.Text = objDatos.apellido;
@@ -29,7 +30,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario
                 txtTelefono.Text = objDatos.telefono;
                 txtEmail.Text = objDatos.email;
                 txtDireccion.Text = objDatos.direccion;
-                txtContraseña.Text = objDatos.contraseña;
+                txtContraseña.Text = encry.descifrarTexto(   objDatos.contraseña);
                 string nombre = objDatos.foto;
                 string ruta = "~/Vista/imagenes/ImagenesUsuarios/" + nombre;
                 img.Src = ResolveUrl(ruta);

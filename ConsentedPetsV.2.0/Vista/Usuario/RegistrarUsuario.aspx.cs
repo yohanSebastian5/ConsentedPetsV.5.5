@@ -39,8 +39,14 @@ namespace ProcsosAparteProyecto
                 Session["Usuario"] = objUsuarioE.idUsuario;
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Bienvenido " + txtNombre.Text + "!', 'Registro Realizado con Exito', 'success')", true);
             }
-
-        
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtTelefono.Text = "";
+            txtContraseña.Text = "";
+            txtDireccion.Text = "";
+            txtDocumento.Text = "";
+            txtEmail.Text = "";
+            txtGenero.Text = "";
         } 
     }
 }
