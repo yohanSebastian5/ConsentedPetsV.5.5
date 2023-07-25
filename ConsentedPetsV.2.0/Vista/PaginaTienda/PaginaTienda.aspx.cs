@@ -44,10 +44,11 @@ namespace PaginaTienda.PaginaTienda
                 repCateg.DataBind();
 
                 int seccion = 2;
-                ClComentarioL objL = new ClComentarioL();
-                List<ClComentarioE> listaCom = objL.mtdListar(seccion, idTienda);
-                repComentario.DataSource = listaCom;
-                repComentario.DataBind();
+                ClComentarioL objCOm = new ClComentarioL();
+                List<ClComentarioE> listaCom = objCOm.mtdListar(seccion, idTienda);
+                repCo.DataSource = listaCom;
+                
+                repCo.DataBind();
 
 
 

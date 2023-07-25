@@ -15,6 +15,8 @@ namespace ConsentedPets.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["Escuela"] = 0;
+            Session["Tienda"] = 0;
             int Seccion = 1;
             ClRepeaterEstablecimientoL objVet = new ClRepeaterEstablecimientoL();
             List<ClRepeaterEstablecimientoE> lista = objVet.mtdRepeater(Seccion);

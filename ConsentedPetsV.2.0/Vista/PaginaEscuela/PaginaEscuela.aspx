@@ -282,20 +282,20 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="owl-carousel testimonial-carousel">
-                            
+
                             <asp:Repeater ID="repComentario" runat="server">
                                 <ItemTemplate>
                                     <div class="text-center">
-                                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                                <h4 class="font-weight-light mb-4"><%# Eval("Comentario") %></h4>
-                                <img class="img-fluid mx-auto mb-3" src='<%# ResolveUrl("../imagenes/ImagenesUsuarios/") + Eval("foto") %>' alt="">
-                                <h5 class="font-weight-bold m-0"><%# Eval("nombre") %></h5>
-                                <span>Profession</span>
-                            </div>
+                                        <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                                        <h4 class="font-weight-light mb-4"><%# Eval("Comentario") %></h4>
+                                        <img class="img-fluid mx-auto mb-3" src='<%# ResolveUrl("../imagenes/ImagenesUsuarios/") + Eval("foto") %>' alt="">
+                                        <h5 class="font-weight-bold m-0"><%# Eval("nombre") %></h5>
+                                        <span>Profession</span>
+                                    </div>
                                 </ItemTemplate>
                             </asp:Repeater>
-                            
-                           
+
+
                         </div>
                     </div>
                 </div>
@@ -528,7 +528,7 @@
         for (var i = 0; i < estrellas.length; i++) {
             estrellas[i].addEventListener("click", function (event) {
                 event.preventDefault();
-             var   valorEstrella = parseInt(this.getAttribute("data-valor")); // Almacenar el valor en la variable global
+                var valorEstrella = parseInt(this.getAttribute("data-valor")); // Almacenar el valor en la variable global
 
                 marcarEstrellas(valorEstrella);
                 document.getElementById("valorEstrellaHidden").value = valorEstrella;
@@ -548,7 +548,7 @@
                 });
             });
         }
-      
+
 
         function marcarEstrellas(valor) {
             for (var i = 0; i < estrellas.length; i++) {

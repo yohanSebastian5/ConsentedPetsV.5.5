@@ -78,13 +78,22 @@ namespace PaginaTienda.PaginaTienda
         protected global::System.Web.UI.HtmlControls.HtmlAnchor emails;
 
         /// <summary>
-        /// Control repComentario.
+        /// Control comentarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repComentario;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl comentarios;
+
+        /// <summary>
+        /// Control repCo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repCo;
 
         /// <summary>
         /// Control comentario.
