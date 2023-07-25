@@ -1434,7 +1434,7 @@ offers
   position: absolute;
   top: 15px;
   right: 0;
-  width: 190px;
+  width: 90px;
   height: 70px;
   background-color: #fb5849;
   display: inline-block;
@@ -1816,3 +1816,50 @@ responsive
     align-items: center;
 }
 
+
+/* Estilos para la ventana modal */
+.modal1 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 600px;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+/* Estilos para el contenido del carrito */
+.carrito-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.carrito-container li {
+    margin-bottom: 10px;
+}
+
+/* Estilos adicionales según tus necesidades */

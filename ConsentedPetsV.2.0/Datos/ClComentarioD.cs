@@ -1,4 +1,6 @@
 ﻿using ConsentedPets.Datos;
+using ConsentedPets.Entidades;
+using ConsentedPets.Vista.PerfilesRol.Administrador.Veterinaria;
 using ConsentedPetsV._2._0.Entidades;
 using System;
 using System.Collections.Generic;
@@ -23,10 +25,10 @@ namespace ConsentedPetsV._2._0.Datos
             comando.Parameters.AddWithValue("@Comentario", objE.comentario);
             comando.Parameters.AddWithValue("@calificacion", objE.calificacion);
             comando.Parameters.AddWithValue("@idUsuario", objE.idUsuario);
-            comando.Parameters.AddWithValue("@idVeterinaria", (object) objE.idVeterinaria);
-            comando.Parameters.AddWithValue("@idTienda",(object) objE.idTienda);
-            comando.Parameters.AddWithValue("@idEscuela",(object) objE.idEscuela ?? DBNull.Value);
-            
+            comando.Parameters.AddWithValue("@idVeterinaria", objE.idVeterinaria);
+            comando.Parameters.AddWithValue("@idTienda", objE.idTienda);
+            comando.Parameters.AddWithValue("@idEscuela", objE.idEscuela);
+
             // Ejecutar el comando
             comando.ExecuteNonQuery();
 
@@ -34,27 +36,47 @@ namespace ConsentedPetsV._2._0.Datos
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
-        //public List<ClVentaE> mtdListar()
-        //{
-        //    SqlCommand Listar = objSQL.mtdProcesoAlmacenado("ListaVenta");
-        //    List<ClVentaE> Lista = new List<ClVentaE>();
-        //    ClVentaE obDatos = null;
-        //    SqlDataReader rd = Listar.ExecuteReader();
-        //    while (rd.Read())
-        //    {
-        //        obDatos = new ClVentaE();
-        //        obDatos.idVenta = rd.GetInt32(0);
-        //        obDatos.Codigo = rd.GetString(1);
-        //        obDatos.Fecha = rd.IsDBNull(2) ? null : rd.GetString(2); ;
-        //        obDatos.Estado = rd.GetString(3);
-        //        obDatos.TotalVen = rd.IsDBNull(4) ? null : rd.GetString(4); ;
-        //        obDatos.idCliente = rd.IsDBNull(5) ? (int?)null : rd.GetInt32(5);
-        //        obDatos.idPersonal = rd.IsDBNull(6) ? (int?)null : rd.GetInt32(6);
-        //        obDatos.idTipoVenta = rd.IsDBNull(7) ? (int?)null : rd.GetInt32(7);
-        //        Lista.Add(obDatos);
-        //    }
-        //    return Lista;
-        //}
+        public List<ClComentarioE> mtdListar(int seccion, int id)
+        {
+            string establecimiento = "";
+            if (seccion == 1)
+            {
+                establecimiento = "idVeterinaria";
+            }
+            else if (seccion == 2)
+            {
+                establecimiento = "idTienda";
+            }
+            else if (seccion == 3)
+            {
+                establecimiento = "idEscuela";
+            }
+
+            string consulta = "select * from Usuario inner join Valoracion on Valoracion.idUsuario = Usuario.idUsuario where Valoracion." + establecimiento + " = '" + id + "'";
+
+            ClProcesarSQL SQL = new ClProcesarSQL();
+            DataTable tabla = SQL.mtdSelectDesc(consulta);
+            List<ClComentarioE> lista = new List<ClComentarioE>();
+
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                ClComentarioE objComentario = new ClComentarioE();
+                objComentario.idValoracion = int.Parse(tabla.Rows[i]["idValoracion"].ToString());
+                objComentario.nombre = tabla.Rows[i]["nombre"].ToString();
+                objComentario.foto = tabla.Rows[i]["foto"].ToString();
+               
+                objComentario.calificacion = int.Parse(tabla.Rows[i]["calificacion"].ToString());
+                objComentario.comentario = tabla.Rows[i]["Comentario"].ToString();
+
+
+
+                lista.Add(objComentario);
+                
+            }
+            
+            return lista;
+        }
+
 
     }
 }

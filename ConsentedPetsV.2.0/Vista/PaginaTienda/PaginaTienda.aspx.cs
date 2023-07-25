@@ -22,56 +22,67 @@ namespace PaginaTienda.PaginaTienda
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
-            int idTienda = int.Parse(Session["Tienda"].ToString());
-            idTienda = 1;
-            int idUsuario = int.Parse(Session["Usuario"].ToString());
-            idUsuario = 19;
-
-            ClMascotaL objMascotaL = new ClMascotaL();
-            List<ClMascotaE> lista = objMascotaL.mtdMascotaVenta(idTienda);
-            repMascotaVenta.DataSource = lista;
-            repMascotaVenta.DataBind();
-
-            ClCategoriaL obj = new ClCategoriaL();
-            List<ClCategoriaE> listaC = obj.mtdCategoria(idTienda);
-            repCateg.DataSource = listaC;
-            repCateg.DataBind();
-
-
-            ClEstablecimientoL objEs = new ClEstablecimientoL();
-            ClEstablecimientoE objE = objEs.mtdListarVet("", "Tienda", idTienda, 1);
-            string image = "../imagenes/ImagenesEstablecimiento/" + objE.foto;
-            foto.ImageUrl = image;
-            Imag.ImageUrl = image;
-            Image2.ImageUrl = image;
-            nombre1.InnerText = objE.nombre;
-        
-            ema.InnerText = objE.email;
-            nombre.InnerText = objE.nombre;
-            
-            emails.InnerText = objE.email;
-            telefono.InnerText = objE.telefono;
-
-
-            ClEstablecimientoL objDato1 = new ClEstablecimientoL();
-            ClEstablecimientoE objDato2 = objDato1.mtdGmail(idTienda);
-            objDato2.email = emails.InnerText;
-            objDato2.telefono = telefono.InnerText;
-
-            string destino = objDato2.email;
-            string name = Request.Form["name"];
-            string email = Request.Form["email"];
-            string phone = Request.Form["phone"];
-            string cantidad = Request.Form["cantidad"];
-            string message = Request.Form["message"];
-            if (!string.IsNullOrEmpty(email))
+            if (!IsPostBack)
             {
-                mtdPedido(destino, name, email, phone, cantidad, message);
+
+
+
+
+                int idTienda = int.Parse(Session["Tienda"].ToString());
+                idTienda = 1;
+                int idUsuario = int.Parse(Session["Usuario"].ToString());
+                idUsuario = 19;
+
+                ClMascotaL objMascotaL = new ClMascotaL();
+                List<ClMascotaE> lista = objMascotaL.mtdMascotaVenta(idTienda);
+                repMascotaVenta.DataSource = lista;
+                repMascotaVenta.DataBind();
+
+                ClCategoriaL obj = new ClCategoriaL();
+                List<ClCategoriaE> listaC = obj.mtdCategoria(idTienda);
+                repCateg.DataSource = listaC;
+                repCateg.DataBind();
+
+                int seccion = 2;
+                ClComentarioL objL = new ClComentarioL();
+                List<ClComentarioE> listaCom = objL.mtdListar(seccion, idTienda);
+                repComentario.DataSource = listaCom;
+                repComentario.DataBind();
+
+
+
+                ClEstablecimientoL objEs = new ClEstablecimientoL();
+                ClEstablecimientoE objE = objEs.mtdListarVet("", "Tienda", idTienda, 1);
+                string image = "../imagenes/ImagenesEstablecimiento/" + objE.foto;
+                foto.ImageUrl = image;
+                Imag.ImageUrl = image;
+                Image2.ImageUrl = image;
+                nombre1.InnerText = objE.nombre;
+
+                ema.InnerText = objE.email;
+                nombre.InnerText = objE.nombre;
+
+                emails.InnerText = objE.email;
+                telefono.InnerText = objE.telefono;
+
+
+                ClEstablecimientoL objDato1 = new ClEstablecimientoL();
+                ClEstablecimientoE objDato2 = objDato1.mtdGmail(idTienda);
+                objDato2.email = emails.InnerText;
+                objDato2.telefono = telefono.InnerText;
+
+                string destino = objDato2.email;
+                string name = Request.Form["name"];
+                string email = Request.Form["email"];
+                string phone = Request.Form["phone"];
+                string cantidad = Request.Form["cantidad"];
+                string message = Request.Form["message"];
+                if (!string.IsNullOrEmpty(email))
+                {
+                    mtdPedido(destino, name, email, phone, cantidad, message);
+                }
+
             }
-
-
 
 
 
@@ -139,15 +150,15 @@ namespace PaginaTienda.PaginaTienda
         protected void btnEnviarComentario_Click(object sender, EventArgs e)
         {
             int idTienda = int.Parse(Session["Tienda"].ToString());
-
+            idTienda = 1;
             int idUsuario = int.Parse(Session["Usuario"].ToString());
-
+            idUsuario = 19;
             ClComentarioL objL = new ClComentarioL();
             ClComentarioE objE = new ClComentarioE();
             objE.comentario = comentario.InnerText;
             objE.calificacion = int.Parse(valorEstrellaHidden.Value); // Obtener el valor de la estrella seleccionada
             objE.idUsuario = idUsuario;
-            objE.idEscuela = idTienda;
+            objE.idTienda = idTienda;
             objL.mtdRegistrar(objE);
         }
     }

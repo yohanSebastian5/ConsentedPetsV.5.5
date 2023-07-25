@@ -23,9 +23,9 @@ namespace ConsentedPetsV._2._0.Vista
             {
 
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
-                //idUsuario = 9;
+                idUsuario = 17;
                 int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
-                //idVeterinaria = 1;
+                idVeterinaria = 1;
                 ClMascotaL objData = new ClMascotaL();
                 List<ClMascotaE> listaMascota = objData.mtdListarMascota(idUsuario);
                 ddlMascota.DataSource = listaMascota;
@@ -53,6 +53,13 @@ namespace ConsentedPetsV._2._0.Vista
                 List<ClProcesosVetE> listaProcesos = objProcesos.mtdProcesos(idVeterinaria);
                 repProcesos.DataSource = listaProcesos;
                 repProcesos.DataBind();
+
+                int seccion = 1;
+                ClComentarioL objL = new ClComentarioL();
+                List<ClComentarioE> listaCom = objL.mtdListar(seccion, idVeterinaria);
+                repComentario.DataSource = listaCom;
+                repComentario.DataBind();
+
 
                 ClEstablecimientoL objVeterinaria = new ClEstablecimientoL();
                 List<ClEstablecimientoE> listaV = objVeterinaria.mtdEstablecimiento(idVeterinaria);
@@ -115,15 +122,15 @@ namespace ConsentedPetsV._2._0.Vista
         protected void btnEnviarComentario_Click(object sender, EventArgs e)
         {
             int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
-            
+            idVeterinaria = 1;
             int idUsuario = int.Parse(Session["Usuario"].ToString());
-          
+            idUsuario = 17;
             ClComentarioL objL = new ClComentarioL();
             ClComentarioE objE = new ClComentarioE();
             objE.comentario = comentario.InnerText;
             objE.calificacion = int.Parse(valorEstrellaHidden.Value); // Obtener el valor de la estrella seleccionada
             objE.idUsuario = idUsuario;
-            objE.idEscuela = idVeterinaria;
+            objE.idVeterinaria = idVeterinaria;
             objL.mtdRegistrar(objE);
         }
     }

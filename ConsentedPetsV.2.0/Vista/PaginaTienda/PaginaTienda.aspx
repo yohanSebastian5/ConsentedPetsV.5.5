@@ -25,7 +25,7 @@ https://templatemo.com/tm-558-klassy-cafe
     <link href="../../Styles/sweetalert.css" rel="stylesheet" />
     <script src="../../Scripts/sweetalert.min.js"></script>
     <script src="../../Scripts/sweetalert-dev.js"></script>
-    
+    <link href="../PaginaEscuela/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
@@ -173,7 +173,8 @@ https://templatemo.com/tm-558-klassy-cafe
                                                 Genero: <%# Eval("genero") %>
                                             </p>
                                             <div class="main-text-button">
-                                                <div class="scroll-to-section"><a href="#reservation">Agregar al carrito <i class="fa fa-angle-down"></i></a></div>
+                                                <%--<div class=""><a href="#reservation">Comprar <i class="fa fa-angle-down"></i></a></div>--%>
+                                                <asp:Button runat="server" ID="btnAgregarMascota" CssClass="btnAgregarCarrito scroll-to-section" Text="Agregar al carrito" OnClientClick='<%# "agregarAlCarrito(\"" + Eval("foto") + "\", \"" + Eval("nombre") + "\", \"" + Eval("precio") + "\"); return false;" %>' />
                                             </div>
                                         </div>
                                     </div>
@@ -205,7 +206,7 @@ https://templatemo.com/tm-558-klassy-cafe
                                 <div class="col-lg-6">
                                     <div class="phone">
                                         <i class="fa fa-phone"></i>
-                                        <h4>Número telefonico</h4>
+                                        <h4 style="width: 200px">Número telefonico</h4>
                                         <span><a id="telefono" runat="server"><%# Eval("telefono") %></a><br>
                                         </span>
                                     </div>
@@ -213,7 +214,7 @@ https://templatemo.com/tm-558-klassy-cafe
                                 <div class="col-lg-6">
                                     <div class="message">
                                         <i class="fa fa-envelope"></i>
-                                        <h4>Emails</h4>
+                                        <h4 style="width: 200px">Emails</h4>
                                         <span><a id="emails" runat="server"><%# Eval("email") %></a><br>
                                         </span>
                                     </div>
@@ -270,43 +271,41 @@ https://templatemo.com/tm-558-klassy-cafe
         <!-- ***** Reservation Area Ends ***** -->
 
         <!-- Testimonial Start -->
-        <div class="container-fluid py-5" id="comentarios">
-            <div class="container py-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <h1 class="section-title position-relative text-center mb-5">Clients Say About Our Famous Ice Cream</h1>
+        <section>
+            <div class="container-fluid py-5" id="comentarios">
+                <div class="container py-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <h1 class="section-title position-relative text-center mb-5">Comentarios de Nuestros Clientes</h1>
+                        </div>
                     </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="owl-carousel testimonial-carousel">
-                            <div class="text-center">
-                                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                                <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                                <img class="img-fluid mx-auto mb-3" src="PaginaVeterinaria/img/testimonial-1.jpg" alt="">
-                                <h5 class="font-weight-bold m-0">Client Name</h5>
-                                <span>Profession</span>
-                            </div>
-                            <div class="text-center">
-                                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                                <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                                <img class="img-fluid mx-auto mb-3" src="PaginaVeterinaria/img/testimonial-2.jpg" alt="">
-                                <h5 class="font-weight-bold m-0">Client Name</h5>
-                                <span>Profession</span>
-                            </div>
-                            <div class="text-center">
-                                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                                <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                                <img class="img-fluid mx-auto mb-3" src="PaginaVeterinaria/img/testimonial-3.jpg" alt="">
-                                <h5 class="font-weight-bold m-0">Client Name</h5>
-                                <span>Profession</span>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="owl-carousel testimonial-carousel">
+
+                                <asp:Repeater ID="repComentario" runat="server">
+                                    <ItemTemplate>
+                                        <div class="text-center">
+                                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                                            <h4 class="font-weight-light mb-4"><%# Eval("Comentario") %></h4>
+                                            <img class="img-fluid mx-auto mb-3" src='<%# ResolveUrl("../imagenes/ImagenesUsuarios/") + Eval("foto") %>' alt="">
+                                            <h5 class="font-weight-bold m-0"><%# Eval("nombre") %></h5>
+                                            <span>Profession</span>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <!-- Testimonial End -->
+
+        <%--modal--%>
+
         <button class="btn btn-primary" id="abrirModal">Haz un Comentario</button>
 
 
@@ -336,6 +335,25 @@ https://templatemo.com/tm-558-klassy-cafe
                 <asp:Button ID="btnEnviarComentario" runat="server" CssClass="btn btn-primary" Text="Enviar comentario" OnClick="btnEnviarComentario_Click" />
 
 
+            </div>
+        </div>
+
+
+
+        <!-- Botón para mostrar el carrito -->
+        <button class="main-button-icon" type="button" onclick="mostrarCarrito()">Mostrar Carrito</button>
+
+
+        <!-- Ventana modal del carrito -->
+        <div id="carritoModal" class="modal1">
+            <div class="modal-content">
+                <span class="close" onclick="cerrarCarritoModal()">&times;</span>
+                <h2>Carrito de compras</h2>
+                <div class="carrito-container"></div>
+                <div class="carrito-total">
+                    <h3>Total de productos: <span id="totalProductos"></span></h3>
+                    <h3>Total a pagar: <span id="totalPagar"></span></h3>
+                </div>
             </div>
         </div>
 
@@ -409,7 +427,11 @@ https://templatemo.com/tm-558-klassy-cafe
                                                                         <h4 id="nombre" runat="server"><%# Eval("nombre") %></h4>
                                                                         <p id="descripcion" runat="server"><%# Eval("descripcion") %></p>
                                                                         <div class="price">
-                                                                            <h6 id="precioP" runat="server">$<%# Eval("precioP") %> <a>Comprar</a></h6>
+                                                                            <h6 id="precioP" runat="server">$<%# Eval("precioP") %>
+                                                                                <asp:Button runat="server" ID="btnAgregarProducto" CssClass="btnAgregarCarrito main-button-icon"
+                                                                                    Style="background-color: #fb5849; height: 70px; border: yellowgreen; color: white;" Text="Agregar al carrito"
+                                                                                    OnClientClick='<%# "agregarAlCarrito(\"" + Eval("foto") + "\", \"" + Eval("nombre") + "\", \"" + Eval("precioP") + "\"); return false;" %>' />
+                                                                            </h6>
                                                                         </div>
                                                                     </div>
                                                                 </ItemTemplate>
@@ -440,33 +462,7 @@ https://templatemo.com/tm-558-klassy-cafe
         <!-- ***** Chefs Area Ends ***** -->
 
 
-        <button id="btnAbrirModal" class="cart-button" type="button" data-toggle="modal" data-target="#myModal">
-            Abrir Carrito de Compras<span id="count" class="badge text-bg-danger"></span>
-        </button>
         <!-- Ventana modal -->
-
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header bg-dark text-light">
-                        <h4 class="modal-title" id="myModalLabel">Carrito de Compras</h4>
-                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div id="carritoProductos">
-                            <!-- Aquí se mostrarán los datos del carrito de compras -->
-
-                        </div>
-                        <div class="modal-footer">
-                            <button id="btnVaciarCarrito" type="button" class="btn btn-warning" data-dismiss="modal" onclick="vaciarCarrito()">Vaciar Carrito</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary">Comprar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
 
         <!-- ***** Footer Start ***** -->
@@ -630,6 +626,89 @@ https://templatemo.com/tm-558-klassy-cafe
 
 
     </script>
+    <script>
+        // Función para agregar un producto al carrito
+        function agregarAlCarrito(foto, nombre, precio) {
+            var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+            // Verificar si el producto ya está en el carrito
+            var item = carrito.find(item => item.Nombre === nombre);
+            if (item) {
+                item.Cantidad++;
+            } else {
+                carrito.push({
+                    Foto: foto,
+                    Cantidad: 1,
+                    Nombre: nombre,
+                    Precio: parseFloat(precio)
+                });
+            }
+
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+         
+        }
+
+        // Función para eliminar un producto del carrito
+        function eliminarDelCarrito(nombre) {
+            var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+            // Eliminar el producto del carrito
+            var index = carrito.findIndex(item => item.Nombre === nombre);
+            if (index !== -1) {
+                carrito.splice(index, 1);
+            }
+
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            mostrarCarrito();
+        }
+
+        // Función para mostrar el contenido del carrito en la ventana modal
+        function mostrarCarrito() {
+            var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            var carritoContainer = document.querySelector('.carrito-container');
+            var totalProductos = document.getElementById('totalProductos');
+            var totalPagar = document.getElementById('totalPagar');
+            var carritoModal = document.getElementById('carritoModal');
+
+            if (carrito.length > 0) {
+                // Construir el contenido del carrito
+                var carritoHTML = '<ul>';
+                var totalProductosCount = 0;
+                var totalPagarAmount = 0;
+
+                for (var i = 0; i < carrito.length; i++) {
+                    carritoHTML += '<li>' + carrito[i].Foto + ' - ' + carrito[i].Nombre + ' - Cantidad: ' + carrito[i].Cantidad + ' - $' + (carrito[i].Cantidad * carrito[i].Precio).toFixed(2) + ' <button onclick="eliminarDelCarrito(\'' + carrito[i].Nombre + '\')">Eliminar</button></li>';
+                    totalProductosCount += carrito[i].Cantidad;
+                    totalPagarAmount += carrito[i].Cantidad * carrito[i].Precio;
+                }
+                carritoHTML += '</ul>';
+
+                carritoContainer.innerHTML = carritoHTML;
+                totalProductos.textContent = totalProductosCount;
+                totalPagar.textContent = totalPagarAmount.toFixed(2);
+
+                // Mostrar la ventana modal del carrito
+                carritoModal.style.display = 'block';
+            } else {
+                // Si el carrito está vacío, mostrar un mensaje
+                carritoContainer.innerHTML = '<p>El carrito está vacío.</p>';
+                totalProductos.textContent = '0';
+                totalPagar.textContent = '0.00';
+
+                // Mostrar la ventana modal del carrito
+                carritoModal.style.display = 'block';
+            }
+        }
+
+        // Función para cerrar la ventana modal del carrito
+        function cerrarCarritoModal() {
+            var carritoModal = document.getElementById('carritoModal');
+            carritoModal.style.display = 'none';
+        }
+    </script>
+
+
+
     <script src="assets/js/carritodeCompras.js"></script>
 
 </body>

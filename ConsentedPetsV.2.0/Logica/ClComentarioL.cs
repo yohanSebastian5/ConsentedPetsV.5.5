@@ -15,5 +15,12 @@ namespace ConsentedPetsV._2._0.Logica
             objCita.mtdCOmentario(objE);
 
         }
+
+        public List<ClComentarioE> mtdListar(int seccion, int id)
+        {
+            ClComentarioD objD = new ClComentarioD();
+            List<ClComentarioE> lista = objD.mtdListar(seccion, id);
+            return lista;
+        }
     }
 }

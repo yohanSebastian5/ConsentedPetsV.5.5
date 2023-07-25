@@ -21,13 +21,13 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
 
             if (!IsPostBack)
             {
-
+                
 
                 int idEscuela = int.Parse(Session["Escuela"].ToString());
                 idEscuela = 1;
 
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
-                idUsuario = 9;
+                idUsuario = 19;
                 ClServicioEL objServicio = new ClServicioEL();
                 List<ClServicioEE> lista = objServicio.mtdServicio(idEscuela);
                 repServicio.DataSource = lista;
@@ -69,8 +69,11 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
                 idImagEstab.ImageUrl = image;
                 nom.InnerText = obj.nombre;
 
-
-                
+                int seccion = 3;
+                ClComentarioL objL = new ClComentarioL();
+                List<ClComentarioE> listaCom = objL.mtdListar(seccion, idEscuela);
+                repComentario.DataSource = listaCom;
+                repComentario.DataBind();
                 
                 
 
@@ -151,6 +154,7 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
             objL.mtdRegistrar(objE);
         }
 
+        
 
 
 
