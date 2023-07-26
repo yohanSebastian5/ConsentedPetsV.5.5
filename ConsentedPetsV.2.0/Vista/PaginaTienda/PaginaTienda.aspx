@@ -284,25 +284,25 @@ https://templatemo.com/tm-558-klassy-cafe
         </section>
         <!-- ***** Reservation Area Ends ***** -->
 
-        <!-- Testimonial Start -->
+     <!-- Testimonial Start -->
         <div class="container-fluid py-5" id="comentarios" runat="server">
             <div class="container py-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
-                        <h1 class="section-title position-relative text-center mb-5">Comentarios de Nuestros Clientes</h1>
+                        <h1 class="section-title position-relative text-center mb-5" style=" margin: 0 auto; display: table;">Comentarios de Nuestros Clientes</h1>
                     </div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <div class="owl-carousel testimonial-carousel">
+                        <div class="testimonial-carousel">
 
                             <asp:Repeater ID="repCo" runat="server">
                                 <ItemTemplate>
                                     <div class="text-center">
                                         <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                                        <h4 class="font-weight-light mb-4"><%# Eval("Comentario") %></h4>
-                                        <img class="img-fluid mx-auto mb-3" src='<%# ResolveUrl("../imagenes/ImagenesUsuarios/") + Eval("foto") %>' alt="">
-                                        <h5 class="font-weight-bold m-0"><%# Eval("nombre") %></h5>
+                                        <h4 class="font-weight-light mb-4" style=" margin: 0 auto; display: table;"><%# Eval("Comentario") %></h4>
+                                        <img class="img-fluid mx-auto mb-3 rounded-circle" style="width: 5rem; height: 5rem;" src='<%# ResolveUrl("../imagenes/ImagenesUsuarios/") + Eval("foto") %>' alt="">
+                                        <h4 class="font-weight-light mb-0" style=" margin: 0 auto; display: table; font-size:20px"><%# Eval("nombre") %></h4>
                                         <span>Profession</span>
                                     </div>
                                 </ItemTemplate>
@@ -320,7 +320,6 @@ https://templatemo.com/tm-558-klassy-cafe
         <%--modal--%>
 
         <button class="btn btn-primary" id="abrirModal">Haz un Comentario</button>
-
 
         <div id="miModal" class="modal">
             <div class="modal-contenido">
@@ -354,7 +353,7 @@ https://templatemo.com/tm-558-klassy-cafe
 
 
         <!-- Botón para mostrar el carrito -->
-        <button class="main-button-icon" type="button" onclick="mostrarCarrito()">Mostrar Carrito</button>
+        <button class="btn btn-primary" type="button" onclick="mostrarCarrito()">Mostrar Carrito</button>
 
 
         <!-- Ventana modal del carrito -->
