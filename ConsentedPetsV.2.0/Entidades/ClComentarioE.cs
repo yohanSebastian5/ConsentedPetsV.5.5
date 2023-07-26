@@ -15,6 +15,7 @@ namespace ConsentedPetsV._2._0.Entidades
         public int idTienda { get; set; }
         public int idVeterinaria { get; set; }
         public string nombre { get; set; }
+        public string apellido { get; set; }
         public string foto { get; set; }
     }
 }

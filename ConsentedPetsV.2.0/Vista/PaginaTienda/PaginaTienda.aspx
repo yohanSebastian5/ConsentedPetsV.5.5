@@ -183,7 +183,7 @@ https://templatemo.com/tm-558-klassy-cafe
                                             </p>
                                             <div class="main-text-button">
                                                 <%--<div class=""><a href="#reservation">Comprar <i class="fa fa-angle-down"></i></a></div>--%>
-                                                <asp:Button runat="server" ID="Button1" CssClass="btnAgregarCarrito scroll-to-section main-button-icon" Text="Agregar al carrito"
+                                                <asp:Button runat="server" ID="Button1" CssClass="btnAgregarCarrito btn btn-primary" Text="Agregar al carrito"
                                                     OnClientClick='<%# "agregarAlCarrito(\"" + Eval("foto") + "\", \"" + Eval("nombre") + "\", \"" + Eval("precio") + "\", \"mascota\"); return false;" %>' />
                                             </div>
                                         </div>
@@ -302,8 +302,9 @@ https://templatemo.com/tm-558-klassy-cafe
                                         <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
                                         <h4 class="font-weight-light mb-4" style=" margin: 0 auto; display: table;"><%# Eval("Comentario") %></h4>
                                         <img class="img-fluid mx-auto mb-3 rounded-circle" style="width: 5rem; height: 5rem;" src='<%# ResolveUrl("../imagenes/ImagenesUsuarios/") + Eval("foto") %>' alt="">
-                                        <h4 class="font-weight-light mb-0" style=" margin: 0 auto; display: table; font-size:20px"><%# Eval("nombre") %></h4>
-                                        <span>Profession</span>
+                                        <h4 class="font-weight-light mb-0" style=" margin: 0 auto; display: table; font-size:20px"> <%# Eval("nombre") %> <%# Eval("apellido") %></h4>
+                                        
+                                        <span>Cliente</span>
                                     </div>
                                 </ItemTemplate>
                             </asp:Repeater>
@@ -438,14 +439,16 @@ https://templatemo.com/tm-558-klassy-cafe
                                                                         <img style="width: 65px; height: 70px;" id="img" runat="server" src='<%# ResolveUrl("~/Vista/imagenes/ImagenesProductoCat/") + Eval("foto") %>' />
                                                                         <h4 id="nombre" runat="server"><%# Eval("nombre") %></h4>
                                                                         <p id="descripcion" runat="server"><%# Eval("descripcion") %></p>
+                                                                        <div>
                                                                         <div class="price">
-                                                                            <h6 id="precioP" runat="server">$<%# Eval("precioP") %>
-
-                                                                                <asp:Button runat="server" ID="Button2" CssClass="btnAgregarCarrito main-button-icon"
-                                                                                    Style="background-color: #fb5849; height: 70px; border: yellowgreen; color: white;" Text="Agregar al carrito"
+                                                                            <h6 style="line-height:50px; height:50px; width: 190px;" id="precioP" runat="server">$<%# Eval("precioP") %>  <asp:Button runat="server" ID="Button2" CssClass="btnAgregarCarrito btn btn-primary"
+                                                                                     Text="Agregar al carrito"
                                                                                     OnClientClick='<%# "agregarAlCarrito(\"" + Eval("foto") + "\", \"" + Eval("nombre") + "\", \"" + Eval("precioP") + "\", \"producto\"); return false;" %>' />
 
+                                                                              
+
                                                                             </h6>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </ItemTemplate>

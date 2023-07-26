@@ -63,6 +63,7 @@ namespace ConsentedPetsV._2._0.Datos
                 ClComentarioE objComentario = new ClComentarioE();
                 objComentario.idValoracion = int.Parse(tabla.Rows[i]["idValoracion"].ToString());
                 objComentario.nombre = tabla.Rows[i]["nombre"].ToString();
+                objComentario.apellido = tabla.Rows[i]["apellido"].ToString();
                 objComentario.foto = tabla.Rows[i]["foto"].ToString();
                
                 objComentario.calificacion = int.Parse(tabla.Rows[i]["calificacion"].ToString());
