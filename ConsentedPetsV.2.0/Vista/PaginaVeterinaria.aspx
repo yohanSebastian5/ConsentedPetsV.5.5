@@ -261,7 +261,7 @@
 
         <%--modal--%>
 
-        <button class="btn btn-primary" id="abrirModal">Haz un Comentario</button>
+        <button class="btn btn-primary" id="abrirModal" style="display: block; margin: 0 auto;">Haz un Comentario</button>
 
 
         <div id="miModal" class="modal">

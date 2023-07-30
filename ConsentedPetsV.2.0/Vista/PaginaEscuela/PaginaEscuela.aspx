@@ -37,7 +37,7 @@
             <div class="row align-items-center py-4 px-xl-5">
                 <div class="col-lg-3">
                     <a href="" class="text-decoration-none">
-                        <h1 class="m-0"><span class="text-primary">E</span>COURSES</h1>
+                        <h1 class="m-0"><span class="text-primary">E</span>SCUELA</h1>
                     </a>
                 </div>
                 <div class="col-lg-3 text-right">
@@ -80,7 +80,7 @@
                     <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
 
                         <a href="" class="text-decoration-none d-block d-lg-none">
-                            <h1 class="m-0"><span class="text-primary">E</span>COURSES</h1>
+                            <h1 class="m-0"><span class="text-primary">E</span>SCUELA</h1>
                         </a>
                         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                             <span class="navbar-toggler-icon"></span>
@@ -89,12 +89,12 @@
                             <div class="navbar-nav py-0">
                                 <a href="../Escuela.aspx" class="nav-item nav-link active">Home</a>
                                 <a href="#About" class="nav-item nav-link">About</a>
-                                <a href="#Services" class="nav-item nav-link">Services</a>
-                                <a href="#Courses" class="nav-item nav-link">Courses</a>
-                                <a href="#Teachers" class="nav-item nav-link">Teachers</a>
-                                <a href="#Testimonial" class="nav-item nav-link">Testimonial</a>
+                                <a href="#Services" class="nav-item nav-link">Servicios</a>
+                                <a href="#Courses" class="nav-item nav-link">Cursos</a>
+                                <a href="#Teachers" class="nav-item nav-link">Profesores</a>
+                                <a href="#Testimonial" class="nav-item nav-link">Comentarios</a>
                             </div>
-                            <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="#Register">Register your pet</a>
+                            <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="#Register">Registra a tu mascuta</a>
                         </div>
                     </nav>
                 </div>
@@ -116,13 +116,13 @@
 
                         <div class="carousel-caption d-flex align-items-center justify-content-center">
                             <div class="p-5" style="width: 100%; max-width: 900px;">
-                                <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
+                                <h5 class="text-white text-uppercase mb-md-3">Los mejores cursos</h5>
                                 <h1 class="display-3 text-white mb-md-4" id="nom" runat="server"></h1>
-                                <a href="#Register" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                                <a href="#Register" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Más</a>
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item" style="min-height: 300px;">
+                    <%--<div class="carousel-item" style="min-height: 300px;">
                         <img class="position-relative w-100" src="../imagenes/ServicioCursosE/carousel-2.jpg" style="min-height: 300px; object-fit: cover;">
                         <div class="carousel-caption d-flex align-items-center justify-content-center">
                             <div class="p-5" style="width: 100%; max-width: 900px;">
@@ -131,7 +131,7 @@
                                 <a href="#Register" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
                             </div>
                         </div>
-                    </div>
+                    </div>--%>
                 </div>
             </div>
         </div>
@@ -148,11 +148,11 @@
                     </div>
                     <div class="col-lg-7">
                         <div class="text-left mb-4">
-                            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
+                            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Acerca de nosotros</h5>
                             <h1 id="nombre" runat="server"></h1>
                         </div>
                         <p>HAZ QUE TU MASCOTA TENGA UNA TRANSFORMACIÓN EN SU FORMA DE SER RECIBIENDO EL MEJOR ADIESTRAMIENTO CANINO</p>
-                        <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                        <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Más</a>
                     </div>
 
 
@@ -168,8 +168,8 @@
             <div class="container pt-5 pb-3">
 
                 <div class="text-center mb-5">
-                    <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Services</h5>
-                    <h1>Explore Top Services</h1>
+                    <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Sercicios</h5>
+                    <h1>Explrora nuestros Servicios</h1>
                 </div>
 
                 <div class="d-flex">
@@ -200,8 +200,8 @@
         <div id="Courses" class="container-fluid py-5">
             <div class="container py-5">
                 <div class="text-center mb-5">
-                    <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Courses</h5>
-                    <h1>Our Courses</h1>
+                    <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Cursos</h5>
+                    <h1>Nuestros Cursos</h1>
                 </div>
                 <div class="row">
                     <asp:Repeater ID="repCurso" runat="server">
@@ -240,8 +240,8 @@
         <div id="Teachers" class="container-fluid py-5">
             <div class="container pt-5 pb-3">
                 <div class="text-center mb-5">
-                    <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Teachers</h5>
-                    <h1>Meet Our Teachers</h1>
+                    <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Profesores</h5>
+                    <h1>Nuestros Profesores</h1>
                 </div>
                 <div class="row">
                     <asp:Repeater ID="repTeacher" runat="server">
@@ -305,7 +305,7 @@
 
         <%--modal--%>
 
-        <button class="btn btn-primary" id="abrirModal">Haz un Comentario</button>
+        <button class="btn btn-primary" id="abrirModal" style="display: block; margin: 0 auto;">Haz un Comentario</button>
 
 
         <div id="miModal" class="modal">
@@ -379,7 +379,7 @@
                             </div>
                             <div class="col-lg-7 mb-5 mb-lg-0">
                                 <div class="mb-4">
-                                    <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Need Any Courses</h5>
+                                    <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Necesitas algún curso</h5>
                                     <h1 class="text-white" id="idMostrarNombre" runat="server"></h1>
                                 </div>
                                 <p class="text-white" id="idMostrarDescripcion" runat="server">
@@ -399,7 +399,7 @@
         <!-- Registration End -->
 
 
-        <!-- Blog Start -->
+        <%--<!-- Blog Start -->
         <div class="container-fluid py-5">
             <div class="container pt-5 pb-3">
                 <div class="text-center mb-5">
@@ -420,7 +420,7 @@
                 </div>
             </div>
         </div>
-        <!-- Blog End -->
+        <!-- Blog End -->--%>
 
 
         <!-- Footer Start -->

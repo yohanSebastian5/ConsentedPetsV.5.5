@@ -103,6 +103,10 @@
     <Content Include="Vista\imagenes\imagenesProcesosV\proceso1.png" />
     <Content Include="Vista\imagenes\imagenesProcesosV\proceso2.png" />
     <Content Include="Vista\imagenes\imagenesProcesosV\proceso3.png" />
+    <Content Include="Vista\imagenes\ImagenesProductoCat\mascota1.png" />
+    <Content Include="Vista\imagenes\ImagenesProductoCat\mascota2.png" />
+    <Content Include="Vista\imagenes\ImagenesProductoCat\mascota3.png" />
+    <Content Include="Vista\imagenes\ImagenesProductoCat\mascota4.png" />
     <Content Include="Vista\imagenes\ImagenesProductoCat\producto1.png" />
     <Content Include="Vista\imagenes\ImagenesProductoCat\producto10.png" />
     <Content Include="Vista\imagenes\ImagenesProductoCat\producto11.png" />

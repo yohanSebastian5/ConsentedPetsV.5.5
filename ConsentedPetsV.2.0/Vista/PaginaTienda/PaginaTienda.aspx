@@ -22,16 +22,26 @@ https://templatemo.com/tm-558-klassy-cafe
 
 -->
     <!-- Additional CSS Files -->
+
+    <!-- CSS de Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- JS de Owl Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
     <link href="../../Styles/sweetalert.css" rel="stylesheet" />
     <script src="../../Scripts/sweetalert.min.js"></script>
     <script src="../../Scripts/sweetalert-dev.js"></script>
-    
+
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-   
+
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
 
     <link rel="stylesheet" href="assets/css/templatemo-klassy-cafe.css">
-   
+
     <link rel="stylesheet" href="assets/css/owl-carousel.css">
     <link href="../PaginaVeterinaria/carrusel/assets/owl.carousel.min.css" rel="stylesheet" />
     <script src="../PaginaVeterinaria/carrusel/owl.carousel.min.js"></script>
@@ -78,15 +88,14 @@ https://templatemo.com/tm-558-klassy-cafe
                             <!-- ***** Menu Start ***** -->
                             <ul class="nav">
                                 <li class="scroll-to-section"><a href="../PetShop.aspx" class="active">Home</a></li>
-
-
-
                                 <li class="scroll-to-section"><a href="#menu">Mascotas</a></li>
-
                                 <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
                                 <li class="scroll-to-section"><a href="#reservation">Pedido</a></li>
                                 <li class="scroll-to-section"><a href="#comentarios">Comentarios</a></li>
                                 <li class="scroll-to-section"><a href="#offers">Productos</a></li>
+                                <li class="scroll-to-section">
+                                    <button class="btn btn-primary" type="button" onclick="mostrarCarrito()"><i class="fa fa-shopping-cart"></i></button>
+                                </li>
                             </ul>
                             <a class='menu-trigger'>
                                 <span>Menu</span>
@@ -124,21 +133,6 @@ https://templatemo.com/tm-558-klassy-cafe
 
                                     </div>
                                 </div>
-                                <!-- // Item -->
-                                <%-- <!-- Item -->
-                                <div class="item">
-                                    <div class="img-fill">
-                                        <img src="assets/images/slide-02.jpg" alt="">
-                                    </div>
-                                </div>
-                                <!-- // Item -->
-                                <!-- Item -->
-                                <div class="item">
-                                    <div class="img-fill">
-                                        <img src="assets/images/slide-03.jpg" alt="">
-                                    </div>
-                                </div>
-                                <!-- // Item -->--%>
                             </div>
                         </div>
                     </div>
@@ -155,8 +149,8 @@ https://templatemo.com/tm-558-klassy-cafe
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="section-heading">
-                            <h6>Pets for sale</h6>
-                            <h2>Select the pets you want to share</h2>
+                            <h6>Mascotas en venta</h6>
+                            <h2>Selecciona la mascota que sera tu nuevo confidente</h2>
                         </div>
                     </div>
                 </div>
@@ -167,14 +161,17 @@ https://templatemo.com/tm-558-klassy-cafe
                         <asp:Repeater runat="server" ID="repMascotaVenta">
                             <ItemTemplate>
                                 <div class="item">
-                                    <div class='card card1' style="background-image: url('<%# ResolveUrl("../imagenes/ImagenesMascota/") + Eval("foto") %>')">
+                                    <div class='card card1' style="background-image: url('<%# ResolveUrl("~/Vista/imagenes/ImagenesProductoCat/") + Eval("foto") %>')">
 
                                         <div class="price">
-                                            <h6 style="width: 100px"><%# Eval("precio") %></h6>
+                                            <h6 style="width: 100px" id="precioM"><%# Eval("precio") %></h6>
                                         </div>
                                         <div class='info'>
-                                            <h1 class='title'><%# Eval("nombre") %></h1>
-                                            <p class='description'>
+
+                                            <p class='description' id="descripcionM">
+                                                <br />
+                                                Nombre: <%# Eval("nombre") %>
+                                                <br />
                                                 Raza: <%# Eval("raza") %>
                                                 <br />
                                                 Edad: <%# Eval("edad") %>
@@ -184,20 +181,16 @@ https://templatemo.com/tm-558-klassy-cafe
                                             <div class="main-text-button">
                                                 <%--<div class=""><a href="#reservation">Comprar <i class="fa fa-angle-down"></i></a></div>--%>
                                                 <asp:Button runat="server" ID="Button1" CssClass="btnAgregarCarrito btn btn-primary" Text="Agregar al carrito"
-                                                    OnClientClick='<%# "agregarAlCarrito(\"" + Eval("foto") + "\", \"" + Eval("nombre") + "\", \"" + Eval("precio") + "\", \"mascota\"); return false;" %>' />
+                                                    OnClientClick='<%# "agregarAlCarrito(\"" + Eval("foto") + "\", \"" + Eval("nombre") + "\", \"" + Eval("precio") + "\", \"mascota\", \"" + Eval("idMascota") + "\"); return false;" %>' />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
-
-
-
                     </div>
                 </div>
             </div>
-
         </section>
         <!-- ***** Menu Area Ends ***** -->
 
@@ -212,7 +205,7 @@ https://templatemo.com/tm-558-klassy-cafe
                     <div class="col-lg-6 align-self-center">
                         <div class="left-text-content">
                             <div class="section-heading">
-                                <h6>Contact Us</h6>
+                                <h6>Contactanos</h6>
                                 <h2>Aquí tú puedes hacer un pedido</h2>
                             </div>
                             <p>Solicita el mejor producto para tu mascota.</p>
@@ -238,7 +231,6 @@ https://templatemo.com/tm-558-klassy-cafe
                     </div>
                     <div class="col-lg-6">
                         <div class="contact-form">
-
                             <div class="row">
                                 <div class="col-lg-12">
                                 </div>
@@ -257,14 +249,11 @@ https://templatemo.com/tm-558-klassy-cafe
                                         <input name="phone" type="text" id="phone" placeholder="Telefono">
                                     </fieldset>
                                 </div>
-
                                 <div class="col-lg-6 col-sm-12">
                                     <fieldset>
                                         <input name="cantidad" type="text" id="cantidad" placeholder="Cantidad">
                                     </fieldset>
                                 </div>
-
-
                                 <div class="col-lg-12">
                                     <fieldset>
                                         <textarea name="message" rows="6" id="message" placeholder="Descripcion del producto"></textarea>
@@ -276,7 +265,6 @@ https://templatemo.com/tm-558-klassy-cafe
                                     </fieldset>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -284,32 +272,30 @@ https://templatemo.com/tm-558-klassy-cafe
         </section>
         <!-- ***** Reservation Area Ends ***** -->
 
-     <!-- Testimonial Start -->
+        <!-- Testimonial Start -->
         <div class="container-fluid py-5" id="comentarios" runat="server">
             <div class="container py-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
-                        <h1 class="section-title position-relative text-center mb-5" style=" margin: 0 auto; display: table;">Comentarios de Nuestros Clientes</h1>
+                        <h1 class="section-title position-relative text-center mb-5" style="margin: 0 auto; display: table;">Comentarios de Nuestros Clientes</h1>
                     </div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <div class="testimonial-carousel">
-
+                        <div class="owl-carousel testimonial-carousel">
                             <asp:Repeater ID="repCo" runat="server">
                                 <ItemTemplate>
-                                    <div class="text-center">
-                                        <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                                        <h4 class="font-weight-light mb-4" style=" margin: 0 auto; display: table;"><%# Eval("Comentario") %></h4>
-                                        <img class="img-fluid mx-auto mb-3 rounded-circle" style="width: 5rem; height: 5rem;" src='<%# ResolveUrl("../imagenes/ImagenesUsuarios/") + Eval("foto") %>' alt="">
-                                        <h4 class="font-weight-light mb-0" style=" margin: 0 auto; display: table; font-size:20px"> <%# Eval("nombre") %> <%# Eval("apellido") %></h4>
-                                        
-                                        <span>Cliente</span>
+                                    <div class="item">
+                                        <div class="text-center">
+                                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                                            <h4 class="font-weight-light mb-4" style="margin: 0 auto; display: table;"><%# Eval("Comentario") %></h4>
+                                            <img class="img-fluid mx-auto mb-3 rounded-circle" style="width: 5rem; height: 5rem;" src='<%# ResolveUrl("../imagenes/ImagenesUsuarios/") + Eval("foto") %>' alt="">
+                                            <h4 class="font-weight-light mb-0" style="margin: 0 auto; display: table; font-size: 20px"><%# Eval("nombre") %> <%# Eval("apellido") %></h4>
+                                            <span>Cliente</span>
+                                        </div>
                                     </div>
                                 </ItemTemplate>
                             </asp:Repeater>
-
-
                         </div>
                     </div>
                 </div>
@@ -320,8 +306,7 @@ https://templatemo.com/tm-558-klassy-cafe
 
         <%--modal--%>
 
-        <button class="btn btn-primary" id="abrirModal">Haz un Comentario</button>
-
+        <button class="btn btn-primary" id="abrirModal" style="display: block; margin: 0 auto;">Haz un Comentario</button>
         <div id="miModal" class="modal">
             <div class="modal-contenido">
                 <span class="cerrar">&times;</span>
@@ -338,23 +323,11 @@ https://templatemo.com/tm-558-klassy-cafe
                         <span class="estrella" data-valor="5">&#9734;</span>
 
                     </div>
-
-
-
                 </div>
-
                 <input type="hidden" id="valorEstrellaHidden" name="valorEstrellaHidden" runat="server" />
-
                 <asp:Button ID="btnEnviarComentario" runat="server" CssClass="btn btn-primary" Text="Enviar comentario" OnClick="btnEnviarComentario_Click" />
-
-
             </div>
         </div>
-
-
-
-        <!-- Botón para mostrar el carrito -->
-        <button class="btn btn-primary" type="button" onclick="mostrarCarrito()">Mostrar Carrito</button>
 
 
         <!-- Ventana modal del carrito -->
@@ -381,8 +354,8 @@ https://templatemo.com/tm-558-klassy-cafe
                         <div class="row">
                             <div class="col-lg-4 offset-lg-4 text-center">
                                 <div class="section-heading">
-                                    <h6>Products</h6>
-                                    <h2>The best products for your pets</h2>
+                                    <h6>Productos</h6>
+                                    <h2>Los mejores productos para tu mascota</h2>
                                 </div>
                             </div>
                         </div>
@@ -390,81 +363,55 @@ https://templatemo.com/tm-558-klassy-cafe
                             <div class="col-lg-12">
                                 <div class="row" id="tabs">
                                     <div class="col-lg-12">
-
-
                                         <div class="heading-tabs">
                                             <div class="row">
-
-
                                                 <div class="col-lg-6 offset-lg-3">
                                                     <ul>
                                                         <asp:Repeater runat="server" ID="repCateg">
                                                             <ItemTemplate>
-                                                                <li>
+                                                                <li class="scroll-to-section">
                                                                     <h2 style="display: none" id="idV" class="Pet-text" contenteditable="inherit"><%#Eval("idCategoriaPS") %></h2>
                                                                     <a runat="server" id="idCategoria" onclick="listarVet(this)" href='#tabs-1 '><%# Eval("nombre") %>
                                                                     </a>
-
                                                                 </li>
-
-
-
-
                                                             </ItemTemplate>
                                                         </asp:Repeater>
                                                         <asp:Button ID="btnProductos" Style="display: none" OnClick="btnProductos_Click" runat="server" Text="Button" />
                                                         <%--<input type="hidden" runat="server" id="hdnCategoriaSeleccionada" />--%>
                                                     </ul>
                                                 </div>
-
                                             </div>
-
                                         </div>
-
                                     </div>
                                     <div class="col-lg-12">
                                         <section class='tabs-content' style="width: 100%">
                                             <article id='tabs-1'>
-
-
                                                 <div class="row">
-
-
                                                     <div class="col-lg-12">
                                                         <div class="list-container col-lg-12">
                                                             <asp:Repeater runat="server" ID="repProduc">
                                                                 <ItemTemplate>
                                                                     <div class="tab-item">
-
                                                                         <img style="width: 65px; height: 70px;" id="img" runat="server" src='<%# ResolveUrl("~/Vista/imagenes/ImagenesProductoCat/") + Eval("foto") %>' />
                                                                         <h4 id="nombre" runat="server"><%# Eval("nombre") %></h4>
                                                                         <p id="descripcion" runat="server"><%# Eval("descripcion") %></p>
                                                                         <div>
-                                                                        <div class="price">
-                                                                            <h6 style="line-height:50px; height:50px; width: 190px;" id="precioP" runat="server">$<%# Eval("precioP") %>  <asp:Button runat="server" ID="Button2" CssClass="btnAgregarCarrito btn btn-primary"
-                                                                                     Text="Agregar al carrito"
-                                                                                    OnClientClick='<%# "agregarAlCarrito(\"" + Eval("foto") + "\", \"" + Eval("nombre") + "\", \"" + Eval("precioP") + "\", \"producto\"); return false;" %>' />
-
-                                                                              
-
-                                                                            </h6>
+                                                                            <div class="price">
+                                                                                <h6 style="line-height: 50px; height: 50px; width: 190px;" id="precioP" runat="server">$<%# Eval("precioP") %>
+                                                                                    <asp:Button runat="server" ID="Button2" CssClass="btnAgregarCarrito btn btn-primary"
+                                                                                        Text="Agregar al carrito"
+                                                                                        OnClientClick='<%# "agregarAlCarrito(\"" + Eval("foto") + "\", \"" + Eval("nombre") + "\", \"" + Eval("precioP") + "\", \"producto\"); return false;" %>' />
+                                                                                </h6>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </ItemTemplate>
                                                             </asp:Repeater>
-
                                                             <!-- Aquí puedes agregar más elementos -->
                                                         </div>
                                                     </div>
-
-
-
                                                 </div>
-
                                             </article>
-
-
                                         </section>
                                     </div>
                                 </div>
@@ -638,31 +585,33 @@ https://templatemo.com/tm-558-klassy-cafe
                 }
             }
         }
-
-
-
-
     </script>
     <script>
         // Función para agregar un producto al carrito
-        function agregarAlCarrito(foto, nombre, precio, tipo) {
+
+        var urlBaseImagenesProductos = "../imagenes/ImagenesProductoCat/";
+
+        // Función para agregar un producto al carrito
+        function agregarAlCarrito(foto, nombre, precio, tipo, idMascota) {
             var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-            // Verificar si el producto o mascota ya está en el carrito
-            var item = carrito.find(item => item.Nombre === nombre && item.Tipo === tipo);
-
+            // Verificar si el producto ya está en el carrito
+            var item = carrito.find(item => item.Nombre === nombre && item.Tipo === tipo && item.IdMascota === idMascota);
             if (item) {
                 item.Cantidad++;
             } else {
+                // Concatenar la URL base con el nombre de la foto para formar la URL completa
+                var fotoCompleta = urlBaseImagenesProductos + foto;
+
                 carrito.push({
-                    Foto: foto,
+                    Foto: fotoCompleta,
                     Cantidad: 1,
                     Nombre: nombre,
                     Precio: parseFloat(precio),
-                    Tipo: tipo
+                    Tipo: tipo,
+                    IdMascota: idMascota
                 });
             }
-
             localStorage.setItem('carrito', JSON.stringify(carrito));
         }
 
@@ -691,16 +640,25 @@ https://templatemo.com/tm-558-klassy-cafe
 
             if (carrito.length > 0) {
                 // Construir el contenido del carrito
+                // Construir el contenido del carrito
                 var carritoHTML = '<ul>';
                 var totalProductosCount = 0;
                 var totalPagarAmount = 0;
 
                 for (var i = 0; i < carrito.length; i++) {
-                    carritoHTML += '<li>' + carrito[i].Foto + ' - ' + carrito[i].Nombre + ' - Cantidad: ' + carrito[i].Cantidad + ' - $' + (carrito[i].Cantidad * carrito[i].Precio).toFixed(2) + ' <button onclick="eliminarDelCarrito(\'' + carrito[i].Nombre + '\')">Eliminar</button></li>';
+                    carritoHTML += '<li><img style="width: 12rem;" src="' + carrito[i].Foto + '">';
+                    carritoHTML += '<div class="carrito-info" style="display: inline-block; margin-left: 10px;">';
+                    carritoHTML += '<h4 class="carrito-nombre" style="font-size: 16px; font - weight: bold; margin: 0; ">' + carrito[i].Nombre + '</h4>';
+                    carritoHTML += '<p class="carrito-cantidad" style="font-size: 14px; margin: 0;">Cantidad: ' + carrito[i].Cantidad + '</p>';
+                    carritoHTML += '<p class="carrito-precio" style="font-size: 14px; margin: 0;">$' + (carrito[i].Cantidad * carrito[i].Precio).toFixed(2) + '</p>';
+                    carritoHTML += '</div>';
+                    carritoHTML += '<button class="btn btn-primary" onclick="eliminarDelCarrito(\'' + carrito[i].Nombre + '\')">Eliminar</button></li><br/><br/>';
                     totalProductosCount += carrito[i].Cantidad;
                     totalPagarAmount += carrito[i].Cantidad * carrito[i].Precio;
                 }
+
                 carritoHTML += '</ul>';
+
 
                 carritoContainer.innerHTML = carritoHTML;
                 totalProductos.textContent = totalProductosCount;
@@ -724,11 +682,24 @@ https://templatemo.com/tm-558-klassy-cafe
             var carritoModal = document.getElementById('carritoModal');
             carritoModal.style.display = 'none';
         }
+        window.addEventListener('unload', function () {
+            localStorage.removeItem('carrito');
+        });
     </script>
 
-
-
+    <script>
+        // Inicializar el carrusel después de cargar la página
+        $(document).ready(function () {
+            $('.testimonial-carousel').owlCarousel({
+                items: 1, // Mostrar solo un elemento a la vez
+                loop: true,
+                margin: 10,
+                nav: true,
+                navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+                dots: false
+            });
+        });
+    </script>
     <script src="assets/js/carritodeCompras.js"></script>
-
 </body>
 </html>
