@@ -24,6 +24,5 @@ namespace ConsentedPetsV._2._0.Entidades
         public string fecha { get; set; }
         public string cantidad { get; set; }
         public string total { get; set; }
-
     }
 }
