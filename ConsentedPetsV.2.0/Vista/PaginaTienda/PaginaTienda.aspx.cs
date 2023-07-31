@@ -15,6 +15,7 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using Newtonsoft.Json;
+using System.Data;
 
 namespace PaginaTienda.PaginaTienda
 {
@@ -162,5 +163,28 @@ namespace PaginaTienda.PaginaTienda
             objE.idTienda = idTienda;
             objL.mtdRegistrar(objE);
         }
+
+        protected/* List<ClProductoE>*/ void btnPagar_Click(object sender, EventArgs e)
+        {
+            //List<ClProductoE> lista = new List<ClProductoE>();
+            //DataTable tabla = new DataTable();
+            //for (int i = 0; i < tabla.Rows.Count; i++)
+            //{
+            //    ClProductoE objPE = new ClProductoE();
+                
+            //    objPE.nombre = ;
+            //    objPE.descripcion = tabla.Rows[i]["descripcion"].ToString();
+            //    objPE.foto = tabla.Rows[i]["foto"].ToString();
+            //    objPE.precioP = int.Parse(tabla.Rows[i]["precio"].ToString());
+            //    objPE.idCategoriaPS = int.Parse(tabla.Rows[i]["idCategoriaPS"].ToString());
+            //    lista.Add(objPE);
+            //}
+            //return lista;
+        
+
+            Response.Redirect("Pago.aspx");
+        }
+
+       
     }
 }

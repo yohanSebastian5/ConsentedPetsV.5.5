@@ -338,7 +338,9 @@ https://templatemo.com/tm-558-klassy-cafe
                 <div class="carrito-container"></div>
                 <div class="carrito-total">
                     <h3>Total de productos: <span id="totalProductos"></span></h3>
-                    <h3>Total a pagar: <span id="totalPagar"></span></h3>
+                    <h3>Total a pagar: <span id="totalPagar"></span></h3>                  
+                    <asp:Button id="btnPagar" runat="server" onclick="btnPagar_Click" class="btn btn-primary" Text="Pagar" style="display: none;"></asp:Button>
+
                 </div>
             </div>
         </div>
@@ -655,7 +657,9 @@ https://templatemo.com/tm-558-klassy-cafe
                     carritoHTML += '<button class="btn btn-primary" onclick="eliminarDelCarrito(\'' + carrito[i].Nombre + '\')">Eliminar</button></li><br/><br/>';
                     totalProductosCount += carrito[i].Cantidad;
                     totalPagarAmount += carrito[i].Cantidad * carrito[i].Precio;
+
                 }
+
 
                 carritoHTML += '</ul>';
 
@@ -666,6 +670,7 @@ https://templatemo.com/tm-558-klassy-cafe
 
                 // Mostrar la ventana modal del carrito
                 carritoModal.style.display = 'block';
+
             } else {
                 // Si el carrito está vacío, mostrar un mensaje
                 carritoContainer.innerHTML = '<p>El carrito está vacío.</p>';
@@ -675,6 +680,14 @@ https://templatemo.com/tm-558-klassy-cafe
                 // Mostrar la ventana modal del carrito
                 carritoModal.style.display = 'block';
             }
+            if (carrito.length > 0) {
+                // Mostrar el botón de pagar si hay productos en el carrito
+                document.getElementById('btnPagar').style.display = 'block';
+            } else {
+                // Ocultar el botón de pagar si el carrito está vacío
+                document.getElementById('btnPagar').style.display = 'none';
+            }
+
         }
 
         // Función para cerrar la ventana modal del carrito

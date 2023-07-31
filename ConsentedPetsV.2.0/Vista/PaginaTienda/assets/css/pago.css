@@ -1,0 +1,94 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&display=swap');
+
+p {
+    font-family: inherit;
+    font-size: x-large;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+    /* Estilos para las celdas de imagen */
+    td.image-cell img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+    }
+
+/* Estilos para las filas pares */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para el total de la compra */
+.total {
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Estilos de colores */
+.section {
+    background-color: #f6f6f6;
+    color: #333;
+}
+
+h1 {
+    color: #ff69b4;
+    text-align: center;
+}
+
+th {
+    background-color: #ff69b4;
+    color: #fff;
+}
+
+td, tfoot td {
+    background-color: #fff;
+}
+
+.total {
+    background-color: #87cefa;
+    color: #fff;
+}
+
+/* Estilos del botón */
+.btn-volver {
+    background-color: mistyrose;
+    color: black;
+    padding: 10px 20px;
+    border: 2px solid rosybrown;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    /* Cambiar color del botón al pasar el mouse */
+    .btn-volver:hover {
+        background-color: rosybrown;
+    }
+
+/* Animación al hacer clic en el botón */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
