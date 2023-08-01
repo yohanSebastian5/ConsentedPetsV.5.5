@@ -30,7 +30,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario
                 txtTelefono.Text = objDatos.telefono;
                 txtEmail.Text = objDatos.email;
                 txtDireccion.Text = objDatos.direccion;
-                txtContraseña.Text = encry.descifrarTexto(   objDatos.contraseña);
+                txtContraseña.Text = objDatos.contraseña;
                 string nombre = objDatos.foto;
                 string ruta = "~/Vista/imagenes/ImagenesUsuarios/" + nombre;
                 img.Src = ResolveUrl(ruta);

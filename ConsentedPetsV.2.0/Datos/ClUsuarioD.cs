@@ -86,14 +86,15 @@ namespace ConsentedPets.Datos
             {
                 objDatos = new ClUsuarioE();
                 objDatos.idUsuario = leer.GetInt32(0);
-                objDatos.nombre = leer.GetString(1);
-                objDatos.apellido = leer.GetString(2);
-                objDatos.telefono = leer.GetString(3);
-                objDatos.email = leer.GetString(4);
-                objDatos.foto = leer.GetString(5);
-                objDatos.direccion = leer.GetString(6);
-                objDatos.genero = leer.GetString(7);
-                string contra = encry.descifrarTexto(leer.GetString(8));
+                objDatos.documento = leer.GetString(1);
+                objDatos.nombre = leer.GetString(2);
+                objDatos.apellido = leer.GetString(3);
+                objDatos.telefono = leer.GetString(4);
+                objDatos.email = leer.GetString(5);
+                objDatos.foto = leer.GetString(6);
+                objDatos.direccion = leer.GetString(7);
+                objDatos.genero = leer.GetString(8);
+                string contra = encry.descifrarTexto(leer.GetString(9));
                 objDatos.contraseña = contra;                
             }
             conexion.CerrarConexion();
