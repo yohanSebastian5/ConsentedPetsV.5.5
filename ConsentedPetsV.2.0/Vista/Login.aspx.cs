@@ -26,8 +26,6 @@ namespace ConsentedPetsV._2._0.Vista
                 }
 
             }
-
-
         }
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
