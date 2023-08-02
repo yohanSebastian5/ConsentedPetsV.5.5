@@ -30,9 +30,9 @@ namespace PaginaTienda.PaginaTienda
 
 
                 int idTienda = int.Parse(Session["Tienda"].ToString());
-                idTienda = 1;
+               
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
-                idUsuario = 19;
+                
 
                 ClMascotaL objMascotaL = new ClMascotaL();
                 List<ClMascotaE> lista = objMascotaL.mtdMascotaVenta(idTienda);

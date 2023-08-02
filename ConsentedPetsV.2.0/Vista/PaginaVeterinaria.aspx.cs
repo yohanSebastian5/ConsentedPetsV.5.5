@@ -23,9 +23,7 @@ namespace ConsentedPetsV._2._0.Vista
             {
 
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
-                idUsuario = 17;
                 int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
-                idVeterinaria = 1;
                 ClMascotaL objData = new ClMascotaL();
                 List<ClMascotaE> listaMascota = objData.mtdListarMascota(idUsuario);
                 ddlMascota.DataSource = listaMascota;

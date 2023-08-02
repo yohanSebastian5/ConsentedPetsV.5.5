@@ -24,10 +24,10 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
                 
 
                 int idEscuela = int.Parse(Session["Escuela"].ToString());
-                idEscuela = 1;
+                
 
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
-                idUsuario = 19;
+               
                 ClServicioEL objServicio = new ClServicioEL();
                 List<ClServicioEE> lista = objServicio.mtdServicio(idEscuela);
                 repServicio.DataSource = lista;
