@@ -144,23 +144,18 @@ namespace ConsentedPets.Datos
         public void mtdEliminarE(int idE, int tipo)
         {
             string establecimiento = "";
-
-            if (tipo==1)
-
-            if (idT == 1)
-
+            if (tipo == 1)
             {
-               establecimiento = "Veterinaria";
+                establecimiento = "Veterinaria";
             }
-            else if (tipo==2)
+            else if (tipo == 2)
             {
                 establecimiento = "Tienda";
             }
-            else if (tipo==3)
+            else if (tipo == 3)
             {
                 establecimiento = "Escuela";
             }
-
 
 
             comando.Connection = conexion.AbrirConexion();
