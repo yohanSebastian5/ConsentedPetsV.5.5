@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vista/PerfilesRol/Administrador/EscuelaCanina/Escuela.Master" AutoEventWireup="true" CodeBehind="ListarProfesores.aspx.cs" Inherits="ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina.ListarProfesores" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentHeadAdministrador" runat="server">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -10,6 +11,11 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    
+    <link href="../../../Css/AgregarVeter.css" rel="stylesheet" />
+    
+    <link href="../../../../Styles/sweetalert.css" rel="stylesheet" />
+    <script src="../../../../Scripts/sweetalert.min.js"></script>
     <style>
         .center {
             align-items: center;
@@ -17,7 +23,6 @@
             justify-content: center;
             flex-direction: column;
         }
-        
         body {
             background: linear-gradient(#d98567, #243b55);
             color: white;
@@ -25,10 +30,10 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
-     <div class="center">
-        <h1 style="margin-top:20px; color:#78fff1">Listar Personal</h1>
+    <div class="center">
+        <h1 style="margin-top: 20px; color: #78fff1">Listar Personal</h1>
         <div style="width: 1100px">
-            <table id="tblUsua" class="table" style="color:white">
+            <table id="tblUsua" class="table" style="color: white">
                 <thead style="color: #78fff1">
                     <tr>
                         <th>Nombre</th>
@@ -40,6 +45,8 @@
                         <th>Especializacion</th>
                         <th>Experiencia</th>
                         <th>Profesion</th>
+                        <th>Editar</th>
+                        <th>ELiminar</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -48,6 +55,62 @@
             </table>
         </div>
     </div>
+    <form runat="server">
+        <div style="color:lightslategray" class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Eliminacion de Datos</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="section">
+                            <%--<h2 class="py-3">Actualizacion de Datos</h2>--%>
+                            <div class="container">
+                                <div class="card">
+                                    <h3>¿Esta Seguro de Eliminar el Profesor?</h3>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <asp:Button ID="btnEliminar" CssClass="btn btn-danger" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="color:lightslategray" class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel2">Actualizacion de Datos</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="color:lightslategray">
+                        <div class="section">
+                            <div class="container">
+                                <div class="card">
+                                    <h3>Datos del Empleado</h3>
+                                    <asp:Label ID="Label1" runat="server" Text="Especializacion"></asp:Label>
+                                    <asp:TextBox ID="txtEspecializacion" runat="server"></asp:TextBox> 
+                                    <asp:Label ID="Label12" runat="server" Text="Experiencia"></asp:Label>
+                                    <asp:TextBox ID="txtExperiencia" runat="server"></asp:TextBox>
+                                    <asp:Label ID="Label13" runat="server" Text="Profesion"></asp:Label>
+                                    <asp:TextBox ID="txtProfesion" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <asp:Button ID="Button1" CssClass="btn btn-danger" runat="server" Text="Editar" OnClick="Button1_Click" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
     <script>
         $(document).ready(function () {
             var id = 0;
@@ -70,8 +133,31 @@
                             { data: "genero" },
                             { data: "especializacion" },
                             { data: "experiencia" },
-                            { data: "profesion" }
+                            { data: "profesion" },
+                            {
+                                data: null,
+                                render: function (data, type, row) {
+                                    return '<button type="button" id="btnEditar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" data-id="' + data.idUsuario + '">Editar</button > ';
+                                 
+                                }
+                            },
+                            {
+                                data: null,
+                                render: function (data, type, row) {
+                                    return '<button type="button" id="btneliminar" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-id="' + data.idUsuario + '">Eliminar</button > ';
+
+                                }
+                            }
                         ]
+                    });
+                    $('#tblUsua').on('click', '#btneliminar', function () {
+                        var id = $(this).data('id');
+                        GuardarIdPersonal(id);
+                    });
+                    $('#tblUsua').on('click', '#btnEditar', function () {
+                        var id = $(this).data('id');
+                        GuardarIdPersonal(id);
+                        cargardatos(id);
                     });
                 },
                 error: function (error) {
@@ -79,5 +165,40 @@
                 }
             });
         });
+
+        function GuardarIdPersonal(elementoA) {
+            $.ajax({
+                type: "POST",
+                url: "ListarProfesores.aspx/GuardarIdPersonal",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify({ id: elementoA }),
+                success: function (data) {
+                    console.log(valor);
+                }, error: function (xhr, textStatus, errorThrown) {
+                    // Manejar cualquier error que ocurra durante la llamada AJAX
+                    console.error(errorThrown);
+                }
+
+            });
+        }
+        function cargardatos(idProducto) {
+            $.ajax({
+                type: "POST",
+                url: "ListarProfesores.aspx/cargardatos",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify({ id: idProducto }),
+                success: function (dat) {
+                    var Carga = dat.d;
+                    document.getElementById('<%= txtProfesion.ClientID %>').value = Carga[0]["profesion"];
+                    document.getElementById('<%= txtEspecializacion.ClientID %>').value = Carga[0]["especializacion"];
+                    document.getElementById('<%= txtExperiencia.ClientID %>').value = Carga[0]["experiencia"];
+                }, error: function (xhr, textStatus, errorThrown) {
+                    // Manejar cualquier error que ocurra durante la llamada AJAX
+                    console.error(errorThrown);
+                }
+            });
+         }
     </script>
 </asp:Content>

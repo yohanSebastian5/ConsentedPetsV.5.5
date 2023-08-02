@@ -18,10 +18,8 @@ namespace ConsentedPets.Vista.Veterinaria
         {
             if (!IsPostBack)
             {
-                if (int.Parse(Session["RolUsuario"].ToString()) == 1)
-                {
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡No Registrado como Administrador !', 'Registre un Establecimiento', 'warning')", true);
-                }
+               
+                   
 
                 ClEstablecimientoL objCateg = new ClEstablecimientoL();
                 List<ClEstablecimientoE> listCat = new List<ClEstablecimientoE>();
@@ -33,19 +31,18 @@ namespace ConsentedPets.Vista.Veterinaria
                 ddlTipo.DataBind();
                 ddlTipo.Items.Insert(0, new ListItem("Tipo de Establecimiento: ", "0"));
 
-                
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Informacion Guardada !', 'Establecimiento Registrado', 'success')", true);
 
-                
+
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡No Registrado como Administrador !', 'Registre un Establecimiento', 'warning')", true);
+
             }
-
+            btnvolver2.ServerClick += new EventHandler(btnVolver_Click);
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             ClEstablecimientoL objEstaL = new ClEstablecimientoL();
             CLUsuarioL objUsuL = new CLUsuarioL();
-            ClUsuarioE objUsuE = new ClUsuarioE();
             
            
             int valor = int.Parse(ddlTipo.SelectedValue.ToString());
@@ -61,6 +58,11 @@ namespace ConsentedPets.Vista.Veterinaria
                 objUsuL.mtdRol( int.Parse(Session["Usuario"].ToString()),tipo);
             }
             ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Registro Exitoso !', 'Establecimiento Registrado ', 'success')", true);
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../PerfilesRol/ElegirPErfil.aspx");
         }
     }
 }

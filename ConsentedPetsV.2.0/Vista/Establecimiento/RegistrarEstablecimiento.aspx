@@ -10,15 +10,30 @@
     <link href="../Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="../../Styles/sweetalert.css" rel="stylesheet" />
+    <script src="../../Scripts/sweetalert.min.js"></script>
+
     <style>
         body {
             background-image: url('../imagenes/fondoRegistrar.jpg');
-
             background-size: cover;
             background-repeat: no-repeat;
         }
-        .quitarmargen{
-            margin:0 0 0 0;
+
+        .quitarmargen {
+            margin: 0 0 0 0;
+        }
+
+        .boton2 {
+            background: #6e616100;
+            border: 1px solid #fdf4f7;
+            color: white;
+            font-size: 18px;
+            letter-spacing: 1px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Montserrat',sans-serif;
+            width:100%;
         }
     </style>
 </head>
@@ -30,7 +45,7 @@
             <form id="form1" runat="server">
                 <div class="field space">
                     <span class="fa fa-user"></span>
-                    <asp:TextBox CssClass="quitarmargen"  ID="txtNombre" required="" placeholder="Nombre" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
+                    <asp:TextBox CssClass="quitarmargen" ID="txtNombre" required="" placeholder="Nombre" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
                 </div>
                 <br />
                 <div class="field space">
@@ -62,9 +77,13 @@
                 <div class="field">
                     <asp:Button ID="btnRegistrar" CssClass="quitarmargen" runat="server" Text="REGISTRAR" OnClick="btnRegistrar_Click" />
                 </div>
+                <div class="field" style="margin-top: 20px; width:308px">
+                    <button id="btnvolver2" class="quitarmargen boton2" runat="server">VOLVER</button>
+                </div>
             </form>
         </div>
     </div>
     <script src="../Bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../Scripts/sweetalert.min.js"></script>
 </body>
 </html>

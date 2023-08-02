@@ -37,6 +37,8 @@ namespace ConsentedPetsV._2._0
             Session["foto"] = "";
 
             Session["Eliminar"] = 0;
+            Session["Curso"] = 1;
+
 
         }
 

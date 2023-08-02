@@ -4,8 +4,14 @@
     justify-content: center;
     align-items: center;
     padding: 50px;
+    background: #52d5b2;
 }
-
+.center {
+    padding: 36px;
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+}
 .Pet {
     width: 20rem;
     height: 25rem;

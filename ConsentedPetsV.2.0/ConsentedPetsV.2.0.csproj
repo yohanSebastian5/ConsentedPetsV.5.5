@@ -94,6 +94,7 @@
     <Content Include="Vista\Bootstrap\css\bootstrap.rtl.min.css" />
     <Content Include="Vista\Css\AgregarVeter.css" />
     <Content Include="Vista\Css\EditarPerfilUsuario.css" />
+    <Content Include="Vista\Css\EliminarEstablecimiento.css" />
     <Content Include="Vista\Css\MascotasRegistradasUsuario.css" />
     <Content Include="Vista\Css\script.js" />
     <Content Include="Vista\imagenes\ImagenesMascota\mascota1.png" />
@@ -464,7 +465,6 @@
     <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarCitas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarVeterinarios.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\RegistrarProceso.aspx" />
-    <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarServicios.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarVeterinarios.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\ProcesosRegistrados.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\Veterinaria\RegistrarServicioV.aspx" />
@@ -513,6 +513,7 @@
     <Compile Include="Datos\ClComentarioD.cs" />
     <Compile Include="Datos\ClConexion.cs" />
     <Compile Include="Datos\ClCursoED.cs" />
+    <Compile Include="Datos\ClEliminarD.cs" />
     <Compile Include="Datos\ClEstablecimientoD.cs" />
     <Compile Include="Datos\ClMascotaD.cs" />
     <Compile Include="Datos\ClMatriculaD.cs" />
@@ -530,6 +531,7 @@
     <Compile Include="Entidades\ClCitaE.cs" />
     <Compile Include="Entidades\ClComentarioE.cs" />
     <Compile Include="Entidades\ClCursoEE.cs" />
+    <Compile Include="Entidades\ClEliminarE.cs" />
     <Compile Include="Entidades\ClEstablecimientoE.cs" />
     <Compile Include="Entidades\ClMascotaE.cs" />
     <Compile Include="Entidades\ClMatriculaE.cs" />
@@ -548,6 +550,7 @@
     <Compile Include="Logica\ClCitaL.cs" />
     <Compile Include="Logica\ClComentarioL.cs" />
     <Compile Include="Logica\ClCursoEL.cs" />
+    <Compile Include="Logica\ClEliminarL.cs" />
     <Compile Include="Logica\ClEstablecimientoL.cs" />
     <Compile Include="Logica\ClMascotaL.cs" />
     <Compile Include="Logica\ClMatriculaL.cs" />
@@ -881,13 +884,6 @@
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarCitas.aspx.designer.cs">
       <DependentUpon>ListarCitas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarServicios.aspx.cs">
-      <DependentUpon>ListarServicios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarServicios.aspx.designer.cs">
-      <DependentUpon>ListarServicios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\ListarVeterinarios.aspx.cs">
       <DependentUpon>ListarVeterinarios.aspx</DependentUpon>

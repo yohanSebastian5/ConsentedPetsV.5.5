@@ -58,7 +58,9 @@
                             </a>
                         </li>
                         <li class="nav-item" >
-                            <a style="color: black" href="Login.aspx">Iniciar Sesion </a>
+                            <a style="color: black" id="Sesion" runat="server"  href="Login.aspx">
+                                <asp:Label ID="sesionn" runat="server" Text="Iniciar Sesion"></asp:Label> </a>
+
                             <%--<input id="btnLogin" runat="server" type="button" value="Iniciar Sesion" style="color:black"  onclick=""/>--%>
                             
                         </li>

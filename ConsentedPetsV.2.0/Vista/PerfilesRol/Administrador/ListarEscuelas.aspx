@@ -11,6 +11,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
     <link href="../../Css/EstiloRepeat.css" rel="stylesheet" />
+
     <style>
         .ocultar{
             display:none;
@@ -19,7 +20,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
      <div style="background-color: darkslategrey">
-        <h1>Escuelas</h1>
+        <h1 class="center">Escuelas</h1>
         <asp:Button ID="Button1" CssClass="ocultar" runat="server" Text="Button" OnClick="Button1_Click"/>
         <div class="row container justify-content-evenly" runat="server">
 
@@ -44,7 +45,7 @@
                                 <%#Eval("email")%>
                             </p>
                             <h2 style="display: none" id="idV" class="Pet-text" contenteditable="inherit"><%#Eval("idVeterinaria") %></h2>
-                            <a id="enlace" onclick="listarVet(this)" class="Pet-text">Ver más 
+   u                         <a id="enlace" onclick="listarVet(this)" class="Pet-text">Ver más 
                             </a>
                         </div>
                     </div>

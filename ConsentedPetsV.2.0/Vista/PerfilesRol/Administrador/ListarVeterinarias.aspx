@@ -21,7 +21,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
     <div style="background-color: darkslategrey">
-        <h1>Veterinarias</h1>
+        <h1  class="center">Veterinarias</h1>
         <asp:Button ID="Button1" CssClass="ocultar" runat="server" Text="Button" OnClick="Button1_Click"/>
         <div class="row container justify-content-evenly" runat="server">
 

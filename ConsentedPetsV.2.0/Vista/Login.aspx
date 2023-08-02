@@ -11,9 +11,6 @@
     <script src="../Scripts/sweetalert-dev.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:&display=swap');
-
-
-
         body {
             height: 100vh;
             background-color: #f2f2f2;

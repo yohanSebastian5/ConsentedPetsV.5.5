@@ -12,10 +12,10 @@ namespace ConsentedPetsV._2._0.Logica
 {
     public class ClServicioVetL
     {
-        public List<ClServicioVeterinariaE> mtdRepeater(int idVeterinaria)
+        public List<ClServicioVeterinariaE> mtdRepeater(int idVeterinaria,int tipo=0)
         {
             ClServicioVetD objVet = new ClServicioVetD();
-            List<ClServicioVeterinariaE> listaVet = objVet.mtdListar(idVeterinaria);
+            List<ClServicioVeterinariaE> listaVet = objVet.mtdListar(idVeterinaria,tipo);
             return listaVet;
 
         }
@@ -38,6 +38,11 @@ namespace ConsentedPetsV._2._0.Logica
         {
             ClServicioVetD objD = new ClServicioVetD();
             objD.mtdRegistrarS(objServis);
+        }
+        public void mtdActualizar(ClServicioVeterinariaE objServis)
+        {
+            ClServicioVetD objD = new ClServicioVetD();
+            objD.mtdEditarS(objServis);
         }
     }
 }

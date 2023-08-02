@@ -18,6 +18,13 @@ namespace ConsentedPets.Vista
         protected void Page_Load(object sender, EventArgs e)
         {
             //btnLogin.ServerClick += new EventHandler(btnLogin_Click);
+            int usu =int.Parse( Session["Usuario"].ToString());
+            if (usu!=0)
+            {
+                sesionn.Text = "Cerrar Sesion";
+            }
+   
+
         }
         public void btnLogin_Click(object sender, EventArgs e)
         {
