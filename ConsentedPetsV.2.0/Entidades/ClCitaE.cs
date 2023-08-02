@@ -14,7 +14,11 @@ namespace ConsentedPetsV._2._0.Entidades
         public string Estado { get; set; }
         public string precio { get; set; }
         public string descripcion { get; set; }
+        public int idMascota { get; set; }
         public string nombre { get; set; }
+        public int idServicioV { get; set; }
+        public int idUsuario { get; set; }
+
 
     }
 }

@@ -11,7 +11,9 @@ namespace ConsentedPetsV._2._0
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["Veterinaria"] = 0;
+            Session["Tienda"] = 0;
+            Session["Escuela"] = 0;
         }
     }
 }

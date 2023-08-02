@@ -14,27 +14,24 @@ namespace ConsentedPetsV._2._0.Datos
     {
         private ClConexion conexion = new ClConexion();
         SqlCommand comando = new SqlCommand();
-        public void mtdCita(int mascota, string fechaCita, string horaCita, string estado)
+
+        public void mtdCita(ClCitaE objHist)
         {
-            
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "RegistarCita";
-            comando.CommandType = CommandType.StoredProcedure;
-
-            // Agregar los parámetros al comando
-            comando.Parameters.AddWithValue("@fecha", fechaCita);
-            comando.Parameters.AddWithValue("@hora", horaCita);
-            comando.Parameters.AddWithValue("@estado", estado);
-            comando.Parameters.AddWithValue("@idMascota", mascota);
-
-            // Ejecutar el comando
-            comando.ExecuteNonQuery();
-
-            // Limpiar los parámetros y cerrar la conexión
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
+            int cantReg = 0;
+            string cons = "insert into CitaV(fecha, hora, estado, idMascota) " +
+                              "values('" + objHist.FechaCita + "' , '" + objHist.HoraCita + "', '" + objHist.Estado + "', '" + objHist.idMascota + "') SELECT SCOPE_IDENTITY() AS [ultimoId]";
+            ClProcesarSQL objSQL = new ClProcesarSQL();
+            DataTable tblID = objSQL.mtdSelectDesc(cons);
+            int idReg = int.Parse(tblID.Rows[0]["ultimoId"].ToString());
+            string cons2 = " insert into HistorialV(idServicioV, idCitaV, idUsuario, precio, descripcion) values('"
+                + objHist.idServicioV + "'," + idReg + ",'" + objHist.idUsuario + "','" + objHist.precio + "','" + objHist.descripcion + "')";
+            cantReg = objSQL.mtdIUDConect(cons2);
 
         }
+     
+        
+        
+        
 
         public List<ClCitaE> mtdListar( int id = 0,int tipo=0)
         {

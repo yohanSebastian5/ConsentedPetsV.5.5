@@ -11159,4 +11159,65 @@ h6,
         margin-bottom: 40px;
         font-size: 24px;
     }
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px; /* Ajusta el ancho máximo según tus necesidades */
+    height: auto;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-contenido {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+}
+
+/* Resto del código CSS... */
+
+
+/* Resto del código CSS... */
+
+
+.cerrar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+    .cerrar:hover,
+    .cerrar:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.estrellas {
+    margin-top: 10px;
+}
+
+
+.estrella {
+    font-size: 24px;
+    color: #ccc;
+    margin-right: 5px;
+}
+
+    .estrella.seleccionada {
+        color: orange;
+    }
+
+.centrar-boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 

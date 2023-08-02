@@ -29,6 +29,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="PaginaVeterinaria/css/style.css" rel="stylesheet" />
     <script src="../Scripts/sweetalert.min.js"></script>
+    <script src="../Scripts/sweetalert-dev.js"></script>
 
     <link href="../Styles/sweetalert.css" rel="stylesheet" />
 </head>
@@ -226,38 +227,31 @@
         <!-- Team End -->
 
 
-        <!-- Testimonial Start -->
+     <!-- Testimonial Start -->
         <div class="container-fluid py-5" id="comentarios">
             <div class="container py-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
-                        <h1 class="section-title position-relative text-center mb-5">Clients Say About Our Famous Ice Cream</h1>
+                        <h1 class="section-title position-relative text-center mb-5">Comentarios de Nuestros Clientes</h1>
                     </div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="owl-carousel testimonial-carousel">
-                            <div class="text-center">
+                            
+                            <asp:Repeater ID="repComentario" runat="server">
+                                <ItemTemplate>
+                                    <div class="text-center">
                                 <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                                <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                                <img class="img-fluid mx-auto mb-3" src="PaginaVeterinaria/img/testimonial-1.jpg" alt="">
-                                <h5 class="font-weight-bold m-0">Client Name</h5>
+                                <h4 class="font-weight-light mb-4"><%# Eval("Comentario") %></h4>
+                                <img class="img-fluid mx-auto mb-3" src='<%# ResolveUrl("imagenes/ImagenesUsuarios/") + Eval("foto") %>' alt="">
+                                <h5 class="font-weight-bold m-0"><%# Eval("nombre") %></h5>
                                 <span>Profession</span>
                             </div>
-                            <div class="text-center">
-                                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                                <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                                <img class="img-fluid mx-auto mb-3" src="PaginaVeterinaria/img/testimonial-2.jpg" alt="">
-                                <h5 class="font-weight-bold m-0">Client Name</h5>
-                                <span>Profession</span>
-                            </div>
-                            <div class="text-center">
-                                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                                <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                                <img class="img-fluid mx-auto mb-3" src="PaginaVeterinaria/img/testimonial-3.jpg" alt="">
-                                <h5 class="font-weight-bold m-0">Client Name</h5>
-                                <span>Profession</span>
-                            </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                            
+                           
                         </div>
                     </div>
                 </div>
@@ -265,8 +259,39 @@
         </div>
         <!-- Testimonial End -->
 
+        <%--modal--%>
+
+        <button class="btn btn-primary" id="abrirModal" style="display: block; margin: 0 auto;">Haz un Comentario</button>
 
 
+        <div id="miModal" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar">&times;</span>
+                <h2>Deja un comentario</h2>
+                <textarea id="comentario" rows="4" cols="50" runat="server" style="width: 357px;"></textarea>
+
+                <div class="calificacion">
+                    <p>Calificación:</p>
+                    <div class="estrellas" id="estrella" runat="server">
+                        <span class="estrella" data-valor="1">&#9734;</span>
+                        <span class="estrella" data-valor="2">&#9734;</span>
+                        <span class="estrella" data-valor="3">&#9734;</span>
+                        <span class="estrella" data-valor="4">&#9734;</span>
+                        <span class="estrella" data-valor="5">&#9734;</span>
+
+                    </div>
+
+
+
+                </div>
+
+                <input type="hidden" id="valorEstrellaHidden" name="valorEstrellaHidden" runat="server" />
+
+                <asp:Button ID="btnEnviarComentario" runat="server" CssClass="btn btn-primary" Text="Enviar comentario" OnClick="btnEnviarComentario_Click" />
+
+
+            </div>
+        </div>
 
 
         <!--hast aqui va el ajax-->
@@ -288,6 +313,7 @@
                                 <label for="mascota">Nombre de la Mascota</label>
                                 <asp:DropDownList ID="ddlMascota" CssClass="cajas" runat="server"></asp:DropDownList>
 
+
                             </div>
                             <div class="mb-3">
                                 <label for="servicio">Servicio Requerido</label>
@@ -304,12 +330,13 @@
 
                             <div class="mb-3">
                                 <label for="fechaSeleccionada">Fecha Seleccionada:</label>
-                                <asp:TextBox ID="txtFecha" runat="server" ReadOnly="true"></asp:TextBox>
+                                <asp:TextBox ID="txtFecha" runat="server" ReadOnly="true" ></asp:TextBox>
                             </div>
 
                             <div class="mb-3">
                                 <label for="hora">Hora de la Cita</label>
                                 <asp:DropDownList ID="ddlHora" CssClass="form-select" runat="server">
+                                    <asp:ListItem Text=""></asp:ListItem>
                                     <asp:ListItem Value="08:00 am">08:00 am</asp:ListItem>
                                     <asp:ListItem Value="08:30 am">08:30 am</asp:ListItem>
                                     <asp:ListItem Value="09:00 am">09:00 am</asp:ListItem>
@@ -340,10 +367,8 @@
                             <div class="mb-3">
                                 <label for="estadoCita">Estado</label>
                                 <asp:DropDownList ID="ddlEstado" CssClass="form-select" runat="server">
-                                    <asp:ListItem Value="">Seleccione el estado</asp:ListItem>
+                                    <asp:ListItem Text=""></asp:ListItem>
                                     <asp:ListItem Value="pendiente">Pendiente</asp:ListItem>
-                                    <asp:ListItem Value="confirmada">Confirmada</asp:ListItem>
-                                    <asp:ListItem Value="cancelada">Cancelada</asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                             <asp:Button ID="btnAgendarCita" runat="server" Text="Agendar Cita" OnClick="btnAgendarCita_Click1" />
@@ -414,6 +439,61 @@
 
         <!-- Template Javascript -->
         <script src="PaginaVeterinaria/js/main.js"></script>
+         <script>
+             document.getElementById("abrirModal").addEventListener("click", function (event) {
+                 event.preventDefault();
+                 document.getElementById("miModal").style.display = "block";
+                 marcarEstrellas(0); // Marcar las estrellas como vacías al abrir la modal
+             });
+
+             document.getElementsByClassName("cerrar")[0].addEventListener("click", function (event) {
+                 event.preventDefault();
+                 document.getElementById("miModal").style.display = "none";
+             });
+
+
+             var estrellas = document.getElementsByClassName("estrella");
+             for (var i = 0; i < estrellas.length; i++) {
+                 estrellas[i].addEventListener("click", function (event) {
+                     event.preventDefault();
+                     var valorEstrella = parseInt(this.getAttribute("data-valor")); // Almacenar el valor en la variable global
+
+                     marcarEstrellas(valorEstrella);
+                     document.getElementById("valorEstrellaHidden").value = valorEstrella;
+                     // Enviar el valor al servidor utilizando AJAX
+                     $.ajax({
+                         url: 'PaginaVeterinaria.aspx/btnEnviarComentario_Click',
+                         type: 'POST',
+                         data: { valor: valorEstrella },
+                         success: function (response) {
+                             // Manejar la respuesta del servidor si es necesario
+                             console.log(response);
+                         },
+                         error: function (xhr, status, error) {
+                             // Manejar el error si ocurre
+                             console.log(error);
+                         }
+                     });
+                 });
+             }
+
+
+             function marcarEstrellas(valor) {
+                 for (var i = 0; i < estrellas.length; i++) {
+                     if (i < valor) {
+                         estrellas[i].innerHTML = "&#9733;"; // Símbolo de estrella rellena
+                         estrellas[i].classList.add("seleccionada");
+                     } else {
+                         estrellas[i].innerHTML = "&#9734;"; // Símbolo de estrella vacía
+                         estrellas[i].classList.remove("seleccionada");
+                     }
+                 }
+             }
+
+
+
+
+         </script>
     </form>
 </body>
 

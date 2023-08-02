@@ -30,6 +30,47 @@ namespace ConsentedPets.Datos
             return lista;
         }
 
+        public ClEstablecimientoE mtdGmail(int idTienda)
+        {
+            string consul = "select * from Tienda where idTienda = " + idTienda + "";
+            ClProcesarSQL sql = new ClProcesarSQL();
+            DataTable tabla = sql.mtdSelectDesc(consul);
+            ClEstablecimientoE objDato = new ClEstablecimientoE();
+            objDato.id = int.Parse(tabla.Rows[0]["idTienda"].ToString());
+            objDato.email = tabla.Rows[0]["email"].ToString();
+            return objDato;
+          
+
+        }
+
+        public ClEstablecimientoE mtdGmailEs(int idEscuela)
+        {
+            string consul = "select * from Escuela where IdEscuela = " + idEscuela + "";
+            ClProcesarSQL sql = new ClProcesarSQL();
+            DataTable tabla = sql.mtdSelectDesc(consul);
+            ClEstablecimientoE objDato = new ClEstablecimientoE();
+            objDato.id = int.Parse(tabla.Rows[0]["IdEscuela"].ToString());
+            objDato.email = tabla.Rows[0]["email"].ToString();
+            return objDato;
+
+
+        }
+
+
+        public ClEstablecimientoE mtdListaDatoEs(int idEscuela)
+        {
+            string consul = "select * from Escuela where IdEscuela = " + idEscuela + "";
+            ClProcesarSQL sql = new ClProcesarSQL();
+            DataTable tabla = sql.mtdSelectDesc(consul);
+            ClEstablecimientoE objDato = new ClEstablecimientoE();
+            objDato.id = int.Parse(tabla.Rows[0]["idTienda"].ToString());
+            objDato.email = tabla.Rows[0]["email"].ToString();
+            objDato.nombre = tabla.Rows[0]["nombre"].ToString();
+            return objDato;
+
+
+        }
+
         public void mtdlistarEscuela()
         {
 
@@ -88,14 +129,14 @@ namespace ConsentedPets.Datos
             return list;
 
         }
-        public void mtdRegistrarUsuarioRol(int idUsu, int idVeter,string establecimiento="Veterinaria")
+        public void mtdRegistrarUsuarioRol(int idUsu, int idVeter, string establecimiento = "Veterinaria")
         {
-          
+
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "RegistrarUsuario"+establecimiento;
+            comando.CommandText = "RegistrarUsuario" + establecimiento;
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@idUsuario", idUsu);
-            comando.Parameters.AddWithValue("@id"+establecimiento, idVeter);
+            comando.Parameters.AddWithValue("@id" + establecimiento, idVeter);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
@@ -103,7 +144,7 @@ namespace ConsentedPets.Datos
         public void mtdEliminarE(int idT, int idE)
         {
             string establecimiento = "";
-            if (idT==1)
+            if (idT == 1)
             {
 
             }
@@ -113,28 +154,28 @@ namespace ConsentedPets.Datos
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "RegistrarUsuario" + establecimiento;
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idUsuario",establecimiento);
-            comando.Parameters.AddWithValue("@id" + establecimiento,establecimiento );
+            comando.Parameters.AddWithValue("@idUsuario", establecimiento);
+            comando.Parameters.AddWithValue("@id" + establecimiento, establecimiento);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
-        public ClEstablecimientoE mtdListar(string foto="",string establecimiento="Veterinaria",int id=0,int tipo=0)
+        public ClEstablecimientoE mtdListar(string foto = "", string establecimiento = "Veterinaria", int id = 0, int tipo = 0)
         {
-            string consulta="";
-            if (tipo==0)
+            string consulta = "";
+            if (tipo == 0)
             {
-                 consulta = "select * from "+establecimiento+" where foto='" + foto + "'";
+                consulta = "select * from " + establecimiento + " where foto='" + foto + "'";
             }
-            else if (tipo==1)
+            else if (tipo == 1)
             {
-                consulta = "select * from "+establecimiento+" where id"+establecimiento+"='" + id + "'";
+                consulta = "select * from " + establecimiento + " where id" + establecimiento + "='" + id + "'";
             }
 
             ClProcesarSQL SQL = new ClProcesarSQL();
             DataTable tblVeterinaria = SQL.mtdSelectDesc(consulta);
             ClEstablecimientoE objVet = new ClEstablecimientoE();
-            objVet.id = int.Parse(tblVeterinaria.Rows[0]["id"+establecimiento].ToString());
+            objVet.id = int.Parse(tblVeterinaria.Rows[0]["id" + establecimiento].ToString());
             objVet.nombre = tblVeterinaria.Rows[0]["nombre"].ToString();
             objVet.direccion = tblVeterinaria.Rows[0]["direccion"].ToString();
             objVet.telefono = tblVeterinaria.Rows[0]["telefono"].ToString();
@@ -142,11 +183,11 @@ namespace ConsentedPets.Datos
             objVet.foto = tblVeterinaria.Rows[0]["foto"].ToString();
             return objVet;
         }
-        public void mtdActualizar(ClEstablecimientoE objE, string tipo="")
+        public void mtdActualizar(ClEstablecimientoE objE, string tipo = "")
         {
-     
+
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "EditarEstablecimiento"+tipo;
+            comando.CommandText = "EditarEstablecimiento" + tipo;
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@id", objE.id);
             comando.Parameters.AddWithValue("@nombre", objE.nombre);
@@ -159,16 +200,32 @@ namespace ConsentedPets.Datos
             conexion.CerrarConexion();
 
         }
-       public void mtdEliminar(string tabla,int id)
+        public void mtdEliminar(string tabla, int id)
         {
-            string consulta = "delete from "+tabla +"where id"+tabla+"="+id;
+            string consulta = "delete from " + tabla + "where id" + tabla + "=" + id;
 
 
 
 
         }
 
+        public List<ClUsuarioE> mtdUsuariosEscuela (int idEscuela)
+        {
+            string consul = "SELECT Usuario.* FROM Usuario inner JOIN UsuarioEscuela ON Usuario.idUsuario = UsuarioEscuela.idUsuario WHERE UsuarioEscuela.IdEscuela  = '" + idEscuela + "'";
+            ClProcesarSQL sql = new ClProcesarSQL();
+            DataTable tabla = sql.mtdSelectDesc(consul);
+            List<ClUsuarioE> lista = new List<ClUsuarioE>();
 
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                ClUsuarioE objDato = new ClUsuarioE();
+                objDato.idUsuario = int.Parse(tabla.Rows[i]["idUsuario"].ToString());
+               
+                objDato.email = tabla.Rows[i]["email"].ToString();
+                lista.Add(objDato);
+            }
+            return lista;
+        }
 
 
 

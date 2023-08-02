@@ -42,7 +42,7 @@ namespace ConsentedPetsV._2._0.Vista.Veterinaria
             string estado = ddlEstado.SelectedValue;
             
 
-            objCita.mtdRegistrar(mascota, fechaCita, hora, estado);                     
+            //objCita.mtdRegistrar(mascota, fechaCita, hora, estado, );                     
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Cita Registrada !', 'Haz Registrado una Cita', 'success')", true);                                    
             }
 

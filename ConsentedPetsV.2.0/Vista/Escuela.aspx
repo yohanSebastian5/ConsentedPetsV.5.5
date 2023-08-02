@@ -29,7 +29,7 @@
                                 <br />
                                 <%#Eval("email")%>
                             </p>
-                            <h2 style="display: none" id="idE" contenteditable="inherit"><%#Eval("idVeterinaria") %></h2>
+                            <h2 style="display: none" id="idE" contenteditable="inherit"><%#Eval("idEscuela") %></h2>
                             <a id="enlace" href="Login.aspx" onclick="ListarSchool(this)" class="Pet-text">Ver más </a>
 
                         </div>

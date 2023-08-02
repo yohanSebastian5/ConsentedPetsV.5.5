@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -13,11 +14,18 @@ namespace ConsentedPets.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["Veterinaria"] = 0;
+            Session["Escuela"] = 0;
             int Seccion = 2;
             ClRepeaterEstablecimientoL objVet = new ClRepeaterEstablecimientoL();
             List<ClRepeaterEstablecimientoE> lista = objVet.mtdRepeater(Seccion);
             repShop.DataSource = lista;
             repShop.DataBind();
+        }
+        [WebMethod]
+        public static void ListarE(string tipo)
+        {
+            HttpContext.Current.Session["Tienda"] = tipo;
         }
     }
 }

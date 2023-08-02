@@ -1,5 +1,6 @@
 ﻿using ConsentedPets.Datos;
 using ConsentedPets.Entidades;
+using ConsentedPets.Vista.PerfilesRol.Administrador.Veterinaria;
 using ConsentedPetsV._2._0.Entidades;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,18 @@ namespace ConsentedPetsV._2._0.Datos
                 listaProductos.Add(objVet);
             }
             return listaProductos;
+        }
+
+        public ClServicioVeterinariaE mtdListaSer(int idServicio)
+        {
+            string consulta = "select * from ServicioV where idServicioV = '" + idServicio + "'";
+            ClProcesarSQL SQL = new ClProcesarSQL();
+            DataTable tblVeterinaria = SQL.mtdSelectDesc(consulta);
+            ClServicioVeterinariaE objVet = new ClServicioVeterinariaE();
+            objVet.idServicioV = int.Parse(tblVeterinaria.Rows[0]["idServicioV"].ToString());            
+            objVet.descripcion = tblVeterinaria.Rows[0]["descripcion"].ToString();
+            objVet.precio = int.Parse(tblVeterinaria.Rows[0]["precio"].ToString());          
+            return objVet;
         }
         public void mtdRegistrarS(ClServicioVeterinariaE objservicioE)
         {

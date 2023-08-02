@@ -174,7 +174,7 @@ namespace ConsentedPetsV._2._0.Datos
             comando.Parameters.AddWithValue("@nombre", objE.nombre);
             comando.Parameters.AddWithValue("@descripcion", objE.descripcion);
             comando.Parameters.AddWithValue("@fecha", objE.fecha);
-            comando.Parameters.AddWithValue("@idEscuela", objE.idServicioV);
+            comando.Parameters.AddWithValue("@IdEscuela", objE.idServicioV);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();

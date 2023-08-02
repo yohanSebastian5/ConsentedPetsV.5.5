@@ -7,7 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
@@ -16,15 +18,16 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             if (!IsPostBack)
             {
                 
 
                 int idEscuela = int.Parse(Session["Escuela"].ToString());
-                int idUsuario = int.Parse(Session["Usuario"].ToString());
                 idEscuela = 1;
-                idUsuario = 5;
+
+                int idUsuario = int.Parse(Session["Usuario"].ToString());
+                idUsuario = 19;
                 ClServicioEL objServicio = new ClServicioEL();
                 List<ClServicioEE> lista = objServicio.mtdServicio(idEscuela);
                 repServicio.DataSource = lista;
@@ -35,7 +38,6 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
                 ddlServicio.DataValueField = "idServicioE";
                 ddlServicio.DataBind();
                 ddlServicio.Items.Insert(0, new ListItem("Seleccione un servicio:", "0"));
-                //ddlCurso.Items.Insert(0, new ListItem("Seleccione un curso del servicio:", "0"));
 
 
                 ClCursoEL objCurso = new ClCursoEL();
@@ -67,12 +69,19 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
                 idImagEstab.ImageUrl = image;
                 nom.InnerText = obj.nombre;
 
+                int seccion = 3;
+                ClComentarioL objL = new ClComentarioL();
+                List<ClComentarioE> listaCom = objL.mtdListar(seccion, idEscuela);
+                repComentario.DataSource = listaCom;
+                repComentario.DataBind();
+                
+                
 
             }
-          
+
 
         }
-       
+
         public void mtdlimpiar()
         {
             ddlCurso.SelectedIndex = 0;
@@ -92,9 +101,7 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
             idMostrarDescripcion.InnerText = cursoSelec.descripcion;
             precio.InnerText = ((int)cursoSelec.precio).ToString();
 
-            //precio = cursoSelec.precio;
 
-            //fechaSeleccionadaTextBox.Text = calendarFecha.SelectedDate.ToString("yyyy-MM-dd");
         }
         protected void ddlServicio_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -120,16 +127,36 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
             DateTime fechaActual = DateTime.Today;
             objME.fechaMatricula = fechaActual.Date.ToString("dd/MM/yyyy");
 
-            objME.idMascota = 1; // int.Parse(ddlMascota.SelectedValue);
+            objME.idMascota = int.Parse(ddlMascota.SelectedValue);
             objME.idEscuela = idEscuela;
             objME.idCurso = int.Parse(ddlCurso.SelectedValue);
             objME.precio = int.Parse(precio.InnerText);
             objML.mtdMatricula(objME);
             mtdlimpiar();
-            
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Su Mascota" + objME.nombre + "!', 'A sido matriculada', 'success')", true);
 
-            
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Su Mascota" + objME.nombre + "!', 'A sido matriculada', 'success')", true);
+
+
         }
+        [WebMethod]
+        protected void btnEnviarComentario_Click(object sender, EventArgs e)
+        {
+            int idEscuela = int.Parse(Session["Escuela"].ToString());
+            idEscuela = 1;
+            int idUsuario = int.Parse(Session["Usuario"].ToString());
+            idUsuario = 19;
+            ClComentarioL objL = new ClComentarioL();
+            ClComentarioE objE = new ClComentarioE();
+            objE.comentario = comentario.InnerText;
+            objE.calificacion = int.Parse(valorEstrellaHidden.Value); // Obtener el valor de la estrella seleccionada
+            objE.idUsuario = idUsuario;
+            objE.idEscuela = idEscuela;
+            objL.mtdRegistrar(objE);
+        }
+
+        
+
+
+
     }
 }
