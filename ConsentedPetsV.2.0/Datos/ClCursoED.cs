@@ -12,7 +12,7 @@ namespace ConsentedPetsV._2._0.Datos
     {
         public List<ClCursoEE> mtdCurso(int idEscuela)
         {
-            string consulta = "select * from Curso inner join ServicioEs on Curso.idServicioE= ServicioEs.idServicioE where ServicioEs.idEscuela='" + idEscuela + "'";
+            string consulta = "select * from CursoE inner join ServicioEs on CursoE.idServicioE= ServicioEs.idServicioE where ServicioEs.idEscuela='" + idEscuela + "'";
             ClProcesarSQL sql = new ClProcesarSQL();
             DataTable tabla = sql.mtdSelectDesc(consulta);
             List<ClCursoEE> lista = new List<ClCursoEE>();
@@ -20,7 +20,7 @@ namespace ConsentedPetsV._2._0.Datos
             {
 
                 ClCursoEE objCurso = new ClCursoEE();
-                objCurso.idCurso = int.Parse(tabla.Rows[i]["idCurso"].ToString());
+                objCurso.idCurso = int.Parse(tabla.Rows[i]["idCursoE"].ToString());
                 objCurso.nombre = tabla.Rows[i]["nombre"].ToString();
                 objCurso.descripcion = tabla.Rows[i]["descripcion"].ToString();
                 objCurso.precio = int.Parse(tabla.Rows[i]["precio"].ToString());
@@ -34,7 +34,7 @@ namespace ConsentedPetsV._2._0.Datos
 
         public List<ClCursoEE> mtdC(int idServicio)
         {
-            string cons = "select * from Curso where idServicioE ='" + idServicio + "'";
+            string cons = "select * from CursoE where idServicioE ='" + idServicio + "'";
             ClProcesarSQL sql = new ClProcesarSQL();
             DataTable tabla = sql.mtdSelectDesc(cons);
             List<ClCursoEE> lista = new List<ClCursoEE>();
@@ -42,7 +42,7 @@ namespace ConsentedPetsV._2._0.Datos
             {
 
                 ClCursoEE objCurso = new ClCursoEE();
-                objCurso.idCurso = int.Parse(tabla.Rows[i]["idCurso"].ToString());
+                objCurso.idCurso = int.Parse(tabla.Rows[i]["idCursoE"].ToString());
                 objCurso.nombre = tabla.Rows[i]["nombre"].ToString();
 
                 objCurso.idServicioE = int.Parse(tabla.Rows[i]["idServicioE"].ToString());
@@ -54,11 +54,11 @@ namespace ConsentedPetsV._2._0.Datos
 
         public ClCursoEE mtdCu(int idCurso)
         {
-            string cons = "select * from Curso where idCurso ='" + idCurso + "'";
+            string cons = "select * from CursoE where idCursoE ='" + idCurso + "'";
             ClProcesarSQL sql = new ClProcesarSQL();
             DataTable tabla = sql.mtdSelectDesc(cons);
             ClCursoEE objCurso = new ClCursoEE();
-            objCurso.idCurso = int.Parse(tabla.Rows[0]["idCurso"].ToString());
+            objCurso.idCurso = int.Parse(tabla.Rows[0]["idCursoE"].ToString());
             objCurso.nombre = tabla.Rows[0]["nombre"].ToString();
             objCurso.descripcion = tabla.Rows[0]["descripcion"].ToString();
             objCurso.precio = int.Parse(tabla.Rows[0]["precio"].ToString());

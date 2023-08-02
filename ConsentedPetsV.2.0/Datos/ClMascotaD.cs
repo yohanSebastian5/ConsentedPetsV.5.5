@@ -97,7 +97,7 @@ namespace ConsentedPets.Datos
             {
                 ClMascotaE objDatosMascota = new ClMascotaE();
                 objDatosMascota.idMascota = int.Parse(tblDataMascota.Rows[i]["idMascota"].ToString());
-                //objDatosMascota.nombre = tblDataMascota.Rows[i]["nombre"].ToString();
+                objDatosMascota.nombre = tblDataMascota.Rows[i]["nombre"].ToString();
                 objDatosMascota.especie = tblDataMascota.Rows[i]["especie"].ToString();
                 objDatosMascota.raza = tblDataMascota.Rows[i]["raza"].ToString();
                 objDatosMascota.genero = tblDataMascota.Rows[i]["genero"].ToString();

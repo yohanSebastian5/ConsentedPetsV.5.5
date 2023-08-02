@@ -13,16 +13,21 @@ namespace ConsentedPetsV._2._0.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (int.Parse(Session["Usuario"].ToString())!=0)
+            if (int.Parse(Session["Usuario"].ToString()) != 0)
             {
                 if (int.Parse(Session["Veterinaria"].ToString()) != 0)
                 {
                     Response.Redirect("PaginaVeterinaria.aspx");
 
                 }
+                else if (int.Parse(Session["Tienda"].ToString()) != 0)
+                {
+                    
+                    Response.Redirect("PaginaTienda/PaginaTienda.aspx");
+                }
                 else if (int.Parse(Session["Escuela"].ToString()) != 0)
                 {
-                    Response.Redirect("PaginaEscuela.aspx");
+                    Response.Redirect("PaginaEscuela/PaginaEscuela.aspx");
                 }
 
             }
@@ -37,6 +42,7 @@ namespace ConsentedPetsV._2._0.Vista
             CLUsuarioL objUsuL = new CLUsuarioL();
             objUsuE = objUsuL.mtdRolU(objUsuE);
 
+
             if (objUsuE.nombre != null)
             {
                 Session["RolUsuario"] = objUsuE.idRol;
@@ -44,6 +50,10 @@ namespace ConsentedPetsV._2._0.Vista
                 if (int.Parse(Session["Veterinaria"].ToString()) != 0)
                 {
                     Response.Redirect("PaginaVeterinaria.aspx");
+                }
+                else if (int.Parse(Session["Tienda"].ToString()) != 0)
+                {
+                    Response.Redirect("PaginaTienda/PaginaTienda.aspx");
                 }
                 else if (int.Parse(Session["Escuela"].ToString()) != 0)
                 {

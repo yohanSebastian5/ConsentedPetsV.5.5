@@ -19,7 +19,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.PetShop
             int idTienda = int.Parse(Session["Tienda"].ToString());
             int idUsuario = int.Parse(Session["Usuario"].ToString());
             idTienda = 1;
-            idUsuario = 1;
+            idUsuario = 19;
 
            
 

@@ -19,10 +19,18 @@ namespace ConsentedPetsV._2._0.Logica
             return listaVet;
 
         }
-        public List<ClServicioVeterinariaE> mtdListar(int id,string tipo="")
+        public ClServicioVeterinariaE mtdListarSer(int idServicio)
+        {
+
+            ClServicioVetD objSe = new ClServicioVetD();
+            ClServicioVeterinariaE objE = objSe.mtdListaSer(idServicio);
+            return objE;
+
+        }
+        public List<ClServicioVeterinariaE> mtdListar(int id, string tipo = "")
         {
             ClProcesosEscuela objE = new ClProcesosEscuela();
-            List<ClServicioVeterinariaE> listaVet = objE.mtdListar(id,tipo);
+            List<ClServicioVeterinariaE> listaVet = objE.mtdListar(id, tipo);
             return listaVet;
 
         }

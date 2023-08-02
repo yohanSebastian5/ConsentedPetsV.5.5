@@ -21,7 +21,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.PetShop
             ClMascotaL objMascotaL = new ClMascotaL();
             //string tipo = ddlGenero.Data;
             string nombreV = txtNombre.Text + txtEspecie.Text + ".png";
-            string rutaImg = Path.Combine(Server.MapPath("../imagenes/ImagenesMascota/"), nombreV);
+            string rutaImg = Path.Combine(Server.MapPath("~/Vista/imagenes/ImagenesProductoCat/"), nombreV);
             FlFotoM.SaveAs(rutaImg);
             objMascotaL.mtdRegistrarPS(txtNombre.Text, txtEspecie.Text, txtRaza.Text, txtEdad.Text, txtGenero.Text, nombreV, txtCondicion.Text, int.Parse(Session["Tienda"].ToString()),int.Parse(txtPrecio.Text));
             

@@ -9,7 +9,7 @@
     <link href="../../css/RegistrarActividad.css" rel="stylesheet" />
     <script src="../../../../Scripts/sweetalert.min.js"></script>
     <link href="../../../../Styles/sweetalert.css" rel="stylesheet" />
-</asp:Content>       
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
     <!-- partial:index.partial.html -->
     <!-- NORMALIZED CSS INSTALLED-->
@@ -17,7 +17,8 @@
     <div id="container">
         <div id="inviteContainer">
             <div class="logoContainer">
-                <img class="logo" src="../../../imagenes/RActividad.jpg" /></div>
+                <img class="logo" src="../../../imagenes/RActividad.jpg" />
+            </div>
             <div class="acceptContainer">
                 <form runat="server">
                     <h1>!REGISTRA TU ACTIVIDAD!</h1>
@@ -30,17 +31,24 @@
                             <p>Descripcion</p>
                             <input type="text" id="txtDescripcion" runat="server" required="" />
                         </div>
-                          <div class="formDiv" style="transition-delay: 0.6s">
-                           <div class="mb-3">
+                        <div class="formDiv" style="transition-delay: 0.6s">
+                            <div class="mb-3">
                                 <label for="fechaCita">Fecha de la Cita</label>
-                                    <asp:Calendar ID="calendarFecha" runat="server" OnSelectionChanged="calendarFecha_SelectionChanged"></asp:Calendar>
-                                    <input type="text" id="txtFecha" runat="server" required="" />
-                                </div>
+                                <asp:Calendar ID="calendarFecha" runat="server" OnSelectionChanged="calendarFecha_SelectionChanged"></asp:Calendar>
+                                <input type="text" id="txtFecha" runat="server" required="" />
                             </div>
                         </div>
-                        <div class="formDiv" style="transition-delay: 0.6s">
-                            <button class="acceptBtn" runat="server" id="btnR" type="submit">Registrar</button>
                     </div>
+                    <div class="formDiv" style="transition-delay: 0.6s">
+                        <button class="acceptBtn" runat="server" id="btnR" type="submit">Registrar</button>
+                    </div>
+                    <asp:Repeater id="repEmail" runat="server">
+                        <ItemTemplate>
+                            <asp:Label ID="idEmail" runat="server" Visible="false" Text='<%# Eval("email")  %>'></asp:Label>
+                            
+                        </ItemTemplate>
+                           </asp:Repeater>                                 
+
                 </form>
             </div>
         </div>

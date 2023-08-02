@@ -52,5 +52,32 @@ namespace ConsentedPets.Logica
             objD.mtdEliminarE (idE, tipo);
         }
 
+        public ClEstablecimientoE mtdGmail(int idTienda)
+        {
+            ClEstablecimientoD objDato = new ClEstablecimientoD();
+            ClEstablecimientoE objDato1 = objDato.mtdGmail(idTienda);
+            return objDato1;
+        }
+
+        public ClEstablecimientoE mtdListaDatosEs(int idEscuela)
+        {
+            ClEstablecimientoD objDato = new ClEstablecimientoD();
+            ClEstablecimientoE objDato1 = objDato.mtdListaDatoEs(idEscuela);
+            return objDato1;
+        }
+
+        public ClEstablecimientoE mtdGmailEs(int idEscuela)
+        {
+            ClEstablecimientoD objDato = new ClEstablecimientoD();
+            ClEstablecimientoE objDato1 = objDato.mtdGmailEs(idEscuela);
+            return objDato1;
+        }
+
+        public List<ClUsuarioE> mtdUsuarioEscuela(int idEscuela)
+        {
+            ClEstablecimientoD objD = new ClEstablecimientoD();
+            List<ClUsuarioE> lista = objD.mtdUsuariosEscuela(idEscuela);
+            return lista;
+        }
     }
 }

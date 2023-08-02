@@ -31,18 +31,35 @@
                             <br />
                             <%#Eval("email")%>
                         </p>
-                        <a href="#" class="Pet-text">Ver más       
-                            
-                        </a>
-                        <%--<a href='<%# "Login.aspx?idTienda=" + Eval("idTienda") %>' class="Pet-text">Ver más</a>--%>
+                        <h2 style="display: none" id="idE" contenteditable="inherit"><%#Eval("idTienda") %></h2>
+                            <a id="enlace" href="Login.aspx" onclick="ListarSchool(this)" class="Pet-text">Ver más </a>
 
+                        </div>
                     </div>
-                </div>
-           
-               
-            </ItemTemplate>
-        </asp:Repeater>
-             </div>
-    </main>
 
+
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
+        <script>
+            function ListarSchool(elementoA) {
+                var valor = elementoA.previousElementSibling.innerText;;
+                $.ajax({
+                    type: "POST",
+                    url: "PetShop.aspx/ListarE",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify({ tipo: valor }),
+                    success: function (data) {
+                        console.log(valor);
+                    }, error: function (xhr, textStatus, errorThrown) {
+                        // Manejar cualquier error que ocurra durante la llamada AJAX
+                        console.error(errorThrown);
+                    }
+
+                });
+            }
+        </script>
+
+    </main>
 </asp:Content>
