@@ -220,7 +220,6 @@
     <Content Include="Vista\PaginaTienda\assets\css\font-awesome.css" />
     <Content Include="Vista\PaginaTienda\assets\css\lightbox.css" />
     <Content Include="Vista\PaginaTienda\assets\css\owl-carousel.css" />
-    <Content Include="Vista\PaginaTienda\assets\css\pago.css" />
     <Content Include="Vista\PaginaTienda\assets\css\templatemo-klassy-cafe.css" />
     <Content Include="Vista\PaginaTienda\assets\fonts\flexslider-icon.svg" />
     <Content Include="Vista\PaginaTienda\assets\fonts\fontawesome-webfont.svg" />
@@ -272,7 +271,6 @@
     <Content Include="Vista\PaginaTienda\assets\js\slick.js" />
     <Content Include="Vista\PaginaTienda\assets\js\waypoints.min.js" />
     <Content Include="Vista\PaginaTienda\PaginaTienda.aspx" />
-    <Content Include="Vista\PaginaTienda\Pago.aspx" />
     <Content Include="Vista\PaginaVeterinaria\css\stiloProcesos.css" />
     <Content Include="Vista\imagenes\ImagenesUsuarios\usuario1.png" />
     <Content Include="Vista\imagenes\ImagenesUsuarios\usuario2.png" />
@@ -624,13 +622,6 @@
     </Compile>
     <Compile Include="Vista\PaginaTienda\PaginaTienda.aspx.designer.cs">
       <DependentUpon>PaginaTienda.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\PaginaTienda\Pago.aspx.cs">
-      <DependentUpon>Pago.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vista\PaginaTienda\Pago.aspx.designer.cs">
-      <DependentUpon>Pago.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PaginaVeterinaria.aspx.cs">
       <DependentUpon>PaginaVeterinaria.aspx</DependentUpon>

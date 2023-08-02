@@ -14,13 +14,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <title>Consented Pets</title>
-    <!--
-    
-TemplateMo 558 Klassy Cafe
+   
+        <script src="https://www.paypal.com/sdk/js?client-id=ASExf15cLQJMARs70Rx1QcatRbJXR4q2JC_IOBqcXisP27TqDCqXgH99--1cnBB9MCoIt-QKZdOiXctX"></script>
 
-https://templatemo.com/tm-558-klassy-cafe
 
--->
     <!-- Additional CSS Files -->
 
     <!-- CSS de Owl Carousel -->
@@ -305,14 +302,12 @@ https://templatemo.com/tm-558-klassy-cafe
 
 
         <%--modal--%>
-
         <button class="btn btn-primary" id="abrirModal" style="display: block; margin: 0 auto;">Haz un Comentario</button>
         <div id="miModal" class="modal">
             <div class="modal-contenido">
                 <span class="cerrar">&times;</span>
                 <h2>Deja un comentario</h2>
                 <textarea id="comentario" rows="4" cols="50" runat="server" style="width: 357px;"></textarea>
-
                 <div class="calificacion">
                     <p>Calificación:</p>
                     <div class="estrellas" id="estrella" runat="server">
@@ -321,7 +316,6 @@ https://templatemo.com/tm-558-klassy-cafe
                         <span class="estrella" data-valor="3">&#9734;</span>
                         <span class="estrella" data-valor="4">&#9734;</span>
                         <span class="estrella" data-valor="5">&#9734;</span>
-
                     </div>
                 </div>
                 <input type="hidden" id="valorEstrellaHidden" name="valorEstrellaHidden" runat="server" />
@@ -338,13 +332,79 @@ https://templatemo.com/tm-558-klassy-cafe
                 <div class="carrito-container"></div>
                 <div class="carrito-total">
                     <h3>Total de productos: <span id="totalProductos"></span></h3>
-                    <h3>Total a pagar: <span id="totalPagar"></span></h3>                  
-                    <asp:Button id="btnPagar" runat="server" onclick="btnPagar_Click" class="btn btn-primary" Text="Pagar" style="display: none;"></asp:Button>
+                    <h3>Total a pagar: <span id="totalPagar"></span></h3>
 
+                    <button id="btnPagar" class="btn btn-primary" type="button" style="display: none;" onclick="abrirModalPago()">Pagar</button>
+                    
+                    <div id="modalPago" class="modalPagar" style="display: none;">
+                        <div class="modalContenido">
+                            <span class="fermer">&times;</span>
+                            <section>
+                                <div id="paypal-button-container"></div>
+                                <table id="paymentTable" style="display: none;">
+                                    <tr>
+                                        <th>Nombre del campo</th>
+                                        <th>Valor</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Nombre</td>
+                                        <td id="nameField"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Correo electrónico</td>
+                                        <td id="emailField"></td>
+                                    </tr>
+                                </table>
+                                <div id="successMessage" style="display:none";>
+                            ¡Pago Exitoso! El pago ha sido realizado con éxito.
+                        </div>
+                                <div id="cancelMessage" style="display:none";>
+                        ¡Pago Cancelado! El pago ha sido cancelado.
+                    </div>
+
+                    <script>
+
+                        paypal.Buttons({
+                            style: {
+                                color: 'blue',
+                                shape: 'pill',
+                                label: 'pay'
+                            },
+                            createOrder: function (data, actions) {
+                                var total = document.getElementById('totalPagar').textContent;
+                                return actions.order.create({
+                                    purchase_units: [{
+                                        amount: {
+                                            value: total
+                                        }
+                                    }]
+                                });
+                            },
+                            onApprove: function (data, actions) {
+                                swal("¡Pago aprobado!", "El pago ha sido realizado con éxito.", "success")
+                                return actions.order.capture().then(function (details) {
+                                    document.getElementById('paymentDetails').textContent = JSON.stringify(details, null, 2);
+                                    document.getElementById('nameField').textContent = details.payer.name.given_name + ' ' + details.payer.name.surname;
+                                    document.getElementById('emailField').textContent = details.payer.email_address;
+                                    document.getElementById('paymentTable').style.display = 'table';
+                                    document.getElementById('successMessage').style.display = 'block';
+                                    console.log(details);
+                                });
+                            },
+                            OnCancel: function (data) {
+                                swal("¡Pago Cancelado!", "El pago ha sido cancelado.", "error");
+                                document.getElementById('cancelMessage').style.display = 'block';
+                                console.log(data);
+                            }
+                        }).render('#paypal-button-container');
+                    </script>
+                    </section>
                 </div>
             </div>
+            </div>
         </div>
-
+        </div>
+      
 
         <!-- ***** Menu Area Starts ***** -->
 
@@ -379,7 +439,6 @@ https://templatemo.com/tm-558-klassy-cafe
                                                             </ItemTemplate>
                                                         </asp:Repeater>
                                                         <asp:Button ID="btnProductos" Style="display: none" OnClick="btnProductos_Click" runat="server" Text="Button" />
-                                                        <%--<input type="hidden" runat="server" id="hdnCategoriaSeleccionada" />--%>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -409,7 +468,6 @@ https://templatemo.com/tm-558-klassy-cafe
                                                                     </div>
                                                                 </ItemTemplate>
                                                             </asp:Repeater>
-                                                            <!-- Aquí puedes agregar más elementos -->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -713,6 +771,24 @@ https://templatemo.com/tm-558-klassy-cafe
             });
         });
     </script>
+    <script>
+        // Función para abrir la modal de pago
+        function abrirModalPago() {
+            document.getElementById("modalPago").style.display = "block";
+        }
+
+        // Función para cerrar la modal de pago
+        function cerrarModalPago() {
+            document.getElementById("modalPago").style.display = "none";
+        }
+
+        // Agregar el evento click al botón de cierre "fermer"
+        document.addEventListener("DOMContentLoaded", function () {
+            var btnCerrarModalPago = document.querySelector(".fermer");
+            btnCerrarModalPago.addEventListener("click", cerrarModalPago);
+        });
+    </script>
+
     <script src="assets/js/carritodeCompras.js"></script>
 </body>
 </html>
