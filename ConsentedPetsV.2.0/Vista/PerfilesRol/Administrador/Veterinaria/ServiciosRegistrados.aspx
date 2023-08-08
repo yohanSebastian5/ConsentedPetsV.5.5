@@ -47,14 +47,7 @@
         </div>
     </div>
     <form runat="server">
-        <div class="modal" id="ModalOpciones" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-body">
-            </div>
-            <div class="modal-footer">
-                <button type="button" onclick="cargardatos()" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-target="#ModalEditar">Editar</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Eliminar</button>
-            </div>
-        </div>
+       
 
         <div class="modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-header">

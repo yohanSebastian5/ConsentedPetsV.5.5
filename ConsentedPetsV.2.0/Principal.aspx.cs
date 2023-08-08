@@ -14,6 +14,12 @@ namespace ConsentedPetsV._2._0
             Session["Veterinaria"] = 0;
             Session["Tienda"] = 0;
             Session["Escuela"] = 0;
+            string nombre = Session["NombreUsuario"].ToString();
+            if (nombre!="")
+            {
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Bienvenido " + nombre + "!', 'Haz iniciado Sesion', 'success')", true);
+
+            }
         }
     }
 }

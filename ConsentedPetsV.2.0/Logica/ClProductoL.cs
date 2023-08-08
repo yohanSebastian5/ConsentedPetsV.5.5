@@ -51,6 +51,12 @@ namespace ConsentedPetsV._2._0.Logica
             List<ClProductoE> listatienda = objDataTienda.mtdListarVentas(idUsuario);
             return listatienda;
         }
+        public List<ClProductoE> mtdListarCompras(int idUsuario)
+        {
+            ClProductoD objDataTienda = new ClProductoD();
+            List<ClProductoE> listatienda = objDataTienda.mtdListarCompras(idUsuario);
+            return listatienda;
+        }
         public List<ClProductoE> mtdListarPedidos(int idUsuario)
         {
             ClProductoD objDataTienda = new ClProductoD();

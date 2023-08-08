@@ -488,7 +488,9 @@
     <Content Include="Vista\PerfilesRol\js\scripts.js" />
     <Content Include="Vista\imagenes\persona.png" />
     <Content Include="Vista\PerfilesRol\Usuario\EditarPerfil.aspx" />
+    <Content Include="Vista\PerfilesRol\Usuario\HistorialCompras.aspx" />
     <Content Include="Vista\PerfilesRol\Usuario\ListarCitasUsuario.aspx" />
+    <Content Include="Vista\PerfilesRol\Usuario\ListarPedido.aspx" />
     <Content Include="Vista\PerfilesRol\Usuario\RegistrarMascota.aspx" />
     <Content Include="Vista\PerfilesRol\Usuario\MascotasRegistradas.aspx" />
     <Content Include="Vista\PerfilesRol\Usuario\RegistroMascota.aspx" />
@@ -941,12 +943,26 @@
     <Compile Include="Vista\PerfilesRol\Usuario\EditarPerfil.aspx.designer.cs">
       <DependentUpon>EditarPerfil.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\HistorialCompras.aspx.cs">
+      <DependentUpon>HistorialCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\HistorialCompras.aspx.designer.cs">
+      <DependentUpon>HistorialCompras.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\PerfilesRol\Usuario\ListarCitasUsuario.aspx.cs">
       <DependentUpon>ListarCitasUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Usuario\ListarCitasUsuario.aspx.designer.cs">
       <DependentUpon>ListarCitasUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\ListarPedido.aspx.cs">
+      <DependentUpon>ListarPedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\ListarPedido.aspx.designer.cs">
+      <DependentUpon>ListarPedido.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Usuario\MascotasRegistradas.aspx.cs">
       <DependentUpon>MascotasRegistradas.aspx</DependentUpon>

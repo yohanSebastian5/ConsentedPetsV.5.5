@@ -37,16 +37,19 @@ namespace ProcsosAparteProyecto
             {
                 Session["RolUsuario"] = objUsuarioE.idRol;
                 Session["Usuario"] = objUsuarioE.idUsuario;
+                Session["NombreUsuario"] = objUsuarioE.nombre;
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Bienvenido " + txtNombre.Text + "!', 'Registro Realizado con Exito', 'success')", true);
+                Response.Redirect("../../Principal.aspx");
             }
-            txtNombre.Text = "";
-            txtApellido.Text = "";
-            txtTelefono.Text = "";
-            txtContraseña.Text = "";
-            txtDireccion.Text = "";
-            txtDocumento.Text = "";
-            txtEmail.Text = "";
-            txtGenero.Text = "";
+
+            ////txtNombre.Text = "";
+            ////txtApellido.Text = "";
+            ////txtTelefono.Text = "";
+            ////txtContraseña.Text = "";
+            ////txtDireccion.Text = "";
+            ////txtDocumento.Text = "";
+            ////txtEmail.Text = "";
+            ////txtGenero.Text = "";
         } 
     }
 }
