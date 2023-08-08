@@ -45,7 +45,7 @@
                                 <%#Eval("email")%>
                             </p>
                             <h2 style="display: none" id="idV" class="Pet-text" contenteditable="inherit"><%#Eval("idVeterinaria") %></h2>
-   u                         <a id="enlace" onclick="listarVet(this)" class="Pet-text">Ver más 
+                        <a id="enlace" onclick="listarVet(this)" class="Pet-text">Ver más 
                             </a>
                         </div>
                     </div>

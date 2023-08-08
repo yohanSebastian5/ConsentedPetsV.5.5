@@ -23,16 +23,30 @@ namespace ConsentedPetsV._2._0.Vista
             {
 
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
+                idUsuario = 20;
                 int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
+                idVeterinaria = 1;
                 ClMascotaL objData = new ClMascotaL();
                 List<ClMascotaE> listaMascota = objData.mtdListarMascota(idUsuario);
-                ddlMascota.DataSource = listaMascota;
-                ddlMascota.DataTextField = "nombre";
-                ddlMascota.DataValueField = "idMascota";
-                ddlMascota.DataBind();
+
+                if (listaMascota.Count == 0)
+                {
+                    ddlMascota.Items.Clear(); // Limpia los elementos existentes, si los hay
+                    ddlMascota.Items.Add(new ListItem("No tiene mascotas registradas", ""));
+                }
+                else
+                {
+                    ddlMascota.DataTextField = "nombre";
+                    ddlMascota.DataValueField = "idMascota";
+                    ddlMascota.DataSource = listaMascota;
+                    ddlMascota.DataBind();
+                }
 
 
-                
+
+
+
+
                 ClServicioVetL objVet = new ClServicioVetL();
                 List<ClServicioVeterinariaE> lista = objVet.mtdRepeater(idVeterinaria);
                 ddlServicio.DataSource = lista;
@@ -63,10 +77,10 @@ namespace ConsentedPetsV._2._0.Vista
                 List<ClEstablecimientoE> listaV = objVeterinaria.mtdEstablecimiento(idVeterinaria);
                 string imagePath = "~/Vista/imagenes/ImagenesEstablecimiento/" + listaV[0].foto;
                 idImagEstab.ImageUrl = imagePath;
-               
+
                 nom.InnerText = listaV[0].nombre;
 
-               
+
             }
 
 
@@ -91,17 +105,17 @@ namespace ConsentedPetsV._2._0.Vista
             objHis.FechaCita = txtFecha.Text;
             objHis.HoraCita = ddlHora.SelectedValue;
             objHis.Estado = ddlEstado.SelectedValue;
-            
+
             objHis.idServicioV = int.Parse(ddlServicio.SelectedValue);
             objHis.idUsuario = idUsuario;
             objHis.precio = objSe.precio.ToString();
             objHis.descripcion = objSe.descripcion;
 
             objCita.mtdRegistrar(objHis);
-          
+
             mtdlimpiar();
             ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Bien " + objHis.nombre + "!', 'Haz agendado una cita', 'success')", true);
-      
+
 
         }
 
@@ -112,10 +126,10 @@ namespace ConsentedPetsV._2._0.Vista
             ddlHora.SelectedIndex = 0;
             ddlEstado.SelectedIndex = 0;
             ddlServicio.SelectedIndex = 0;
-         
+
 
         }
-        
+
         [WebMethod]
         protected void btnEnviarComentario_Click(object sender, EventArgs e)
         {

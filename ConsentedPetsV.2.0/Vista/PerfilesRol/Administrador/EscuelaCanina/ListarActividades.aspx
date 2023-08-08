@@ -85,7 +85,7 @@
                         <div class="section">
                             <div class="container">
                                 <div class="card">
-                                    <h3>Datos del Empleado</h3>
+                                    <h3>Datos de la Actividad</h3>
                                     <asp:Label ID="Label1" runat="server" Text="Especializacion"></asp:Label>
                                     <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
                                     <asp:Label ID="Label12" runat="server" Text="Experiencia"></asp:Label>
@@ -95,7 +95,7 @@
                                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                         <ContentTemplate>
-                                                  <asp:Calendar ID="Calendar1" OnSelectionChanged="Calendar1_SelectionChanged" runat="server"></asp:Calendar>
+                                                  <asp:Calendar ID="calenario" OnSelectionChanged="calenario_SelectionChanged" runat="server"></asp:Calendar>
                                         </ContentTemplate>
                                     </asp:UpdatePanel>
                                 </div>

@@ -24,6 +24,7 @@ namespace ConsentedPetsV._2._0.Datos
             comando.Parameters.AddWithValue("@nombre", objDatos.name);
             comando.Parameters.AddWithValue("@descripcion", objDatos.message);
             comando.Parameters.AddWithValue("@fechaPedido", objDatos.fecha);
+            comando.Parameters.AddWithValue("@estado", objDatos.estado);
             comando.Parameters.AddWithValue("@idUsuario", objDatos.idUsuario);
             comando.Parameters.AddWithValue("@idTienda", objDatos.idTienda);
             comando.ExecuteNonQuery();

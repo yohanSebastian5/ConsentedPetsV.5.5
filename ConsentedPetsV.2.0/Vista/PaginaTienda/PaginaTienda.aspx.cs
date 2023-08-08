@@ -23,14 +23,12 @@ namespace PaginaTienda.PaginaTienda
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {
 
-
-
-
                 int idTienda = int.Parse(Session["Tienda"].ToString());
-               
+                
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
                 
 
@@ -48,7 +46,7 @@ namespace PaginaTienda.PaginaTienda
                 ClComentarioL objCOm = new ClComentarioL();
                 List<ClComentarioE> listaCom = objCOm.mtdListar(seccion, idTienda);
                 repCo.DataSource = listaCom;
-                
+
                 repCo.DataBind();
 
 
@@ -66,25 +64,25 @@ namespace PaginaTienda.PaginaTienda
 
                 emails.InnerText = objE.email;
                 telefono.InnerText = objE.telefono;
-
-
-                ClEstablecimientoL objDato1 = new ClEstablecimientoL();
-                ClEstablecimientoE objDato2 = objDato1.mtdGmail(idTienda);
-                objDato2.email = emails.InnerText;
-                objDato2.telefono = telefono.InnerText;
-
-                string destino = objDato2.email;
-                string name = Request.Form["name"];
-                string email = Request.Form["email"];
-                string phone = Request.Form["phone"];
-                string cantidad = Request.Form["cantidad"];
-                string message = Request.Form["message"];
-                if (!string.IsNullOrEmpty(email))
-                {
-                    mtdPedido(destino, name, email, phone, cantidad, message);
-                }
-
             }
+           
+            ClEstablecimientoL objDato1 = new ClEstablecimientoL();
+            ClEstablecimientoE objDato2 = objDato1.mtdGmail(int.Parse(Session["Tienda"].ToString()));
+            objDato2.email = emails.InnerText;
+            objDato2.telefono = telefono.InnerText;
+
+            string destino = objDato2.email;
+            string name = Request.Form["name"];
+            string email = Request.Form["email"];
+            string phone = Request.Form["phone"];
+            string cantidad = Request.Form["cantidad"];
+            string message = Request.Form["message"];
+            if (!string.IsNullOrEmpty(email))
+            {
+                mtdPedido(destino, name, email, phone, cantidad, message);
+            }
+
+
 
 
 
@@ -93,9 +91,9 @@ namespace PaginaTienda.PaginaTienda
         protected void mtdPedido(string destino, string name, string email, string phone, string cantidad, string message)
         {
             int idTienda = int.Parse(Session["Tienda"].ToString());
-            //idTienda = 1;
+            
             int idUsuario = int.Parse(Session["Usuario"].ToString());
-                                                                                           
+            
             ClPedidoL objDato1 = new ClPedidoL();
             ClPedidoE objDato2 = new ClPedidoE();
             string remitente = email;
@@ -109,19 +107,20 @@ namespace PaginaTienda.PaginaTienda
             mensaje.Dispose();
             clienteSmtp.Dispose();
 
-            
+
             objDato2.name = name;
             objDato2.message = message;
             DateTime fechaActual = DateTime.Today;
             objDato2.fecha = fechaActual.Date.ToString("dd/MM/yyyy");
+            objDato2.estado = "pendiente";
             objDato2.idUsuario = idUsuario;
             objDato2.idTienda = idTienda;
             objDato1.mtdGuardarPedido(objDato2);
-            
-           
+
+
         }
 
-        
+
 
         [WebMethod]
         public static void ListarV(string tipo)
@@ -162,6 +161,6 @@ namespace PaginaTienda.PaginaTienda
             objE.idUsuario = idUsuario;
             objE.idTienda = idTienda;
             objL.mtdRegistrar(objE);
-        }       
+        }
     }
 }

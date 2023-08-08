@@ -20,10 +20,11 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario
             {
 
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
-               
+                idUsuario = 1;
                 CLUsuarioL objU = new CLUsuarioL();
                 Encrypt encry = new Encrypt();
                 ClUsuarioE objDatos = objU.mtdListarU(idUsuario);
+                txtDocumento.Text = objDatos.documento;
                 txtNombre.Text = objDatos.nombre;
                 txtApellido.Text = objDatos.apellido;
                 txtGenero.Text = objDatos.genero;
@@ -46,7 +47,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario
             string rutaF = txtNombre.Text + txtApellido.Text + txtTelefono.Text + ".png";
             string rutaImg = Path.Combine(Server.MapPath("~/Vista/imagenes/ImagenesUsuarios/"), rutaF);
             FlImagenV.SaveAs(rutaImg);
-            objE.idUsuario=int.Parse(Session["Usuario"].ToString());
+            objE.idUsuario=1;
             objE.nombre = txtNombre.Text;
             objE.apellido = txtApellido.Text;
             objE.genero = txtGenero.Text;

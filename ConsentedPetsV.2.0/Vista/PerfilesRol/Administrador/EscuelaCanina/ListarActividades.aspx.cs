@@ -50,6 +50,11 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
             return list;
         }
 
+        protected void calenario_SelectionChanged(object sender, EventArgs e)
+        {
+            txtFecha.Text = calenario.SelectedDate.ToString("yyyy-MM-dd");
+        }
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             ClProcesosVetL objL = new ClProcesosVetL();
@@ -64,9 +69,8 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
 
         }
 
-        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
-        {
-            txtFecha.Text = Calendar1.SelectedDate.ToString("yyyy-MM-dd");
-        }
+       
+
+        
     }
 }
