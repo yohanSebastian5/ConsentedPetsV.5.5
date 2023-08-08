@@ -90,6 +90,7 @@
                                     <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
                                     <asp:Label ID="Label12" runat="server" Text="Experiencia"></asp:Label>
                                     <asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtFecha2" runat="server"></asp:TextBox>
                                     <asp:Label ID="Label13" runat="server" Text="Profesion"></asp:Label>
                                     <asp:TextBox ID="txtFecha" runat="server"></asp:TextBox>
                                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -149,6 +150,7 @@
                     });
                     $('#tblUsua').on('click', '#btnEditar', function () {
                         var id = $(this).data('id');
+                        GuardarIdPersonal(id);
                         cargardatos(id);
                     });
 
