@@ -18,6 +18,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
         {
             if (!IsPostBack)
             {
+
                 ClServicioVetL objL = new ClServicioVetL();
                 ClServicioVeterinariaE objE = new ClServicioVeterinariaE();
                 Session["Escuela"] = 1;
