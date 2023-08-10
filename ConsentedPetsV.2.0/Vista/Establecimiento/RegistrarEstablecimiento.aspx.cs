@@ -57,7 +57,7 @@ namespace ConsentedPets.Vista.Veterinaria
             {
                 objUsuL.mtdRol( int.Parse(Session["Usuario"].ToString()),tipo);
             }
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Registro Exitoso !', 'Establecimiento Registrado ', 'success')", true);
+            Response.Redirect("../PerfilesRol/Tutorial.aspx");
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)

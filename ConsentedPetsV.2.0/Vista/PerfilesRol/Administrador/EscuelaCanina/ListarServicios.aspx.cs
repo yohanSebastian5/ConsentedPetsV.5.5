@@ -13,11 +13,12 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
 {
     public partial class ListarServicios : System.Web.UI.Page
     {
+        ClServicioVetL objL = new ClServicioVetL();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                ClServicioVetL objL = new ClServicioVetL();
+                
                
                 List<ClServicioVeterinariaE> lista = objL.mtdListar(int.Parse(Session["Escuela"].ToString()));
                 rpServis.DataSource = lista;
@@ -30,7 +31,6 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
         public static void Listar(string tipo)
         {
             HttpContext.Current.Session["Servicio"] = tipo;
-            var page = HttpContext.Current.Handler as ListarServicios ;
         }
         List<ClServicioVeterinariaE> listaG = null;
         protected void Button1_Click(object sender, EventArgs e)
@@ -38,6 +38,11 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
 
             int tipo = int.Parse(Session["Servicio"].ToString());
             ClProcesosVetL objL = new ClProcesosVetL();
+            ClServicioVetL objSL = new ClServicioVetL();
+            List<ClServicioVeterinariaE> lista2 = objSL.mtdListar(tipo,"",1);
+            string ruta = "../../../imagenes/ServicioCursoE/" + lista2[0].foto;
+            imgS.ImageUrl=ruta;
+            txtNombreS.Text = lista2[0].nombre;
             List<ClServicioVeterinariaE> lista = objL.mtdListarCurso(tipo);
             listaG = lista;
             ddlCursos.DataSource = lista;
@@ -49,9 +54,9 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
             
 
         }
-        public  void ListarC()
+        public  void ListarC(int curso)
         {
-            int curso = int.Parse(Session["Curso"].ToString());
+            
             for (int i = 0; i < listaG.Count; i++)
             {
                 if (curso == listaG[i].idCurso)
@@ -69,7 +74,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
         {
             int id = int.Parse(ddlCursos.SelectedValue.ToString());
             Session["Curso"] = id;
-            ListarC();
+            ListarC(id);
         }
 
     }

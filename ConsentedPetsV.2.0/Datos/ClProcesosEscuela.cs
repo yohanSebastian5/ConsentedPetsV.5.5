@@ -12,12 +12,16 @@ namespace ConsentedPetsV._2._0.Datos
 {
     public class ClProcesosEscuela
     {
-        public List<ClServicioVeterinariaE> mtdListar(int id,string tipo="")
+        public List<ClServicioVeterinariaE> mtdListar(int id,string tipo="",int idS=0)
         {
             string consulta = "";
             if (tipo == "")
             {
                 consulta = "select * from ServicioEs where idEscuela = '" + id + "'";
+            }
+            else if (idS==0)
+            {
+                consulta = "select * from ServicioEs where idServicioE = '" + id + "'";
             }
             else
             {

@@ -27,10 +27,10 @@ namespace ConsentedPetsV._2._0.Logica
             return objE;
 
         }
-        public List<ClServicioVeterinariaE> mtdListar(int id, string tipo = "")
+        public List<ClServicioVeterinariaE> mtdListar(int id, string tipo = "",int idS=0)
         {
             ClProcesosEscuela objE = new ClProcesosEscuela();
-            List<ClServicioVeterinariaE> listaVet = objE.mtdListar(id, tipo);
+            List<ClServicioVeterinariaE> listaVet = objE.mtdListar(id, tipo,idS);
             return listaVet;
 
         }
