@@ -14,10 +14,12 @@
     <link href="Styles/sweetalert.css" rel="stylesheet" />
     <script src="Scripts/sweetalert.min.js"></script>
 </head>
-<body style="background-color:#90604A; background-size: cover;">
+<body style="background-color:#e798a7; background-size: cover;">
     <div class="container d-flex align-items-center vh-100">
         <div class="row justify-content-center">
-            <h1 style="text-align:center">CONSENTED PETS</h1>
+           
+<%--                <img src="Vista/imagenes/logo.png" style="border-radius: 30px; width: 330px"/>--%>
+            <h1 style="text-align:center; font-size: 70px">CONSENTED PETS</h1>
             <form id="form1" runat="server">
                 <div class="row justify-content-center">
                     <div class="Pet col-md-3 align-items-center">
@@ -28,7 +30,7 @@
                                 <h2 class="Pet-text">Veterinarias</h2>
                                 <br />
                                 <p class="card-text">AGENDA PARA QUE TU MASCOTA RECIBA LA MEJOR ATENCIÓN Y CUIDADO PARA SU BIENESTAR</p>
-                                <a href="Vista/ClinicaVeterinaria.aspx" class="btn btn-primary">Go</a>
+                                <a href="Vista/ClinicaVeterinaria.aspx" style="background: #e798a7; border: #e798a7" class="btn btn-primary">Go</a>
                             </div>
                         </div>
                     </div>
@@ -40,7 +42,7 @@
                                 <h2 class="Pet-text">Pet Shops</h2>
                                 <br />
                                 <p class="card-text">ENCUENTRA TODO LO QUE BUSCAS PARA CONSENTIR A TU MASCOTA</p>
-                                <a href="Vista/PetShop.aspx" class="btn btn-primary">Go</a>
+                                <a href="Vista/PetShop.aspx" style="background: #e798a7; border: #e798a7" class="btn btn-primary">Go</a>
                             </div>
                         </div>
                     </div>
@@ -51,7 +53,7 @@
                                 <br />
                                 <h2 class="Pet-text">Escuelas</h2>
                                 <p class="card-text">HAZ QUE TU MASCOTA TENGA UNA TRANSFORMACIÓN EN SU FORMA DE SER RECIBIENDO EL MEJOR ADIESTRAMIENTO CANINO</p>
-                                <a href="Vista/Escuela.aspx" class="btn btn-primary">Go</a>
+                                <a href="Vista/Escuela.aspx" style="background: #e798a7; border: #e798a7" class="btn btn-primary">Go</a>
                             </div>
                         </div>
                     </div>

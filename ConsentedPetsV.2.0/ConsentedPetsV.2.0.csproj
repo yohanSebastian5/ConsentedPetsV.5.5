@@ -149,6 +149,7 @@
     <Content Include="Vista\imagenes\ImagenesTutorial\Imagen3.png" />
     <Content Include="Vista\imagenes\ImagenesTutorial\Imagen4.png" />
     <Content Include="Vista\imagenes\ImagenesUsuarios\usuario5.png" />
+    <Content Include="Vista\imagenes\mas.jpg" />
     <Content Include="Vista\imagenes\muchi.png" />
     <Content Include="Vista\imagenes\RActividad.jpg" />
     <Content Include="Vista\imagenes\RegistrarServicio\Iconos\diente.jpg" />
@@ -497,11 +498,8 @@
     <Content Include="Vista\PerfilesRol\Usuario\EditarPerfil.aspx" />
     <Content Include="Vista\PerfilesRol\Usuario\HistorialCompras.aspx" />
     <Content Include="Vista\PerfilesRol\Usuario\ListarCitasUsuario.aspx" />
-
     <Content Include="Vista\PerfilesRol\Usuario\ListarPedido.aspx" />
-
     <Content Include="Vista\PerfilesRol\Usuario\PedidosRegistrados.aspx" />
-
     <Content Include="Vista\PerfilesRol\Usuario\RegistrarMascota.aspx" />
     <Content Include="Vista\PerfilesRol\Usuario\MascotasRegistradas.aspx" />
     <Content Include="Vista\PerfilesRol\Usuario\RegistroMascota.aspx" />

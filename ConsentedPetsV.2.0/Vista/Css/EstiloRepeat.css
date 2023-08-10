@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     padding: 50px;
-    background: #8e715f;
+    background: #90604A;
 }
 .center {
     padding: 36px;
@@ -12,6 +12,7 @@
     justify-content: center;
     font-size: 60px;
 }
+
 .Pet {
     width: 20rem;
     height: 25rem;
