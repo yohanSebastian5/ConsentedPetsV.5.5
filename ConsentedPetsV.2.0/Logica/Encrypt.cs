@@ -12,65 +12,46 @@ namespace ConsentedPets.Logica
     {
         public string cifrarT(string texto)
         {
-            byte[] initialVectoresBytes = Encoding.ASCII.GetBytes("123456789123456789");
-            byte[] setValuesBytes = Encoding.ASCII.GetBytes("Encriptar_Proyecto");
-            byte[] plaintextByte = Encoding.UTF8.GetBytes(texto);
+            byte[] initialvectorBytes = Encoding.ASCII.GetBytes("1234567891234567");
+            byte[] SaltValueBytes = Encoding.ASCII.GetBytes("Encriptacion_Exposicion");
+            byte[] plainTextBytes = Encoding.ASCII.GetBytes(texto);
 
-            PasswordDeriveBytes password = new PasswordDeriveBytes("Encriptar_Proyecto", setValuesBytes, "sha1", 22);
+            PasswordDeriveBytes password = new PasswordDeriveBytes("Encriptacion_Exposicion", SaltValueBytes, "sha1", 22);
 
-            byte[] keyByes = password.GetBytes(128 / 8);
-            RijndaelManaged smartkey = new RijndaelManaged();
-            smartkey.Mode = CipherMode.CBC;
-
-            ICryptoTransform encryptor = smartkey.CreateEncryptor(keyByes, initialVectoresBytes);
-            MemoryStream memoristream = new MemoryStream();
-
-            CryptoStream crypto = new CryptoStream(memoristream, encryptor, CryptoStreamMode.Write);
-            crypto.Write(plaintextByte, 0, plaintextByte.Length);
-
-            crypto.FlushFinalBlock();
-
-            byte[] clp = memoristream.ToArray();
-            memoristream.Close();
-            crypto.Close();
-
-            string textoCifrado = Convert.ToBase64String(clp);
-
-
-            return textoCifrado;
+            byte[] keybyttes = password.GetBytes(128 / 8);
+            RijndaelManaged symetrikey = new RijndaelManaged();
+            symetrikey.Mode = CipherMode.CBC;
+            ICryptoTransform encrytar = symetrikey.CreateEncryptor(keybyttes, initialvectorBytes);
+            MemoryStream memoryStream = new MemoryStream();
+            CryptoStream cryptoStream = new CryptoStream(memoryStream, encrytar, CryptoStreamMode.Write);
+            cryptoStream.Write(plainTextBytes, 0, plainTextBytes.Length);
+            cryptoStream.FlushFinalBlock();
+            byte[] ivBytes = memoryStream.ToArray();
+            memoryStream.Close();
+            cryptoStream.Close();
+            string textocifrado = Convert.ToBase64String(ivBytes);
+            return textocifrado;
         }
 
         public string descifrarTexto(string deci)
         {
-            byte[] initialVectoresBytes = Encoding.ASCII.GetBytes("123456789123456789");
-            byte[] setValuesBytes = Encoding.ASCII.GetBytes("Encriptar_Proyecto");
-
-            byte[] ciperTextBytes = Convert.FromBase64String(deci);
-
-            PasswordDeriveBytes password = new PasswordDeriveBytes("Encriptar_Proyecto", setValuesBytes, "SHA1", 22);
-
-            byte[] keyByte = password.GetBytes(128 / 8);
-
-            RijndaelManaged smartkey = new RijndaelManaged();
-            smartkey.Mode = CipherMode.CBC;
-
-            ICryptoTransform crypto = smartkey.CreateEncryptor(keyByte, initialVectoresBytes);
-            MemoryStream memoristream = new MemoryStream(ciperTextBytes);
-
-            CryptoStream cryptoStream = new CryptoStream(memoristream, crypto, CryptoStreamMode.Read);
-
-            byte[] plainText = new byte[ciperTextBytes.Length];
-
-
-            int decryptedbyte = cryptoStream.Read(plainText, 0, plainText.Length);
-
-
-            memoristream.Close();
+            byte[] initialvectorBytes = Encoding.ASCII.GetBytes("1234567891234567");
+            byte[] SaltValueBytes = Encoding.ASCII.GetBytes("Encriptacion_Exposicion");
+            byte[] ciphertextBytes = Convert.FromBase64String(deci);
+            PasswordDeriveBytes password = new PasswordDeriveBytes("Encriptacion_Exposicion", SaltValueBytes, "SHA1", 22);
+            byte[] keybytes = password.GetBytes(128 / 8);
+            RijndaelManaged symetrikey = new RijndaelManaged();
+            symetrikey.Mode = CipherMode.CBC;
+            ICryptoTransform decryptor = symetrikey.CreateDecryptor(keybytes, initialvectorBytes);
+            MemoryStream memoryStream = new MemoryStream(ciphertextBytes);
+            CryptoStream cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read);
+            byte[] plaintextBytes = new byte[ciphertextBytes.Length];
+            int decryptedBytescount = cryptoStream.Read(plaintextBytes, 0, plaintextBytes.Length);
+            memoryStream.Close();
             cryptoStream.Close();
+            string textoDescrifrado = Encoding.UTF8.GetString(plaintextBytes, 0, decryptedBytescount);
 
-            string textoDecifradoFinal = Encoding.UTF8.GetString(plainText, 0, decryptedbyte);
-
-            return textoDecifradoFinal;
+            return textoDescrifrado;
 
 
         }

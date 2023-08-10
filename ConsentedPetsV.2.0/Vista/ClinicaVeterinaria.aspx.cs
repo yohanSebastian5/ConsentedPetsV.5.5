@@ -15,6 +15,7 @@ namespace ConsentedPets.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["NombreUsuario"] = "";
             Session["Escuela"] = 0;
             Session["Tienda"] = 0;
             int Seccion = 1;

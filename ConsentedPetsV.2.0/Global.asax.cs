@@ -19,6 +19,7 @@ namespace ConsentedPetsV._2._0
         {
             Session["RolUsuario"] = 0;
             Session["Usuario"] = 0;
+            Session["NombreUsuario"] = "";
             Session["Servicio"] = 0;
             Session["Veterinaria"] = 0;
             Session["Tienda"] = 0;

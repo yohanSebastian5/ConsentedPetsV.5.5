@@ -11,7 +11,8 @@
     <script src="Vista/Bootstrap/js/bootstrap.min.js"></script>
 <%--    <link href="Vista/Css/Style.css" rel="stylesheet" />--%>
     <link href="Vista/Css/EstiloRepeat.css" rel="stylesheet" />
-
+    <link href="Styles/sweetalert.css" rel="stylesheet" />
+    <script src="Scripts/sweetalert.min.js"></script>
 </head>
 <body style="background-color:#90604A; background-size: cover;">
     <div class="container d-flex align-items-center vh-100">

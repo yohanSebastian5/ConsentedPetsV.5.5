@@ -26,7 +26,7 @@
     <form runat="server">
         <div class="bg-img" style="background: rgba(0,0,0,0.4)">
             <div class="content">
-                <header>Datos de Tu Escuela</header>
+                <header>Datos de Tu Pet Shop</header>
                 <br />
                 <div>
                     <asp:Image ID="Image1" CssClass="imgUsuarioP" runat="server" />

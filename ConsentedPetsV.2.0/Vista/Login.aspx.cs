@@ -47,6 +47,7 @@ namespace ConsentedPetsV._2._0.Vista
             {
                 Session["RolUsuario"] = objUsuE.idRol;
                 Session["Usuario"] = objUsuE.idUsuario;
+                Session["NombreUsuario"] = objUsuE.nombre;
                 if (int.Parse(Session["Veterinaria"].ToString()) != 0)
                 {
                     Response.Redirect("PaginaVeterinaria.aspx");
@@ -60,9 +61,8 @@ namespace ConsentedPetsV._2._0.Vista
                     Response.Redirect("PaginaEscuela/PaginaEscuela.aspx");
                 }
 
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Bienvenido " + objUsuE.nombre + "!', 'Haz iniciado Sesion', 'success')", true);
                 txtUsuario.Value = "";
-
+                Response.Redirect("../Principal.aspx");
 
             }
             else

@@ -127,8 +127,30 @@ namespace ConsentedPetsV._2._0.Datos
                 objE.nombreP = table.Rows[i]["nombre"].ToString();
                 objE.fecha = (table.Rows[i]["fechaCompra"].ToString());
                 objE.cantidad = table.Rows[i]["cantidad"].ToString();
-                objE.precio = table.Rows[i]["totalDetalle"].ToString();
+                objE.total = table.Rows[i]["totalDetalle"].ToString();
                 objE.nombreC = table.Rows[i]["nombre2"].ToString();
+                lista.Add(objE);
+
+            }
+            return lista;
+
+        }
+
+        public List<ClProductoE> mtdListarCompras(int id)
+        {
+            string consulta = "select * from Compra inner join DetallesCompra on Compra.idCompra= DetallesCompra.idCompra inner join Producto on DetallesCompra.idProducto=Producto.idProducto inner join UsuarioCompra on UsuarioCompra.idCompra=Compra.idCompra inner join CategoriaPS on CategoriaPS.idCategoriaPS=Producto.idCategoriaPS inner join Tienda on Tienda.idTienda=CategoriaPS.idTienda where UsuarioCompra.idUsuario=" + id;
+            ClProcesarSQL SQL = new ClProcesarSQL();
+            DataTable table = SQL.mtdSelectDesc(consulta);
+            List<ClProductoE> lista = new List<ClProductoE>();
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                ClProductoE objE = new ClProductoE();
+                objE.nombreP = table.Rows[i]["nombre"].ToString();
+                objE.fecha = (table.Rows[i]["fechaCompra"].ToString());
+                objE.cantidad = table.Rows[i]["cantidad"].ToString();
+                objE.total = table.Rows[i]["totalDetalle"].ToString();
+                objE.nombreC = table.Rows[i]["nombre1"].ToString();
+                objE.nombre = table.Rows[i]["nombre2"].ToString();
                 lista.Add(objE);
 
             }

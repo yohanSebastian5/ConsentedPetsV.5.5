@@ -23,9 +23,11 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario
             string rutaImg = Path.Combine(Server.MapPath("../../imagenes/ImagenesMascota/"), nombreV);
             FlFotoM.SaveAs(rutaImg);
             objMascotaL.mtdRegistrar(nombre.Value, especie.Value,  raza.Value, Request.Form["pet-weight"], Request.Form["pet-gender"], nombreV, txtCondicion.Value,int.Parse( Session["Usuario"].ToString()));
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Bienvenido " + nombre.Value + "!', 'Haz Registrado tu Mascota', 'success')", true);
-
-
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Bienvenido " + nombre.Value + "!', 'Haz sido Registrado en Consented Pets', 'success')", true);
+            txtCondicion.Value = "";
+            especie.Value = "";
+            raza.Value = "";
+            nombre.Value = "";
         }
     }
 }

@@ -144,6 +144,10 @@
     <Content Include="Vista\imagenes\ImagenesProductoCat\producto7.png" />
     <Content Include="Vista\imagenes\ImagenesProductoCat\producto8.png" />
     <Content Include="Vista\imagenes\ImagenesProductoCat\producto9.png" />
+    <Content Include="Vista\imagenes\ImagenesTutorial\Imagen1.png" />
+    <Content Include="Vista\imagenes\ImagenesTutorial\Imagen2.png" />
+    <Content Include="Vista\imagenes\ImagenesTutorial\Imagen3.png" />
+    <Content Include="Vista\imagenes\ImagenesTutorial\Imagen4.png" />
     <Content Include="Vista\imagenes\ImagenesUsuarios\usuario5.png" />
     <Content Include="Vista\imagenes\muchi.png" />
     <Content Include="Vista\imagenes\RActividad.jpg" />
@@ -447,6 +451,9 @@
     <Content Include="Vista\PerfilesRol\Administrador\PetShop\RegistrarVendedor.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\RegistrarEscuela.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\RegistrarTienda.aspx" />
+    <Content Include="Vista\PerfilesRol\css\Tutorial.css" />
+    <Content Include="Vista\PerfilesRol\js\Tutorial.js" />
+    <Content Include="Vista\PerfilesRol\TutorialAdmin.aspx" />
     <Content Include="Vista\PerfilesRol\css\ListarMascotas.css" />
     <Content Include="Vista\PerfilesRol\css\ListarServicios.css" />
     <Content Include="Vista\PerfilesRol\css\registrar.css" />
@@ -488,8 +495,13 @@
     <Content Include="Vista\PerfilesRol\js\scripts.js" />
     <Content Include="Vista\imagenes\persona.png" />
     <Content Include="Vista\PerfilesRol\Usuario\EditarPerfil.aspx" />
+    <Content Include="Vista\PerfilesRol\Usuario\HistorialCompras.aspx" />
     <Content Include="Vista\PerfilesRol\Usuario\ListarCitasUsuario.aspx" />
+
+    <Content Include="Vista\PerfilesRol\Usuario\ListarPedido.aspx" />
+
     <Content Include="Vista\PerfilesRol\Usuario\PedidosRegistrados.aspx" />
+
     <Content Include="Vista\PerfilesRol\Usuario\RegistrarMascota.aspx" />
     <Content Include="Vista\PerfilesRol\Usuario\MascotasRegistradas.aspx" />
     <Content Include="Vista\PerfilesRol\Usuario\RegistroMascota.aspx" />
@@ -858,6 +870,13 @@
     <Compile Include="Vista\PerfilesRol\Administrador\RegistrarVeterinaria.aspx.designer.cs">
       <DependentUpon>RegistrarVeterinaria.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\PerfilesRol\TutorialAdmin.aspx.cs">
+      <DependentUpon>TutorialAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\TutorialAdmin.aspx.designer.cs">
+      <DependentUpon>TutorialAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\Veterinaria\AgregarVeterinario.aspx.cs">
       <DependentUpon>AgregarVeterinario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -942,12 +961,26 @@
     <Compile Include="Vista\PerfilesRol\Usuario\EditarPerfil.aspx.designer.cs">
       <DependentUpon>EditarPerfil.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\HistorialCompras.aspx.cs">
+      <DependentUpon>HistorialCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\HistorialCompras.aspx.designer.cs">
+      <DependentUpon>HistorialCompras.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\PerfilesRol\Usuario\ListarCitasUsuario.aspx.cs">
       <DependentUpon>ListarCitasUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Usuario\ListarCitasUsuario.aspx.designer.cs">
       <DependentUpon>ListarCitasUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\ListarPedido.aspx.cs">
+      <DependentUpon>ListarPedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\ListarPedido.aspx.designer.cs">
+      <DependentUpon>ListarPedido.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Usuario\MascotasRegistradas.aspx.cs">
       <DependentUpon>MascotasRegistradas.aspx</DependentUpon>

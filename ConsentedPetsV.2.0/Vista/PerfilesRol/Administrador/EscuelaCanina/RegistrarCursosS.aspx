@@ -32,7 +32,7 @@
             <asp:Image ID="Image2" Style="border-radius: 52%; width: 250px; height: 250px;" runat="server" />
             <input id="txtServcio" runat="server" name="email" type="text" placeholder="Nombre Servicio" />
             <asp:DropDownList ID="ddlTipo" name="email" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlTipo_SelectedIndexChanged"></asp:DropDownList>
-            <asp:FileUpload ID="FileUpload2" CssClass="diseño" runat="server" onchange="cargar2(this)" />
+            <asp:FileUpload ID="FileUpload2"  CssClass="diseño" runat="server" onchange="cargar2(this)" />
             <div class="button firstNext">Next</div>
         </div>
         <div class="user-details register-form ">
