@@ -54,8 +54,8 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
         {
 
             
-            txtFecha2.Text = String.Format("{0:yyyy-MM-dd}",calenario.SelectedDate);
-            txtFecha2.Text = "Amarillo";
+            //txtFecha.Text = String.Format("{0:yyyy-MM-dd}",calenario.SelectedDate);
+          
         }
 
         protected void Button1_Click(object sender, EventArgs e)

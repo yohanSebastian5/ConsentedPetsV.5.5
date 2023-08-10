@@ -39,8 +39,8 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
             int tipo = int.Parse(Session["Servicio"].ToString());
             ClProcesosVetL objL = new ClProcesosVetL();
             ClServicioVetL objSL = new ClServicioVetL();
-            List<ClServicioVeterinariaE> lista2 = objSL.mtdListar(tipo,"",1);
-            string ruta = "../../../imagenes/ServicioCursoE/" + lista2[0].foto;
+            List<ClServicioVeterinariaE> lista2 = objSL.mtdListar(tipo,"0",1);
+            string ruta = "~/Vista/imagenes/ServicioCursoE/" + lista2[0].foto;
             imgS.ImageUrl=ruta;
             txtNombreS.Text = lista2[0].nombre;
             List<ClServicioVeterinariaE> lista = objL.mtdListarCurso(tipo);
@@ -63,7 +63,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
                 {
                     txtNombreC.Text = listaG[i].nombre;
                     txtDescripcion.Text = listaG[i].descripcion;
-                    string ruta = "../../../imagenes/ServicioCursoE/" + listaG[i].foto;
+                    string ruta = "~/Vista/imagenes/ServicioCursoE/" + listaG[i].foto;
                     imgS.ImageUrl = ruta;
                     txtPrecio.Text = listaG[i].precio.ToString();
                 }

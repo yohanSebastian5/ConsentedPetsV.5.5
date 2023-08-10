@@ -19,7 +19,7 @@ namespace ConsentedPetsV._2._0.Datos
             {
                 consulta = "select * from ServicioEs where idEscuela = '" + id + "'";
             }
-            else if (idS==0)
+            else if (idS==1)
             {
                 consulta = "select * from ServicioEs where idServicioE = '" + id + "'";
             }

@@ -78,25 +78,25 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel2">Actualizacion de Datos</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel2" style="font-family: serif;">Actualizacion de Datos</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body" style="color: lightslategray">
+                    <div class="modal-body" style="background:#c27c65;">
                         <div class="section">
                             <div class="container">
-                                <div class="card">
-                                    <h3>Datos de la Actividad</h3>
-                                    <asp:Label ID="Label1" runat="server" Text="Especializacion"></asp:Label>
-                                    <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
-                                    <asp:Label ID="Label12" runat="server" Text="Experiencia"></asp:Label>
-                                    <asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox>
-                                    <asp:TextBox ID="txtFecha2" runat="server"></asp:TextBox>
-                                    <asp:Label ID="Label13" runat="server" Text="Profesion"></asp:Label>
-                                    <asp:TextBox ID="txtFecha" runat="server"></asp:TextBox>
+                                <div class="card" style="padding:35px;">
+                                    <h3 style="font-family: serif;">Datos de la Actividad</h3>
+                                    <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>
+                                    <asp:TextBox ID="txtNombre" runat="server" style="border-color: rosybrown; border-radius: 20px; background-color: #c27c65b0; border-width: 2.5px; text-align: center;"></asp:TextBox>
+                                    <asp:Label ID="Label12" runat="server" Text="Descripción"></asp:Label>
+                                    <asp:TextBox ID="txtDescripcion" runat="server" style="border-color: rosybrown; border-radius: 20px; background-color: #c27c65b0; border-width: 2.5px; text-align: center;"></asp:TextBox>
+                                    <asp:Label ID="Label13" runat="server" Text="Fecha"></asp:Label>
+                                    <asp:TextBox ID="txtFecha" runat="server" style="border-color: rosybrown; border-radius: 20px; background-color: #c27c65b0; border-width: 2.5px; text-align: center;"></asp:TextBox>
+                                    <br />
                                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                         <ContentTemplate>
-                                                  <asp:Calendar ID="calenario" OnSelectionChanged="calenario_SelectionChanged" runat="server"></asp:Calendar>
+                                                  <asp:Calendar ID="calenario" OnSelectionChanged="calenario_SelectionChanged" runat="server" style="border-color: rosybrown; background-color: #c27c65b0; text-align: center;"></asp:Calendar>
                                         </ContentTemplate>
                                     </asp:UpdatePanel>
                                 </div>

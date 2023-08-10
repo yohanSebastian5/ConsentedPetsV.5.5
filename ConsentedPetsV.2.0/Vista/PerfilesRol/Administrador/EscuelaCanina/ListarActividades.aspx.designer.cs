@@ -60,15 +60,6 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
         protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
 
         /// <summary>
-        /// Control txtFecha2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFecha2;
-
-        /// <summary>
         /// Control Label13.
         /// </summary>
         /// <remarks>
