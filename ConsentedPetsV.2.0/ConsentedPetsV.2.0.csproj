@@ -489,6 +489,7 @@
     <Content Include="Vista\imagenes\persona.png" />
     <Content Include="Vista\PerfilesRol\Usuario\EditarPerfil.aspx" />
     <Content Include="Vista\PerfilesRol\Usuario\ListarCitasUsuario.aspx" />
+    <Content Include="Vista\PerfilesRol\Usuario\PedidosRegistrados.aspx" />
     <Content Include="Vista\PerfilesRol\Usuario\RegistrarMascota.aspx" />
     <Content Include="Vista\PerfilesRol\Usuario\MascotasRegistradas.aspx" />
     <Content Include="Vista\PerfilesRol\Usuario\RegistroMascota.aspx" />
@@ -954,6 +955,13 @@
     </Compile>
     <Compile Include="Vista\PerfilesRol\Usuario\MascotasRegistradas.aspx.designer.cs">
       <DependentUpon>MascotasRegistradas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\PedidosRegistrados.aspx.cs">
+      <DependentUpon>PedidosRegistrados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Usuario\PedidosRegistrados.aspx.designer.cs">
+      <DependentUpon>PedidosRegistrados.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Usuario\PerfilUsuario.Master.cs">
       <DependentUpon>PerfilUsuario.Master</DependentUpon>
