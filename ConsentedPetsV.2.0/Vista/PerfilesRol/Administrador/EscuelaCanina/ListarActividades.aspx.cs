@@ -50,23 +50,34 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
             return list;
         }
 
+        protected void calenario_SelectionChanged(object sender, EventArgs e)
+        {
+
+            
+            txtFecha2.Text = String.Format("{0:yyyy-MM-dd}",calenario.SelectedDate);
+            txtFecha2.Text = "Amarillo";
+        }
+
         protected void Button1_Click(object sender, EventArgs e)
         {
+            string fecha = String.Format("{0:yyyy-MM-dd}",calenario.SelectedDate);
+
+
             ClProcesosVetL objL = new ClProcesosVetL();
             ClServicioVeterinariaE objE = new ClServicioVeterinariaE();
             objE.nombre = txtNombre.Text;
             objE.descripcion = txtDescripcion.Text;
             objE.fecha = txtFecha.Text;
+            objE.fecha = fecha;
             objE.idServicioV = int.Parse(Session["Escuela"].ToString());
             objE.id=  int.Parse(Session["Eliminar"].ToString());
-            objL.mtdRegistrarActividad(objE);
+            objL.mtdActualizarActividad(objE);
             ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Actualizacion Exitosa !', 'Actividad Actualizada', 'success')", true);
 
         }
 
-        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
-        {
-            txtFecha.Text = Calendar1.SelectedDate.ToString("yyyy-MM-dd");
-        }
+       
+
+        
     }
 }

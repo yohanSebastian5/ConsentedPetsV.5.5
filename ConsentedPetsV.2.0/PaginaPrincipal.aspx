@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="Vista/Css/StylePrincipal.css" rel="stylesheet" />
     <link href="Vista/Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <title></title>
+    <title>Concented Pets</title>
     <style>
         a {
             text-decoration: none;
@@ -16,6 +16,7 @@
         img {
             vertical-align: middle;
             height: 125px;
+
             width: 203px;
             margin-left: 0px;
         }
