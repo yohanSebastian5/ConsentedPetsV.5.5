@@ -54,6 +54,16 @@
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="row">
                                 <div class="col-md-6">
+                                    <label style="color: blue">DOCUMENTO:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtDocumento" runat="server" placeholder="Documento"></asp:TextBox>
+
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-6">
                                     <label style="color: blue">NOMBRE:</label>
                                 </div>
                                 <div class="col-md-6">

@@ -77,7 +77,7 @@
                     <div class="col-12">
                         <nav class="main-nav">
                             <!-- ***** Logo Start ***** -->
-                            <a href="index.html" class="logo">
+                            <a class="logo">
                                 <asp:Image ID="Imag" runat="server" Style="width: 70px; height=70px;" />
                                 <h4 id="nombre1" runat="server" style="color: black; font-size: 14px;"><%# Eval("nombre") %></h4>
                             </a>

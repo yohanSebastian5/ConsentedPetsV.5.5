@@ -11221,3 +11221,10 @@ h6,
     align-items: center;
 }
 
+.cajas {
+    border-color: rosybrown;
+    border-radius: 20px;
+    background-color: mistyrose;
+    border-width: 2.5px;
+    text-align: center;
+}

@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>iCREAM - Ice Cream Shop Website Template</title>
+    <title>Consented Pets</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -27,11 +27,12 @@
     <link href="PaginaVeterinaria/lightbox/css/lightbox.min.css" rel="stylesheet" />
     <link href="PaginaVeterinaria/css/stiloProcesos.css" rel="stylesheet" />
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="PaginaVeterinaria/css/style.css" rel="stylesheet" />
+
     <script src="../Scripts/sweetalert.min.js"></script>
     <script src="../Scripts/sweetalert-dev.js"></script>
 
     <link href="../Styles/sweetalert.css" rel="stylesheet" />
+    <link href="PaginaVeterinaria/css/style.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -310,32 +311,32 @@
                         <div class="container">
 
                             <div class="mb-3">
-                                <label for="mascota">Nombre de la Mascota</label>
-                                <asp:DropDownList ID="ddlMascota" CssClass="cajas" runat="server"></asp:DropDownList>
+                                <label for="mascota" class="font-weight-light">Nombre de la Mascota</label>
+                                <asp:DropDownList ID="ddlMascota" style="border-color: rosybrown; border-radius: 20px; background-color: mistyrose; border-width: 2.5px; text-align: center;" runat="server"></asp:DropDownList>
 
 
                             </div>
                             <div class="mb-3">
-                                <label for="servicio">Servicio Requerido</label>
-                                <asp:DropDownList ID="ddlServicio" CssClass="cajas" runat="server"></asp:DropDownList>
+                                <label for="servicio" class="font-weight-light">Servicio Requerido</label>
+                                <asp:DropDownList ID="ddlServicio" style="border-color: rosybrown; border-radius: 20px; background-color: mistyrose; border-width: 2.5px; text-align: center;" runat="server"></asp:DropDownList>
 
                             </div>
 
                             <div class="mb-3">
-                                <label for="fechaCita">Fecha de la Cita</label>
+                                <label for="fechaCita" class="font-weight-light">Fecha de la Cita</label>
                                 <div class="calendar-container">
-                                    <asp:Calendar ID="calendarFecha" runat="server" OnSelectionChanged="calendarFecha_SelectionChanged"></asp:Calendar>
+                                    <asp:Calendar ID="calendarFecha" runat="server" style="border-color: rosybrown; border-radius: 20px; background-color: mistyrose; border-width: 2.5px; text-align: center;" OnSelectionChanged="calendarFecha_SelectionChanged"></asp:Calendar>
                                 </div>
                             </div>
 
                             <div class="mb-3">
-                                <label for="fechaSeleccionada">Fecha Seleccionada:</label>
-                                <asp:TextBox ID="txtFecha" runat="server" ReadOnly="true" ></asp:TextBox>
+                                <label for="fechaSeleccionada" class="font-weight-light">Fecha Seleccionada:</label>
+                                <asp:TextBox ID="txtFecha" style="border-color: rosybrown; border-radius: 20px; background-color: mistyrose; border-width: 2.5px; text-align: center;" ReadOnly="true" runat="server"></asp:TextBox>
                             </div>
 
                             <div class="mb-3">
-                                <label for="hora">Hora de la Cita</label>
-                                <asp:DropDownList ID="ddlHora" CssClass="form-select" runat="server">
+                                <label for="hora" class="font-weight-light">Hora de la Cita</label>
+                                <asp:DropDownList ID="ddlHora" style="border-color: rosybrown; border-radius: 20px; background-color: mistyrose; border-width: 2.5px; text-align: center;" runat="server">
                                     <asp:ListItem Text=""></asp:ListItem>
                                     <asp:ListItem Value="08:00 am">08:00 am</asp:ListItem>
                                     <asp:ListItem Value="08:30 am">08:30 am</asp:ListItem>
@@ -365,13 +366,13 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="estadoCita">Estado</label>
-                                <asp:DropDownList ID="ddlEstado" CssClass="form-select" runat="server">
+                                <label for="estadoCita" class="font-weight-light">Estado</label>
+                                <asp:DropDownList ID="ddlEstado" style="border-color: rosybrown; border-radius: 20px; background-color: mistyrose; border-width: 2.5px; text-align: center;" runat="server">
                                     <asp:ListItem Text=""></asp:ListItem>
                                     <asp:ListItem Value="pendiente">Pendiente</asp:ListItem>
                                 </asp:DropDownList>
                             </div>
-                            <asp:Button ID="btnAgendarCita" runat="server" Text="Agendar Cita" OnClick="btnAgendarCita_Click1" />
+                            <asp:Button ID="btnAgendarCita" runat="server" CssClass="btn btn-primary" Text="Agendar Cita" OnClick="btnAgendarCita_Click1" />
 
                         </div>
                     </div>
