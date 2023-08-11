@@ -145,7 +145,7 @@ namespace ConsentedPetsV._2._0.Datos
             }else
             {
                 consulta = "select * from CursoE where idCursoE=" + id;
-                precio = "valorServicio"; 
+                precio = "precio"; 
             }
             ClProcesarSQL SQL = new ClProcesarSQL();
             DataTable tble = SQL.mtdSelectDesc(consulta);

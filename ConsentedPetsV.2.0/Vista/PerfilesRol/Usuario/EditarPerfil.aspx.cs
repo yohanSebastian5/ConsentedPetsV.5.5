@@ -20,11 +20,12 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario
             {
 
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
-               
+                
                 CLUsuarioL objU = new CLUsuarioL();
                 Encrypt encry = new Encrypt();
                 ClUsuarioE objDatos = objU.mtdListarU(idUsuario);
                 txtNombre.Text = objDatos.nombre;
+                txtDocumento.Text = objDatos.documento;
                 txtApellido.Text = objDatos.apellido;
                 txtGenero.Text = objDatos.genero;
                 txtTelefono.Text = objDatos.telefono;
@@ -46,15 +47,16 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario
             string rutaF = txtNombre.Text + txtApellido.Text + txtTelefono.Text + ".png";
             string rutaImg = Path.Combine(Server.MapPath("~/Vista/imagenes/ImagenesUsuarios/"), rutaF);
             FlImagenV.SaveAs(rutaImg);
-            objE.idUsuario=int.Parse(Session["Usuario"].ToString());
+            objE.idUsuario = int.Parse(Session["Usuario"].ToString());
             objE.nombre = txtNombre.Text;
+            objE.documento = txtDocumento.Text;
             objE.apellido = txtApellido.Text;
             objE.genero = txtGenero.Text;
             objE.telefono = txtTelefono.Text;
             objE.email = txtEmail.Text;
             objE.direccion = txtDireccion.Text;
             objE.contraseña = txtContraseña.Text;
- 
+
             objE.foto = rutaF;
            
             objL.mtdActualizarDatos(objE);

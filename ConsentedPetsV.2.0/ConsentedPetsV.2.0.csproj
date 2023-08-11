@@ -97,6 +97,12 @@
     <Content Include="Vista\Css\EliminarEstablecimiento.css" />
     <Content Include="Vista\Css\MascotasRegistradasUsuario.css" />
     <Content Include="Vista\Css\script.js" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\PetShop4.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\PetShop5.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\PetShop6.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\Veterinaria4.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\Veterinaria5.png" />
+    <Content Include="Vista\imagenes\ImagenesEstablecimiento\Veterinaria6.png" />
     <Content Include="Vista\imagenes\ImagenesMascota\mascota1.png" />
     <Content Include="Vista\imagenes\ImagenesMascota\mascota2.png" />
     <Content Include="Vista\imagenes\ImagenesMascota\mascota3.png" />

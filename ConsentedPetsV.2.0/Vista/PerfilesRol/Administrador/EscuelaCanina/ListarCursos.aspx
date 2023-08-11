@@ -79,22 +79,22 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel2">Actualizacion de Datos</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel2" style="font-family: serif;">Actualizacion de Datos</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body" style="color:lightslategray">
+                    <div class="modal-body" style="background:#c27c65;">
                         <div class="section">
                             <div class="container">
-                                <div class="card">
-                                    <h3>Datos del Curso</h3>
+                                <div class="card" style="padding:35px;">
+                                    <h3 style="font-family: serif;">Datos del Curso</h3>
                                     <img runat="server" id="imagen" src="#" style="width:20px ;height:20px" />
                                     <asp:Image ID="Image1" runat="server" style="width:20px ;height:20px" />
                                     <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>
-                                    <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox> 
+                                    <asp:TextBox ID="txtNombre" runat="server" style="border-color: rosybrown; border-radius: 20px; background-color: #c27c65b0; border-width: 2.5px; text-align: center;"></asp:TextBox> 
                                     <asp:Label ID="Label12" runat="server" Text="Descripcion"></asp:Label>
-                                    <asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtDescripcion" runat="server" style="border-color: rosybrown; border-radius: 20px; background-color: #c27c65b0; border-width: 2.5px; text-align: center;"></asp:TextBox>
                                     <asp:Label ID="Label13" runat="server" Text="Precio"></asp:Label>
-                                    <asp:TextBox ID="txtPrecio" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtPrecio" runat="server" style="border-color: rosybrown; border-radius: 20px; background-color: #c27c65b0; border-width: 2.5px; text-align: center;"></asp:TextBox>
                                     <asp:Label ID="Label2" runat="server" Text="Imagen"></asp:Label>
                                     <asp:FileUpload ID="FileUpload1" runat="server" />
                                     <asp:Label ID="Label3" runat="server" Text="*En caso de cambio"></asp:Label>
@@ -103,7 +103,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <asp:Button ID="Button1" CssClass="btn btn-danger" runat="server" Text="Editar" OnClick="Button1_Click" />
+                            <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" Text="Editar" OnClick="Button1_Click" />
                         </div>
                     </div>
                 </div>

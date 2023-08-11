@@ -306,7 +306,8 @@ namespace ConsentedPets.Datos
 
            
             comando.Parameters.AddWithValue("@idUsuario", objE.idUsuario);
-             comando.Parameters.AddWithValue("@nombre", objE.nombre);
+            comando.Parameters.AddWithValue("@documento", objE.documento);
+            comando.Parameters.AddWithValue("@nombre", objE.nombre);
             comando.Parameters.AddWithValue("@apellido", objE.apellido);
             comando.Parameters.AddWithValue("@genero", objE.genero);
             comando.Parameters.AddWithValue("@telefono", objE.telefono);

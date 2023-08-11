@@ -104,7 +104,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <asp:Button ID="Button1" CssClass="btn btn-danger" runat="server" Text="Editar" OnClick="Button1_Click" />
+                            <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" Text="Editar" OnClick="Button1_Click" />
                         </div>
                     </div>
                 </div>
