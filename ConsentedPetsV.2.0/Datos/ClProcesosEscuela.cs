@@ -76,6 +76,24 @@ namespace ConsentedPetsV._2._0.Datos
             conexion.CerrarConexion();
 
         }
+        public void mtdActualizaCurso(ClServicioVeterinariaE objE)
+        {
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "RegistrarCursoE";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@nombre", objE.nombre);
+            comando.Parameters.AddWithValue("@descripcion", objE.descripcion);
+            comando.Parameters.AddWithValue("@valor", objE.precio);
+            comando.Parameters.AddWithValue("@foto", objE.foto);
+            comando.Parameters.AddWithValue("@idServicioE", objE.idServicioV);
+            comando.Parameters.AddWithValue("@idServicioE", objE.idCurso);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+
+        }
         public List<ClMatriculaE> mtdListarMatriculas(int id)
         {
             string consulta = "select * from Matricula  inner join Curso on  Matricula.idCursoE =Curso.idCursoE  inner join ServicioEs on Curso.idServicioE= ServicioEs.idServicioE inner join Registro on Matricula.idRegistro= Registro.idRegistro inner join Mascota on Registro.idMascota= Mascota.idMascota where Registro.idEscuela="+id+""; 
@@ -116,10 +134,16 @@ namespace ConsentedPetsV._2._0.Datos
             return listaProductos;
         }
 
-        public List<ClServicioVeterinariaE> mtdListarCurso(int id)
+        public List<ClServicioVeterinariaE> mtdListarCurso(int id,int tipo=0)
         {
-            string consulta = "select * from CursoE where idServicioE=" + id;
-
+            string consulta = "";
+            if (tipo==0)
+            {
+                consulta = "select * from CursoE where idServicioE=" + id;
+            }else
+            {
+                consulta = "select * from CursoE where idCursoE=" + id;
+            }
             ClProcesarSQL SQL = new ClProcesarSQL();
             DataTable tble = SQL.mtdSelectDesc(consulta);
             List<ClServicioVeterinariaE> lista = new List<ClServicioVeterinariaE>();

@@ -432,6 +432,7 @@
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditarPerfilE.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\EditaryEliminarDatos.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarActividades.aspx" />
+    <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarCursos.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProcesos.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMascotas.aspx" />
     <Content Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarMatriculas.aspx" />
@@ -678,6 +679,13 @@
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarActividades.aspx.designer.cs">
       <DependentUpon>ListarActividades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarCursos.aspx.cs">
+      <DependentUpon>ListarCursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarCursos.aspx.designer.cs">
+      <DependentUpon>ListarCursos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\PerfilesRol\Administrador\EscuelaCanina\ListarProcesos.aspx.cs">
       <DependentUpon>ListarProcesos.aspx</DependentUpon>

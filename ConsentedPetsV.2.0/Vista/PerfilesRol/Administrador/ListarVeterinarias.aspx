@@ -17,6 +17,9 @@
         .ocultar{
             display:none;
         }
+        main{
+            background: #52d5b2;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">

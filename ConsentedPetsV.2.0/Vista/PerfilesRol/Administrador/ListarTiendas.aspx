@@ -14,7 +14,7 @@
         .ocultar {
             display: none;
         }
-        body{
+        main{
             background: #52d5b2;
         }
     </style>
