@@ -48,8 +48,10 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
 
             string ruta= "../../../imagenes/ServicioCursosE/"+ lista[0].foto;
             lista[0].foto = ruta;
+            HttpContext.Current.Session["foto"] = ruta;
             return lista;
         }
+        
 
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -78,6 +80,11 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
             }
 
 
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Image1.ImageUrl = Session["foto"].ToString();
         }
     }
 }

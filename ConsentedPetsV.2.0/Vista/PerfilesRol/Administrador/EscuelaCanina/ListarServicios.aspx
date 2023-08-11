@@ -35,7 +35,6 @@
                             </div>
                             <div class="card-flap flap2">
                                 <div class="card-actions">
-                                    <asp:Button ID="Button1" runat="server" Text="Listar Cursos" OnClick="Button1_Click" />
                                 </div>
                             </div>
                         </div>
@@ -43,7 +42,12 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
-
+        <asp:ScriptManager runat="server"></asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button1_Click" Style="display: none" AutoPostBack="false" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </form>
     <script>
         $(document).ready(function () {
@@ -98,13 +102,15 @@
                 dataType: "json",
                 data: JSON.stringify({ tipo: valor }),
                 success: function (response) {
+                    window.location.href =" ListarCursos.aspx";
+
                 }, error: function (xhr, textStatus, errorThrown) {
                     // Manejar cualquier error que ocurra durante la llamada AJAX
                     console.error(errorThrown);
                 }
 
             });
-            activarBoton();
+            
         }
         
     </script>

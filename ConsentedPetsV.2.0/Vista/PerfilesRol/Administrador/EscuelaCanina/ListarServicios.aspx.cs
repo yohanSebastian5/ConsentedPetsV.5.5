@@ -30,7 +30,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
         [WebMethod]
         public static void Listar(string tipo)
         {
-            HttpContext.Current.Session["Servicio"] = tipo;
+                HttpContext.Current.Session["Servicio"] = tipo;
         }
         List<ClServicioVeterinariaE> listaG = null;
         protected void Button1_Click(object sender, EventArgs e)

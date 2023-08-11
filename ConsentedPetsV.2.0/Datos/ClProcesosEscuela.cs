@@ -137,12 +137,15 @@ namespace ConsentedPetsV._2._0.Datos
         public List<ClServicioVeterinariaE> mtdListarCurso(int id,int tipo=0)
         {
             string consulta = "";
+            string precio = "";
             if (tipo==0)
             {
                 consulta = "select * from CursoE where idServicioE=" + id;
+                precio = "precio";
             }else
             {
                 consulta = "select * from CursoE where idCursoE=" + id;
+                precio = "valorServicio"; 
             }
             ClProcesarSQL SQL = new ClProcesarSQL();
             DataTable tble = SQL.mtdSelectDesc(consulta);
@@ -153,7 +156,7 @@ namespace ConsentedPetsV._2._0.Datos
                 objE.idCurso = int.Parse(tble.Rows[i]["idCursoE"].ToString());
                 objE.nombre = tble.Rows[i]["nombre"].ToString();
                 objE.descripcion = tble.Rows[i]["descripcion"].ToString();
-                objE.precio =int.Parse( tble.Rows[i]["precio"].ToString());
+                objE.precio =int.Parse( tble.Rows[i][precio].ToString());
                 objE.foto = tble.Rows[i]["foto"].ToString();
                 lista.Add(objE);
             }

@@ -12,10 +12,26 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+        <link href="../../../Css/AgregarVeter.css" rel="stylesheet" />
+    
+    <link href="../../../../Styles/sweetalert.css" rel="stylesheet" />
+    <script src="../../../../Scripts/sweetalert.min.js"></script>
+    <style>
+        .center {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        body {
+            background: linear-gradient(#d98567, #243b55);
+            color: white;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
     <div class="center">
-        <h1 style="margin-top: 20px; color: #78fff1">Listar Personal</h1>
+        <h1 style="margin-top: 20px; color: #78fff1">Listar Cursos</h1>
         <div style="width: 1100px">
             <table id="tblUsua" class="table" style="color: white">
                 <thead style="color: #78fff1">
@@ -72,6 +88,7 @@
                                 <div class="card">
                                     <h3>Datos del Curso</h3>
                                     <img runat="server" id="imagen" src="#" style="width:20px ;height:20px" />
+                                    <asp:Image ID="Image1" runat="server" style="width:20px ;height:20px" />
                                     <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>
                                     <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox> 
                                     <asp:Label ID="Label12" runat="server" Text="Descripcion"></asp:Label>
@@ -92,6 +109,12 @@
                 </div>
             </div>
         </div>
+         <asp:ScriptManager runat="server"></asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button2_Click" Style="display: none" AutoPostBack="false" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </form>
     <script>
         $(document).ready(function () {
@@ -107,20 +130,20 @@
                     $('#tblUsua').DataTable({
                         data: data,
                         columns: [
-                            { data: "Nombre" },
-                            { data: "Descripcion" },
-                            { data: "Precio" },
+                            { data: "nombre" },
+                            { data: "descripcion" },
+                            { data: "precio" },
                             {
                                 data: null,
                                 render: function (data, type, row) {
-                                    return '<button type="button" id="btnEditar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" data-id="' + data.idUsuario + '">Editar</button > ';
+                                    return '<button type="button" id="btnEditar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" data-id="' + data.idCurso + '">Editar</button > ';
                                  
                                 }
                             },
                             {
                                 data: null,
                                 render: function (data, type, row) {
-                                    return '<button type="button" id="btneliminar" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-id="' + data.idUsuario + '">Eliminar</button > ';
+                                    return '<button type="button" id="btneliminar" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-id="' + data.idCurso + '">Eliminar</button > ';
 
                                 }
                             }
@@ -134,6 +157,7 @@
                         var id = $(this).data('id');
                         GuardarIdPersonal(id);
                         cargardatos(id);
+                        activarBoton();
                     });
                 },
                 error: function (error) {
@@ -179,6 +203,16 @@
                     console.error(errorThrown);
                 }
             });
+            
+        }
+        function activarBoton() {
+            // Obtiene una referencia al botón
+            var boton = document.getElementById('<%= Button2.ClientID %>');
+
+             // Simula el clic en el botón
+             if (boton) {
+                 boton.click();
+             }
          }
     </script>
 </asp:Content>
