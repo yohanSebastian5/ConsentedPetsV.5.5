@@ -61,12 +61,12 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
             objE.nombre = txtNombre.Text;
             objE.descripcion = txtDescripcion.Text;
             objE.precio = int.Parse(txtPrecio.Text);
-
+            string nombre="";
             if (FileUpload1.HasFile)
             {
                 // Procesar el archivo cargado
-                string nombreArchivo = Path.GetFileName(FileUpload1.FileName);
-                string rutaArchivo = Server.MapPath("~/Uploads/") + nombreArchivo; // Cambiar con la ruta deseada
+                 nombre = Path.GetFileName(FileUpload1.FileName);
+                string rutaArchivo = Server.MapPath("../../../imagenes/ServicioCursosE/") + nombre; // Cambiar con la ruta deseada
 
                 FileUpload1.SaveAs(rutaArchivo);
 
@@ -75,10 +75,13 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
             else
             {
                 // Usar el nombre de la imagen preexistente para el procesamiento en el servidor
-                string nombreImagenPreexistente = imagen.Src;
+                 nombre = imagen.Src;
                 // Realizar operaciones con el nombre de la imagen preexistente
             }
-
+            objE.foto = nombre;
+            objE.idServicioV = 1;
+            objL.mtdActualizarCursoE(objE);
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Actualizacion Exitosa !', 'Curso Editado', 'success')", true);
 
         }
 
