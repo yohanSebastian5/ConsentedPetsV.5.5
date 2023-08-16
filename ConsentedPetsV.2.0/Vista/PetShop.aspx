@@ -17,7 +17,7 @@
               
                 <div class="Pet col-md-3 align-items-center">
                     
-                    <img src='<%# ResolveUrl("~/Vista/imagenes/PetShop/") + Eval("foto") %>'/>
+                    <img src='<%# ResolveUrl("~imagenes/ImagenesEstablecimiento/") + Eval("foto") %>'/>
 
                     <div class="Pet-content">
                         <h2 class="Pet-text"><%#Eval("nombre") %>
