@@ -12,11 +12,15 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador
 {
     public partial class ListarPersonal : System.Web.UI.Page
     {
-        ClUsuarioE objUsuarioE = new ClUsuarioE();
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            int idUsuarios = int.Parse(Session["RolUsuario"].ToString());
+            if (idUsuarios != 2)
+            {
+                Response.Redirect("../../../PaginaPrincipal.aspx");
+            }
         }
         [WebMethod]
         public static List<ClUsuarioE> mtdLista()

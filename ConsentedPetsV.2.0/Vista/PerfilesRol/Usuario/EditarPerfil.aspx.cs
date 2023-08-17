@@ -15,6 +15,11 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Usuario
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            int idUsuarios = int.Parse(Session["Usuario"].ToString());
+            if (idUsuarios == 0)
+            {
+                Response.Redirect("../../../PaginaPrincipal.aspx");
+            }
 
             if (!IsPostBack)
             {

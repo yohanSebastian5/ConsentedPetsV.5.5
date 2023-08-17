@@ -12,6 +12,7 @@ namespace ConsentedPetsV._2._0
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["Usuario"] = 0;
+            Session["RolUsuario"] = 0;
         }
     }
 }

@@ -16,6 +16,11 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
         ClServicioVetL objL = new ClServicioVetL();
         protected void Page_Load(object sender, EventArgs e)
         {
+            int idUsuarios = int.Parse(Session["UsRolUsuariouario"].ToString());
+            if (idUsuarios != 2)
+            {
+                Response.Redirect("../../../PaginaPrincipal.aspx");
+            }
             if (!IsPostBack)
             {
                 
