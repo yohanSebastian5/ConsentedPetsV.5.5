@@ -57,7 +57,7 @@ namespace ConsentedPets.Vista.Veterinaria
             {
                 objUsuL.mtdRol( int.Parse(Session["Usuario"].ToString()),tipo);
             }
-            Response.Redirect("../PerfilesRol/Tutorial.aspx");
+            Response.Redirect("../PerfilesRol/TutorialAdmin.aspx");
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)
