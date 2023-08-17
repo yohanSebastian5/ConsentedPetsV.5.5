@@ -16,12 +16,13 @@
         <div class="left">
             <div class="top_link">
                 <a href="../../Principal.aspx">
-                   <img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt=""></a>
+                    <img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt=""></a>
             </div>
             <div class="contact">
                 <form runat="server">
                     <h3>Registrarse</h3>
                     <asp:TextBox ID="txtDocumento" runat="server" placeholder="Documento"></asp:TextBox>
+                    
                     <asp:TextBox ID="txtNombre" runat="server" placeholder="Nombre"></asp:TextBox>
                     <asp:TextBox ID="txtApellido" runat="server" placeholder="Apellido"></asp:TextBox>
                     <asp:TextBox ID="txtTelefono" runat="server" placeholder="Telefono"></asp:TextBox>
@@ -33,10 +34,10 @@
 
 
                     <button runat="server" id="btnRegistrar" class="submit">Registrar</button>
-<%--                    <asp:Button ID="btnRegistrar" class="submit" runat="server" Text="Registrar" />--%>
+                    <%--                    <asp:Button ID="btnRegistrar" class="submit" runat="server" Text="Registrar" />--%>
                 </form>
             </div>
-            
+
         </div>
         <div class="right">
             <div class="right-text">
