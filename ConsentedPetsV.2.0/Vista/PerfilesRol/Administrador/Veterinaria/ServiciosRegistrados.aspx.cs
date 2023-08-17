@@ -18,6 +18,11 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            int idUsuarios = int.Parse(Session["RolUsuario"].ToString());
+            if (idUsuarios != 2)
+            {
+                Response.Redirect("../../../../PaginaPrincipal.aspx");
+            }
             if (!IsPostBack)
             {
                 int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());

@@ -14,10 +14,10 @@ namespace ConsentedPets.Vista.PerfilesRol.Administrador.EscuelaCanina
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idUsuarios = int.Parse(Session["UsRolUsuariouario"].ToString());
+            int idUsuarios = int.Parse(Session["RolUsuario"].ToString());
             if (idUsuarios != 2)
             {
-                Response.Redirect("../../../PaginaPrincipal.aspx");
+                Response.Redirect("../../../../PaginaPrincipal.aspx");
             }
             if (!IsPostBack)
             {

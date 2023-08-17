@@ -13,8 +13,12 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-                int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
+            int idUsuarios = int.Parse(Session["RolUsuario"].ToString());
+            if (idUsuarios != 2)
+            {
+                Response.Redirect("../../../../PaginaPrincipal.aspx");
+            }
+            int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
             idVeterinaria = 1;
                 ClProcesosVetL objProcesos = new ClProcesosVetL();
                 List<ClProcesosVetE> listaProcesos = objProcesos.mtdProcesos(idVeterinaria);

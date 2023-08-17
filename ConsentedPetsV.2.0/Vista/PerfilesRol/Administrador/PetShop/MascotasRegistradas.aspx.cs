@@ -14,6 +14,11 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.PetShop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            int idUsuarios = int.Parse(Session["RolUsuario"].ToString());
+            if (idUsuarios != 2)
+            {
+                Response.Redirect("../../../../PaginaPrincipal.aspx");
+            }
             ClProductoL objL = new ClProductoL();
             Session["Escuela"] = 1;
             List<ClMascotaE> lista = objL.mtdListarMascota(int.Parse(Session["Escuela"].ToString()));

@@ -13,7 +13,11 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.PetShop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            int idUsuarios = int.Parse(Session["RolUsuario"].ToString());
+            if (idUsuarios != 2)
+            {
+                Response.Redirect("../../../../PaginaPrincipal.aspx");
+            }
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
