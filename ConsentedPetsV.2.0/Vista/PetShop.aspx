@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
     <link href="Css/EstiloRepeat.css" rel="stylesheet" />
-    <main>
+    <main style="background:#e798a7d1">
         <h1>Pet Shops</h1>
         <div class="row container justify-content-evenly" runat="server">
             

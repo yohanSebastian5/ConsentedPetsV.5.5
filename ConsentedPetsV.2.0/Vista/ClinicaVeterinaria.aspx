@@ -19,7 +19,7 @@
     <link href="Css/EstiloRepeat.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <main>
+    <main style="background:#a9dcf4c2">
 
         <h1>Veterinarias</h1>
         <div class="row container justify-content-evenly" runat="server">

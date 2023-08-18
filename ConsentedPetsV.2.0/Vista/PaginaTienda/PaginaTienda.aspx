@@ -284,7 +284,7 @@
                                 <ItemTemplate>
                                     <div class="item">
                                         <div class="text-center">
-                                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                                            <i class="fa fa-3x fa-quote-left text-primary mb-4" style="color:#e798a7d1"></i>
                                             <h4 class="font-weight-light mb-4" style="margin: 0 auto; display: table;"><%# Eval("Comentario") %></h4>
                                             <img class="img-fluid mx-auto mb-3 rounded-circle" style="width: 5rem; height: 5rem;" src='<%# ResolveUrl("../imagenes/ImagenesUsuarios/") + Eval("foto") %>' alt="">
                                             <h4 class="font-weight-light mb-0" style="margin: 0 auto; display: table; font-size: 20px"><%# Eval("nombre") %> <%# Eval("apellido") %></h4>

@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="Css/EstiloRepeat.css" rel="stylesheet" />
-    <main>
+    <main style="background:#ff945ec4">
 
         <h1>Escuelas Caninas</h1>
         <div class="row container justify-content-evenly" runat="server">
