@@ -15,14 +15,16 @@
             display: none;
         }
         main{
-            background: #52d5b2;
+            background: mistyrose;
         }
-       
+       body{
+           background:mistyrose
+       }
        
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
-    <div style="background-color: darkslategrey">
+    <div style="background-color: #e798a7de">
         <h1  class="center">Tiendas de Mascotas</h1>
         <asp:Button ID="Button1" CssClass="ocultar" runat="server" Text="Button" OnClick="Button1_Click" />
         <div class="row container justify-content-evenly" runat="server">

@@ -33,22 +33,22 @@
                 <asp:Image ID="Image1" CssClass="imgUsuarioP" runat="server" /></div>
             <br />
             <div class="field space">
-                <span class="fa fa-user"></span>
+                <span class="fa "></span>
                 <asp:TextBox ID="txtNombre" placeholder="Nombre" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
             </div>
             <br />
             <div class="field space">
-                <span class="fa fa-user"></span>
+                <span class="fa "></span>
                 <asp:TextBox ID="txtDireccion" placeholder="Direccion" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
             </div>
             <br />
             <div class="field space">
-                <span class="fa fa-user"></span>
+                <span class="fa "></span>
                 <asp:TextBox ID="txtTelefono" placeholder="Telefono" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
             </div>
             <br />
             <div class="field space">
-                <span class="fa fa-user"></span>
+                <span class="fa"></span>
                 <asp:TextBox ID="txtEmail" placeholder="Email" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
             </div>
             <br />

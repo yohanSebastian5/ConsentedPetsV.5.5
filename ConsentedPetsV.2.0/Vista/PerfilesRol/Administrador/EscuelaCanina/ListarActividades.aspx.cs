@@ -17,17 +17,18 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
         ClProcesosVetL objL = new ClProcesosVetL();
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idUsuarios = int.Parse(Session["RolUsuario"].ToString());
-            if (idUsuarios != 2)
-            {
-                Response.Redirect("../../../../PaginaPrincipal.aspx");
-            }
+            //int idUsuarios = int.Parse(Session["RolUsuario"].ToString());
+            //if (idUsuarios != 2)
+            //{
+            //    Response.Redirect("../../../../PaginaPrincipal.aspx");
+            //}
         }
 
        [WebMethod]
         public static List<ClServicioVeterinariaE> mtdListar()
         {
             ClProcesosVetL objL = new ClProcesosVetL();
+            HttpContext.Current.Session["Escuela"] = 1;
             List<ClServicioVeterinariaE> lista = objL.mtdListarActividad( int.Parse(HttpContext.Current.Session["Escuela"].ToString()));
         
             return lista;

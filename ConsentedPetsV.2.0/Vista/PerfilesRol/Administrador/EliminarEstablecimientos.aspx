@@ -16,14 +16,21 @@
     <script src="../../../Scripts/sweetalert.min.js"></script>
     <link href="../../../Styles/sweetalert.css" rel="stylesheet" />
     <link href="../../Css/EliminarEstablecimiento.css" rel="stylesheet" />
+    <style>
+        body {
+            background: url("https://estaticos-cdn.prensaiberica.es/clip/76091432-8b3a-482b-8209-cb4c51e54b0c_16-9-discover-aspect-ratio_default_0.jpg");
+            background-size: cover;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
-    <h2 class="Title" >ELIMINAR ESTABLECIMIENTO</h2>
-    <asp:DropDownList ID="ddlTipo" runat="server" CssClass="tipos"  style="width: 20%; color: #125a99;" OnSelectedIndexChanged="ddlTipo_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+    <h2 class="Title">ELIMINAR ESTABLECIMIENTO</h2>
+    <asp:DropDownList ID="ddlTipo" runat="server" CssClass="tipos" Style="width: 20%; color: #210070b5; background: #f0f8ff5c;" OnSelectedIndexChanged="ddlTipo_SelectedIndexChanged" AutoPostBack="true">
+    </asp:DropDownList>
     <div class=" d-flex justify-content-center">
-        <div id="dataTableContainer" class="table-responsive tabla" style="width: 1450px; justify-content:center">
+        <div id="dataTableContainer" class="table-responsive tabla" style="width: 1450px; color: aliceblue; justify-content: center; background: #21007042">
             <table id="tblTrabajador" class="table ">
-                <thead style="color: #125a99;">
+                <thead style="color: #ffffff;">
                     <tr>
                         <th>Nombre</th>
                         <th>Telefono</th>
@@ -32,11 +39,12 @@
                         <th>Eliminar</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody style="color: aliceblue">
+                </tbody>
             </table>
         </div>
     </div>
-    
+
 
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
