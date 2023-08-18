@@ -56,10 +56,10 @@ namespace PaginaTienda.PaginaTienda
                 string image = "../imagenes/ImagenesEstablecimiento/" + objE.foto;
                 foto.ImageUrl = image;
                 Imag.ImageUrl = image;
-                Image2.ImageUrl = image;
+                //Image2.ImageUrl = image;
                 nombre1.InnerText = objE.nombre;
 
-                ema.InnerText = objE.email;
+                //ema.InnerText = objE.email;
                 nombre.InnerText = objE.nombre;
 
                 emails.InnerText = objE.email;
@@ -91,9 +91,9 @@ namespace PaginaTienda.PaginaTienda
         protected void mtdPedido(string destino, string name, string email, string phone, string cantidad, string message)
         {
             int idTienda = int.Parse(Session["Tienda"].ToString());
-            
+           
             int idUsuario = int.Parse(Session["Usuario"].ToString());
-            
+           
             ClPedidoL objDato1 = new ClPedidoL();
             ClPedidoE objDato2 = new ClPedidoE();
             string remitente = email;
@@ -151,9 +151,9 @@ namespace PaginaTienda.PaginaTienda
         protected void btnEnviarComentario_Click(object sender, EventArgs e)
         {
             int idTienda = int.Parse(Session["Tienda"].ToString());
-            idTienda = 1;
+        
             int idUsuario = int.Parse(Session["Usuario"].ToString());
-            idUsuario = 19;
+           
             ClComentarioL objL = new ClComentarioL();
             ClComentarioE objE = new ClComentarioE();
             objE.comentario = comentario.InnerText;

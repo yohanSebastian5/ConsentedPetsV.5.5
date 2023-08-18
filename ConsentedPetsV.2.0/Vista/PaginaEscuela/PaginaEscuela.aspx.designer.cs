@@ -15,6 +15,33 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
     {
 
         /// <summary>
+        /// Control direc.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl direc;
+
+        /// <summary>
+        /// Control emaile.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl emaile;
+
+        /// <summary>
+        /// Control tele.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tele;
+
+        /// <summary>
         /// Control idImagEstab.
         /// </summary>
         /// <remarks>

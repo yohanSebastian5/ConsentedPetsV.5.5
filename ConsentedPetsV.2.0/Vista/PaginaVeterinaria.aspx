@@ -59,7 +59,7 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav ml-auto py-0">
-                            <a href="ClinicaVeterinaria.aspx" class="nav-item nav-link active">Home</a>
+                            <a href="ClinicaVeterinaria.aspx" class="nav-item nav-link active">Volver</a>
                             <a href="#servicios" class="nav-item nav-link">Servicios</a>
                             <a href="#procesos" class="nav-item nav-link">Procesos</a>
                         </div>
@@ -247,7 +247,7 @@
                                 <h4 class="font-weight-light mb-4"><%# Eval("Comentario") %></h4>
                                 <img class="img-fluid mx-auto mb-3" src='<%# ResolveUrl("imagenes/ImagenesUsuarios/") + Eval("foto") %>' alt="">
                                 <h5 class="font-weight-bold m-0"><%# Eval("nombre") %></h5>
-                                <span>Profession</span>
+                                <span>Cliente</span>
                             </div>
                                 </ItemTemplate>
                             </asp:Repeater>
@@ -365,13 +365,7 @@
                                 </asp:DropDownList>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="estadoCita" class="font-weight-light">Estado</label>
-                                <asp:DropDownList ID="ddlEstado" style="border-color: rosybrown; border-radius: 20px; background-color: mistyrose; border-width: 2.5px; text-align: center;" runat="server">
-                                    <asp:ListItem Text=""></asp:ListItem>
-                                    <asp:ListItem Value="pendiente">Pendiente</asp:ListItem>
-                                </asp:DropDownList>
-                            </div>
+                            
                             <asp:Button ID="btnAgendarCita" runat="server" CssClass="btn btn-primary" Text="Agendar Cita" OnClick="btnAgendarCita_Click1" />
 
                         </div>
@@ -386,34 +380,12 @@
                 <div class="row">
                     <div class="col-12 mb-4">
                         <a href="index.html" class="navbar-brand m-0">
-                            <h1 class="m-0 mt-n2 display-4 text-primary"><span class="text-secondary">i</span>CREAM</h1>
+                            <h1 class="m-0 mt-n2 display-4 text-primary"><span class="text-secondary">V</span>ETERINARIA</h1>
                         </a>
                     </div>
-                    <div class="col-12 mb-4">
-                        <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-secondary btn-social" href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                    <div class="col-12 mt-2 mb-4">
-                        <div class="row">
-                            <div class="col-sm-6 text-center text-sm-right border-right mb-3 mb-sm-0">
-                                <h5 class="font-weight-bold mb-2">Get In Touch</h5>
-                                <p class="mb-2">123 Street, New York, USA</p>
-                                <p class="mb-0">+012 345 67890</p>
-                            </div>
-                            <div class="col-sm-6 text-center text-sm-left">
-                                <h5 class="font-weight-bold mb-2">Opening Hours</h5>
-                                <p class="mb-2">Mon – Sat, 8AM – 5PM</p>
-                                <p class="mb-0">Sunday: Closed</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <p class="m-0">
-                            &copy; <a href="#">Domain</a>. All Rights Reserved. Designed by <a href="https://htmlcodex.com">HTML Codex</a>
-                        </p>
-                    </div>
+                    
+                    
+                  
                 </div>
             </div>
         </div>

@@ -24,8 +24,7 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
                 
 
                 int idEscuela = int.Parse(Session["Escuela"].ToString());
-                
-
+               
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
                 
                 ClServicioEL objServicio = new ClServicioEL();
@@ -63,7 +62,9 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
                 ClEstablecimientoL objEs = new ClEstablecimientoL();
                 ClEstablecimientoE obj = objEs.mtdListarVet("", "Escuela", idEscuela, 1);
                 string image = "../imagenes/ImagenesEstablecimiento/" + obj.foto;
-
+                emaile.InnerText = obj.email;
+                tele.InnerText = obj.telefono;
+                direc.InnerText = obj.direccion;
                 foto.ImageUrl = image;
                 nombre.InnerText = obj.nombre;
                 idImagEstab.ImageUrl = image;
@@ -121,7 +122,7 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
         {
 
             int idEscuela = int.Parse(Session["Escuela"].ToString());
-            idEscuela = 1;
+
             ClMatriculaL objML = new ClMatriculaL();
             ClMatriculaE objME = new ClMatriculaE();
             DateTime fechaActual = DateTime.Today;
@@ -142,9 +143,9 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
         protected void btnEnviarComentario_Click(object sender, EventArgs e)
         {
             int idEscuela = int.Parse(Session["Escuela"].ToString());
-            idEscuela = 1;
+
             int idUsuario = int.Parse(Session["Usuario"].ToString());
-            idUsuario = 19;
+
             ClComentarioL objL = new ClComentarioL();
             ClComentarioE objE = new ClComentarioE();
             objE.comentario = comentario.InnerText;

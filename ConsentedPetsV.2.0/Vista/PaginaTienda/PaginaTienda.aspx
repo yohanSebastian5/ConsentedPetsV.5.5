@@ -84,7 +84,7 @@
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
                             <ul class="nav">
-                                <li class="scroll-to-section"><a href="../PetShop.aspx" class="active">Home</a></li>
+                                <li class="scroll-to-section"><a href="../PetShop.aspx" class="active">Volver</a></li>
                                 <li class="scroll-to-section"><a href="#menu">Mascotas</a></li>
                                 <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
                                 <li class="scroll-to-section"><a href="#reservation">Pedido</a></li>
@@ -490,7 +490,7 @@
 
 
         <!-- ***** Footer Start ***** -->
-        <footer>
+       <%-- <footer>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-xs-12">
@@ -518,7 +518,7 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer>--%>
 
 
     </form>

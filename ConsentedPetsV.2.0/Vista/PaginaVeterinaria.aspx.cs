@@ -104,7 +104,7 @@ namespace ConsentedPetsV._2._0.Vista
             objHis.idMascota = int.Parse(ddlMascota.SelectedValue.ToString());
             objHis.FechaCita = txtFecha.Text;
             objHis.HoraCita = ddlHora.SelectedValue;
-            objHis.Estado = ddlEstado.SelectedValue;
+            objHis.Estado = "pendiente";
 
             objHis.idServicioV = int.Parse(ddlServicio.SelectedValue);
             objHis.idUsuario = idUsuario;
@@ -124,7 +124,6 @@ namespace ConsentedPetsV._2._0.Vista
             ddlMascota.SelectedIndex = 0;
             txtFecha.Text = "";
             ddlHora.SelectedIndex = 0;
-            ddlEstado.SelectedIndex = 0;
             ddlServicio.SelectedIndex = 0;
 
 
@@ -134,9 +133,9 @@ namespace ConsentedPetsV._2._0.Vista
         protected void btnEnviarComentario_Click(object sender, EventArgs e)
         {
             int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
-            idVeterinaria = 1;
+           
             int idUsuario = int.Parse(Session["Usuario"].ToString());
-            idUsuario = 17;
+            
             ClComentarioL objL = new ClComentarioL();
             ClComentarioE objE = new ClComentarioE();
             objE.comentario = comentario.InnerText;
