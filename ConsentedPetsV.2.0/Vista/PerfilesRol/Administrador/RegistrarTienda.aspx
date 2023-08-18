@@ -29,10 +29,10 @@
                     <label for="email">Nombre</label>
                     <input id="txtNombre" runat="server">
                     <label for="password">Telefono</label>
-                    <input id="txtTelefono" runat="server">
+                    <input type="number" id="txtTelefono" runat="server">
                     <label for="password">Direccion</label>
                     <input id="txtDireccion" runat="server">
-                    <label for="password">email</label>
+                    <label  for="password">email</label>
                     <input type="email" style="margin-bottom: 10px" runat="server" id="txtEmail">
                     <asp:FileUpload ID="FlImagenV" Font-Size="Small" runat="server" onchange="cargar(this);" />
                     <input type="submit" style="margin-top: 10px" runat="server" id="submit" value="Submit">

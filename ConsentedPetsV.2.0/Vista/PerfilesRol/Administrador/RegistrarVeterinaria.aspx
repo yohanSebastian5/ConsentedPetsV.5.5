@@ -34,7 +34,7 @@
                     <label for="email">Nombre</label>
                     <input id="txtNombre" runat="server">
                     <label for="password">Telefono</label>
-                    <input id="txtTelefono" runat="server">
+                    <input  id="txtTelefono" runat="server">
                     <label for="password">Direccion</label>
                     <input id="txtDireccion" runat="server">
                     <label for="password">email</label>

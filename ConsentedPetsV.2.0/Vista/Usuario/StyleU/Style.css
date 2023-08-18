@@ -19,7 +19,7 @@ body {
     display: block;
     margin: auto;
     margin-top: 40px;
-    background: #9c9898;
+    background: #ee6428;
     color: #fff;
     font-weight: bold;
     -webkit-box-shadow: 0px 9px 15px -11px rgba(88,54,114,1);
@@ -36,7 +36,7 @@ body {
     transform: translate(-50%,-50%);
     background: #fff;
     border-radius: 10px;
-    box-shadow: 1px 4px 22px -8px #0004;
+    box-shadow: 1px 4px 22px 2px #0004;
     display: flex;
     overflow: hidden;
 }
@@ -99,7 +99,7 @@ body {
 
 
 .right {
-    background: linear-gradient(212.38deg, rgba(185 169 175 / 0%) 0%, rgba(117 106 118 / 71%) 100%),url(../imagenes/fondo3.png);
+    background: linear-gradient(212.38deg, rgba(185 169 175 / 0%) 0%, rgba(22 20 22 / 100%) 100%),url(../imagenes/fondo3.png);
     color: #fff;
     position: relative;
 }

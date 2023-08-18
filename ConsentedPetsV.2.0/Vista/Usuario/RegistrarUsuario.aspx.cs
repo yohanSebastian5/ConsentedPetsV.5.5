@@ -36,7 +36,7 @@ namespace ProcsosAparteProyecto
                     objUsuE.email = txtEmail.Text;
                     objUsuE = objUsuL.mtdRolU(objUsuE, 1);
 
-                    if (objUsuE.nombre == "")
+                    if (objUsuE.idUsuario == 0)
                     {
 
                         int tipo = 1;
@@ -54,7 +54,7 @@ namespace ProcsosAparteProyecto
                         objUsuarioL.mtdRol(objUsuarioE.idUsuario);
                         if (tipo == 1)
                         {
-                            Session["RolUsuario"] = objUsuarioE.idRol;
+                            Session["RolUsuario"] = 1;
                             Session["Usuario"] = objUsuarioE.idUsuario;
                             Session["NombreUsuario"] = objUsuarioE.nombre;
 
