@@ -14,6 +14,7 @@ namespace ConsentedPets.Vista.PerfilesRol.Administrador.Veterinaria
 {
     public partial class EditarPefilV : System.Web.UI.Page
     {
+        public static string type = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             //int idUsuarios = int.Parse(Session["RolUsuario"].ToString());
@@ -64,10 +65,8 @@ namespace ConsentedPets.Vista.PerfilesRol.Administrador.Veterinaria
             objE.foto = foto;
             objE.id= int.Parse(Session["Veterinaria"].ToString());
             objL.mtdActualizar(objE,"V");
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Informacion Atualizada!', ''"+objE.nombre+"' A sido Actualizado', 'success')", true);
-
-
-
+          
+           
 
         }
     }

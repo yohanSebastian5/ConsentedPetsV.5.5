@@ -47,17 +47,17 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade justify-content-center align-items-center" style="justify-content: center;align-items: center; " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content" style="width: 700px;">
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">Actualizacion de Datos</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="background: #2a0f6dbd">
                     <div class="section">
                         <div class="container">
-                            <div class="card">
+                            <div class="card" style="background: #c8c1d7f2">
                                 <h3>¿Esta Seguro de Eliminar el Establecimiento?</h3>
                             </div>
                         </div>
@@ -89,14 +89,7 @@
                             {
                                 data: null,
                                 render: function (data, type, row) {
-                                    //var btneli = document.createElement("button");
-                                    //btneli.className = 'btn btn-primary';
-                                    //btneli.innerHTML = 'eliminar';
-                                    //btneli.setAttribute = "type", "button";
-                                    //btneli.addEventListener('click', function () {
-                                    //    console.log('ddsd');
-                                    //});
-                                    //return btneli;
+                                   
                                     return '<button type="button" id="btneliminar" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-id="' + data.idVeterinaria + '">Eliminar</button > ';
 
                                 }

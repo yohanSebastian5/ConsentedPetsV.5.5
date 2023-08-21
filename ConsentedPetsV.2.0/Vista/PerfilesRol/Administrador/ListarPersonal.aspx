@@ -22,7 +22,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
     <h1 class="Title">Listar Personal</h1>
     <div class="d-flex justify-content-center">
-        <div class="table-responsive tabla" style="width: 1435px">
+        <div class="table-responsive tabla" style="width: 1435px ;background: #21007042">
             <table id="tblUsua" class=" table ">
                 <thead style="color: #21007042;">
                     <tr>

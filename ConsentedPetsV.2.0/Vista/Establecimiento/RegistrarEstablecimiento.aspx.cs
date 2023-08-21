@@ -16,11 +16,11 @@ namespace ConsentedPets.Vista.Veterinaria
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idUsuarios = int.Parse(Session["RolUsuario"].ToString());
-            if (idUsuarios != 1)
-            {
-                Response.Redirect("../../../PaginaPrincipal.aspx");
-            }
+            //int idUsuarios = int.Parse(Session["RolUsuario"].ToString());
+            //if (idUsuarios != 1)
+            //{
+            //    Response.Redirect("../../../PaginaPrincipal.aspx");
+            //}
             if (!IsPostBack)
             {
                

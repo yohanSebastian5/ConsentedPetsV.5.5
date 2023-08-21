@@ -141,8 +141,7 @@
                 success: function (dat) {
                     var objUsuE = dat.d;
                     swal('¡Realizado!', 'Veterinario Registrado', 'success');
-                    console.log(objUsuE);
-                    console.log(espe);
+                   
                 }, error: function (xhr, textStatus, errorThrown) {
                     // Manejar cualquier error que ocurra durante la llamada AJAX
                     console.error(errorThrown);

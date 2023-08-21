@@ -18,7 +18,7 @@
         }
 
         .right {
-            background: linear-gradient(212.38deg, rgba(185 169 175 / 70%) 0%, rgb(149 41 159 / 71%) 100%),url(../imagenes/fondo3.png);
+            background: linear-gradient(212.38deg, rgba(41 125 159 / 71%) 0%, rgb(149 41 159 / 71%) 100%),url(../imagenes/fondo3.png);
             color: #fff;
             position: relative;
         }
@@ -49,7 +49,7 @@
                     <h3>Registrarse</h3>
                     <asp:TextBox ID="txtNombre" runat="server" placeholder="Nombre"></asp:TextBox>
                     <asp:TextBox ID="txtDescripcio" runat="server" placeholder="Descripcion"></asp:TextBox>
-                    <asp:TextBox ID="txtPrecio" runat="server" placeholder="Precio"></asp:TextBox>
+                    <asp:TextBox ID="txtPrecio" TextMode="Number" runat="server" placeholder="Precio"></asp:TextBox>
                     <asp:DropDownList ID="ddlServicio" runat="server" CssClass="ddl"></asp:DropDownList>
                     <asp:FileUpload ID="FlImagenU" runat="server" />
                     <button runat="server" id="btnRegistrar" class="submit">Registrar</button>

@@ -37,21 +37,31 @@ namespace ConsentedPets.Vista.PerfilesRol.Administrador.Veterinaria
         }
         public void mtdRegistrar(object sender, EventArgs e)
         {
-            ClServicioVeterinariaE objE = new ClServicioVeterinariaE();
-            ClServicioVetL objL = new ClServicioVetL();
-            string nombreV = txtNombre.Text+txtPrecio  + ".png";
-            string rutaImg = Path.Combine(Server.MapPath("../../../imagenes/servicios/"), nombreV);
-            FlImagenU.SaveAs(rutaImg);
-            objE.idServicioV = int.Parse(ddlServicio.SelectedValue.ToString());
-            objE.precio = int.Parse(txtPrecio.Text);
-            objE.descripcion = txtDescripcio.Text;
-            objE.nombre = txtNombre.Text;
-            objE.idVeterinaria =int.Parse(Session["Veterinaria"].ToString());
-            objE.foto = nombreV;
-            objL.mtdRegistrar(objE);
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Servicio " + objE.nombre + "!', 'Se ha Registrado con Exito', 'success')", true);
+            int tipo = int.Parse(ddlServicio.SelectedValue.ToString());
+            if (txtNombre.Text=="" || txtDescripcio.Text=="" || txtPrecio.Text=="" || FlImagenU.HasFile || tipo==0)
+            {
+                ClServicioVeterinariaE objE = new ClServicioVeterinariaE();
+                ClServicioVetL objL = new ClServicioVetL();
+                string nombreV = txtNombre.Text + txtPrecio + ".png";
+                string rutaImg = Path.Combine(Server.MapPath("../../../imagenes/servicios/"), nombreV);
+                FlImagenU.SaveAs(rutaImg);
+                objE.idServicioV = tipo;
+                objE.precio = int.Parse(txtPrecio.Text);
+                objE.descripcion = txtDescripcio.Text;
+                objE.nombre = txtNombre.Text;
+                objE.idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
+                objE.foto = nombreV;
+                objL.mtdRegistrar(objE);
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Servicio " + objE.nombre + "!', 'Se ha Registrado con Exito', 'success')", true);
 
-            
+            }
+            else
+            {
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Agregar todos los Datos !', 'No se pueden dejar espacios en blanco', 'warning')", true);
+
+            }
+
+
         }
     }
 }
