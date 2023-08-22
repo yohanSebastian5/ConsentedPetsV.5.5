@@ -203,6 +203,18 @@
                 }
             });
         }
+
+
+        document.getElementById("btnEditar").addEventListener("click", function () {
+            var div = document.getElementById("ContentBodyAdministrador");
+            if (div.style.opacity === "0") {
+                div.style.opacity = "0.6";
+            } else {
+                div.style.opacity = "0";
+            }
+        });
+
+
     </script>
 
 </asp:Content>
