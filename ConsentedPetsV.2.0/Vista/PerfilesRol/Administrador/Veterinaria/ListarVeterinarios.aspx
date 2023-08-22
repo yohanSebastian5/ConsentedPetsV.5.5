@@ -11,6 +11,8 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <link href="../../../../Styles/sweetalert.css" rel="stylesheet" />
+    <script src="../../../../Scripts/sweetalert.min.js"></script>
     <style>
         .center {
             align-items: center;
@@ -20,9 +22,13 @@
         }
 
         body {
-            background: linear-gradient(#d98567, #243b55);
+            background: linear-gradient(#8db3e1, #1d3149);
             color: white;
         }
+        .card{
+
+        }
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
@@ -55,16 +61,16 @@
     <form runat="server">
         <div style="color:lightslategray" class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content"  style="background-color: #2972d9b3; width:600px">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Eliminacion de Datos</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel" style="color:mintcream">Eliminacion de Datos</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="section">
                             <%--<h2 class="py-3">Actualizacion de Datos</h2>--%>
                             <div class="container">
-                                <div class="card">
+                                <div class="card" style=" background: #4b92ae;color: mintcream;">
                                     <h3>¿Esta Seguro de Eliminar el Veterinario?</h3>
 
                                 </div>
@@ -80,15 +86,15 @@
         </div>
         <div style="color:lightslategray" class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content" style="background-color: #2972d9b3;">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel2">Actualizacion de Datos</h5>
+                        <h5 class="modal-title" style="color:mintcream" id="staticBackdropLabel2">Actualizacion de Datos</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" style="color:lightslategray">
                         <div class="section">
                             <div class="container">
-                                <div class="card">
+                                <div class="card" style=" background: #4b92ae;color: mintcream;">
                                     <h3>Datos del Empleado</h3>
                                     <asp:Label ID="Label1" runat="server" Text="Especializacion"></asp:Label>
                                     <asp:TextBox ID="txtEspecializacion" runat="server"></asp:TextBox> 
@@ -101,7 +107,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <asp:Button ID="Button1" CssClass="btn btn-danger" runat="server" Text="Editar" OnClick="Button1_Click" />
+                            <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" Text="Editar" OnClick="Button1_Click" />
                         </div>
                     </div>
                 </div>

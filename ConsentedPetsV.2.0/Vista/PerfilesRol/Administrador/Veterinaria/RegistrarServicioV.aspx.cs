@@ -53,6 +53,10 @@ namespace ConsentedPets.Vista.PerfilesRol.Administrador.Veterinaria
                 objE.foto = nombreV;
                 objL.mtdRegistrar(objE);
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Servicio " + objE.nombre + "!', 'Se ha Registrado con Exito', 'success')", true);
+                txtDescripcio.Text = "";
+                txtNombre.Text = "";
+                txtPrecio.Text = "";
+                
 
             }
             else

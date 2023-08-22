@@ -40,16 +40,19 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria
         {
             int tipo = 2;
             int rol = 3;
-            ClUsuarioE objUsuE = cargardatos(docum);
-            CLUsuarioL objUsuL = new CLUsuarioL();
-            objUsuE.documento = docum;
-            objUsuE = objUsuL.mtdRolU(objUsuE, tipo);
-            objUsuE.especializacion= espes;
-            objUsuE.experiencia = expes;
-            objUsuE.profesion = profes;
-            objUsuL.mtdActualizarEmp(objUsuE);
-            objUsuL.mtdRol(objUsuE.idUsuario,rol);
-            objUsuL.mtdUsuarioE(objUsuE.idUsuario, int.Parse(HttpContext.Current.Session["Veterinaria"].ToString()));
+            if (espes!="" || expes!="" || profes!="")
+            {
+                ClUsuarioE objUsuE = cargardatos(docum);
+                CLUsuarioL objUsuL = new CLUsuarioL();
+                objUsuE.documento = docum;
+                objUsuE = objUsuL.mtdRolU(objUsuE, tipo);
+                objUsuE.especializacion = espes;
+                objUsuE.experiencia = expes;
+                objUsuE.profesion = profes;
+                objUsuL.mtdActualizarEmp(objUsuE);
+                objUsuL.mtdRol(objUsuE.idUsuario, rol);
+                objUsuL.mtdUsuarioE(objUsuE.idUsuario, int.Parse(HttpContext.Current.Session["Veterinaria"].ToString()));
+            }
         }
 
         public string mtdGuardar()

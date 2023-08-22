@@ -20,7 +20,7 @@
         }
 
         body {
-            background: linear-gradient(#d98567, #243b55);
+            background: linear-gradient(#8db3e1, #1d3149);
             color: white;
         }
     </style>

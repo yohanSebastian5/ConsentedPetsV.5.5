@@ -18,17 +18,17 @@
         }
 
         .right {
-            background: linear-gradient(212.38deg, rgba(41 125 159 / 71%) 0%, rgb(149 41 159 / 71%) 100%),url(../imagenes/fondo3.png);
+            background: linear-gradient(212.38deg, rgba(152 161 165 / 85%) 0%, rgb(71 130 153 / 91%) 100%),url(../imagenes/fondo3.png);
             color: #fff;
             position: relative;
         }
 
         body {
-            background: #a28dcb;
+            background: #516dd7ab;
         }
 
         .submit {
-            background: #fd9d9d;
+            background: #5286e7;
         }
 
         .ddl {
@@ -41,9 +41,7 @@
     <div class="login_box">
         <div class="left">
             <div class="top_link">
-                <a href="#">
-                    <img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="">Return home</a>
-            </div>
+          </div>
             <div class="contact">
                 <form runat="server">
                     <h3>Registrarse</h3>

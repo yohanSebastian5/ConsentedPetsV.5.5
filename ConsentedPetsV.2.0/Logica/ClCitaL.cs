@@ -23,5 +23,10 @@ namespace ConsentedPetsV._2._0.Logica
             return lista;
 
         }
+        public void mtdActualizarCitaEstado(int id,string estado)
+        {
+            ClCitaD objD = new ClCitaD();
+            objD.mtdActualizarEstadoCita(id, estado);
+        }
     }
 }
