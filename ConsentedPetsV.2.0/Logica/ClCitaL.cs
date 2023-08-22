@@ -23,5 +23,12 @@ namespace ConsentedPetsV._2._0.Logica
             return lista;
 
         }
+
+        public List<ClCitaE> mtdCita( int idVeterinaria)
+        {
+            ClCitaD objD = new ClCitaD();
+            List<ClCitaE> listaCita = objD.mtdCita2(idVeterinaria);
+            return listaCita;
+        }
     }
 }

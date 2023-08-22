@@ -24,7 +24,7 @@ namespace ConsentedPetsV._2._0.Vista.PaginaEscuela
                 
 
                 int idEscuela = int.Parse(Session["Escuela"].ToString());
-               
+                
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
                 
                 ClServicioEL objServicio = new ClServicioEL();

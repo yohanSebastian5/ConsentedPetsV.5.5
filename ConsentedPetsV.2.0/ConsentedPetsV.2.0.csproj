@@ -70,6 +70,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\sweetalert\bootstrap-sweetalert.png" />
+    <Content Include="Content\sweetalert\docs.css" />
+    <Content Include="Content\sweetalert\sweet-alert.css" />
+    <Content Include="Content\sweetalert\thumbs-up.jpg" />
     <Content Include="Global.asax" />
     <Content Include="PaginaPrincipal.aspx" />
     <Content Include="Principal.aspx" />
@@ -1093,6 +1097,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\sweetalert\sweet-alert.less" />
+    <Content Include="Content\sweetalert\sweet-alert-combine.less" />
+    <Content Include="Content\sweetalert\sweet-alert-animations.less" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
     <None Include="packages.config" />
     <Content Include="Vista\Bootstrap\css\bootstrap-grid.css.map" />
     <Content Include="Vista\Bootstrap\css\bootstrap-grid.min.css.map" />
@@ -1229,6 +1238,7 @@
     <Content Include="Vista\PaginaTienda\assets\fonts\slick.eot" />
     <Content Include="Vista\PaginaTienda\assets\fonts\slick.ttf" />
     <Content Include="Vista\PaginaTienda\assets\fonts\slick.woff" />
+    <Content Include="Views\Sweet\Alert.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
