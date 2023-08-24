@@ -44,7 +44,7 @@
           </div>
             <div class="contact">
                 <form runat="server">
-                    <h3>Registrarse</h3>
+                    <h3>Registrar</h3>
                     <asp:TextBox ID="txtNombre" runat="server" placeholder="Nombre"></asp:TextBox>
                     <asp:TextBox ID="txtDescripcio" runat="server" placeholder="Descripcion"></asp:TextBox>
                     <asp:TextBox ID="txtPrecio" TextMode="Number" runat="server" placeholder="Precio"></asp:TextBox>

@@ -44,8 +44,8 @@
                         <div class="row">
                             <div class="col-lg-4 offset-lg-4 text-center">
                                 <div class="section-heading">
-                                    <h6>Products</h6>
-                                    <h2>The best products for your pets</h2>
+                                    <h6>Productos</h6>
+                                    <h2>Los mejores productos para tu mascota</h2>
                                 </div>
                             </div>
                         </div>

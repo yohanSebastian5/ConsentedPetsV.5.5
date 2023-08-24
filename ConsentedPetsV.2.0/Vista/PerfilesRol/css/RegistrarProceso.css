@@ -128,7 +128,7 @@ button.tab {
     top: 50%;
     transform: translate(0, -50%) scale(0,1);
     transform-origin: left center;
-    background: #3950ffe3;
+    background: #1433a7;
     z-index: 2;
 }
 
@@ -209,7 +209,7 @@ button.tab {
     bottom: 1px;
     width: 100%;
     height: 2px;
-    background: #3950ffe3;
+    background: #1433a7;
     transform: scale(0,0);
     transform-origin: left;
     transition: all .25s ease-in-out;
@@ -267,7 +267,7 @@ input {
     border: 0px;
     color: #fff;
     padding: 20px 24px;
-    background: #3950ffe3;
+    background: #1433a7;
     text-transform: uppercase;
     font-family: "Roboto", sans-serif;
     letter-spacing: 2px;
