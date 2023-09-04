@@ -80,6 +80,8 @@ namespace ConsentedPets.Vista.Veterinaria
 
             }
 
+            Response.Redirect("../PerfilesRol/TutorialAdmin.aspx");
+
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)
