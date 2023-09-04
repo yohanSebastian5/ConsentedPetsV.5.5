@@ -4,7 +4,11 @@
     <link href="../../../Css/RegistrarV.css" rel="stylesheet" />
     <script src="../../../../Scripts/sweetalert.min.js"></script>
     <link href="../../../../Styles/sweetalert.css" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link href="../../../Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="../../../Bootstrap/js/bootstrap.min.js"></script>
     <style>
         body {
             background-image: url('../../imagenes/fondoRegistroM.png.jpg');
@@ -20,7 +24,7 @@
                 <header style="color: #aeb0b7e0;">Registra Tu mascota</header>
                 <br />
                 <div class="field space">
-                    <span class="fa fa-user"></span>
+                    <span class="bi bi-buildings-fill"></span>
                     <asp:TextBox CssClass="quitarmargen" ID="txtNombre" required="" placeholder="Nombre" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
                 </div>
                 <br />
@@ -51,7 +55,7 @@
                 </div>
                 <br />
 
-             
+
                 <br />
                 <asp:FileUpload ID="FlFotoM" runat="server" CssClass="field space" />
                 <br />

@@ -2,10 +2,11 @@
     justify-content: center;
     display: flex;
     margin: 20px;
-    color: #125a99;
+    color: #210070b5;
+    font-size: 30px;
 }
 body {
-    background-color: #d3f7f7;
+    background-color: mistyrose;
 }
 .tabla {
     border: 2px solid;

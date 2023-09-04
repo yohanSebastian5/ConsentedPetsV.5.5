@@ -28,6 +28,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.EscuelaCanina
         public static List<ClServicioVeterinariaE> mtdListar()
         {
             ClProcesosVetL objL = new ClProcesosVetL();
+            HttpContext.Current.Session["Escuela"] = 1;
             List<ClServicioVeterinariaE> lista = objL.mtdListarActividad( int.Parse(HttpContext.Current.Session["Escuela"].ToString()));
         
             return lista;

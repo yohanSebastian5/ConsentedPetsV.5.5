@@ -10,17 +10,17 @@
     <script src="../../Scripts/sweetalert.min.js"></script>
     <link href="../../Styles/sweetalert.css" rel="stylesheet" />
 </head>
-<body style="background: #ed940ca1;">
+<body style="background: #f38233c7;">
     <%--<section class="login">--%>
     <div class="login_box">
         <div class="left">
             <div class="top_link">
-                <a href="../../Principal.aspx">
+                <a href="../Login.aspx">
                     <img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt=""></a>
             </div>
             <div class="contact">
                 <form runat="server">
-                    <h3>Registrarse</h3>
+                    <h3>Bienvenido</h3>
                     <asp:TextBox ID="txtDocumento" runat="server" placeholder="Documento"></asp:TextBox>
                     
                     <asp:TextBox ID="txtNombre" runat="server" placeholder="Nombre"></asp:TextBox>

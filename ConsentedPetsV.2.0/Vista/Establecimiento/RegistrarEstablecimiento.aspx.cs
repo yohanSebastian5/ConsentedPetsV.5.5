@@ -16,6 +16,11 @@ namespace ConsentedPets.Vista.Veterinaria
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //int idUsuarios = int.Parse(Session["RolUsuario"].ToString());
+            //if (idUsuarios != 1)
+            //{
+            //    Response.Redirect("../../../PaginaPrincipal.aspx");
+            //}
             if (!IsPostBack)
             {
                
@@ -33,7 +38,7 @@ namespace ConsentedPets.Vista.Veterinaria
 
 
 
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡No Registrado como Administrador !', 'Registre un Establecimiento', 'warning')", true);
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡No Registrado como Administrador !', 'Registre un Establecimiento Para ser Administrador', 'warning')", true);
 
             }
             btnvolver2.ServerClick += new EventHandler(btnVolver_Click);
@@ -41,23 +46,42 @@ namespace ConsentedPets.Vista.Veterinaria
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            ClEstablecimientoL objEstaL = new ClEstablecimientoL();
-            CLUsuarioL objUsuL = new CLUsuarioL();
-            
-           
-            int valor = int.Parse(ddlTipo.SelectedValue.ToString());
-            string nombreV = valor + txtNombre.Text+txtTelefono.Text + ".png";
-            string rutaImg = Path.Combine(Server.MapPath("../imagenes/ImagenesEstablecimiento/"),  nombreV);
-            FlImagenV.SaveAs(rutaImg);
-            objEstaL.mtdRegistrar(txtNombre.Text,txtDireccion.Text,txtTelefono.Text,txtEmail.Text,nombreV,valor);
-            int tipo= 2;
-            ClEstablecimientoE objEstablecimientoE = objEstaL.mtdListarVet(nombreV);
-            objEstaL.mtdUsuarioVeterinaria(int.Parse(Session["Usuario"].ToString()),objEstablecimientoE.id);
-            if (int.Parse(Session["RolUsuario"].ToString()) == 1)
+            if (FlImagenV.HasFile)
             {
-                objUsuL.mtdRol( int.Parse(Session["Usuario"].ToString()),tipo);
+                int valor = int.Parse(ddlTipo.SelectedValue.ToString());
+                if (valor!=0)
+                {
+                    ClEstablecimientoL objEstaL = new ClEstablecimientoL();
+                    CLUsuarioL objUsuL = new CLUsuarioL();
+                    string nombreV = valor + txtNombre.Text + txtTelefono.Text + ".png";
+                    string rutaImg = Path.Combine(Server.MapPath("../imagenes/ImagenesEstablecimiento/"), nombreV);
+                    FlImagenV.SaveAs(rutaImg);
+                    objEstaL.mtdRegistrar(txtNombre.Text, txtDireccion.Text, txtTelefono.Text, txtEmail.Text, nombreV, valor);
+                    int tipo = 2;
+                    ClEstablecimientoE objEstablecimientoE = objEstaL.mtdListarVet(nombreV);
+                    objEstaL.mtdUsuarioVeterinaria(int.Parse(Session["Usuario"].ToString()), objEstablecimientoE.id);
+                    if (int.Parse(Session["RolUsuario"].ToString()) == 1)
+                    {
+                        objUsuL.mtdRol(int.Parse(Session["Usuario"].ToString()), tipo);
+                        Session["RolUsuario"] = 2;
+                    }
+                    Response.Redirect("../PerfilesRol/TutorialAdmin.aspx");
+                }
+                else
+                {
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Tipo de Establecimiento no Seleccionado!', 'Seleccione el tipo de establecimiento a Registrar', 'warning')", true);
+
+                }
+
             }
+            else
+            {
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Imagen no Seleccionada!', 'Ingrese una Imagen Para su Establecimiento', 'warning')", true);
+
+            }
+
             Response.Redirect("../PerfilesRol/TutorialAdmin.aspx");
+
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)

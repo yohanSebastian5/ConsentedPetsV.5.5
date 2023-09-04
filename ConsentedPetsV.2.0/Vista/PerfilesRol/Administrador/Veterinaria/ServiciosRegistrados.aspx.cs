@@ -63,7 +63,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria
             objE.idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
             objE.foto = foto;
             objL.mtdActualizar(objE);
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Servicio " + objE.nombre + "!', 'Se ha Actualizado con Exito', 'success')", true);
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Servicio Actuallizado!', 'Se ha Actualizado con Exito', 'success')", true);
 
         }
         [WebMethod]
@@ -89,7 +89,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria
             ClEliminarE objE = new ClEliminarE();
             int id= int.Parse(Session["Eliminar"].ToString());
             objL.mtdEliminarServicioV(id);
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Servicio Eliminado!', 'Se ha Elimi| nado con Exito', 'success')", true);
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Servicio Eliminado!', 'Se ha Eliminado con Exito', 'success')", true);
 
 
         }

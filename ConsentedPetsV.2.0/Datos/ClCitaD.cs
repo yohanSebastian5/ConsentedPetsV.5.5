@@ -28,10 +28,20 @@ namespace ConsentedPetsV._2._0.Datos
             cantReg = objSQL.mtdIUDConect(cons2);
 
         }
-     
-        
-        
-        
+
+        public void mtdActualizarEstadoCita(int id, string estado)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "ActualizarCita";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id", id);
+            comando.Parameters.AddWithValue("@estado", estado);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+        }
+
+
 
         public List<ClCitaE> mtdListar( int id = 0,int tipo=0)
         {

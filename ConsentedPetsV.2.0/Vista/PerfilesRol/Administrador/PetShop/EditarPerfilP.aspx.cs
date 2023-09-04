@@ -40,15 +40,25 @@ namespace ConsentedPets.Vista.PerfilesRol.Administrador.PetShop
             objE.telefono = txtTelefono.Text;
             objE.direccion = txtDireccion.Text;
             objE.email = txtEmail.Text;
-            objE.id = 1;
-            string nombreV = 3 + txtNombre.Text + txtTelefono.Text + ".png";
-            string rutaImg = Path.Combine(Server.MapPath("../../../imagenes/ImagenesEstablecimiento/"), nombreV);
-            FlImagenV.SaveAs(rutaImg);
-            objE.foto = nombreV;
+            string foto = "";
+            if (FlImagenV.HasFile)
+            {
+
+                string nombreV = 3 + txtNombre.Text + txtTelefono.Text + ".png";
+                string rutaImg = Path.Combine(Server.MapPath("~/Vista/imagenes/ImagenesEstablecimiento/"), nombreV);
+                FlImagenV.SaveAs(rutaImg);
+                foto = nombreV;
+            }
+            else
+            {
+                foto = Session["foto"].ToString();
+            }
+            objE.id = int.Parse(Session["Tienda"].ToString());
+          
+            objE.foto = foto;
             objL.mtdActualizar(objE, "T");
            
             
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Informacion Atualizada! " + objE.nombre + "' A sido Actualizado', 'success')", true);
         }
     }
 }

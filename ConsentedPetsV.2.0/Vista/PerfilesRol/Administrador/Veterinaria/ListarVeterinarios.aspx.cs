@@ -41,7 +41,6 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.Veterinaria
             int idE = int.Parse(HttpContext.Current.Session["Eliminar"].ToString());
             objL.mtdEliminarUsuarioEs(idE, "Veterinaria");
             ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Actualizacion Exitosa !', 'Veterinario Eliminado', 'success')", true);
-
         }
         [WebMethod]
         public static List<ClUsuarioE> cargardatos(int id)

@@ -38,7 +38,6 @@
     }
 
 .content {
-
     position: absolute;
     top: 50%;
     left: 50%;
@@ -47,7 +46,7 @@
     padding: 60px 32px;
     width: 370px;
     transform: translate(-50%,-50%);
-    background: rgba(0,0,0,0.2);
+    background: rgb(217 214 214 / 8%);
     box-shadow: -1px 4px 28px 0px rgba(0,0,0,0);
 }
 

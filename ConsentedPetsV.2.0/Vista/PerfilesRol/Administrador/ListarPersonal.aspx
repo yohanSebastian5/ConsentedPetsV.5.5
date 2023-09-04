@@ -12,13 +12,19 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
     <link href="../../Css/EliminarEstablecimiento.css" rel="stylesheet" />
+     <style>
+        body {
+            background: url("https://estaticos-cdn.prensaiberica.es/clip/76091432-8b3a-482b-8209-cb4c51e54b0c_16-9-discover-aspect-ratio_default_0.jpg");
+            background-size: cover;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
     <h1 class="Title">Listar Personal</h1>
     <div class="d-flex justify-content-center">
-        <div class="table-responsive tabla" style="width: 1435px">
+        <div class="table-responsive tabla" style="width: 1435px ;background: #21007042">
             <table id="tblUsua" class=" table ">
-                <thead style="color: #125a99;">
+                <thead style="color: #21007042;">
                     <tr>
                         <th>Nombre</th>
                         <th>Apellido</th>
