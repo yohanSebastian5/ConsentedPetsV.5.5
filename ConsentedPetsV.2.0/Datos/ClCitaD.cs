@@ -18,14 +18,36 @@ namespace ConsentedPetsV._2._0.Datos
         public void mtdCita(ClCitaE objHist)
         {
             int cantReg = 0;
-            string cons = "insert into CitaV(fecha, hora, estado, idMascota) " +
-                              "values('" + objHist.FechaCita + "' , '" + objHist.HoraCita + "', '" + objHist.Estado + "', '" + objHist.idMascota + "') SELECT SCOPE_IDENTITY() AS [ultimoId]";
+            string cons = "insert into CitaV(fecha, hora, estado, idMascota, idVeterinaria) " +
+                              "values('" + objHist.FechaCita + "' , '" + objHist.HoraCita + "', '" + objHist.Estado + "', '" + objHist.idMascota + "', '" + objHist.idVeterinaria + "') SELECT SCOPE_IDENTITY() AS [ultimoId]";
             ClProcesarSQL objSQL = new ClProcesarSQL();
             DataTable tblID = objSQL.mtdSelectDesc(cons);
             int idReg = int.Parse(tblID.Rows[0]["ultimoId"].ToString());
             string cons2 = " insert into HistorialV(idServicioV, idCitaV, idUsuario, precio, descripcion) values('"
                 + objHist.idServicioV + "'," + idReg + ",'" + objHist.idUsuario + "','" + objHist.precio + "','" + objHist.descripcion + "')";
             cantReg = objSQL.mtdIUDConect(cons2);
+
+        }
+
+
+        public List<ClCitaE> mtdCita2(int idVeterinaria)
+        {
+            string consul = "select * from CitaV where idVeterinaria = '"+idVeterinaria+"'";
+            ClProcesarSQL sql = new ClProcesarSQL();
+            DataTable tabla = sql.mtdSelectDesc(consul);
+            List<ClCitaE> listaCita = new List<ClCitaE>();
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                ClCitaE objE = new ClCitaE();
+                objE.idcita = int.Parse(tabla.Rows[i]["idCitaV"].ToString());
+                
+                objE.FechaCitaa = tabla.Rows[i]["fecha"].ToString();
+                objE.HoraCitaa = tabla.Rows[i]["hora"].ToString();
+                listaCita.Add(objE);
+            }
+
+          
+            return listaCita;
 
         }
 
@@ -40,6 +62,7 @@ namespace ConsentedPetsV._2._0.Datos
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
+
 
 
 

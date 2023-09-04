@@ -14,7 +14,7 @@
     <link href="Styles/sweetalert.css" rel="stylesheet" />
     <script src="Scripts/sweetalert.min.js"></script>
 </head>
-<body style="background-color:#e798a7; background-size: cover;">
+<body style="background-color:#e798a7d1; background-size: cover;">
     <div class="container d-flex align-items-center vh-100">
         <div class="row justify-content-center">
            

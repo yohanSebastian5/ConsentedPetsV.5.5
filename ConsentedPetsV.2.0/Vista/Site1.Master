@@ -32,7 +32,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body style="background-color:#90604A;">
+<body style="height: 0px;">
     <header>
         <nav class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container">

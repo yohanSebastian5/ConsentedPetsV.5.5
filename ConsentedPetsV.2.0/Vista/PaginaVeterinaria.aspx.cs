@@ -5,6 +5,7 @@ using ConsentedPetsV._2._0.Entidades;
 using ConsentedPetsV._2._0.Logica;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.DynamicData;
@@ -23,9 +24,9 @@ namespace ConsentedPetsV._2._0.Vista
             {
 
                 int idUsuario = int.Parse(Session["Usuario"].ToString());
-                
+               
                 int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
-              
+               
                 ClMascotaL objData = new ClMascotaL();
                 List<ClMascotaE> listaMascota = objData.mtdListarMascota(idUsuario);
 
@@ -80,6 +81,7 @@ namespace ConsentedPetsV._2._0.Vista
 
                 nom.InnerText = listaV[0].nombre;
 
+               
 
             }
 
@@ -89,32 +91,56 @@ namespace ConsentedPetsV._2._0.Vista
 
         protected void calendarFecha_SelectionChanged(object sender, EventArgs e)
         {
-            txtFecha.Text = calendarFecha.SelectedDate.ToString("yyyy-MM-dd");
+            DateTime fechaSeleccionada = calendarFecha.SelectedDate;
+
+            if (fechaSeleccionada >= DateTime.Today)
+            {
+                txtFecha.Text = fechaSeleccionada.ToString("yyyy-MM-dd");
+            }
+            else
+            {
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('Fecha inválida', 'Seleccione una fecha válida', 'warning')", true);
+            }
         }
+
 
         protected void btnAgendarCita_Click1(object sender, EventArgs e)
         {
             int idServicio = int.Parse(ddlServicio.SelectedValue);
             int idUsuario = int.Parse(Session["Usuario"].ToString());
-            idUsuario = 9;
+            int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
+
+
+            ClCitaL objLi = new ClCitaL();
+            List<ClCitaE> listaCita = objLi.mtdCita(idVeterinaria);
+
+
             ClServicioVetL objS = new ClServicioVetL();
             ClServicioVeterinariaE objSe = objS.mtdListarSer(idServicio);
             ClCitaL objCita = new ClCitaL();
             ClCitaE objHis = new ClCitaE();
-            objHis.idMascota = int.Parse(ddlMascota.SelectedValue.ToString());
+            
             objHis.FechaCita = txtFecha.Text;
             objHis.HoraCita = ddlHora.SelectedValue;
-            objHis.Estado = ddlEstado.SelectedValue;
+          
+            objHis.Estado = "pendiente";
 
             objHis.idServicioV = int.Parse(ddlServicio.SelectedValue);
             objHis.idUsuario = idUsuario;
             objHis.precio = objSe.precio.ToString();
+            objHis.idVeterinaria = idVeterinaria;
             objHis.descripcion = objSe.descripcion;
-
-            objCita.mtdRegistrar(objHis);
-
-            mtdlimpiar();
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Bien " + objHis.nombre + "!', 'Haz agendado una cita', 'success')", true);
+            if (int.TryParse(ddlMascota.SelectedValue, out int selectedMascotaId))
+            {
+                objHis.idMascota = selectedMascotaId;
+                objCita.mtdRegistrar(objHis);
+                mtdlimpiar();
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Bien !', 'Haz agendado una cita', 'success')", true);
+            }
+            else
+            {
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡No se realizó la cita!', 'Registre una mascota', 'warning')", true);
+            }
 
 
         }
@@ -124,7 +150,6 @@ namespace ConsentedPetsV._2._0.Vista
             ddlMascota.SelectedIndex = 0;
             txtFecha.Text = "";
             ddlHora.SelectedIndex = 0;
-            ddlEstado.SelectedIndex = 0;
             ddlServicio.SelectedIndex = 0;
 
 
@@ -134,9 +159,9 @@ namespace ConsentedPetsV._2._0.Vista
         protected void btnEnviarComentario_Click(object sender, EventArgs e)
         {
             int idVeterinaria = int.Parse(Session["Veterinaria"].ToString());
-            idVeterinaria = 1;
+           
             int idUsuario = int.Parse(Session["Usuario"].ToString());
-            idUsuario = 17;
+            
             ClComentarioL objL = new ClComentarioL();
             ClComentarioE objE = new ClComentarioE();
             objE.comentario = comentario.InnerText;
@@ -144,6 +169,11 @@ namespace ConsentedPetsV._2._0.Vista
             objE.idUsuario = idUsuario;
             objE.idVeterinaria = idVeterinaria;
             objL.mtdRegistrar(objE);
+        }
+
+        protected void btnMascota_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Vista/PerfilesRol/Usuario/RegistrarMascota.aspx");
         }
     }
 }

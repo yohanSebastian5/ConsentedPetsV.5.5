@@ -28,9 +28,8 @@
     <link href="PaginaVeterinaria/css/stiloProcesos.css" rel="stylesheet" />
     <!-- Customized Bootstrap Stylesheet -->
 
-    <script src="../Scripts/sweetalert.min.js"></script>
     <script src="../Scripts/sweetalert-dev.js"></script>
-
+    <script src="../Scripts/sweetalert.min.js"></script>
     <link href="../Styles/sweetalert.css" rel="stylesheet" />
     <link href="PaginaVeterinaria/css/style.css" rel="stylesheet" />
 </head>
@@ -59,7 +58,7 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav ml-auto py-0">
-                            <a href="ClinicaVeterinaria.aspx" class="nav-item nav-link active">Home</a>
+                            <a href="ClinicaVeterinaria.aspx" class="nav-item nav-link active">Volver</a>
                             <a href="#servicios" class="nav-item nav-link">Servicios</a>
                             <a href="#procesos" class="nav-item nav-link">Procesos</a>
                         </div>
@@ -88,10 +87,10 @@
                             <asp:Image ID="idImagEstab" runat="server" class="position-relative w-100" Style="min-height: 300px; object-fit: cover;" />
                             <div class="carousel-caption d-flex align-items-center justify-content-center">
                                 <div class="p-5" style="width: 100%; max-width: 900px;">
-                                   
+
                                     <h1 class="display-3 text-white mb-md-4" id="nom" runat="server"></h1>
-                                    
-                                     <h5 class="text-white text-uppercase mb-md-3">AGENDA PARA QUE TU MASCOTA RECIBA LA MEJOR ATENCIÓN Y CUIDADO PARA SU BIENESTAR</h5>
+
+                                    <h5 class="text-white text-uppercase mb-md-3">AGENDA PARA QUE TU MASCOTA RECIBA LA MEJOR ATENCIÓN Y CUIDADO PARA SU BIENESTAR</h5>
                                 </div>
                             </div>
                         </div>
@@ -228,7 +227,7 @@
         <!-- Team End -->
 
 
-     <!-- Testimonial Start -->
+        <!-- Testimonial Start -->
         <div class="container-fluid py-5" id="comentarios">
             <div class="container py-5">
                 <div class="row justify-content-center">
@@ -239,20 +238,17 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="owl-carousel testimonial-carousel">
-                            
                             <asp:Repeater ID="repComentario" runat="server">
                                 <ItemTemplate>
                                     <div class="text-center">
-                                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                                <h4 class="font-weight-light mb-4"><%# Eval("Comentario") %></h4>
-                                <img class="img-fluid mx-auto mb-3" src='<%# ResolveUrl("imagenes/ImagenesUsuarios/") + Eval("foto") %>' alt="">
-                                <h5 class="font-weight-bold m-0"><%# Eval("nombre") %></h5>
-                                <span>Profession</span>
-                            </div>
+                                        <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                                        <h4 class="font-weight-light mb-4"><%# Eval("Comentario") %></h4>
+                                        <img class="img-fluid mx-auto mb-3" src='<%# ResolveUrl("imagenes/ImagenesUsuarios/") + Eval("foto") %>' alt="">
+                                        <h5 class="font-weight-bold m-0"><%# Eval("nombre") %></h5>
+                                        <span>Cliente</span>
+                                    </div>
                                 </ItemTemplate>
                             </asp:Repeater>
-                            
-                           
                         </div>
                     </div>
                 </div>
@@ -261,10 +257,7 @@
         <!-- Testimonial End -->
 
         <%--modal--%>
-
         <button class="btn btn-primary" id="abrirModal" style="display: block; margin: 0 auto;">Haz un Comentario</button>
-
-
         <div id="miModal" class="modal">
             <div class="modal-contenido">
                 <span class="cerrar">&times;</span>
@@ -294,49 +287,46 @@
             </div>
         </div>
 
-
         <!--hast aqui va el ajax-->
-   
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <div class="container-fluid py-5" id="citas">
                     <div class="container py-5">
-                        <div class="row">
+                        <div class="row justify-content-center">
                             <div class="col-lg-6">
-                                <h1 class="section-title position-relative mb-5">Agendamiento de Citas para Mascotas</h1>
+                                <h1 class="section-title position-relative text-center mb-5">Agendamiento de Citas para Mascotas</h1>
                             </div>
-                            <div class="col-lg-6 mb-5 mb-lg-0 pb-5 pb-lg-0"></div>
                         </div>
-                        <div class="container">
-
-                            <div class="mb-3">
+                        <div class="container py-5">
+                            <div class="mb-3 position-relative text-center">
                                 <label for="mascota" class="font-weight-light">Nombre de la Mascota</label>
-                                <asp:DropDownList ID="ddlMascota" style="border-color: rosybrown; border-radius: 20px; background-color: mistyrose; border-width: 2.5px; text-align: center;" runat="server"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlMascota" Style="border-color: rosybrown; border-radius: 20px; background-color: #bee4f7; border-width: 2.5px; text-align: center;" runat="server"></asp:DropDownList>
 
 
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3 position-relative text-center">
                                 <label for="servicio" class="font-weight-light">Servicio Requerido</label>
-                                <asp:DropDownList ID="ddlServicio" style="border-color: rosybrown; border-radius: 20px; background-color: mistyrose; border-width: 2.5px; text-align: center;" runat="server"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlServicio" Style="border-color: rosybrown; border-radius: 20px; background-color: #bee4f7; border-width: 2.5px; text-align: center;" runat="server"></asp:DropDownList>
 
                             </div>
 
-                            <div class="mb-3">
+                            <div class="mb-3 position-relative text-center">
                                 <label for="fechaCita" class="font-weight-light">Fecha de la Cita</label>
-                                <div class="calendar-container">
-                                    <asp:Calendar ID="calendarFecha" runat="server" style="border-color: rosybrown; border-radius: 20px; background-color: mistyrose; border-width: 2.5px; text-align: center;" OnSelectionChanged="calendarFecha_SelectionChanged"></asp:Calendar>
+                                <div style="display: flex; justify-content: center;">
+                                    <asp:Calendar ID="calendarFecha" runat="server" Style="border-color: rosybrown; border-radius: 20px; background-color: #bee4f7; border-width: 2.5px; text-align: center;" OnSelectionChanged="calendarFecha_SelectionChanged"></asp:Calendar>
                                 </div>
+
                             </div>
 
-                            <div class="mb-3">
+                            <div class="mb-3 position-relative text-center">
                                 <label for="fechaSeleccionada" class="font-weight-light">Fecha Seleccionada:</label>
-                                <asp:TextBox ID="txtFecha" style="border-color: rosybrown; border-radius: 20px; background-color: mistyrose; border-width: 2.5px; text-align: center;" ReadOnly="true" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtFecha" Style="border-color: rosybrown; border-radius: 20px; background-color: #bee4f7; border-width: 2.5px; text-align: center;" ReadOnly="true" runat="server"></asp:TextBox>
                             </div>
 
-                            <div class="mb-3">
+                            <div class="mb-3 position-relative text-center">
                                 <label for="hora" class="font-weight-light">Hora de la Cita</label>
-                                <asp:DropDownList ID="ddlHora" style="border-color: rosybrown; border-radius: 20px; background-color: mistyrose; border-width: 2.5px; text-align: center;" runat="server">
+                                <asp:DropDownList ID="ddlHora" Style="border-color: rosybrown; border-radius: 20px; background-color: #bee4f7; border-width: 2.5px; text-align: center;" runat="server">
                                     <asp:ListItem Text=""></asp:ListItem>
                                     <asp:ListItem Value="08:00 am">08:00 am</asp:ListItem>
                                     <asp:ListItem Value="08:30 am">08:30 am</asp:ListItem>
@@ -365,14 +355,9 @@
                                 </asp:DropDownList>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="estadoCita" class="font-weight-light">Estado</label>
-                                <asp:DropDownList ID="ddlEstado" style="border-color: rosybrown; border-radius: 20px; background-color: mistyrose; border-width: 2.5px; text-align: center;" runat="server">
-                                    <asp:ListItem Text=""></asp:ListItem>
-                                    <asp:ListItem Value="pendiente">Pendiente</asp:ListItem>
-                                </asp:DropDownList>
-                            </div>
-                            <asp:Button ID="btnAgendarCita" runat="server" CssClass="btn btn-primary" Text="Agendar Cita" OnClick="btnAgendarCita_Click1" />
+
+                            <asp:Button ID="btnAgendarCita" runat="server" CssClass="btn btn-primary" Style="display: block; margin: 0 auto;" Text="Agendar Cita" OnClick="btnAgendarCita_Click1" />
+                            <asp:Button ID="btnMascota" runat="server" CssClass="btn btn-primary" Style="display: block; margin: 0 auto;" Text="Registrar Mascota" OnClick="btnMascota_Click" />
 
                         </div>
                     </div>
@@ -386,34 +371,12 @@
                 <div class="row">
                     <div class="col-12 mb-4">
                         <a href="index.html" class="navbar-brand m-0">
-                            <h1 class="m-0 mt-n2 display-4 text-primary"><span class="text-secondary">i</span>CREAM</h1>
+                            <h1 class="m-0 mt-n2 display-4 text-primary"><span class="text-secondary">V</span>ETERINARIA</h1>
                         </a>
                     </div>
-                    <div class="col-12 mb-4">
-                        <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-secondary btn-social" href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                    <div class="col-12 mt-2 mb-4">
-                        <div class="row">
-                            <div class="col-sm-6 text-center text-sm-right border-right mb-3 mb-sm-0">
-                                <h5 class="font-weight-bold mb-2">Get In Touch</h5>
-                                <p class="mb-2">123 Street, New York, USA</p>
-                                <p class="mb-0">+012 345 67890</p>
-                            </div>
-                            <div class="col-sm-6 text-center text-sm-left">
-                                <h5 class="font-weight-bold mb-2">Opening Hours</h5>
-                                <p class="mb-2">Mon – Sat, 8AM – 5PM</p>
-                                <p class="mb-0">Sunday: Closed</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <p class="m-0">
-                            &copy; <a href="#">Domain</a>. All Rights Reserved. Designed by <a href="https://htmlcodex.com">HTML Codex</a>
-                        </p>
-                    </div>
+
+
+
                 </div>
             </div>
         </div>
@@ -440,61 +403,61 @@
 
         <!-- Template Javascript -->
         <script src="PaginaVeterinaria/js/main.js"></script>
-         <script>
-             document.getElementById("abrirModal").addEventListener("click", function (event) {
-                 event.preventDefault();
-                 document.getElementById("miModal").style.display = "block";
-                 marcarEstrellas(0); // Marcar las estrellas como vacías al abrir la modal
-             });
+        <script>
+            document.getElementById("abrirModal").addEventListener("click", function (event) {
+                event.preventDefault();
+                document.getElementById("miModal").style.display = "block";
+                marcarEstrellas(0); // Marcar las estrellas como vacías al abrir la modal
+            });
 
-             document.getElementsByClassName("cerrar")[0].addEventListener("click", function (event) {
-                 event.preventDefault();
-                 document.getElementById("miModal").style.display = "none";
-             });
-
-
-             var estrellas = document.getElementsByClassName("estrella");
-             for (var i = 0; i < estrellas.length; i++) {
-                 estrellas[i].addEventListener("click", function (event) {
-                     event.preventDefault();
-                     var valorEstrella = parseInt(this.getAttribute("data-valor")); // Almacenar el valor en la variable global
-
-                     marcarEstrellas(valorEstrella);
-                     document.getElementById("valorEstrellaHidden").value = valorEstrella;
-                     // Enviar el valor al servidor utilizando AJAX
-                     $.ajax({
-                         url: 'PaginaVeterinaria.aspx/btnEnviarComentario_Click',
-                         type: 'POST',
-                         data: { valor: valorEstrella },
-                         success: function (response) {
-                             // Manejar la respuesta del servidor si es necesario
-                             console.log(response);
-                         },
-                         error: function (xhr, status, error) {
-                             // Manejar el error si ocurre
-                             console.log(error);
-                         }
-                     });
-                 });
-             }
+            document.getElementsByClassName("cerrar")[0].addEventListener("click", function (event) {
+                event.preventDefault();
+                document.getElementById("miModal").style.display = "none";
+            });
 
 
-             function marcarEstrellas(valor) {
-                 for (var i = 0; i < estrellas.length; i++) {
-                     if (i < valor) {
-                         estrellas[i].innerHTML = "&#9733;"; // Símbolo de estrella rellena
-                         estrellas[i].classList.add("seleccionada");
-                     } else {
-                         estrellas[i].innerHTML = "&#9734;"; // Símbolo de estrella vacía
-                         estrellas[i].classList.remove("seleccionada");
-                     }
-                 }
-             }
+            var estrellas = document.getElementsByClassName("estrella");
+            for (var i = 0; i < estrellas.length; i++) {
+                estrellas[i].addEventListener("click", function (event) {
+                    event.preventDefault();
+                    var valorEstrella = parseInt(this.getAttribute("data-valor")); // Almacenar el valor en la variable global
+
+                    marcarEstrellas(valorEstrella);
+                    document.getElementById("valorEstrellaHidden").value = valorEstrella;
+                    // Enviar el valor al servidor utilizando AJAX
+                    $.ajax({
+                        url: 'PaginaVeterinaria.aspx/btnEnviarComentario_Click',
+                        type: 'POST',
+                        data: { valor: valorEstrella },
+                        success: function (response) {
+                            // Manejar la respuesta del servidor si es necesario
+                            console.log(response);
+                        },
+                        error: function (xhr, status, error) {
+                            // Manejar el error si ocurre
+                            console.log(error);
+                        }
+                    });
+                });
+            }
+
+
+            function marcarEstrellas(valor) {
+                for (var i = 0; i < estrellas.length; i++) {
+                    if (i < valor) {
+                        estrellas[i].innerHTML = "&#9733;"; // Símbolo de estrella rellena
+                        estrellas[i].classList.add("seleccionada");
+                    } else {
+                        estrellas[i].innerHTML = "&#9734;"; // Símbolo de estrella vacía
+                        estrellas[i].classList.remove("seleccionada");
+                    }
+                }
+            }
 
 
 
 
-         </script>
+        </script>
     </form>
 </body>
 
