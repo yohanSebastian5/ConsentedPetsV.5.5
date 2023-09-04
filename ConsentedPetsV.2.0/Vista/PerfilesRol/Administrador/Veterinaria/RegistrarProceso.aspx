@@ -5,6 +5,7 @@
     <style>
         body{
             color:white;
+            background:#4ba4bfdb;
         }
         .ocultar{
             display:none;

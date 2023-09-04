@@ -253,8 +253,8 @@
         <br />
         <form runat="server">
 
-            <input class="espacio" type="text" id="txtUsuario" runat="server" name="username" placeholder="Username" required="" />
-            <input class="espacio" type="password" id="txtContraseña" runat="server" name="password" placeholder="Password" required="" />
+            <input class="espacio" type="text" id="txtUsuario" runat="server" name="username" placeholder="Correo" required="" />
+            <input class="espacio" type="password" id="txtContraseña" runat="server" name="password" placeholder="Contraseña" required="" />
 
 
             <asp:Button ID="btnIngresar" class="espacio" runat="server" Text="LOGIN" OnClick="btnIngresar_Click" />

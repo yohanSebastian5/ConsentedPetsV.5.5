@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vista/PerfilesRol/Administrador/PetShop/PetShop.Master" AutoEventWireup="true" CodeBehind="RegistrarVendedor.aspx.cs" Inherits="ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.PetShop.RegistrarVendedor" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentHeadAdministrador" runat="server">
     <link href="../../css/AgregarVeter.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -27,8 +28,13 @@
             cursor: pointer;
             margin-top: 50px
         }
-        .color{
-            color:white;
+
+        .color {
+            color: white;
+        }
+
+        body {
+            background: linear-gradient(#8db3e1, #1d3149);
         }
     </style>
 </asp:Content>
@@ -98,6 +104,8 @@
                     document.getElementById('<%= txtExperi.ClientID %>').value = objUsuE.experiencia;
                     document.getElementById('<%= txtEspeci.ClientID %>').value = objUsuE.especializacion;
                     document.getElementById('<%= txtProfesion.ClientID %>').value = objUsuE.profesion;
+                    var nombre = objUsuE.nombre;
+                    mostrarDiv(nombre);
                 }, error: function (xhr, textStatus, errorThrown) {
                     // Manejar cualquier error que ocurra durante la llamada AJAX
                     console.error(errorThrown);
@@ -116,8 +124,13 @@
                 success: function (dat) {
                     var objUsuE = dat.d;
                     swal('¡Realizado!', 'Profesor Registrado', 'success');
-                    console.log(objUsuE);
-                    console.log(espe);
+
+                    document.getElementById('<%= txtBuscar.ClientID %>').value = '';
+
+
+                    var div = document.getElementById('<%= Datos.ClientID %>');
+                    div.style.display = 'none';
+
                 }, error: function (xhr, textStatus, errorThrown) {
                     // Manejar cualquier error que ocurra durante la llamada AJAX
                     console.error(errorThrown);
@@ -137,7 +150,10 @@
             var espe = document.getElementById('<%= txtEspeci.ClientID %>').value;
             var expe = document.getElementById('<%= txtExperi.ClientID %>').value;
             var profe = document.getElementById('<%= txtProfesion.ClientID %>').value;
-            console.log(profe);
+            if (espe.trim() === '' || expe.trim() === '' || profe.trim() === '') {
+                swal('¡Espacios en Blanco!', 'Completar todos los campos', 'warning');
+                return; // No se envía la solicitud
+            }
             ActualizarDatos(valor, espe, expe, profe);
 
         });
@@ -166,8 +182,12 @@
         }
 
         function mostrarDiv() {
-            var div = document.getElementById('<%= Datos.ClientID %>');
-            div.style.display = 'block';
+            if (txtnombre !== null) {
+                var div = document.getElementById('<%= Datos.ClientID %>');
+               div.style.display = 'block';
+           } else {
+               swal('¡Usuario no Encontrado!', 'El Documento ingresado no Coincide con ningun usuario', 'warning');
+           }
         }
 
     </script>

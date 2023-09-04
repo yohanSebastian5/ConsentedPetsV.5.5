@@ -10,6 +10,7 @@
     <link href="../Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
     <link href="../../Styles/sweetalert.css" rel="stylesheet" />
     <script src="../../Scripts/sweetalert.min.js"></script>
 
@@ -44,23 +45,23 @@
             <br />
             <form id="form1" runat="server">
                 <div class="field space">
-                    <span class="fa fa-user"></span>
+                    <span class="fa bi bi-buildings-fill"></span>
                     <asp:TextBox CssClass="quitarmargen" ID="txtNombre" required="" placeholder="Nombre" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
                 </div>
                 <br />
                 <div class="field space">
-                    <span class="fa fa-user"></span>
+                    <span class="bi bi-house-add-fill"></span>
                     <asp:TextBox CssClass="quitarmargen" ID="txtDireccion" required="" placeholder="Direccion" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
                 </div>
                 <br />
                 <div class="field space">
-                    <span class="fa fa-user"></span>
-                    <asp:TextBox CssClass="quitarmargen" ID="txtTelefono" required="" placeholder="Telefono" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
+                    <span class="bi bi-telephone-plus-fill"></span>
+                    <asp:TextBox CssClass="quitarmargen" TextMode="Phone" ID="txtTelefono" required="" placeholder="Telefono" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
                 </div>
                 <br />
                 <div class="field space">
-                    <span class="fa fa-user"></span>
-                    <asp:TextBox ID="txtEmail" CssClass="quitarmargen" required="" placeholder="Email" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
+                    <span class="bi bi-envelope-plus-fill"></span>
+                    <asp:TextBox ID="txtEmail" TextMode="Email" CssClass="quitarmargen" required="" placeholder="Email" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
                 </div>
                 <br />
                 <asp:DropDownList ID="ddlTipo" runat="server" CssClass="field space"></asp:DropDownList>

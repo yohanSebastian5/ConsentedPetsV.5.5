@@ -18,17 +18,17 @@
         }
 
         .right {
-            background: linear-gradient(212.38deg, rgba(185 169 175 / 70%) 0%, rgb(149 41 159 / 71%) 100%),url(../imagenes/fondo3.png);
+            background: linear-gradient(212.38deg, rgba(152 161 165 / 85%) 0%, rgb(71 130 153 / 91%) 100%),url(../imagenes/fondo3.png);
             color: #fff;
             position: relative;
         }
 
         body {
-            background: #a28dcb;
+            background: #516dd7ab;
         }
 
         .submit {
-            background: #fd9d9d;
+            background: #5286e7;
         }
 
         .ddl {
@@ -41,15 +41,13 @@
     <div class="login_box">
         <div class="left">
             <div class="top_link">
-                <a href="#">
-                    <img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="">Return home</a>
-            </div>
+          </div>
             <div class="contact">
                 <form runat="server">
-                    <h3>Registrarse</h3>
+                    <h3>Registrar</h3>
                     <asp:TextBox ID="txtNombre" runat="server" placeholder="Nombre"></asp:TextBox>
                     <asp:TextBox ID="txtDescripcio" runat="server" placeholder="Descripcion"></asp:TextBox>
-                    <asp:TextBox ID="txtPrecio" runat="server" placeholder="Precio"></asp:TextBox>
+                    <asp:TextBox ID="txtPrecio" TextMode="Number" runat="server" placeholder="Precio"></asp:TextBox>
                     <asp:DropDownList ID="ddlServicio" runat="server" CssClass="ddl"></asp:DropDownList>
                     <asp:FileUpload ID="FlImagenU" runat="server" />
                     <button runat="server" id="btnRegistrar" class="submit">Registrar</button>

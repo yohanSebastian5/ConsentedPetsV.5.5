@@ -15,12 +15,12 @@
     <link href="../../../../Styles/sweetalert.css" rel="stylesheet" />
     <link href="../../../Css/AgregarVeter.css" rel="stylesheet" />
     <script src="../../../../Scripts/sweetalert.min.js"></script>
-    
+
     <script src="../../../Bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         .search-button {
-            background-color: #ea8c32;
+            background-color: #2579d7;
             border: none;
             color: white;
             padding: 10px;
@@ -32,8 +32,9 @@
             cursor: pointer;
             margin-top: 50px
         }
-        .color{
-            color:white;
+
+        .color {
+            color: white;
         }
     </style>
 </asp:Content>
@@ -107,6 +108,7 @@
         </form>
     </div>--%>
     <script>
+
         function cargardatos(buscar) {
             $.ajax({
                 type: "POST",
@@ -123,6 +125,8 @@
                     document.getElementById('<%= txtExperi.ClientID %>').value = objUsuE.experiencia;
                     document.getElementById('<%= txtEspeci.ClientID %>').value = objUsuE.especializacion;
                     document.getElementById('<%= txtProfesion.ClientID %>').value = objUsuE.profesion;
+                    var nombre = objUsuE.nombre;
+                    mostrarDiv(nombre);
                 }, error: function (xhr, textStatus, errorThrown) {
                     // Manejar cualquier error que ocurra durante la llamada AJAX
                     console.error(errorThrown);
@@ -140,9 +144,14 @@
 
                 success: function (dat) {
                     var objUsuE = dat.d;
+
                     swal('¡Realizado!', 'Veterinario Registrado', 'success');
-                    console.log(objUsuE);
-                    console.log(espe);
+
+                    document.getElementById('<%= txtBuscar.ClientID %>').value = '';
+
+
+                    var div = document.getElementById('<%= Datos.ClientID %>');
+                    div.style.display = 'none';
                 }, error: function (xhr, textStatus, errorThrown) {
                     // Manejar cualquier error que ocurra durante la llamada AJAX
                     console.error(errorThrown);
@@ -153,8 +162,9 @@
         }
         $('#btnBuscar').click(function () {
             var valor = document.getElementById('<%= txtBuscar.ClientID %>').value;
-            mostrarDiv();
             cargardatos(valor);
+            
+
         });
         $('#btnActualizar').click(function () {
 
@@ -162,6 +172,11 @@
             var espe = document.getElementById('<%= txtEspeci.ClientID %>').value;
             var expe = document.getElementById('<%= txtExperi.ClientID %>').value;
             var profe = document.getElementById('<%= txtProfesion.ClientID %>').value;
+            if (espe.trim() === '' || expe.trim() === '' || profe.trim() === '') {
+                swal('¡Espacios en Blanco!', 'Completar todos los campos', 'warning');
+                return; // No se envía la solicitud
+            }
+
             console.log(profe);
             ActualizarDatos(valor, espe, expe, profe);
 
@@ -190,10 +205,16 @@
 
         }
 
-        function mostrarDiv() {
-            var div = document.getElementById('<%= Datos.ClientID %>');
-            div.style.display = 'block';
-        }
+        function mostrarDiv(txtnombre) {
 
+            if (txtnombre !== null) {
+                var div = document.getElementById('<%= Datos.ClientID %>');
+                div.style.display = 'block';
+            } else {
+                swal('¡Usuario no Encontrado!', 'El Documento ingresado no Coincide con ningun usuario', 'warning');
+            }
+
+
+        }
     </script>
 </asp:Content>

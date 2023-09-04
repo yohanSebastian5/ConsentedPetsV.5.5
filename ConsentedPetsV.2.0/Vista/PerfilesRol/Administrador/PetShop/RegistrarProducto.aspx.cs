@@ -46,18 +46,31 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.PetShop
         {
             ClProductoE objE = new ClProductoE();
             ClProductoL objL = new ClProductoL();
-            objE.nombreP = txtNombre.Value;
-            objE.descripcionP = txtDescripcion.Value;
-            objE.precio = txtPrecio.Value;
-            objE.idCategoria = int.Parse(ddlCategoria.SelectedValue.ToString());
-            string nombre = Session["Tienda"].ToString() + objE.idCategoria + txtNombre.Value+".png";
-            string ruta = Path.Combine(Server.MapPath( "~/Vista/imagenes/ImagenesProductoCat/" ), nombre);
-            FileUpload1.SaveAs(ruta);
-            objE.foto = nombre;
-            objL.mtdRegistrarProducto(objE);
-
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡El Producto " + objE.nombre + "!', 'A sido registrado', 'success')", true);
-
+            int categoria = int.Parse(ddlCategoria.SelectedValue.ToString());
+            if (txtNombre.Value!="" ||txtDescripcion.Value!="" || txtPrecio.Value!="" ||FileUpload1.HasFile)
+            {
+                if (categoria!=0)
+                {
+                    objE.nombreP = txtNombre.Value;
+                    objE.descripcionP = txtDescripcion.Value;
+                    objE.precio = txtPrecio.Value;
+                    objE.idCategoria =categoria;
+                    string nombre = Session["Tienda"].ToString() + objE.idCategoria + txtNombre.Value + ".png";
+                    string ruta = Path.Combine(Server.MapPath("~/Vista/imagenes/ImagenesProductoCat/"), nombre);
+                    FileUpload1.SaveAs(ruta);
+                    objE.foto = nombre;
+                    objL.mtdRegistrarProducto(objE);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡El Producto " + objE.nombre + "!', 'A sido registrado', 'success')", true);
+                }
+                else
+                {
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Categoria sin seleccionar!', 'Seleccione una categoria', 'warning')", true);
+                }
+            }
+            else
+            {
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Espacios en Blanco!', 'Rellenar Todos los Campos', 'warning')", true);
+            }
 
         }
 
@@ -65,16 +78,24 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador.PetShop
 
         protected void Button_Click(object sender, EventArgs e)
         {
-            ClProductoE objE = new ClProductoE();
-            ClProductoL objL = new ClProductoL();
-            objE.nombreC = txtNombreC.Value;
-            objE.descripcionC = txtDescripcionC.Value;
-            objE.idTienda = int.Parse(Session["Tienda"].ToString());
-            objL.mtdRegistrarCategoria(objE);
-            
+            if (txtNombreC.Value!="" || txtDescripcionC.Value!="")
+            {
+                ClProductoE objE = new ClProductoE();
+                ClProductoL objL = new ClProductoL();
+                objE.nombreC = txtNombreC.Value;
+                objE.descripcionC = txtDescripcionC.Value;
+                objE.idTienda = int.Parse(Session["Tienda"].ToString());
+                objL.mtdRegistrarCategoria(objE);
+
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡La Categoria " + objE.nombre + "!', 'A sido registrada', 'success')", true);
 
-            
+            }
+            else
+            {
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('¡Espacios en Blanco!', 'Rellenar Todos los Campos', 'warning')", true);
+            }
+
+
         }
     }
 }

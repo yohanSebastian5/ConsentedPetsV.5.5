@@ -161,12 +161,7 @@ namespace ConsentedPets.Datos
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "Eliminar" + establecimiento;
             comando.CommandType = CommandType.StoredProcedure;
-
             comando.Parameters.AddWithValue("@id" ,idE);
-
-            comando.Parameters.AddWithValue("@idUsuario", establecimiento);
-            comando.Parameters.AddWithValue("@id" + establecimiento, establecimiento);
-
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
 
@@ -175,8 +170,6 @@ namespace ConsentedPets.Datos
             comando.Parameters.AddWithValue("@id", idE);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
-
-
             conexion.CerrarConexion();
         }
         public ClEstablecimientoE mtdListar(string foto = "", string establecimiento = "Veterinaria", int id = 0, int tipo = 0)
@@ -219,14 +212,7 @@ namespace ConsentedPets.Datos
             conexion.CerrarConexion();
 
         }
-        public void mtdEliminar(string tabla, int id)
-        {
-            string consulta = "delete from " + tabla + "where id" + tabla + "=" + id;
-
-
-
-
-        }
+      
 
         public List<ClUsuarioE> mtdUsuariosEscuela (int idEscuela)
         {

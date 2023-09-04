@@ -14,11 +14,12 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol.Administrador
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idUsuarios = int.Parse(Session["RolUsuario"].ToString());
-            if (idUsuarios != 2)
-            {
-                Response.Redirect("../../../PaginaPrincipal.aspx");
-            }
+            //int idUsuarios = int.Parse(Session["RolUsuario"].ToString());
+            //if (idUsuarios != 2)
+            //{
+            //    Response.Redirect("../../../PaginaPrincipal.aspx");
+            //}
+            Session["RolUsuario"] = 2;
             int Seccion = 1;
             
             ClRepeaterEstablecimientoL objVet = new ClRepeaterEstablecimientoL();
