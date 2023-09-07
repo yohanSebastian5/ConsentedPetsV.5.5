@@ -25,12 +25,12 @@ namespace ConsentedPetsV._2._0.Logica
         }
 
 
-        public List<ClCitaE> mtdCita( int idVeterinaria)
+        public List<ClCitaE> mtdCita(int idVeterinaria)
         {
             ClCitaD objD = new ClCitaD();
             List<ClCitaE> listaCita = objD.mtdCita2(idVeterinaria);
             return listaCita;
-
+        }
         public void mtdActualizarCitaEstado(int id,string estado)
         {
             ClCitaD objD = new ClCitaD();

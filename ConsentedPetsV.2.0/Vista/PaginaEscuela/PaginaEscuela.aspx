@@ -107,7 +107,7 @@
             <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#header-carousel" data-slide-to="1"></li>
+
 
                 </ol>
                 <div class="carousel-inner">
@@ -122,16 +122,7 @@
                             </div>
                         </div>
                     </div>
-                    <%--<div class="carousel-item" style="min-height: 300px;">
-                        <img class="position-relative w-100" src="../imagenes/ServicioCursosE/carousel-2.jpg" style="min-height: 300px; object-fit: cover;">
-                        <div class="carousel-caption d-flex align-items-center justify-content-center">
-                            <div class="p-5" style="width: 100%; max-width: 900px;">
-                                <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
-                                <h1 class="display-3 text-white mb-md-4">Best Online Learning Platform</h1>
-                                <a href="#Register" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
-                            </div>
-                        </div>
-                    </div>--%>
+
                 </div>
             </div>
         </div>
@@ -165,36 +156,32 @@
         <!-- Category Start -->
         <div id="Services" class="container-fluid py-5">
 
-            <div class="container pt-5 pb-3">
+            <div class="container pt-5">
 
                 <div class="text-center mb-5">
                     <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Servicios</h5>
                     <h1>Explrora nuestros Servicios</h1>
                 </div>
-
-                <div class="d-flex">
+                <div class="row">
                     <asp:Repeater ID="repServicio" runat="server">
                         <ItemTemplate>
-                            <div class="cat-item mx-3 position-relative overflow-hidden rounded mb-2" style="height: 160px; width: 270px">
-                                <img class="img-fluid" src='<%# ResolveUrl("../imagenes/ServicioCursosE/") + Eval("foto") %>' alt="">
-                                <a class="cat-overlay text-white text-decoration-none">
-                                    <h4 class="text-white font-weight-medium"><%# Eval("nombre") %></h4>
-                                    <span>100 Courses</span>
-                                </a>
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="rounded overflow-hidden mb-2">
+                                    <div class="cat-item mx-3 position-relative overflow-hidden rounded mb-2" style="height: 160px; width: 270px">
+                                        <img class="img-fluid" src='<%# ResolveUrl("../imagenes/ServicioCursosE/") + Eval("foto") %>' alt="">
+                                        <a class="cat-overlay text-white text-decoration-none">
+                                            <h4 class="text-white font-weight-medium" style="padding:10px"><%# Eval("nombre") %></h4>
+                                           
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-
-
                         </ItemTemplate>
                     </asp:Repeater>
                 </div>
-
             </div>
-
         </div>
         <!-- Category Start -->
-
-
-
 
         <!-- Courses Start -->
         <div id="Courses" class="container-fluid py-5">
@@ -250,7 +237,6 @@
                                 <div class="team-item rounded overflow-hidden mb-2">
                                     <div class="team-img position-relative">
                                         <img class="img-fluid" src='<%# ResolveUrl("../imagenes/ImagenesUsuarios/") + Eval("foto") %>'>
-                                       
                                     </div>
                                     <div class="bg-secondary p-4">
                                         <h5><%# Eval("nombre") %></h5>
@@ -396,7 +382,7 @@
 
 
 
-      
+
 
 
         <!-- Back to Top -->
