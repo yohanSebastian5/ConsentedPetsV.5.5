@@ -78,6 +78,19 @@ namespace ConsentedPets.Logica
             ClUsuarioD objD = new ClUsuarioD();
             objD.mtdIngresarUsuarioE(idUsuario, idE, id);
         }
+        public int mtdVerificarCorreo (string correo)
+        {
+            ClUsuarioD objD = new ClUsuarioD();
+            int objE = objD.mtdVerificarCorreo(correo);
+            return objE;
+        }
+
+        public int mtdActualizarContraseña (string email, string contraseña)
+        {
+            ClUsuarioD objD= new ClUsuarioD();
+            int ibje = objD.mtdActualizarContraseña(email, contraseña);
+            return ibje;
+        }
 
     }
 }

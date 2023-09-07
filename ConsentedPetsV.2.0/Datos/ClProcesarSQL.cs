@@ -29,5 +29,13 @@ namespace ConsentedPets.Datos
             objConexion.CerrarConexion().Close();
             return registros;
         }
+        public int mtdVerificarExistenciaCorreo(string consul)
+        {
+            ClConexion obConexion = new ClConexion();
+            SqlCommand comando = new SqlCommand(consul, obConexion.AbrirConexion());
+            int verificar = (int)comando.ExecuteScalar();
+            obConexion.CerrarConexion().Close();
+            return verificar;
+        }
     }
 }

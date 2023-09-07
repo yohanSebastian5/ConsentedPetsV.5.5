@@ -262,6 +262,9 @@
             <br />
 
             <a href="Usuario/RegistrarUsuario.aspx" style="color: white; text-decoration: none">¿No Tienes Cuenta? Registrate</a>
+            <br />
+            <br />
+            <a href="../RecuperarContraseña.aspx" style="color: white; text-decoration: none">Recuperar Contraseña</a>
         </form>
 
     </div>

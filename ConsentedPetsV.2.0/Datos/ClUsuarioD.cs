@@ -9,6 +9,7 @@ using System.Runtime.Remoting.Messaging;
 using static System.Collections.Specialized.BitVector32;
 using ConsentedPets.Vista.PerfilesRol.Administrador.Veterinaria;
 using ConsentedPets.Logica;
+using System.Runtime.Remoting;
 
 namespace ConsentedPets.Datos
 {
@@ -19,7 +20,7 @@ namespace ConsentedPets.Datos
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
-        public void mtdRegistrar(string documento ,string nombre, string apellido, string direccion, string telefono, string email, string foto, string genero, string contraseña)
+        public void mtdRegistrar(string documento, string nombre, string apellido, string direccion, string telefono, string email, string foto, string genero, string contraseña)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "RegistrarUsuarios";
@@ -73,7 +74,7 @@ namespace ConsentedPets.Datos
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
-        public ClUsuarioE mtdMostrar (int idUsuario)
+        public ClUsuarioE mtdMostrar(int idUsuario)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "MostrarUsuario";
@@ -95,30 +96,31 @@ namespace ConsentedPets.Datos
                 objDatos.direccion = leer.GetString(7);
                 objDatos.genero = leer.GetString(8);
                 string contra = encry.descifrarTexto(leer.GetString(9));
-                objDatos.contraseña = contra;                
+                objDatos.contraseña = contra;
             }
             conexion.CerrarConexion();
             return objDatos;
         }
-        public ClUsuarioE mtdLogin(ClUsuarioE objE,int tipo=0)
+        public ClUsuarioE mtdLogin(ClUsuarioE objE, int tipo = 0)
         {
             string consulta = "";
-            if (tipo ==0)
+            if (tipo == 0)
             {
-               consulta= "select Usuario.*,UsuarioRol.idRol from Usuario inner join UsuarioRol on Usuario.idUsuario=UsuarioRol.idUsuario where email='" + objE.email + "' and contraseña='" + objE.contraseña + "'";
-            }else if(tipo==1)
+                consulta = "select Usuario.*,UsuarioRol.idRol from Usuario inner join UsuarioRol on Usuario.idUsuario=UsuarioRol.idUsuario where email='" + objE.email + "' and contraseña='" + objE.contraseña + "'";
+            }
+            else if (tipo == 1)
             {
                 consulta = "select * from Usuario where email='" + objE.email + "'";
             }
-            else if (tipo==2)
+            else if (tipo == 2)
             {
-                consulta = "select * from Usuario where documento='" + objE.documento+ "'";
+                consulta = "select * from Usuario where documento='" + objE.documento + "'";
             }
             else
             {
                 consulta = "select * from Usuario where email='" + objE.email + "' and contraseña='" + objE.contraseña + "'";
             }
-            
+
             ClProcesarSQL SQL = new ClProcesarSQL();
             DataTable tblVeterinaria = SQL.mtdSelectDesc(consulta);
             ClUsuarioE objU = new ClUsuarioE();
@@ -133,7 +135,7 @@ namespace ConsentedPets.Datos
                 objU.genero = tblVeterinaria.Rows[0]["genero"].ToString();
                 objU.contraseña = tblVeterinaria.Rows[0]["contraseña"].ToString();
                 objU.idUsuario = int.Parse(tblVeterinaria.Rows[0]["idUsuario"].ToString());
-                if (tipo==0)
+                if (tipo == 0)
                 {
                     objU.idRol = int.Parse(tblVeterinaria.Rows[0]["idRol"].ToString());
                 }
@@ -142,10 +144,10 @@ namespace ConsentedPets.Datos
 
             return objU;
         }
-        public void mtdIngresarRol(int idUsuario,int idRol =1 )
+        public void mtdIngresarRol(int idUsuario, int idRol = 1)
         {
             string consultaRol = "RegistrarRol";
-            if (idRol!=1)
+            if (idRol != 1)
             {
                 consultaRol = "ActualizarRol";
 
@@ -159,19 +161,19 @@ namespace ConsentedPets.Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }
-        public void mtdIngresarUsuarioE(int idUsuario,int idE, int id = 1)
+        public void mtdIngresarUsuarioE(int idUsuario, int idE, int id = 1)
         {
             string consulta = "";
-            if (id== 1)
+            if (id == 1)
             {
                 consulta = "Veterinaria";
 
             }
-            if (id==2)
+            if (id == 2)
             {
                 consulta = "Escuela";
             }
-            if (id==3)
+            if (id == 3)
             {
                 consulta = "Tienda";
             }
@@ -180,7 +182,7 @@ namespace ConsentedPets.Datos
             comando.CommandText = "RegistrarUsuario" + consulta;
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@idUsuario", idUsuario);
-            comando.Parameters.AddWithValue("@id"+consulta, idE);
+            comando.Parameters.AddWithValue("@id" + consulta, idE);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }
@@ -216,22 +218,22 @@ namespace ConsentedPets.Datos
             }
             return listaProductos;
         }
-        public List<ClUsuarioE> mtdListar(int idVeterinaria,int tipo =0,int id=0)
+        public List<ClUsuarioE> mtdListar(int idVeterinaria, int tipo = 0, int id = 0)
         {
             string consulta = "";
-            if (tipo==0)
+            if (tipo == 0)
             {
                 consulta = "select Usuario.* from Usuario inner join UsuarioVeterinaria on Usuario.idUsuario= UsuarioVeterinaria.idUsuario inner join UsuarioRol on " +
             "UsuarioRol.idUsuario = Usuario.idUsuario where idVeterinaria = '" + idVeterinaria + "' and UsuarioRol.idRol = 4; ";
 
             }
-            else if (tipo==1)
+            else if (tipo == 1)
             {
                 consulta = "select Usuario.* from Usuario inner join UsuarioEscuela on Usuario.idUsuario= UsuarioEscuela.idUsuario inner join UsuarioRol on " +
             "UsuarioRol.idUsuario = Usuario.idUsuario where idEscuela = '" + idVeterinaria + "' and UsuarioRol.idRol = 3; ";
 
             }
-            else if (tipo==2)
+            else if (tipo == 2)
             {
                 consulta = "select Usuario.* from Usuario inner join UsuarioTienda on Usuario.idUsuario= UsuarioTienda.idUsuario inner join UsuarioRol on " +
            "UsuarioRol.idUsuario = Usuario.idUsuario where idTienda = '" + idVeterinaria + "' and UsuarioRol.idRol = 5; ";
@@ -239,7 +241,7 @@ namespace ConsentedPets.Datos
             }
             else if (tipo == 3)
             {
-                consulta = "select * from Usuario where idUsuario="+id;
+                consulta = "select * from Usuario where idUsuario=" + id;
             }
 
 
@@ -301,10 +303,10 @@ namespace ConsentedPets.Datos
         {
 
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "EditarPerfilUsuario" ;
+            comando.CommandText = "EditarPerfilUsuario";
             comando.CommandType = CommandType.StoredProcedure;
 
-           
+
             comando.Parameters.AddWithValue("@idUsuario", objE.idUsuario);
             comando.Parameters.AddWithValue("@documento", objE.documento);
             comando.Parameters.AddWithValue("@nombre", objE.nombre);
@@ -320,7 +322,20 @@ namespace ConsentedPets.Datos
             conexion.CerrarConexion();
 
         }
-        
 
+        public int mtdVerificarCorreo(string correo)
+        {
+            string cons = "select * from Usuario where email = '" + correo + "'";
+            ClProcesarSQL SQL = new ClProcesarSQL();
+            int objU = SQL.mtdVerificarExistenciaCorreo(cons);
+            return objU;
+        }
+        public int mtdActualizarContraseña (string email, string contraseña)
+        {
+            string con = "update Usuario set contraseña = '" + contraseña + "' where email = '" + email + "'";
+            ClProcesarSQL sql = new ClProcesarSQL();
+            int actualizar = sql.mtdIUDConect(con);
+            return actualizar;
+        }
     }
 }
