@@ -24,10 +24,16 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyAdministrador" runat="server">
+
+
+   
+
+
     <!-- ***** Reservation Us Area Starts ***** -->
     <section class="section" id="reservation">
         <div class="container">
             <div class="row">
+                
                 <div class="col-lg-6 align-self-center" style="flex: 100%; max-width: 100%;">
                     <div class="left-text-content">
                         <div class="section-heading">
@@ -80,8 +86,9 @@
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
+            </div>
         </div>
-        </div>
+    
     </section>
     <!-- ***** Reservation Area Ends ***** -->
 </asp:Content>
