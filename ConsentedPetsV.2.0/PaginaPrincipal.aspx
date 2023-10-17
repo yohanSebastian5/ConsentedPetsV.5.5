@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="Vista/Css/StylePrincipal.css" rel="stylesheet" />
     <link href="Vista/Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <title>Concented Pets</title>
+    <title>Consented Pets</title>
     <style>
         a {
             text-decoration: none;
