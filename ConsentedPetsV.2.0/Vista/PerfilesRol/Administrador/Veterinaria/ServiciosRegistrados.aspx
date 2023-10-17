@@ -78,28 +78,26 @@
                 </div>
             </div>
         </div>
-    </div>
-    <form runat="server">
+        <div class="modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-content " style="max-width: 700px; background: rgb(103, 142, 171);">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="color: white" id="exampleModaEliminar">Eliminar Servicio</h5>
 
+                </div>
+                <div class="modal-body">
+                    <div class="section">
+                        <%--<h2 class="py-3">Actualizacion de Datos</h2>--%>
+                        <div class="container">
+                            <div class="card" style="background: #4b92ae;">
+                                <h3 style="color: mintcream">¿Esta Seguro de Eliminar el Servicio?</h3>
 
-        <div class="modal" id="staticBackdrop" style="max-width: 700px; background: rgb(103, 142, 171);" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-header">
-                <h5 class="modal-title" style="color: white" id="exampleModaEliminar">Eliminar Servicio</h5>
-
-            </div>
-            <div class="modal-body">
-                <div class="section">
-                    <%--<h2 class="py-3">Actualizacion de Datos</h2>--%>
-                    <div class="container">
-                        <div class="card" style="background: #4b92ae;">
-                            <h3 style="color:mintcream">¿Esta Seguro de Eliminar el Servicio?</h3>
-
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <asp:Button ID="Button3" CssClass="btn btn-secondary" runat="server" Text="Cerrar" />
-                    <asp:Button ID="btnEliminar" CssClass="btn btn-danger" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+                    <div class="modal-footer">
+                        <asp:Button ID="Button3" CssClass="btn btn-secondary" runat="server" Text="Cerrar" />
+                        <asp:Button ID="btnEliminar" CssClass="btn btn-danger" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -128,14 +126,19 @@
                 </div>
                 <div class="modal-footer">
                     <asp:Button ID="Button12" CssClass="btn btn-danger" runat="server" Text="Cerrar" />
-                    <asp:Button ID="Button1" CssClass="btn btn-secondary" runat="server" Text="Editar"  OnClick="btnEditar_Click" />
+                    <asp:Button ID="Button1" CssClass="btn btn-secondary" runat="server" Text="Editar" OnClick="btnEditar_Click" />
                 </div>
             </div>
         </div>
-        <button type="button" id="Button2" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="display: none" onclick="cargardatos()">Opcionesl</button>
-        <button onclick="openModal()" style="display: none">Abrir Modal</button>
+    </div>
 
-    </form>
+
+
+
+    <button type="button" id="Button2" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="display: none" onclick="cargardatos()">Opcionesl</button>
+    <button onclick="openModal()" style="display: none">Abrir Modal</button>
+
+
 
 
     <!-- Services End -->

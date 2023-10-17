@@ -32,6 +32,36 @@ namespace ConsentedPets.Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
+        }      
+        public void mtdEdtar(ClMascotaE objMascota)
+        {
+
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "EditarMascota";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@nombre", objMascota.nombre);
+            comando.Parameters.AddWithValue("@especie", objMascota.especie);
+            comando.Parameters.AddWithValue("@raza", objMascota.raza);
+            comando.Parameters.AddWithValue("@edad", objMascota.edad);
+            comando.Parameters.AddWithValue("@genero", objMascota.genero);
+            comando.Parameters.AddWithValue("@foto", objMascota.foto);
+            comando.Parameters.AddWithValue("@condicionMedica", objMascota.condicionMedica);
+            comando.Parameters.AddWithValue("@idUsuario", objMascota.idUsuario);
+            comando.Parameters.AddWithValue("@id", objMascota.idMascota);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+        }
+        public void mtdEliminar(int id)
+        {
+
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "EliminarMascota";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id", id);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
         }
 
 
@@ -55,12 +85,21 @@ namespace ConsentedPets.Datos
             conexion.CerrarConexion();
 
         }
-        public List<ClMascotaE> mtdListarMascota(int idUsuario)
+        public List<ClMascotaE> mtdListarMascota(int idUsuario,int idMascota=0)
         {
-            string sql = "select * from Mascota where idUsuario = '"+idUsuario+"'";
+            string consulta = "";
+            if (idMascota==0)
+            {
+               consulta = "select * from Mascota where idUsuario = '" + idUsuario + "'";
+            }
+            else 
+            {
+                consulta = "select * from Mascota where idMascota = '" + idMascota + "'";
+            }
+           
             //SELECT idMascota, nombre FROM Mascota WHERE idUsuario = @idUsuario
             ClProcesarSQL objSql = new ClProcesarSQL();
-            DataTable tblDataMascota = objSql.mtdSelectDesc(sql);
+            DataTable tblDataMascota = objSql.mtdSelectDesc(consulta);
 
             List<ClMascotaE> listaMascota = new List<ClMascotaE>();
 
@@ -112,6 +151,7 @@ namespace ConsentedPets.Datos
             return listaMascota;
 
         }
+
 
 
     }
