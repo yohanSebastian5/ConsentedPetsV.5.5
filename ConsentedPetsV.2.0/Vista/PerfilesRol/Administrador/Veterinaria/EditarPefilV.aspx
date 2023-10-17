@@ -34,7 +34,6 @@
         <div class="content">
             <header>Datos de Tu Veterinaria</header>
             <br />
-            <form runat="server">
                 <div>
                     <asp:Image ID="Image1" CssClass="imgUsuarioP" runat="server" />
                 </div>
@@ -66,7 +65,7 @@
                 <div class="field">
                     <asp:Button ID="btnRegistrar" runat="server" Text="Actualizar" OnClick="btnRegistrar_Click" OnClientClick="return registrarYMostrarSweetAlert();" />
                 </div>
-            </form>
+ 
         </div>
     </div>
 

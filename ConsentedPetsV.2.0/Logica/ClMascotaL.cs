@@ -19,10 +19,22 @@ namespace ConsentedPets.Logica
             ClMascotaD objMascotaD = new ClMascotaD();
             objMascotaD.mtdRegistrarMascotaPD(nombre, especie, raza, edad, genero, foto, condicion, idTienda, precio);
         }
-        public List<ClMascotaE> mtdListarMascota(int idUsuario)
+
+        public void mtdEditar(ClMascotaE objMascota)
+        {
+            ClMascotaD objMascotaD = new ClMascotaD();
+            objMascotaD.mtdEdtar(objMascota);
+        }
+        public void mtdEliminar(int id)
+        {
+            ClMascotaD objMascotaD = new ClMascotaD();
+            objMascotaD.mtdEliminar(id);
+        }
+
+        public List<ClMascotaE> mtdListarMascota(int idUsuario,int idMascota=0)
         {
             ClMascotaD objDataTienda = new ClMascotaD();
-            List<ClMascotaE> listatienda = objDataTienda.mtdListarMascota(idUsuario);
+            List<ClMascotaE> listatienda = objDataTienda.mtdListarMascota(idUsuario,idMascota);
             return listatienda;
         }
         public List<ClMascotaE> mtdMascotaVenta(int idTienda)

@@ -20,6 +20,9 @@
             width: 203px;
             margin-left: 0px;
         }
+        .fixed-top{
+            position:absolute;
+        }
     </style>
 </head>
 <body>

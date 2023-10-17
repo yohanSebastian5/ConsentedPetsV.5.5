@@ -10,10 +10,10 @@ namespace ConsentedPets.Datos
     public class ClConexion
     {
 
-        //private SqlConnection Conexion = new SqlConnection("Data Source=.;Initial Catalog=ConsentedPets;Integrated Security=True");
+        private SqlConnection Conexion = new SqlConnection("Data Source=.;Initial Catalog=ConsentedPets;Integrated Security=True");
         //private SqlConnection Conexion = new SqlConnection("Data Source=SOGAPRRBCFSD538;Initial Catalog=ConsentedPets;User ID=Mascotica;Password=1234");
 
-        private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-T3VHGES\\SQLEXPRESS;Initial Catalog=ConsentedPets;Integrated Security=True");
+        //private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-T3VHGES\\SQLEXPRESS;Initial Catalog=ConsentedPets;Integrated Security=True");
         public SqlConnection AbrirConexion()
         {
             if (Conexion.State == ConnectionState.Closed)

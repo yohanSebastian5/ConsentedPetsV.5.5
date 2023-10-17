@@ -14,7 +14,7 @@ namespace ConsentedPetsV._2._0.Vista.PerfilesRol
             int idUsuarios = int.Parse(Session["Usuario"].ToString());
             if (idUsuarios == 0)
             {
-                Response.Redirect("../../PaginaPrincipal.aspx");
+                Response.Redirect("../Login.aspx");
             }
 
         }
